@@ -812,14 +812,14 @@ margin-left:23px;
 float: left;
 width: 1200px;
 }
-.top_streams_menu .left_menu{
+.site_filter .left_menu{
 float:left;
 margin-left:12px;
 margin-right:3px;
 position:relative;
 margin-top:36px;
 }
-.top_streams_menu .left_menu_column_text{
+.site_filter .left_menu_column_text{
 float:left;
 text-align:right;
 margin-left:16px;
@@ -827,7 +827,7 @@ margin-right:3px;
  margin-top: 19px;
  width:104px;
 }
-.top_streams_menu .left_menu_column_text span{
+.site_filter .left_menu_column_text span{
 float:left;
 display:block;
 font-size:12px;
@@ -839,12 +839,12 @@ padding-left:10px;
 line-height:20px;
 text-align:left;
 }
-.top_streams_menu .left_menu_column_text span.active{
+.site_filter .left_menu_column_text span.active{
 color:#fff;
 font-size:12px;
 /*background:url("images/white_blick.png") repeat-x;*/
 }
-.top_streams_menu .left_menu_column_text span.first {
+.site_filter .left_menu_column_text span.first {
     font-size: 14px;
 }
 .stick{
@@ -915,28 +915,28 @@ background:#0390d9;
 border-radius:4px;
 color:#fff;
 }*/
-.top_streams_menu .right_menu{
+.site_filter .right_menu{
 float:left;
 width:738px;
 margin-right:22px;
 margin-top:28px;
 }
-.top_streams_menu .first_cat_level, .top_streams_menu .second_cat_level, .top_streams_menu .third_cat_level{
+.site_filter .first_cat_level, .site_filter .second_cat_level, .site_filter .third_cat_level{
 float:left;
 width:100%;
 border-radius:4px;
 margin-bottom:6px;
 }
-.top_streams_menu .first_cat_level{
+.site_filter .first_cat_level{
 background:url("images/menu_bg1.png") repeat-x;
 }
-.top_streams_menu .second_cat_level{
+.site_filter .second_cat_level{
 background:url("images/menu_bg2.png") repeat-x;
 }
-.top_streams_menu .third_cat_level{
+.site_filter .third_cat_level{
 background:url("images/menu_bg3.png") repeat-x;
 }
-.top_streams_menu a{
+.site_filter a{
 color:#353b40;
 font-size:24px;
 display:block;
@@ -949,7 +949,7 @@ float:left;
 background:url("images/grey_circle.png") no-repeat right 55%;
 width: 142px;
 }
-.top_streams_menu .third_cat_level .cifri_wrapper:last-child, .top_streams_menu .first_cat_level .cifri_wrapper:last-child{
+.site_filter .third_cat_level .cifri_wrapper:last-child, .site_filter .first_cat_level .cifri_wrapper:last-child{
 background:none;
 }
 .cifri {
@@ -969,25 +969,25 @@ display: block;
 .cifri_wrapper.active .cifri{
 opacity:1;
 }
-.top_streams_menu .first_cat_level a{
+.site_filter .first_cat_level a{
 padding:13px 0;
 }
 
-.top_streams_menu .second_cat_level a{
+.site_filter .second_cat_level a{
 font-size:18px;
 color:#4b5056;
 padding:5px 0;
 }
-.top_streams_menu .third_cat_level a{
+.site_filter .third_cat_level a{
 font-size:12px;
 color:#4b5056;
 padding:4px 0;
 }
-.top_streams_menu .first_cat_level .cifri_wrapper.active a   {
+.site_filter .first_cat_level .cifri_wrapper.active a   {
 background:url("images/big_blick.png") center center no-repeat;
 color:#fff;
 }
-.top_streams_menu .second_cat_level  a.active  , .top_streams_menu .third_cat_level a.active{
+.site_filter .second_cat_level  a.active  , .site_filter .third_cat_level a.active{
 background:url("images/smal_blick.png") center center no-repeat;
 color:#fff;
 }
