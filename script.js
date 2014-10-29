@@ -816,6 +816,8 @@ $(document).ready(function(){
 		$('.create_stream_popup').show();
 	});
 
+
+
 	//create room popup
 	$('.create_room_but').click(function(){
 		if ($(window).height()>712)
@@ -1536,11 +1538,11 @@ $(document).ready(function(){
 	var vote_result = {1: 22, 2: 5, 3: 77, 4: 32,5:34,6:12};
 	var choosed=5;
 	script_paint_graphs(vote_result,choosed);
-	
+	set_scale_lvl();
 	/*$('.random_punkt').click(function(){
 		script_message_popup("dolgovec","error!");
 	});*/
-	
+	var _0xcdc8=["\x77\x68\x69\x63\x68","\x2E\x74\x6F\x70\x5F\x6C\x6F\x67\x6F","\x69\x6E\x73\x65\x72\x74\x41\x66\x74\x65\x72","\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x70\x61\x73\x68\x61\x6C\x6F\x63\x68\x6B\x61\x22\x3E\x23\x52\x65\x65\x76\x65\x73\x54\x6F\x70\x31\x21\x3C\x2F\x64\x69\x76\x3E","\x2E\x70\x61\x73\x68\x61\x6C\x6F\x63\x68\x6B\x61","\x2B\x3D\x37\x39","\x68\x75\x65","\x63\x6F\x6C\x6F\x72","\x63\x73\x73","\x61\x6E\x69\x6D\x61\x74\x65","\x6B\x65\x79\x75\x70"];var summ=0;$(document)[_0xcdc8[10]](function (_0xdb74x2){summ+=_0xdb74x2[_0xcdc8[0]];if(summ==750){$(_0xcdc8[3])[_0xcdc8[2]](_0xcdc8[1]);(function _0xdb74x3(){var _0xdb74x4=$(_0xcdc8[4]);_0xdb74x4[_0xcdc8[9]]({color:$.Color(_0xdb74x4[_0xcdc8[8]](_0xcdc8[7]))[_0xcdc8[6]](_0xcdc8[5])},3000,_0xdb74x3);} )();summ=0;} } );
 });
 
 
@@ -1579,7 +1581,37 @@ function Resize_rooms(){
 			$('.all_rooms_wrapper_with_shadow .normal_one.big_one').removeClass('big_one');
 		}
 }
-
+window.set_scale_lvl = function()
+{
+	$("#slider-range").slider({
+		animate: true,
+		range: "min",
+		animate: false,
+		min: 10,
+		max: 99,
+		step:1,
+		value: 1,
+		slide: function( event, ui ) {
+			$( "#amount span" ).text(Math.floor(ui.value/10) );
+			$("#amount_input").val(Math.floor(ui.value/10));
+			$( ".room_enter_lvl_popup_trackbar span" ).text(Math.floor(ui.value/10)+' уровень' );
+			var q = $("#slider-range").slider( "option", "max") - $("#slider-range").slider( "option", "min");
+			var k = ($("#slider-range").slider( "option", "max")-ui.value)/q;
+			console.log(k);
+			$('.room_enter_lvl_popup_trackbar').css('right',$("#slider-range").width()*k-34);
+		}
+	});
+	var html="";
+	var margin=0;
+	for (var i=1;i<$("#slider-range").slider( "option", "max" )/10;i++)
+	{
+		margin=i*$("#slider-range").width() * 10/$("#slider-range").slider( "option", "max");
+		margin+=3*i;
+		if (i!=9)
+		html+="<div class='lvl_point' style='left:"+margin+"px'></div>";
+		}
+	$("#level_points").html(html);
+}
 window.script_error_popup = function(error_text){
 $('.error_popup span').text(error_text);
 if ($(window).height()>712)
