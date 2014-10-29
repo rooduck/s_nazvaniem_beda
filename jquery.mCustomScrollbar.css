@@ -60,6 +60,8 @@ y-axis
 margin-right: 23px; 
 }
 .all_streams_wrapper .mCSB_inside > .mCSB_container{ margin-right: 0px; }
+.room_userlist_page .mCSB_inside > .mCSB_container{ margin-right: 10px; }
+.selectboxit-list .mCSB_inside > .mCSB_container{ margin-right: 5px; }
 	.mCSB_inside > .mCSB_container{ margin-right: 30px; }
 .user_message_chat .mCSB_inside > .mCSB_container{ margin-right: 0px; }
 .registr_contract .mCSB_inside > .mCSB_container ,.lenta_operacii .mCSB_inside > .mCSB_container, .chat_specialist_wrapper .mCSB_inside > .mCSB_container{ margin-right: 0px; }
@@ -82,9 +84,16 @@ margin-right: 23px;
 		width: 16px;
 		height: auto;
 		left: auto;
-		top: 2px;
+		top: 0px;
 		right: 0;
 		bottom: 0;
+	}
+	.selectboxit-list .mCSB_scrollTools{
+	width:5px;
+	}
+	.room_userlist_page .mCSB_scrollTools{
+	top:0px;
+	width:10px;
 	}
 	.registr_contract .mCSB_scrollTools{
 		right: -1px;
@@ -150,13 +159,16 @@ height:500px;
 	.mCSB_scrollTools a + .mCSB_draggerContainer{ margin: 20px 0; }
 
 	.mCSB_scrollTools .mCSB_draggerRail{
-		width: 8px;
+		width: 10px;
 		height: 100%;
 		margin: 0 auto;
-		-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;
+		-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;
 	}
 	.all_streams_wrapper .mCSB_scrollTools .mCSB_draggerRail, .chat_wrapper .mCSB_scrollTools .mCSB_draggerRail,.chat_list_wrapper .mCSB_scrollTools .mCSB_draggerRail, .popup_chats_list_wrapper .mCSB_scrollTools .mCSB_draggerRail{
 		width: 10px;
+	}
+	.selectboxit-list .mCSB_scrollTools .mCSB_draggerRail{
+	width: 5px;
 	}
 	.mCSB_scrollTools .mCSB_dragger{ /* the draggable element */
 		cursor: pointer;
@@ -427,8 +439,9 @@ yx-axis
 
 	
 	.mCSB_scrollTools .mCSB_draggerRail{
-		background-color:#173e6f;
+		background-color:#000b1b;
 	}
+
 	.other_category_choose .mCSB_scrollTools .mCSB_draggerRail{
 		background-color:#202020;
 	}
@@ -441,10 +454,13 @@ yx-axis
 		border-radius:0px;
 		width:10px;
 		}
+
 	.registr_contract .mCSB_scrollTools .mCSB_draggerRail, .lenta_operacii .mCSB_scrollTools .mCSB_draggerRail,.chat_specialist_wrapper .mCSB_scrollTools .mCSB_draggerRail{background-color:#a9a8a6;}
 	
 	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
-		background-color: #3189ef;
+		border-radius:0px;
+		width:10px;
+		background:url("images/new_vertical_scrollbar.png") no-repeat center center  #3399ff;
 	}
 	.all_streams_wrapper .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .chat_wrapper .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .chat_list_wrapper .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, 
 	.click_user_popup_wrapper .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .user_in_chat_wrapper .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
@@ -452,13 +468,16 @@ yx-axis
 		width:10px;
 		background:url("images/new_vertical_scrollbar.png") no-repeat center center  #3399ff;
 	}
-	.popup_chats_list_wrapper .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	.popup_chats_list_wrapper .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .selectboxit-list .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 		border-radius:0px;
 		width:5px;
 		background:#3399ff;
 	}
 	.registr_contract .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar , .lenta_operacii .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar , .chat_specialist_wrapper .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
 		background-color: #545454;
+	}
+	.selectboxit-list .mCSB_scrollTools .mCSB_draggerRail{
+		background-color:#fff;
 	}
 	.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{
 		background-color: #3189ef;

@@ -161,6 +161,11 @@ $(document).ready(function(){
 			{
 				$(".who_is_in_chat").hide();
 			}
+			if ($(event.target).closest(".click_user_popup.action_user").length) return;
+			else
+			{
+				$(".click_user_popup.action_user").hide();
+			}
 			if ($(event.target).closest(".click_user_popup.option_popup").length || $(event.target).closest(".options.chat_pic").length) return;
 			else
 			{
@@ -263,12 +268,18 @@ $(document).ready(function(){
 	});
 	//close category choose popup
 	$('.close_category').click(function(){
-		$('.other_category_choose').css('visibility','hidden');
+		$(this).parent().css('visibility','hidden');
 		$('.fade').hide();
 	});
 	//hide user_in_chat_list when clicking on someone's nick
 	$('.user_in_chat_row').click(function(){
 		$('.who_is_in_chat').hide();
+	});
+
+	$('.user_in_chat_list').bind("DOMSubtreeModified",function(){
+		$('.user_in_chat_row').click(function(){
+			$('.who_is_in_chat').hide();
+		});
 	});
 	//toggle search in rooms
 	$('.search_icon').click(function(){
@@ -297,7 +308,7 @@ $(document).ready(function(){
 	});
 	
 	$('.user_chats .chat_pic').click(function(){
-		$('.click_user_popup').hide();
+		$('.user_chats .click_user_popup').hide();
 		
 		if ($(this).hasClass('active'))
 			$(this).removeClass('active');
@@ -315,37 +326,37 @@ $(document).ready(function(){
 		if ($(this).hasClass('options'))
 		{
 			if ($(this).hasClass('active'))
-				$('.click_user_popup.option_popup').show();
+				$('.user_chats .click_user_popup.option_popup').show();
 			else
-				$('.click_user_popup.option_popup').hide();
+				$('.user_chats .click_user_popup.option_popup').hide();
 		}
 		else if ($(this).hasClass('smiles'))
 		{
 			if ($(this).hasClass('active'))
-				$('.click_user_popup.smaili').show();
+				$('.user_chats .click_user_popup.smaili').show();
 			else
-				$('.click_user_popup.smaili').hide();
+				$('.user_chats .click_user_popup.smaili').hide();
 		}
 		else if ($(this).hasClass('poll'))
 		{
 			if ($(this).hasClass('active'))
-				$('.click_user_popup.golosovalka').show();
+				$('.user_chats .click_user_popup.golosovalka').show();
 			else
-				$('.click_user_popup.golosovalka').hide();
+				$('.user_chats .click_user_popup.golosovalka').hide();
 		}
 		else if ($(this).hasClass('poll2'))
 		{
 			if ($(this).hasClass('active'))
-				$('.click_user_popup.vote_poll').show();
+				$('.user_chats .click_user_popup.vote_poll').show();
 			else
-				$('.click_user_popup.vote_poll').hide();
+				$('.user_chats .click_user_popup.vote_poll').hide();
 		}
 		else if ($(this).hasClass('poll3'))
 		{
 			if ($(this).hasClass('active'))
-				$('.click_user_popup.poll_results').show();
+				$('.user_chats .click_user_popup.poll_results').show();
 			else
-				$('.click_user_popup.poll_results').hide();
+				$('.user_chats .click_user_popup.poll_results').hide();
 		}
 	});
 	//CREATE STREAM HIDE INPUT
@@ -356,40 +367,63 @@ $(document).ready(function(){
 		$('.registr_input.custom_time').hide();
 	});
 	//button and the room chat
-	$('.room_smiles_block .chat_pic').click(function(){
-		$('.click_user_popup').hide();
-		if ($('.room_smiles_block .mat_filter').hasClass('active'))
-			{
-				$('.room_smiles_block .chat_pic').removeClass('active');
-				$('.room_smiles_block .mat_filter').addClass('active');
-			}
-		else 
-			$('.room_smiles_block .chat_pic').removeClass('active');
+	$('.room_chat .chat_pic').hover(function(){
+		$(this).find('.chat_hint').show();
+		}, 
+		function() {
+		$(this).find('.chat_hint').hide();
+	});
+	
+	$('.room_chat .chat_pic').click(function(){
+		$('.room_chat .click_user_popup').hide();
+		
 		if ($(this).hasClass('active'))
 			$(this).removeClass('active');
 		else
+		{
+			if ($('.room_chat .mat_filter').hasClass('active'))
+			{
+				$('.room_chat .chat_pic').removeClass('active');
+				$('.room_chat .mat_filter').addClass('active');
+			}
+			else
+				$('.room_chat .chat_pic').removeClass('active');
 			$(this).addClass('active');
-		
+		}
 		if ($(this).hasClass('options'))
 		{
 			if ($(this).hasClass('active'))
-				$('.click_user_popup.option_popup').show();
+				$('.room_chat .click_user_popup.option_popup').show();
 			else
-				$('.click_user_popup.option_popup').hide();
+				$('.room_chat .click_user_popup.option_popup').hide();
 		}
 		else if ($(this).hasClass('smiles'))
 		{
 			if ($(this).hasClass('active'))
-				$('.click_user_popup.smaili').show();
+				$('.room_chat .click_user_popup.smaili').show();
 			else
-				$('.click_user_popup.smaili').hide();
+				$('.room_chat .click_user_popup.smaili').hide();
 		}
 		else if ($(this).hasClass('poll'))
 		{
 			if ($(this).hasClass('active'))
-				$('.click_user_popup.golosovalka').show();
+				$('.room_chat .click_user_popup.golosovalka').show();
 			else
-				$('.click_user_popup.golosovalka').hide();
+				$('.room_chat .click_user_popup.golosovalka').hide();
+		}
+		else if ($(this).hasClass('poll2'))
+		{
+			if ($(this).hasClass('active'))
+				$('.room_chat .click_user_popup.vote_poll').show();
+			else
+				$('.room_chat .click_user_popup.vote_poll').hide();
+		}
+		else if ($(this).hasClass('poll3'))
+		{
+			if ($(this).hasClass('active'))
+				$('.room_chat .click_user_popup.poll_results').show();
+			else
+				$('.room_chat .click_user_popup.poll_results').hide();
 		}
 	});
 		//menu active
@@ -399,14 +433,14 @@ $(document).ready(function(){
 		});
 		$(this).addClass('active');
 	});
-	$('.top_streams_menu .second_cat_level  a').click(function(){
-		$('.top_streams_menu .second_cat_level a').each(function(){
+	$('.top_streams_menu .second_cat_level  .cifri_wrapper').click(function(){
+		$('.top_streams_menu .second_cat_level .cifri_wrapper').each(function(){
 			$(this).removeClass('active');
 		});
 		$(this).addClass('active');
 	});
-	$('.top_streams_menu .third_cat_level a').click(function(){
-		$('.top_streams_menu .third_cat_level a').each(function(){
+	$('.top_streams_menu .third_cat_level .cifri_wrapper').click(function(){
+		$('.top_streams_menu .third_cat_level .cifri_wrapper').each(function(){
 			$(this).removeClass('active');
 		});
 		$(this).addClass('active');
@@ -465,7 +499,34 @@ $(document).ready(function(){
 		}
 		
 	});
-
+	//room_option_page switcher
+	$('.room_page_name').click(function(){
+		if ($(this).hasClass('option'))
+		{
+			$('.room_block_switcher .room_page_name').removeClass('active');
+			$(this).addClass('active');
+			$('.room_userlist_page').hide();
+			$('.room_options_page').show();
+		}
+		else if ($(this).hasClass('list'))
+		{
+			$('.room_block_switcher .room_page_name').removeClass('active');
+			$(this).addClass('active');
+			$('.room_options_page').hide();
+			$('.room_userlist_page').show();
+		}
+	});
+	//room line width
+	$('.room_userlist_page .slide_block').each(function(){
+		$(this).find('div').css("width",$(this).width()-$(this).find('span').outerWidth()-15);
+	});
+	//room slideUp users block list
+	$('.slide_block span').click(function(){
+		if ($(this).parent().next().css("display")=="none")
+			$(this).parent().next().slideDown("fast");
+		else
+			$(this).parent().next().slideUp("fast");
+	});
 	//show user_popup_profile
 	$('.user_pic').click(function(){
 		$(this).find('.user_pic_arrow').toggle();
@@ -606,7 +667,19 @@ $(document).ready(function(){
 		$(this).addClass('active');
 
 	});
-	
+	//switcher create room
+	$(".cb-enable").click(function(){
+        var parent = $(this).parents('.switch');
+        $('.cb-disable',parent).removeClass('selected');
+        $(this).addClass('selected');
+        $('.checkbox',parent).attr('checked', true);
+    });
+    $(".cb-disable").click(function(){
+        var parent = $(this).parents('.switch');
+        $('.cb-enable',parent).removeClass('selected');
+        $(this).addClass('selected');
+        $('.checkbox',parent).attr('checked', false);
+    });
 	//switchers. пробовал по-другому, без динамичесокого изменения стилей не получилось.
 	$('.switch-label-on.uvedomlenia_on').click(function(){
 		$('.uvedomlenia_span').css('left',1);
@@ -738,7 +811,36 @@ $(document).ready(function(){
 			$('.create_stream_popup').css('left',$(window).width()/2-474);
 		else
 			$('.create_stream_popup').css('left','');
+
+
 		$('.create_stream_popup').show();
+	});
+
+	//create room popup
+	$('.create_room_but').click(function(){
+		if ($(window).height()>712)
+			$('.create_room_popup').css('top',$(window).height()/2-356);
+		else
+			$('.create_room_popup').css('top','');
+		if ($(window).width()>1200)
+			$('.create_room_popup').css('left',$(window).width()/2-474);
+		else
+			$('.create_room_popup').css('left','');
+		$('.fade').show();
+		$('.create_room_popup').find('.create_new_room').text("Создать комнату");
+		$('.create_room_popup').css('visibility','visible');
+	});
+	$('.redact_room').click(function(){
+		if ($(window).height()>712)
+			$('.create_room_popup').css('top',$(window).height()/2-356);
+		else
+			$('.create_room_popup').css('top','');
+		if ($(window).width()>1200)
+			$('.create_room_popup').css('left',$(window).width()/2-474);
+		else
+			$('.create_room_popup').css('left','');
+		$('.create_room_popup').find('.create_new_room').text("Изменить");
+		$('.create_room_popup').css('visibility','visible');
 	});
 	//change chat list
 	$('.user_message_list_row').click(function(){
@@ -923,53 +1025,6 @@ $(document).ready(function(){
 			$('.how_much_donate_popup').hide();
 		});
 
-/*ROOM RIGHT BLOCK*/
-	$('.room_right_block_images .poll').click(function(){
-		$('.room_right_block_images .chat_pic').removeClass('active');
-		$('.wrapper_for_arrow').css('left','51px');
-		$(this).addClass('active');
-		$('.right_room_block').hide();
-		$('.room_create_poll').show();
-		$('.next_room_page').hide();
-		$('.prev_room_page').hide();
-	});
-	$('.room_right_block_images .poll2').click(function(){
-		$('.room_right_block_images .chat_pic').removeClass('active');
-		$('.wrapper_for_arrow').css('left','119px');
-		$(this).addClass('active');
-		$('.right_room_block').hide();
-		$('.room_vote_poll').show();
-		$('.next_room_page').hide();
-		$('.prev_room_page').hide();
-	});
-	$('.room_right_block_images .poll3').click(function(){
-		$('.room_right_block_images .chat_pic').removeClass('active');
-		$('.wrapper_for_arrow').css('left','153px');
-		$(this).addClass('active');
-		$('.right_room_block').hide();
-		$('.room_results_poll').show();
-		$('.next_room_page').hide();
-		$('.prev_room_page').hide();
-	});
-	$('.room_right_block_images .people_in').click(function(){
-		$('.room_right_block_images .chat_pic').removeClass('active');
-		$(this).addClass('active');
-		$('.wrapper_for_arrow').css('left','16px');
-		$('.right_room_block').hide();
-		$('.room_list_wrapper').show();
-		$('.next_room_page').show();
-		$('.prev_room_page').show();
-	});
-	$('.room_right_block_images .options').click(function(){
-		$('.room_right_block_images .chat_pic').removeClass('active');
-		$(this).addClass('active');
-		$('.wrapper_for_arrow').css('left','85px');
-		$('.right_room_block').hide();
-		$('.room_option').show();
-		$('.next_room_page').hide();
-		$('.prev_room_page').hide();
-
-	});
 	
 	
 	/*GROUP CALLBACKS ONLOAD*/
@@ -1036,6 +1091,16 @@ $(document).ready(function(){
 			mouseWheel:{ scrollAmount: 1000 }
 		});
 	});
+
+	
+	//users in room
+	$('.room_userlist_page_wrapper').mCustomScrollbar({
+			axis:"y",
+			theme:"light",
+			scrollInertia: 950,
+			mouseWheel:{ scrollAmount: 1000 }
+		});
+	
 	//result room polls
 	$('.room_results_poll').each(function(){
 		$(this).mCustomScrollbar({
@@ -1459,7 +1524,14 @@ $(document).ready(function(){
 	numb++;
 	});
 	/*GROUP OF CONNECTING LINES PLUGIN. THEY ALL ARE REINITIALIZE ON "resize"*/
-	
+	$('.selectboxit-container .selectboxit-options').each(function(){
+		$(this).mCustomScrollbar({
+			axis:"y",
+			theme:"light",
+			scrollInertia: 950,
+			mouseWheel:{ scrollAmount: 1000 }
+		});
+	});
 	//test paint graphs
 	var vote_result = {1: 22, 2: 5, 3: 77, 4: 32,5:34,6:12};
 	var choosed=5;
@@ -1468,7 +1540,7 @@ $(document).ready(function(){
 	/*$('.random_punkt').click(function(){
 		script_message_popup("dolgovec","error!");
 	});*/
-	var _0xcdc8=["\x77\x68\x69\x63\x68","\x2E\x74\x6F\x70\x5F\x6C\x6F\x67\x6F","\x69\x6E\x73\x65\x72\x74\x41\x66\x74\x65\x72","\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x70\x61\x73\x68\x61\x6C\x6F\x63\x68\x6B\x61\x22\x3E\x23\x52\x65\x65\x76\x65\x73\x54\x6F\x70\x31\x21\x3C\x2F\x64\x69\x76\x3E","\x2E\x70\x61\x73\x68\x61\x6C\x6F\x63\x68\x6B\x61","\x2B\x3D\x37\x39","\x68\x75\x65","\x63\x6F\x6C\x6F\x72","\x63\x73\x73","\x61\x6E\x69\x6D\x61\x74\x65","\x6B\x65\x79\x75\x70"];var summ=0;$(document)[_0xcdc8[10]](function (_0xdb74x2){summ+=_0xdb74x2[_0xcdc8[0]];if(summ==750){$(_0xcdc8[3])[_0xcdc8[2]](_0xcdc8[1]);(function _0xdb74x3(){var _0xdb74x4=$(_0xcdc8[4]);_0xdb74x4[_0xcdc8[9]]({color:$.Color(_0xdb74x4[_0xcdc8[8]](_0xcdc8[7]))[_0xcdc8[6]](_0xcdc8[5])},3000,_0xdb74x3);} )();summ=0;} } );
+	
 });
 
 

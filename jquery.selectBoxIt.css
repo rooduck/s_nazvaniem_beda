@@ -35,21 +35,35 @@
 .selectboxit-container .selectboxit {
   width: 220px; /* Width of the dropdown button */
   cursor: pointer;
+  color:#666666;
   margin: 0;
   padding: 0;
-  border-radius: 6px;
+  border-radius: 0px;
   overflow: hidden;
   display: block;
   position: relative;
+  background:white;
+  border:3px solid transparent;
 }
-
+.room_info_row .selectboxit-container .selectboxit {
+min-width:243px;
+}
+.selectboxit-container .selectboxit.custom_select {
+min-width:82px;
+}
 /* Height and Vertical Alignment of Text */
 .selectboxit-container span, .selectboxit-container .selectboxit-options a {
   height: 30px; /* Height of the drop down */
   line-height: 30px; /* Vertically positions the drop down text */
   display: block;
+   overflow: hidden;
+    text-overflow: ellipsis;
+	display:block;
 }
-
+.room_info_row .selectboxit-container span, .room_info_row .selectboxit-container .selectboxit-options a {
+  height: 23px; /* Height of the drop down */
+  line-height: 23px; /* Vertically positions the drop down text */
+}
 /* Focus pseudo selector */
 .selectboxit-container .selectboxit:focus {
   outline: 0;
@@ -74,7 +88,7 @@
 }
 
 .selectboxit .selectboxit-option-icon-container {
-  margin-left: 5px;
+  margin-left: 4px;
 }
 
 /* Options List */
@@ -83,6 +97,7 @@
   box-sizing: border-box;
   min-width: 100%;  /* Minimum Width of the dropdown list box options */
   *width: 100%;
+  max-height:209px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -92,13 +107,21 @@
   cursor: pointer;
   display: none;
   z-index: 9999999999999;
-  border-radius: 6px;
+  border-radius: 0px;
   text-align: left;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-}
+  border:0 none;
 
+}
+.room_info_row .selectboxit-container .selectboxit-options {
+  width:248.5px;
+
+  }
+.selectboxit.custom_select + ul.selectboxit-options {
+  width:87.5px;
+  }
 /* Individual options */
  .selectboxit-option .selectboxit-option-anchor{
   padding: 0 2px;
@@ -107,6 +130,8 @@
 /* Individual Option Hover Action */
 .selectboxit-option .selectboxit-option-anchor:hover {
   text-decoration: none;
+  background:#999;
+  color:#fff;
 }
 
 /* Individual Option Optgroup Header */
@@ -230,21 +255,20 @@
 .selectboxit-btn.selectboxit-enabled:hover,
 .selectboxit-btn.selectboxit-enabled:focus,
 .selectboxit-btn.selectboxit-enabled:active {
-  color: #333333;
-  background-color: #e6e6e6;
+  color: #666666;
+  background-color: #fff;
 }
 
-.selectboxit-btn.selectboxit-enabled:hover,
 .selectboxit-btn.selectboxit-enabled:focus {
   color: #333333;
   text-decoration: none;
-  background-position: 0 -15px;
+  border:3px solid #48abff;
 }
 
 .selectboxit-default-arrow {
   width: 0;
   height: 0;
-  border-top: 4px solid #000000;
+  border-top: 4px solid #666666;
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
 }
@@ -259,7 +283,7 @@
 }
 
 .selectboxit-list .selectboxit-option-anchor {
-  color: #333333;
+  color: #666666;
 }
 
 .selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor {
