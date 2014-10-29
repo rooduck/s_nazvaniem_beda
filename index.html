@@ -5111,26 +5111,22 @@
 				<div class="room_info_row">
 					<span class="room_info_row_span wide">Удалять сообщения через:</span>
 					<select name="time_to_reset" class="custom_select">
-						<option value="never">Никогда</option>
+						<option value="never">Никогда</option>a
 						<option value="1">1 час</option>
 						<option value="2">2 часа</option>
 						<option value="3">3 часа</option>
 						<option value="4">4 часа</option>              
 					</select>
 				</div>
-				<div class="room_info_row">
-					<span class="room_info_row_span wide">Ограничение: </span>
-					<select name="lvl_enter" class="custom_select">
-						<option value="1">1 уровень</option>
-						<option value="2">2 уровень</option>
-						<option value="3">3 уровень</option>
-						<option value="4">4 уровень</option>
-						<option value="5">5 уровень</option>   
-						<option value="6">6 уровень</option>  
-						<option value="7">7 уровень</option>  
-						<option value="8">8 уровень</option>  
-						<option value="9">9 уровень</option>  						
-					</select>
+				<div class="room_info_row track">
+					<span class="room_info_row_span left">Ограничение: </span>
+					<div class="room_enter_lvl_popup_trackbar">
+						<span>1 уровень</span>
+					</div>
+					<div id="slider-range"></div>
+					<div id="level_points"></div>
+						<span id="amount">уровень вхождения в комнату - <span>1</span> уровень</span>
+					<input name="room_enter_lvl" type="text" style="display:none;" id="amount_input" />	
 				</div>
 				<div class="room_info_row">
 					<span class="room_info_row_span left">Тип управления</span>
