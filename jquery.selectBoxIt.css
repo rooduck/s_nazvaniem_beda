@@ -43,13 +43,15 @@
   display: block;
   position: relative;
   background:white;
-  border:3px solid transparent;
+
 }
 .room_info_row .selectboxit-container .selectboxit {
 min-width:243px;
+  border:3px solid transparent;
 }
 .selectboxit-container .selectboxit.custom_select {
-min-width:82px;
+min-width:118px;
+max-width:118px;
 }
 /* Height and Vertical Alignment of Text */
 .selectboxit-container span, .selectboxit-container .selectboxit-options a {
@@ -115,13 +117,16 @@ min-width:82px;
   border:0 none;
 
 }
+.selectboxit.custom_select + ul.selectboxit-options {
+
+  min-width:124px;
+max-width:124px;
+  }
 .room_info_row .selectboxit-container .selectboxit-options {
-  width:248.5px;
+  width:249px;
 
   }
-.selectboxit.custom_select + ul.selectboxit-options {
-  width:87.5px;
-  }
+
 /* Individual options */
  .selectboxit-option .selectboxit-option-anchor{
   padding: 0 2px;
@@ -246,7 +251,7 @@ min-width:82px;
   background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
   background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
   background-repeat: repeat-x;
-  border: 1px solid #cccccc;
+  border: 0px solid #cccccc;
   border-color: #e6e6e6 #e6e6e6 #bfbfbf;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   border-bottom-color: #b3b3b3;
@@ -262,9 +267,10 @@ min-width:82px;
 .selectboxit-btn.selectboxit-enabled:focus {
   color: #333333;
   text-decoration: none;
-  border:3px solid #48abff;
 }
-
+.room_info_row .selectboxit-btn.selectboxit-enabled:focus {
+	border:3px solid #48abff;
+}
 .selectboxit-default-arrow {
   width: 0;
   height: 0;
