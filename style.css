@@ -4451,7 +4451,7 @@ width:951px;
 height:657px;
 background:url("images/create_room_bg.jpg") no-repeat;
 left:125px;
-top:100px;
+top:0px;
 visibility:hidden;
 z-index:6;
 }
@@ -4481,6 +4481,7 @@ padding-left:0px;
     float: right;
     margin-bottom: 20px;
     width: 100%;
+	position:relative;
 }
 .room_info_row_span {
     color: #fff;
@@ -4493,7 +4494,9 @@ padding-left:0px;
 	margin-top: 6px;
 }
 .room_info_row_span.left {
+	margin-right: 9px;
     text-align: left;
+    width: auto;
 }
 .room_info_row_span.wide{
     width: 278px;
@@ -4605,6 +4608,70 @@ border: 0 none;
 .room_create_btn a{
 margin-left: 82px;
 float:left;
+}
+.room_info_row.track{
+margin-top:34px;
+}
+.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all {
+    background: none repeat scroll 0 0 #509fee;
+    position: relative;
+	width:321px;
+	border-radius:2px;
+	float:left;
+	top:10px;
+}
+.ui-slider-range.ui-widget-header.ui-corner-all.ui-slider-range-min {
+    background: none repeat scroll 0 0 #fff;
+    height: 11px;
+	border-radius:2px;
+}
+.ui-slider-handle.ui-state-default.ui-corner-all {
+    background: none repeat scroll 0 0 #3399ff;
+    display: block;
+	top:-3px;
+    float: left;
+    height: 16px;
+    position: absolute;
+	border-radius:10px;
+    width: 16px;
+	margin-left:-8px;
+	cursor:pointer;
+}
+.lvl_point {
+    background: none repeat scroll 0 0 #336699;
+    height: 3px;
+    position: absolute;
+    width: 3px;
+	border-radius:4px;
+}
+
+.room_info_row #amount {
+    color: #fff;
+    float: right;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-top: 14px;
+}
+.room_info_row #level_points {
+    position: relative;
+    top: 14px;
+	left:100px;
+}
+.room_enter_lvl_popup_trackbar{
+position:absolute;
+background:url("images/white_arrow.png") no-repeat center bottom;
+padding-bottom:5px;
+right:287px;
+top:-21px;
+}
+.room_enter_lvl_popup_trackbar span{
+display:block;
+width:86px;
+height:21px;
+color:#666666;
+font-size:14px;
+background:white;
+text-align:center;
 }
 /*VALUTE POPUP*/
 
