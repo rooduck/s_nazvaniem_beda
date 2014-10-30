@@ -1345,19 +1345,8 @@ $(document).ready(function(){
 		$(this).find('.category_choose_people').hide();
 		$(this).find('.black_filtr').css("background","rgba(0,0,0,0.5)");
 	});
-	
-	$('.stream.normal_one').hover(function(){
-		$(this).find('.streamer_viewers').show();
-		$(this).find('.streamer_rating').show();
-		$(this).find('.filter_on_pic').hide();
-		$(this).find('.main_stream_info').css("height","85px");
-		}, 
-		function() {
-		$(this).find('.streamer_viewers').hide();
-		$(this).find('.streamer_rating').hide();
-		$(this).find('.filter_on_pic').show();
-		$(this).find('.main_stream_info').css("height","46px");
-	});
+
+    setStreamHover();
 	
 	/*GROUP OF CUSTOM SELECTBOXES*/
 	
@@ -1530,7 +1519,7 @@ $(document).ready(function(){
 	var vote_result = {1: 22, 2: 5, 3: 77, 4: 32,5:34,6:12};
 	var choosed=5;
 	script_paint_graphs(vote_result,choosed);
-	set_scale_lvl();
+	//set_scale_lvl();
 	
 	/*$('.random_punkt').click(function(){
 		script_message_popup("dolgovec","error!");
@@ -1690,4 +1679,19 @@ window.script_paint_graphs = function(vote_result,choosed){
 			$graphs +='<div class="graphic_bar"><div class="graph_bar"  style="height:'+height+'px"></div><span class="poll_answer_number">'+i+'</span><span class="poll_answer_votes">'+val+'</span></div>';
 	});
 	$('.graphics').html($graphs);
+}
+
+function setStreamHover() {
+    $('.stream.normal_one').hover(function () {
+            $(this).find('.streamer_viewers').show();
+            $(this).find('.streamer_rating').show();
+            $(this).find('.filter_on_pic').hide();
+            $(this).find('.main_stream_info').css("height", "85px");
+        },
+        function () {
+            $(this).find('.streamer_viewers').hide();
+            $(this).find('.streamer_rating').hide();
+            $(this).find('.filter_on_pic').show();
+            $(this).find('.main_stream_info').css("height", "46px");
+        });
 }
