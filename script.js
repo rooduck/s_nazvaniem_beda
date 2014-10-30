@@ -251,6 +251,7 @@ $(document).ready(function(){
 	//FADE
 	$('.fade').click(function(){
 		$('.other_category_choose').css('visibility','hidden');
+		$('.create_room_popup').css('visibility','hidden');
 		$(this).hide();
 	});
 	//open choose category popup
@@ -593,75 +594,58 @@ $(document).ready(function(){
 			$(".user_profile").css('visibility','visible');
 	});
 	//top_left_streamers_menu
-	$('.left_menu_column_text span').click(function(){
-		$('.left_menu_column_text span').each(function(){
+	$('.top_streams_menu .left_menu_column_text span').click(function(){
+		$('.top_streams_menu .left_menu_column_text span').each(function(){
 			$(this).removeClass('active');
-			$('.menu_lines div').removeClass('active');
+			$('.top_streams_menu .menu_lines div').removeClass('active');
 		});
 		if ($(this).hasClass('first'))
-			$('.menu_lines .first_topmenu_line').addClass('active');
+			$('.top_streams_menu .menu_lines .first_topmenu_line').addClass('active');
 		else if ($(this).hasClass('second'))
-			$('.menu_lines .second_topmenu_line').addClass('active');
+			$('.top_streams_menu .menu_lines .second_topmenu_line').addClass('active');
 		else if ($(this).hasClass('third'))
-			$('.menu_lines .third_topmenu_line').addClass('active');
+			$('.top_streams_menu .menu_lines .third_topmenu_line').addClass('active');
 		$(this).addClass('active');
 	});
 
 	
 	//content_left_streamers_menu
-	$('.content_streams_menu  .left_menu_column_text span').click(function(){
-		$('.content_streams_menu  .left_menu_column_text span').each(function(){
+	$('.content_streams_menu .left_menu_column_text span').click(function(){
+		$('.content_streams_menu .left_menu_column_text span').each(function(){
 			$(this).removeClass('active');
-			$('.content_left_menu_column_numbers .number').removeClass('active');
-		});
-		//ничего более умного, как перебором не смог связать текст и цифры в разных блоках (а по дизайну они должны быть в разных блоках)
-		if ($(this).hasClass('first'))
-			$('.content_left_menu_column_numbers .number.first').addClass('active');
-		else if ($(this).hasClass('second'))
-			$('.content_left_menu_column_numbers .number.second').addClass('active');
-		else if ($(this).hasClass('third'))
-			$('.content_left_menu_column_numbers .number.third').addClass('active');
-		$(this).addClass('active');
-		$('.content_streams_menu .content_streams_menu .right_menu').css("width",$('.content_streams_menu').width()-$('.content_streams_menu .left_menu').outerWidth( true )-5+"px"); //resize big menu
-	});
-	//ничего более умного, как перебором не смог связать текст и цифры в разных блоках (а по дизайну они должны быть в разных блоках)
-	$('.content_left_menu_column_numbers span').click(function(){
-		$('.content_left_menu_column_numbers span').each(function(){
-			$(this).removeClass('active');
-			$('.content_streams_menu  .left_menu_column_text span').removeClass('active');
+			$('.content_streams_menu .menu_lines div').removeClass('active');
 		});
 		if ($(this).hasClass('first'))
-			$('.content_streams_menu  .left_menu_column_text span.first').addClass('active');
+			$('.content_streams_menu .menu_lines .first_topmenu_line').addClass('active');
 		else if ($(this).hasClass('second'))
-			$('.content_streams_menu  .left_menu_column_text span.second').addClass('active');
+			$('.content_streams_menu .menu_lines .second_topmenu_line').addClass('active');
 		else if ($(this).hasClass('third'))
-			$('.content_streams_menu  .left_menu_column_text span.third').addClass('active');
+			$('.content_streams_menu .menu_lines .third_topmenu_line').addClass('active');
+		else if ($(this).hasClass('fourth'))
+			$('.content_streams_menu .menu_lines .fourth_topmenu_line').addClass('active');
 		$(this).addClass('active');
-		$('.content_streams_menu .content_streams_menu .right_menu').css("width",$('.content_streams_menu').width()-$('.content_streams_menu .left_menu').outerWidth( true )-5+"px");//resize big menu
-		
 	});
-	
 
 	//repaint lines in content menu
-	$('.content_streams_menu .first_cat_level a').click(function(){
+	$('.content_streams_menu .first_cat_level .cifri_wrapper').click(function(){
 
-		$('.content_streams_menu .first_cat_level a').each(function(){
+		$('.content_streams_menu .first_cat_level .cifri_wrapper').each(function(){
 			$(this).removeClass('active');
 		});
 		$(this).addClass('active');
 
 	});
-	$('.content_streams_menu .second_cat_level a').click(function(){
+	$('.content_streams_menu .second_cat_level .cifri_wrapper').click(function(){
 
-		$('.content_streams_menu .second_cat_level a').each(function(){
+		$('.content_streams_menu .second_cat_level .cifri_wrapper').each(function(){
 			$(this).removeClass('active');
 		});
 		$(this).addClass('active');
 
 	});
-	$('.content_streams_menu .third_cat_level a').click(function(){
+	$('.content_streams_menu .third_cat_level .cifri_wrapper').click(function(){
 
-		$('.content_streams_menu .third_cat_level a').each(function(){
+		$('.content_streams_menu .third_cat_level .cifri_wrapper').each(function(){
 			$(this).removeClass('active');
 		});
 		$(this).addClass('active');
@@ -729,9 +713,9 @@ $(document).ready(function(){
 	$('.li_second').click(function(){
 		$('.hide_popup').hide();
 		if ($(window).height()>712)
-			$('.valute_popup').css('top',$(window).height()/2-356);
+			$('.valute_popup').css('top',$(window).height()/2-356+$(window).scrollTop());
 		else
-			$('.valute_popup').css('top','');
+			$('.valute_popup').css('top',$(window).scrollTop());
 		if ($(window).width()>1200)
 			$('.valute_popup').css('left',$(window).width()/2-474);
 		else
@@ -791,9 +775,9 @@ $(document).ready(function(){
 			$('.user_main_menu .some_li').find('div').removeClass('active');
 			$(this).addClass('active');
 		if ($(window).height()>712)
-			$('.create_stream_popup').css('top',$(window).height()/2-356);
+			$('.create_stream_popup').css('top',$(window).height()/2-356+$(window).scrollTop());
 		else
-			$('.create_stream_popup').css('top','');
+			$('.create_stream_popup').css('top'+$(window).scrollTop());
 		if ($(window).width()>1200)
 			$('.create_stream_popup').css('left',$(window).width()/2-474);
 		else
@@ -804,9 +788,9 @@ $(document).ready(function(){
 	//create stream popup
 	$('.create_stream_but').click(function(){
 		if ($(window).height()>712)
-			$('.create_stream_popup').css('top',$(window).height()/2-356);
+			$('.create_stream_popup').css('top',$(window).height()/2-356+$(window).scrollTop());
 		else
-			$('.create_stream_popup').css('top','');
+			$('.create_stream_popup').css('top',$(window).scrollTop());
 		if ($(window).width()>1200)
 			$('.create_stream_popup').css('left',$(window).width()/2-474);
 		else
@@ -821,9 +805,9 @@ $(document).ready(function(){
 	//create room popup
 	$('.create_room_but').click(function(){
 		if ($(window).height()>712)
-			$('.create_room_popup').css('top',$(window).height()/2-356);
+			$('.create_room_popup').css('top',$(window).height()/2-356+$(window).scrollTop());
 		else
-			$('.create_room_popup').css('top','');
+			$('.create_room_popup').css('top',$(window).scrollTop());
 		if ($(window).width()>1200)
 			$('.create_room_popup').css('left',$(window).width()/2-474);
 		else
@@ -834,14 +818,15 @@ $(document).ready(function(){
 	});
 	$('.redact_room').click(function(){
 		if ($(window).height()>712)
-			$('.create_room_popup').css('top',$(window).height()/2-356);
+			$('.create_room_popup').css('top',$(window).height()/2-356+$(window).scrollTop());
 		else
-			$('.create_room_popup').css('top','');
+			$('.create_room_popup').css('top',$(window).scrollTop());
 		if ($(window).width()>1200)
 			$('.create_room_popup').css('left',$(window).width()/2-474);
 		else
 			$('.create_room_popup').css('left','');
 		$('.create_room_popup').find('.create_new_room').text("Изменить");
+		$('.fade').show();
 		$('.create_room_popup').css('visibility','visible');
 	});
 	//change chat list
@@ -886,9 +871,9 @@ $(document).ready(function(){
 		$('.hide_popup').hide();
 		$('.user_main_menu .some_li').find('div').removeClass('active');
 		if ($(window).height()>712)
-			$('.registration_popup').css('top',$(window).height()/2-356);
+			$('.registration_popup').css('top',$(window).height()/2-356+$(window).scrollTop());
 		else
-			$('.registration_popup').css('top','');
+			$('.registration_popup').css('top',$(window).scrollTop());
 		if ($(window).width()>1200)
 			$('.registration_popup').css('left',$(window).width()/2-474);
 		else
@@ -899,9 +884,22 @@ $(document).ready(function(){
 		$('.hide_popup').hide();
 		$('.user_main_menu .some_li').find('div').removeClass('active');
 		if ($(window).height()>712)
-			$('.registration_popup').css('top',$(window).height()/2-356);
+			$('.registration_popup').css('top',$(window).height()/2-356+$(window).scrollTop());
 		else
-			$('.registration_popup').css('top','');
+			$('.registration_popup').css('top',$(window).scrollTop());
+		if ($(window).width()>1200)
+			$('.registration_popup').css('left',$(window).width()/2-474);
+		else
+			$('.registration_popup').css('left','');
+		$('.registration_popup').show();
+	});
+	$('.content_menu_create .text span').click(function(){
+		$('.hide_popup').hide();
+		$('.user_main_menu .some_li').find('div').removeClass('active');
+		if ($(window).height()>712)
+			$('.registration_popup').css('top',$(window).height()/2-356+$(window).scrollTop());
+		else
+			$('.registration_popup').css('top',$(window).scrollTop());
 		if ($(window).width()>1200)
 			$('.registration_popup').css('left',$(window).width()/2-474);
 		else
@@ -929,9 +927,9 @@ $(document).ready(function(){
 		$('.hide_popup').hide();
 		$('.user_main_menu .some_li').find('div').removeClass('active');		
 		if ($(window).height()>712)
-			$('.forgot_password_popup').css('top',$(window).height()/2-156);
+			$('.forgot_password_popup').css('top',$(window).height()/2-156+$(window).scrollTop());
 		else
-			$('.forgot_password_popup').css('top','');
+			$('.forgot_password_popup').css('top',$(window).scrollTop());
 		$('.forgot_password_popup').show();
 	});
 	$('.forgot_password_popup .close_btn').click(function(){
@@ -944,9 +942,9 @@ $(document).ready(function(){
 		$('.hide_popup').hide();
 		$('.user_main_menu .some_li').find('div').removeClass('active');
 		if ($(window).height()>712)
-			$('.add_cash_popup').css('top',$(window).height()/2-356);
+			$('.add_cash_popup').css('top',$(window).height()/2-356+$(window).scrollTop());
 		else
-			$('.add_cash_popup').css('top','');
+			$('.add_cash_popup').css('top',$(window).scrollTop());
 		if ($(window).width()>1200)
 			$('.add_cash_popup').css('left',$(window).width()/2-474);
 		else
@@ -1014,9 +1012,9 @@ $(document).ready(function(){
 		//show popup how much donate
 		$('.support_add').click(function(){
 			if ($(window).height()>712)
-				$('.how_much_donate_popup').css('top',$(window).height()/2-100);
+				$('.how_much_donate_popup').css('top',$(window).height()/2-100+$(window).scrollTop());
 			else
-				$('.how_much_donate_popup').css('top','');
+				$('.how_much_donate_popup').css('top',$(window).scrollTop());
 			if ($(window).width()>1200)
 				$('.how_much_donate_popup').css('left',$(window).width()/2-200);
 			else
