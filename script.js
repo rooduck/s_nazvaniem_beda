@@ -172,7 +172,7 @@ $(document).ready(function(){
 				$('.option_popup').hide();
 				$('.options.chat_pic').removeClass('active');
 			}
-			if ($(event.target).closest(".smaili").length || $(event.target).closest(".smiles.chat_pic").length) return;
+			if (!$(event.target).hasClass('chat_smiles') && $(event.target).closest(".smaili").length || $(event.target).closest(".smiles.chat_pic").length) return;
 			else
 			{
 				$('.smaili').hide();
@@ -1284,13 +1284,8 @@ $(document).ready(function(){
 		mouseWheel:{ scrollAmount: 500 },
 	});
 	
-	//chat
-	$(".chat_wrapper").mCustomScrollbar({
-		axis:"y",
-		theme:"light",
-		scrollInertia: 950,
-		mouseWheel:{ scrollAmount: 1000 },
-	});
+	//chat t0s in chat.js
+
 	//all rooms
 	$(".all_rooms_wrapper").mCustomScrollbar({
 		 axis:"y",
