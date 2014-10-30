@@ -3270,58 +3270,87 @@
 	<!---CONTENTOVAIA ZONA-->
 	<div id="wrapper_content">
 		<div id="content_part">
-			<!---GREY BLOCK-->
-			<div class="content_grey_block">
-				<div class="left_column">
 				<!---CONTENT PAGE MENU-->
 					<div class="content_streams_menu">
-						<div class="left_menu">
-							<div class="left_menu_column_text content_filter">
-								<span class="active first">все</span>
-								<span class="second">коллекция</span>
-								<span class="third">избранное</span>
+						<div class="site_filter">
+							<div class="left_menu">
+								<div class="left_menu_column_text content_filter">
+									<span class="active first">все</span>
+									<span class="second">коллекция</span>
+									<span class="third">избранное <span>55</span></span>
+									<span class="fourth">песочница <span>998</span></span>
+								</div>
+								<div class="menu_lines">
+									<div class="stick"></div>
+									<div class="first_topmenu_line active"></div>
+									<div class="second_topmenu_line"></div>
+									<div class="third_topmenu_line"></div>
+									<div class="fourth_topmenu_line"></div>
+								</div>
 							</div>
-							<div class="content_left_menu_column_numbers">
-								<span class="number active first">617</span>
-								<span class="number second">7</span>
-								<span class="number third">67</span>
+							<div class="right_menu" >
+								<div class="first_cat_level">
+									<div class="cifri_wrapper active">
+										<a href="#" class="click_filter">Статьи</a>
+										<span class="cifri">333</span>
+									</div>
+									<div class="cifri_wrapper">
+										<a href="#" class="click_filter">Топики</a>
+										<span class="cifri">33</span>
+									</div>
+									<div class="cifri_wrapper">
+										<a href="#" class="click_filter">Проекты</a>
+										<span class="cifri">6666</span>
+									</div>
+									<div class="cifri_wrapper">
+										<a href="#" class="click_filter">Галерея</a>
+										<span class="cifri">7</span>
+									</div>
+								</div>
+								<div class="second_cat_level">
+									<div class="cifri_wrapper">
+										<a href="#" class="click_filter">Все</a>
+									</div>
+									<div class="cifri_wrapper">
+										<a href="#" class="click_filter">Болталки</a>
+									</div>
+									<div class="cifri_wrapper">
+										<a href="#" class="active click_filter">Киберспорт</a>
+									</div>
+									<div class="cifri_wrapper">
+										<a href="#" class="click_filter">Игры</a>
+									</div>
+									<div class="cifri_wrapper">
+										<a href="#" class="click_filter">Другое</a>
+									</div>
+								</div>
+								<div class="third_cat_level">
+									<div class="cifri_wrapper">
+										<a href="#" class="click_filter">Все</a>
+									</div>
+									<div class="cifri_wrapper">
+										<a href="#" class="click_filter">Болталки</a>
+									</div>
+									<div class="cifri_wrapper">
+										<a href="#" class="active click_filter">Киберспорт</a>
+									</div>
+									<div class="cifri_wrapper">
+										<a href="#" class="click_filter">Игры</a>
+									</div>
+									<div class="cifri_wrapper">
+										<a href="#" class="click_filter">Другое</a>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="right_menu" >
-							<div class="first_cat_level">
-									<a href="#" class="active click_filter">Стримы</a>
-									<a href="#" class="click_filter">Видео</a>
-									<a href="#" class="click_filter">Записи</a>
-									<a href="#" class="click_filter">Комнаты</a>
-								<form action="" name="content_search" id="content_search">
-									<span class="search_image_holder"></span>
-									<input type="text" class="content_search_input" name="content_search_input" />
-									
-								</form>
-							</div>
-							<div class="second_cat_level">
-								<a href="#" class="click_filter">Все стримы</a>
-								<a href="#" class="click_filter">Игры</a>
-								<a href="#" class="active click_filter">Киберспорт</a>
-								<a href="#" class="click_filter">Реалы</a>
-							</div>
-							<div class="third_cat_level">
-								<a href="#" class="active click_filter">Dota2</a>
-								<a href="#" class="click_filter">LoL</a>
-								<a href="#" class="click_filter">Sc2</a>
-								<a href="#" class="click_filter">World of Tanks</a>
-								<a href="#" class="click_filter">Другое</a>
-							</div>
+						<div class="content_menu_create">
+							<!---USE THAT BLOCK WHAT U NEED-->
+							<div class="create_content_but">Добавить статью</div>
+							<span class="some_plus">+</span>
+							<span class="text">Для того чтобы добавить статью, необходимо <span>зарегистрироваться</span></span>
 						</div>
 					</div>
-					
-				</div>
-				<div class="right_column">
-					<div class="add_news">
-						Добавить новость
-					</div>
-				</div>
-			</div>	
+
 			<!---MAIN BLOCK NOT OPEN NEWS CHANGED INSTEAD OF PAGE-->
 			<div class="content_main_block" >
 				<!---NEWS LIST-->
@@ -5111,26 +5140,22 @@
 				<div class="room_info_row">
 					<span class="room_info_row_span wide">Удалять сообщения через:</span>
 					<select name="time_to_reset" class="custom_select">
-						<option value="never">Никогда</option>
+						<option value="never">Никогда</option>a
 						<option value="1">1 час</option>
 						<option value="2">2 часа</option>
 						<option value="3">3 часа</option>
 						<option value="4">4 часа</option>              
 					</select>
 				</div>
-				<div class="room_info_row">
-					<span class="room_info_row_span wide">Ограничение: </span>
-					<select name="lvl_enter" class="custom_select">
-						<option value="1">1 уровень</option>
-						<option value="2">2 уровень</option>
-						<option value="3">3 уровень</option>
-						<option value="4">4 уровень</option>
-						<option value="5">5 уровень</option>   
-						<option value="6">6 уровень</option>  
-						<option value="7">7 уровень</option>  
-						<option value="8">8 уровень</option>  
-						<option value="9">9 уровень</option>  						
-					</select>
+				<div class="room_info_row track">
+					<span class="room_info_row_span left">Ограничение: </span>
+					<div class="room_enter_lvl_popup_trackbar">
+						<span>1 уровень</span>
+					</div>
+					<div id="slider-range"></div>
+					<div id="level_points"></div>
+						<span id="amount">уровень вхождения в комнату - <span>1</span> уровень</span>
+					<input name="room_enter_lvl" type="text" style="display:none;" id="amount_input" />	
 				</div>
 				<div class="room_info_row">
 					<span class="room_info_row_span left">Тип управления</span>
