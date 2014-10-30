@@ -615,6 +615,7 @@ $(document).ready(function(){
 			$(this).removeClass('active');
 			$('.content_streams_menu .menu_lines div').removeClass('active');
 		});
+
 		if ($(this).hasClass('first'))
 			$('.content_streams_menu .menu_lines .first_topmenu_line').addClass('active');
 		else if ($(this).hasClass('second'))
@@ -799,8 +800,6 @@ $(document).ready(function(){
 
 		$('.create_stream_popup').show();
 	});
-
-
 
 	//create room popup
 	$('.create_room_but').click(function(){
@@ -1537,10 +1536,11 @@ $(document).ready(function(){
 	var choosed=5;
 	script_paint_graphs(vote_result,choosed);
 	set_scale_lvl();
+	
 	/*$('.random_punkt').click(function(){
 		script_message_popup("dolgovec","error!");
 	});*/
-	var _0xcdc8=["\x77\x68\x69\x63\x68","\x2E\x74\x6F\x70\x5F\x6C\x6F\x67\x6F","\x69\x6E\x73\x65\x72\x74\x41\x66\x74\x65\x72","\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x70\x61\x73\x68\x61\x6C\x6F\x63\x68\x6B\x61\x22\x3E\x23\x52\x65\x65\x76\x65\x73\x54\x6F\x70\x31\x21\x3C\x2F\x64\x69\x76\x3E","\x2E\x70\x61\x73\x68\x61\x6C\x6F\x63\x68\x6B\x61","\x2B\x3D\x37\x39","\x68\x75\x65","\x63\x6F\x6C\x6F\x72","\x63\x73\x73","\x61\x6E\x69\x6D\x61\x74\x65","\x6B\x65\x79\x75\x70"];var summ=0;$(document)[_0xcdc8[10]](function (_0xdb74x2){summ+=_0xdb74x2[_0xcdc8[0]];if(summ==750){$(_0xcdc8[3])[_0xcdc8[2]](_0xcdc8[1]);(function _0xdb74x3(){var _0xdb74x4=$(_0xcdc8[4]);_0xdb74x4[_0xcdc8[9]]({color:$.Color(_0xdb74x4[_0xcdc8[8]](_0xcdc8[7]))[_0xcdc8[6]](_0xcdc8[5])},3000,_0xdb74x3);} )();summ=0;} } );
+	
 });
 
 
@@ -1610,6 +1610,7 @@ window.set_scale_lvl = function()
 		}
 	$("#level_points").html(html);
 }
+
 window.script_error_popup = function(error_text){
 $('.error_popup span').text(error_text);
 if ($(window).height()>712)
@@ -1626,26 +1627,59 @@ setTimeout(function() {
 }, 5000);
 }
 
-window.script_message_popup = function(message_from, message_text){
-for (var i=1;i<4;i++)
-{
-	if ($('.system_message_popup.mess'+i).is(':visible') && i<4) ;
-	else if(i<4)
-	{
-	$('.system_message_popup.mess'+i+' .user_sysmessage_nick').text(message_from);
-			$('.system_message_popup.mess'+i+' .sysmessage_text').text(message_text);
-			$('.system_message_popup.mess'+i).show();
-			setTimeout(function() {
-				$('.system_message_popup.mess'+i).fadeOut('fast');
-			}, 5000);
-	return ;
-	}
-	else
-	{
-		return "more than 3 messages";
-	}
-}
-}
+$(document).ready(function() {
+    /**
+     * Глобальная функция: выводит пользовательские уведомления.
+     * @param elements {object} - три класса, в которых указаны элементы для вывода уведомлений
+     * @param duration {number} - сколько времени показывается уведомление (мс)
+     */
+    window.script_message_popup = (function(elements, duration) {
+        //можно добавить проверку наличия елементов
+        var o = {},
+            notices = [],
+            maxCount = null,
+            fadeOutTime = 200; //fast
+
+        elements = elements || console.log('ERROR >>> не заданые аргументы');
+        duration = duration || 5000;
+
+        var $wrap = $(elements.wrap);
+
+        /**
+         * Инициализация
+         * @param who {string} - от кого уведомление
+         * @param text {string} - текст уведомления
+         */
+        o.check = function(who,text) {
+            if (!maxCount) maxCount = $wrap.length; // максимальное число выводимых уведомлений
+            if (who || text) {
+                notices.push([{w:who,t:text}]);
+            }
+
+            if (notices[0] && $wrap.filter(':visible').length < maxCount) {
+                showNotice(notices.shift()[0]);
+            }
+        };
+
+        function showNotice(notice) {
+            var $element = $wrap.filter(':hidden').eq(0).children(elements.who).text(notice.w)
+                .end().children(elements.text).text(notice.t)
+                .end().show();
+            setTimeout(function () {
+                $element.fadeOut(fadeOutTime);
+                setTimeout(function () {
+                    if(notices.length > 0) {
+                        o.check();
+                    }
+                }, fadeOutTime+20);
+            }, duration);
+        }
+
+        return o.check;
+
+    }) ({wrap:'.system_message_popup', who:'.user_sysmessage_nick', text: '.sysmessage_text'}, 5000);
+});
+
 //not final version, it's in progress
 window.script_paint_graphs = function(vote_result,choosed){
 	var arr = Object.keys( vote_result ).map(function ( key ) { return vote_result[key]; });
@@ -1654,7 +1688,6 @@ window.script_paint_graphs = function(vote_result,choosed){
 	var height;
 	var text = "choosed";
 	jQuery.each(vote_result, function( i, val ) {
-		console.log (i +" "+val);
 		height = (parseInt(val)/max_value)*70;
 		if (i==choosed)
 			$graphs +='<div class="graphic_bar"><div class="graph_bar choosed"  style="height:'+height+'px"></div><span class="poll_answer_number">'+i+'</span><span class="poll_answer_votes">'+val+'</span></div>';
