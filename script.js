@@ -1530,7 +1530,7 @@ $(document).ready(function(){
 	var vote_result = {1: 22, 2: 5, 3: 77, 4: 32,5:34,6:12};
 	var choosed=5;
 	script_paint_graphs(vote_result,choosed);
-	set_scale_lvl();
+	//set_scale_lvl();
 	
 	/*$('.random_punkt').click(function(){
 		script_message_popup("dolgovec","error!");
