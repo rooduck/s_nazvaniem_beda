@@ -1029,7 +1029,6 @@ $(document).ready(function(){
 	/*GROUP CALLBACKS ONLOAD*/
 	
 	//changing big stream pic from 2 to 3
-	Resize_news();
 	Resize_rooms();
 	window.script_Chat_list_users = function(){
 		$('.who_is_in_chat').show();
@@ -1529,25 +1528,6 @@ $(document).ready(function(){
 
 
 
-//making 2 or 3 big block instead of monitor width
-function Resize_news(){
-		if ($('.content_main_block .left_column').width()>=1440 && $('.content_main_block .left_column .big_one').size()<3) {
-			$('.content_main_block .left_column .normal_one').first().prev().removeClass('zero_margin');
-			$('.content_main_block .left_column .normal_one').first().addClass('big_one');
-			$('.content_main_block .left_column .normal_one').first().css('clear','none');
-			$('.content_main_block .left_column .normal_one').first().removeClass('normal_one');
-			$('.content_main_block .left_column .normal_one').first().css('clear','left');
-		}
-		else if($('.content_main_block .left_column').width()<1440 && $('.content_main_block .left_column .big_one').size()>=3) {
-			$('.content_main_block .left_column .normal_one').first().css('clear','none');
-			$('.content_main_block .left_column .normal_one').first().prev().addClass('normal_one');
-			$('.content_main_block .left_column .normal_one.big_one').css('clear','left');
-			$('.content_main_block .left_column .normal_one.big_one').removeClass('big_one');
-		
-		}
-			$('.content_main_block .left_column .normal_one').first().prev().addClass('zero_margin');
-			$('.content_main_block .left_column .normal_one').first().css('clear','left');
-}
 //making 2 or 3 big block instead of monitor width
 function Resize_rooms(){
 		if ($('.all_rooms_wrapper_with_shadow').width()>=1440 && $('.all_rooms_wrapper_with_shadow .big_one').size()<3) {
