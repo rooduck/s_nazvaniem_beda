@@ -66,6 +66,10 @@
 $(document).ready(function(){
 	/*group of scripts, which are calculatin or set some width or any other styles. Call first of all, before any plugins*/
 	
+	$('.comment_hover_left_border').each(function(){
+		$(this).css("height",$(this).parent().height()-2);
+	});
+	
 	//first of all, calculating width for x-scrolled blocks (in px instead of %)
 	var horizontal_block_podpiski_width=$(".user_streams_list .favorite_stream").size()*265;//265 - outerWidth
 	$(".user_streams_list_wrapper").css('width',horizontal_block_podpiski_width);
@@ -75,7 +79,6 @@ $(document).ready(function(){
 	$('.category_choose').css('width',horizontal_block_choose_category_width);
 
 	//$('.create_news_input').css("width",$('.content_main_block').width()-$('.content_main_block .right_column').outerWidth(true)-140-35-10+"px"); //shirina inputa pri sozdanii novosti
-	$('.material_list div:last-child').css('border-bottom','0 none'); 
 	
 	/*dimanicheskie stili dl9 room chata*/
 	$('.room_chat .romm_chat_row:last-child').css('border-bottom','0 none');
@@ -111,6 +114,23 @@ $(document).ready(function(){
             easing          : "linear",
             duration        : 1000,                         
             pauseOnHover    : true
+        }                   
+    });
+	//the best of articles
+	$(".material_list_wrapper").carouFredSel({
+        items               : 9,
+		auto:{play:false},
+		circular: false,
+		infinite: false, 
+        direction           : "up",
+		responsive	: false,
+		prev        : ".the_best_prev_page",
+		next        : ".the_best_next_page",
+        scroll : {
+            items           : 9,
+            easing          : "linear",
+            duration        : 1000,                         
+            pauseOnHover    : false
         }                   
     });
 	//room right block
@@ -226,6 +246,15 @@ $(document).ready(function(){
 			$html+='<div class="answer_input"><span class="golosovalka_podpis input_podpis">'+input_clicks+'.</span><input type="text" class="input_answer" name="answer'+input_clicks+'"/></div>';
 		$('.input_answers_block').html($html);	
 	});
+	//changing classes in comment rating
+	$('.comment_rating_wrapper .up_comment_rating').click(function(){
+		$(this).addClass('selected');
+		$(this).parent().find('.down_comment_rating').removeClass('selected');
+	});
+	$('.comment_rating_wrapper .down_comment_rating').click(function(){
+		$(this).addClass('selected');
+		$(this).parent().find('.up_comment_rating').removeClass('selected');
+	});
 	//changing classes at stream_page
 	$('.streamer_subscribed_star').click(function(){
 		if ($(this).hasClass('subscribed'))
@@ -239,6 +268,15 @@ $(document).ready(function(){
 	$('.up_rating').click(function(){
 		$(this).addClass('selected');
 		$(this).parent().find('.down_rating').removeClass('selected');
+	});
+	//change active filter preview news class
+	$('.best_filter1 .articles_show_filter span').click(function(){
+		$(".best_filter1 .articles_show_filter span").removeClass('selected');
+		$(this).addClass('selected');
+	});
+	$('.best_filter2 .articles_show_filter span').click(function(){
+		$(".best_filter2 .articles_show_filter span").removeClass('selected');
+		$(this).addClass('selected');
 	});
 	//show action on streamer nick click
 	$('.chat_streamer_action .text').click(function(){
@@ -1344,7 +1382,19 @@ $(document).ready(function(){
 		$(this).find('.category_choose_people').hide();
 		$(this).find('.black_filtr').css("background","rgba(0,0,0,0.5)");
 	});
-
+	//article comments
+	$('.article_comment_row').hover(function(){
+		$(this).find('.comment_hover_left_border').show();
+		$(this).find('.up_comment_rating').css("visibility","visible");
+		$(this).find('.down_comment_rating').css("visibility","visible");
+		$(this).find('.user_comment_options').css("visibility","visible");
+		}, 
+		function() {
+		$(this).find('.comment_hover_left_border').hide();
+		$(this).find('.up_comment_rating').css("visibility","hidden");
+		$(this).find('.down_comment_rating').css("visibility","hidden");
+		$(this).find('.user_comment_options').css("visibility","hidden");
+	});
     setStreamHover();
 	
 	/*GROUP OF CUSTOM SELECTBOXES*/
