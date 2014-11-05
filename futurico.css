@@ -10,7 +10,7 @@
     padding: 0;
     width: 15px;
     height: 15px;
-    background: url("/images/radio.png") no-repeat;
+    background: url("images/radio.png") no-repeat;
     border: none;
     cursor: pointer;
 }
@@ -30,12 +30,12 @@ background:url("/images/white_not_filled_radio.png") no-repeat;
     }
 	
 	    .icheckbox_futurico2.checked {
-        background:url("/images/radio_checked.png") no-repeat;
+        background:url("images/radio_checked.png") no-repeat;
     }
-	.icheckbox_futurico.checked:hover, .icheckbox_futurico2.checked:hover {
+	.icheckbox_futurico.checked:hover {
 		background:url("/images/radio_checked_hover.png") no-repeat;
 	}
-		.icheckbox_futurico:hover,.icheckbox_futurico2:hover{
+		.icheckbox_futurico:hover{
 		background:url("/images/radio_hover.png") no-repeat;
 	}
     .icheckbox_futurico.disabled {
