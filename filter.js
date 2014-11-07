@@ -145,10 +145,11 @@ $(document).ready(function(){
         });
 
         $subCategories.on('click', 'a', function(){
+            $subCategory.find('.active').removeClass('active');
             $subCategory.find('.show_category_search')
                 .html($(this).html())
                 .attr('href', $(this).attr('href'))
-                .addClass('active')
+                .parents('div:first').addClass('active')
             ;
             $subCategories.find('.close_category').click();
         });
@@ -177,3 +178,20 @@ $(document).ready(function(){
     });
 });
 
+//$(".category_choose_wrapper").mCustomScrollbar({
+//    axis:"x",
+//    theme:"light",
+//    scrollInertia: 950,
+//    mouseWheel:{ scrollAmount: 1000 }
+//});
+
+//SOME HOVER
+//show number of people in choose category popup
+//$('.category_choose-category').hover(function(){
+//    $(this).find('.category_choose_people').show();
+//    $(this).find('.black_filtr').css("background","rgba(0,0,0,0)");
+//},
+//function() {
+//    $(this).find('.category_choose_people').hide();
+//    $(this).find('.black_filtr').css("background","rgba(0,0,0,0.5)");
+//});
