@@ -75,8 +75,6 @@ $(document).ready(function(){
 	$(".user_streams_list_wrapper").css('width',horizontal_block_podpiski_width);
 	var horizontal_block_ignorelist_width=$(".user_streams_ignore_list .favorite_stream").size()*265;//265 - outerWidth
 	$(".user_streams_ignore_list_wrapper").css('width',horizontal_block_ignorelist_width);
-	var horizontal_block_choose_category_width=$('.category_choose .category_choose-category').size()*141;
-	$('.category_choose').css('width',horizontal_block_choose_category_width);
 
 	//$('.create_news_input').css("width",$('.content_main_block').width()-$('.content_main_block .right_column').outerWidth(true)-140-35-10+"px"); //shirina inputa pri sozdanii novosti
 	
@@ -285,25 +283,6 @@ $(document).ready(function(){
 	});
 	$('.popup_actions_list .action_name_row').click(function(){
 		$('.popup_actions_list').fadeOut(400);
-	});
-	//FADE
-	$('.fade').click(function(){
-		$('.other_category_choose').css('visibility','hidden');
-		$('.create_room_popup').css('visibility','hidden');
-		$(this).hide();
-	});
-	//open choose category popup
-	$('.show_category_search').click(function(){
-		if ($(window).height()>712)
-			$('.other_category_choose').css('top',$(window).height()/2-256);
-		else
-			$('.other_category_choose').css('top','');
-		if ($(window).width()>1200)
-			$('.other_category_choose').css('left',$(window).width()/2-424);
-		else
-			$('.other_category_choose').css('left','');
-		$('.other_category_choose').css('visibility','visible');
-		$('.fade').show();
 	});
 	//close category choose popup
 	$('.close_category').click(function(){
@@ -1344,13 +1323,7 @@ $(document).ready(function(){
 			}
 		}
 	});
-	
-	$(".category_choose_wrapper").mCustomScrollbar({
-		 axis:"x",
-		 theme:"light",
-		 scrollInertia: 950,
-			mouseWheel:{ scrollAmount: 1000 }
-	});
+
 	/*GROUP OF CUSTOM CHECKBOXES*/
 	
 	$('.blue_checkbox').iCheck({
