@@ -1055,7 +1055,8 @@ height:50px;
 float:left;
 margin-top:6px;
 }
-a.back_to_the_list {
+
+a.back_to_the_list,div.back_to_the_list {
     background: url("/images/back_to_the_list.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     cursor: pointer;
     float: left;
@@ -1068,6 +1069,7 @@ margin-right:10px;
 }
 .user_stream_page .some_unknow_block .text1, .user_stream_page .some_unknow_block .text2{
 color:#fff;
+float:left;
 }
 .streamListContainer .some_unknow_block .text1{
 color:#666;
@@ -2067,7 +2069,7 @@ width:240px;
 background-position: 96px bottom;
 }
 .chat_list_wrapper{
- height: 389px;
+height: 482px;
 float:left;
 width:240px;
 background:#0d1016;
@@ -3316,6 +3318,15 @@ color:#3399ff;
     text-align: center;
     width: 100%;
 }
+a.my_news {
+    color: #3399ff;
+    float: left;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: underline;
+    width: 100%;
+}
 .content_menu_create .text span {
     cursor: pointer;
 	color:#3399ff;
@@ -3330,6 +3341,7 @@ margin-top: 35px;
 .content_main_block .left_column{
 width:915px;
 padding-left:4px;
+min-height:353px;
 }
 
 /*NORMAL ONE*/
@@ -3707,7 +3719,7 @@ border-right:1px solid #afd7ff;
 height:26px;
 background:#26b0ee;
 padding:4px 16px 0 16px;
-margin:0 -1px;
+margin:0 -2px;
 width:auto;
 }
 .news_author {
@@ -3967,7 +3979,7 @@ line-height:6px;
     float: left;
 	padding-top: 46px;
     padding-left: 20px;
-	width:840px;
+	width:98.5%;
 }
 .enter_comment .text {
     color: #333333;
@@ -3981,7 +3993,7 @@ line-height:6px;
     width: 50px;
 }
 .enter_comment > form {
-    width: 840px;
+    width: 100%;
 	position:relative;
 }
 .arrow_textarea{
@@ -3998,7 +4010,7 @@ color:#666666;
 font-size:14px;
 padding:8px 13px;
 height:54px;
-width:737px;
+width:86.1%;
 border:1px solid #cccccc;
 border-radius:2px;
 background:#f5f5f5;
@@ -4074,7 +4086,7 @@ width:685px;
 }
 .anonimnost_wrapper {
     float: right;
-	width:100%;
+	margin-right:77px;
 }
 .anonimnost{
 float:right;
@@ -4803,8 +4815,11 @@ line-height:12px;
 
 .create_stream_popup{
 position:absolute;
-top:100px;
-left:125px;
+top:0;
+left:0;
+right:0;
+bottom:0;
+margin:auto;
 display:none;
 z-index:20;
 }
