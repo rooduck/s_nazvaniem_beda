@@ -59,6 +59,8 @@ $(document).ready(function(){
         };
 
         var doRequest = function(type, category, subCategory){
+            $(".create_but").hide();
+            $("#create_" + type).show();
             var $target = $(target); // Стримы загружаются не сразу
             $target.html('<p>Ждите</p>');
 
@@ -178,6 +180,23 @@ $(document).ready(function(){
     });
 });
 
+//$(".category_choose_wrapper").mCustomScrollbar({
+//    axis:"x",
+//    theme:"light",
+//    scrollInertia: 950,
+//    mouseWheel:{ scrollAmount: 1000 }
+//});
+
+//SOME HOVER
+//show number of people in choose category popup
+//$('.category_choose-category').hover(function(){
+//    $(this).find('.category_choose_people').show();
+//    $(this).find('.black_filtr').css("background","rgba(0,0,0,0)");
+//},
+//function() {
+//    $(this).find('.category_choose_people').hide();
+//    $(this).find('.black_filtr').css("background","rgba(0,0,0,0.5)");
+//});
 //$(".category_choose_wrapper").mCustomScrollbar({
 //    axis:"x",
 //    theme:"light",

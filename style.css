@@ -6080,15 +6080,25 @@ padding-left:24px;
 }
 /*OTHER CATEGORY CHOOSE*/
 .other_category_choose{
-position:fixed;
-z-index:7;
-background:url("/images/category_streams.jpg") no-repeat;
-width:700px;
-height:435px;
-top:53px;
-left:225px;
-box-shadow: 0 0 10px rgba(0,0,0,0.6);
-visibility:hidden;
+    position:fixed;
+    z-index:7
+;
+    background:#353B40;
+    width:700px;
+    height:435px;
+    top:53px;
+    left:225px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    visibility:hidden;
+}
+.other_category_choose a {
+    color: #FFFFFF;
+    font-size: 18px;
+    width: auto;
+}
+.other_category_choose .cifri_wrapper {
+    width: auto;
+    padding: 10px;
 }
 .category_string_name{
 background:url("/images/category_choose_border.png") no-repeat left bottom;
