@@ -75,6 +75,8 @@ $(document).ready(function(){
 	$(".user_streams_list_wrapper").css('width',horizontal_block_podpiski_width);
 	var horizontal_block_ignorelist_width=$(".user_streams_ignore_list .favorite_stream").size()*265;//265 - outerWidth
 	$(".user_streams_ignore_list_wrapper").css('width',horizontal_block_ignorelist_width);
+	var horizontal_block_choose_category_width=$('.category_choose .category_choose-category').size()*141;
+	$('.category_choose').css('width',horizontal_block_choose_category_width);
 
 	//$('.create_news_input').css("width",$('.content_main_block').width()-$('.content_main_block .right_column').outerWidth(true)-140-35-10+"px"); //shirina inputa pri sozdanii novosti
 	
@@ -95,6 +97,32 @@ $(document).ready(function(){
 	$('.room_message').css('width',$('.romm_chat_row').outerWidth(false)-$('.close-open_button').width()-30);
 	$('.answer .room_message').css('width',$('.romm_chat_row').width());
 	
+	
+	//give all popups center screen
+	if ($(window).height()>712)
+	{
+		$('.restore_pwd_popup').css('top',$(window).height()/2-256);
+		$('.change_pwd_popup').css('top',$(window).height()/2-256);
+		$('.autorization_popup').css('top',$(window).height()/2-256);
+	}
+	else
+	{
+		$('.restore_pwd_popup').css('top','');
+		$('.change_pwd_popup').css('top','');
+		$('.autorization_popup').css('top','');
+	}
+	if ($(window).width()>1200)
+	{
+		$('.restore_pwd_popup').css('left',$(window).width()/2-164);
+		$('.change_pwd_popup').css('left',$(window).width()/2-164);
+		$('.autorization_popup').css('left',$(window).width()/2-164);
+	}
+	else
+	{
+		$('.restore_pwd_popup').css('left','');
+		$('.change_pwd_popup').css('left','');
+		$('.autorization_popup').css('left','');
+	}
 	/*GROUP OF SLIDER'S INITIALIZATION*/
 	
 	//top rating
@@ -283,6 +311,28 @@ $(document).ready(function(){
 	});
 	$('.popup_actions_list .action_name_row').click(function(){
 		$('.popup_actions_list').fadeOut(400);
+	});
+	//FADE
+	$('.fade').click(function(){
+		$('.other_category_choose').css('visibility','hidden');
+		$('.create_room_popup').css('visibility','hidden');
+		$('.change_pwd_popup').css('visibility','hidden');
+		$('.restore_pwd_popup').css('visibility','hidden');
+		$('.autorization_popup').css('visibility','hidden');
+		$(this).hide();
+	});
+	//open choose category popup
+	$('.show_category_search').click(function(){
+		if ($(window).height()>712)
+			$('.other_category_choose').css('top',$(window).height()/2-256);
+		else
+			$('.other_category_choose').css('top','');
+		if ($(window).width()>1200)
+			$('.other_category_choose').css('left',$(window).width()/2-424);
+		else
+			$('.other_category_choose').css('left','');
+		$('.other_category_choose').css('visibility','visible');
+		$('.fade').show();
 	});
 	//close category choose popup
 	$('.close_category').click(function(){
@@ -748,6 +798,12 @@ $(document).ready(function(){
 			$(this).addClass('active');
 			$('.valute_popup').show();
 		}
+	});
+	//forget_passw_popup
+	$('a.text_popup').click(function(){
+		$('.restore_pwd_popup').css("visibility","visible");
+		$('.autorization_popup').css("visibility","hidden");
+		$('fade').show();
 	});
 	//popup search, popup options
 	$('.user_main_menu .li_first').click(function(){
@@ -1275,6 +1331,7 @@ $(document).ready(function(){
 	});
 	
 	//all streams
+	
 	$(".all_streams_wrapper").mCustomScrollbar({
 		 axis:"y",
 		 theme:"light",
@@ -1323,7 +1380,13 @@ $(document).ready(function(){
 			}
 		}
 	});
-
+	
+	$(".category_choose_wrapper").mCustomScrollbar({
+		 axis:"x",
+		 theme:"light",
+		 scrollInertia: 950,
+			mouseWheel:{ scrollAmount: 1000 }
+	});
 	/*GROUP OF CUSTOM CHECKBOXES*/
 	
 	$('.blue_checkbox').iCheck({
@@ -1357,19 +1420,29 @@ $(document).ready(function(){
 	});
 	//article comments
 	$('.article_comment_row').hover(function(){
-		$(this).find('.comment_hover_left_border').show();
-		$(this).find('.up_comment_rating').css("visibility","visible");
-		$(this).find('.down_comment_rating').css("visibility","visible");
-		$(this).find('.user_comment_options').css("visibility","visible");
+		$(this).find('.comment_hover_left_border:first').show();
+		$(this).find('.up_comment_rating:first').css("visibility","visible");
+		$(this).find('.down_comment_rating:first').css("visibility","visible");
+		$(this).find('.user_comment_options:first').css("visibility","visible");
+		return;
 		}, 
 		function() {
-		$(this).find('.comment_hover_left_border').hide();
-		$(this).find('.up_comment_rating').css("visibility","hidden");
-		$(this).find('.down_comment_rating').css("visibility","hidden");
-		$(this).find('.user_comment_options').css("visibility","hidden");
+		$(this).find('.comment_hover_left_border:first').hide();
+		$(this).find('.up_comment_rating:first').css("visibility","hidden");
+		$(this).find('.down_comment_rating:first').css("visibility","hidden");
+		$(this).find('.user_comment_options:first').css("visibility","hidden");
 	});
-    setStreamHover();
-	
+
+	$('.all_streams_wrapper').bind("DOMSubtreeModified",function(){
+		setStreamHover();
+		$(".all_streams_wrapper").mCustomScrollbar({
+		 axis:"y",
+		 theme:"light",
+		 scrollInertia: 950,
+			mouseWheel:{ scrollAmount: 1000 },
+		});
+	});
+	setStreamHover();
 	/*GROUP OF CUSTOM SELECTBOXES*/
 	
 	//use this for all site selectses
