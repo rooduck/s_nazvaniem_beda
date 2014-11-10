@@ -95,31 +95,7 @@ $(document).ready(function(){
 	$('.answer .room_message').css('width',$('.romm_chat_row').width());
 	
 	
-	//give all popups center screen
-	if ($(window).height()>712)
-	{
-		$('.restore_pwd_popup').css('top',$(window).height()/2-256);
-		$('.change_pwd_popup').css('top',$(window).height()/2-256);
-		$('.autorization_popup').css('top',$(window).height()/2-256);
-	}
-	else
-	{
-		$('.restore_pwd_popup').css('top','');
-		$('.change_pwd_popup').css('top','');
-		$('.autorization_popup').css('top','');
-	}
-	if ($(window).width()>1200)
-	{
-		$('.restore_pwd_popup').css('left',$(window).width()/2-164);
-		$('.change_pwd_popup').css('left',$(window).width()/2-164);
-		$('.autorization_popup').css('left',$(window).width()/2-164);
-	}
-	else
-	{
-		$('.restore_pwd_popup').css('left','');
-		$('.change_pwd_popup').css('left','');
-		$('.autorization_popup').css('left','');
-	}
+
 	/*GROUP OF SLIDER'S INITIALIZATION*/
 	
 	//top rating
@@ -287,10 +263,20 @@ $(document).ready(function(){
 	$('.down_rating').click(function(){
 		$(this).addClass('selected');
 		$(this).parent().find('.up_rating').removeClass('selected');
+		$(this).parent().find('.how_much_left_popup').removeClass('plus');
+		$(this).parent().find('.how_much_left_popup').addClass('minus');
+		$(this).parent().find('.today_rating').hide();
+		$(this).parent().find('.streamer_rating').show();
+		$(this).parent().find('.article_rating').show();
 	});
 	$('.up_rating').click(function(){
 		$(this).addClass('selected');
 		$(this).parent().find('.down_rating').removeClass('selected');
+		$(this).parent().find('.how_much_left_popup').removeClass('minus');
+		$(this).parent().find('.how_much_left_popup').addClass('plus');
+		$(this).parent().find('.today_rating').hide();
+		$(this).parent().find('.streamer_rating').show();
+		$(this).parent().find('.article_rating').show();
 	});
 	//change active filter preview news class
 	$('.best_filter1 .articles_show_filter span').click(function(){
@@ -504,6 +490,8 @@ $(document).ready(function(){
 			$('.chat_images .chat_pic').removeClass('active');
 		}
 	});
+
+
 	//close popup when clicking some option
 	$('.click_user_popup_row').click(function(){
 	if ($('.chat_buttons .mat_filter').hasClass('active'))
@@ -651,7 +639,7 @@ $(document).ready(function(){
 		$(this).addClass('active');
 	});
 
-	
+
 	//content_left_streamers_menu
 	$('.content_streams_menu .left_menu_column_text span').click(function(){
 		$('.content_streams_menu .left_menu_column_text span').each(function(){
@@ -819,35 +807,19 @@ $(document).ready(function(){
 		$('.hide_popup').hide();
 		if ($(this).hasClass('active')) {
 			$(this).removeClass('active');
-			$('.create_stream_popup').hide();
+			$('.create_stream_popup').css('visibility','hidden');
 			
 		} else {
 			$('.user_main_menu .some_li').find('div').removeClass('active');
 			$(this).addClass('active');
-		if ($(window).height()>712)
-			$('.create_stream_popup').css('top',$(window).height()/2-356+$(window).scrollTop());
-		else
-			$('.create_stream_popup').css('top'+$(window).scrollTop());
-		if ($(window).width()>1200)
-			$('.create_stream_popup').css('left',$(window).width()/2-474);
-		else
-			$('.create_stream_popup').css('left','');
-			$('.create_stream_popup').show();
+			$('.create_stream_popup').css('visibility','visible');
+			$('.fade').show();
 		}
 	});
 	//create stream popup
 	$('.create_stream_but').click(function(){
-		if ($(window).height()>712)
-			$('.create_stream_popup').css('top',$(window).height()/2-356+$(window).scrollTop());
-		else
-			$('.create_stream_popup').css('top',$(window).scrollTop());
-		if ($(window).width()>1200)
-			$('.create_stream_popup').css('left',$(window).width()/2-474);
-		else
-			$('.create_stream_popup').css('left','');
-
-
-		$('.create_stream_popup').show();
+		$('.create_stream_popup').css('visibility','visible');
+		$('.fade').show();
 	});
 
 	//create room popup
@@ -974,14 +946,10 @@ $(document).ready(function(){
 	$('.forgot').click(function(){
 		$('.hide_popup').hide();
 		$('.user_main_menu .some_li').find('div').removeClass('active');		
-		if ($(window).height()>712)
-			$('.forgot_password_popup').css('top',$(window).height()/2-156+$(window).scrollTop());
-		else
-			$('.forgot_password_popup').css('top',$(window).scrollTop());
-		$('.forgot_password_popup').show();
+		$('.restore_pwd_popup').css('visibility',"visible");
 	});
-	$('.forgot_password_popup .close_btn').click(function(){
-		$('.forgot_password_popup').hide();
+	$('.restore_pwd_popup .close_btn').click(function(){
+		$('.restore_pwd_popup').css('visibility',"hidden");
 	});
 
 	// my work
@@ -1072,8 +1040,14 @@ $(document).ready(function(){
 		$('.how_much_donate_popup .close_btn').click(function(){
 			$('.how_much_donate_popup').hide();
 		});
-
-	
+		//
+		//show smiles popup in article comments
+	$('.enter_comment .smiles_img').click(function(){
+		$('.click_user_popup2').show();
+	});
+	$('.close_open_popup2').click(function(){
+		$('.click_user_popup2').hide();
+	});
 	
 	/*GROUP CALLBACKS ONLOAD*/
 	
@@ -1403,15 +1377,17 @@ $(document).ready(function(){
 		$(this).find('.user_comment_options:first').css("visibility","hidden");
 	});
 
-	$('.all_streams_wrapper').bind("DOMSubtreeModified",function(){
-		setStreamHover();
-
+	$('.all_streams_wrapper .mCSB_container').bind("DOMSubtreeModified",function(){
+		
 		$(".all_streams_wrapper").mCustomScrollbar({
 		 axis:"y",
 		 theme:"light",
 		 scrollInertia: 950,
 			mouseWheel:{ scrollAmount: 1000 }
 		});
+		
+		setStreamHover();
+
 	});
 	setStreamHover();
 	/*GROUP OF CUSTOM SELECTBOXES*/
@@ -1730,15 +1706,9 @@ window.script_paint_graphs = function(vote_result,choosed){
 
 function setStreamHover() {
     $('.stream.normal_one').hover(function () {
-            $(this).find('.streamer_viewers').show();
-            $(this).find('.streamer_rating').show();
             $(this).find('.filter_on_pic').hide();
-            $(this).find('.main_stream_info').css("height", "85px");
         },
         function () {
-            $(this).find('.streamer_viewers').hide();
-            $(this).find('.streamer_rating').hide();
             $(this).find('.filter_on_pic').show();
-            $(this).find('.main_stream_info').css("height", "46px");
         });
 }
