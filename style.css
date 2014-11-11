@@ -1196,7 +1196,10 @@ padding-left:5px;
 background:#01132b;
 padding-top:6px;
 }
-
+.min_param{
+min-height:500px;
+min-width:905px;
+}
 .user_chats .top_stream_wrapper_border2{
 top:-4px;
 }
@@ -2685,6 +2688,10 @@ color:#fff;
 .open_room .block_before_streams .text2{
 clear:both;
 }
+.open_room_chat {
+    float: left;
+    width: 910px;
+}
 .open_room .block_before_streams .text3{
 display:block;
 float:left;
@@ -2833,7 +2840,6 @@ background:#fff;
 .room_right_block {
     float: left;
     width: 259px;
-	margin-top: -30px;
 	background:url("/images/room_right_block_bg.png") repeat;
 }
 .room_block_switcher {
