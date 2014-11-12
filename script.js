@@ -1554,7 +1554,7 @@ $(document).ready(function(){
 			axis:"y",
 			theme:"light",
 			scrollInertia: 950,
-			mouseWheel:{ scrollAmount: 1000 }
+			mouseWheel:{ scrollAmount: 180 }
 		});
 	});
 	//test paint graphs
