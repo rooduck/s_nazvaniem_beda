@@ -260,24 +260,6 @@ $(document).ready(function(){
 			$(this).removeClass('subscribed');
 		else $(this).addClass('subscribed');
 	});
-	$('.down_rating').click(function(){
-		$(this).addClass('selected');
-		$(this).parent().find('.up_rating').removeClass('selected');
-		$(this).parent().find('.how_much_left_popup').removeClass('plus');
-		$(this).parent().find('.how_much_left_popup').addClass('minus');
-		$(this).parent().find('.today_rating').hide();
-		$(this).parent().find('.streamer_rating').show();
-		$(this).parent().find('.article_rating').show();
-	});
-	$('.up_rating').click(function(){
-		$(this).addClass('selected');
-		$(this).parent().find('.down_rating').removeClass('selected');
-		$(this).parent().find('.how_much_left_popup').removeClass('minus');
-		$(this).parent().find('.how_much_left_popup').addClass('plus');
-		$(this).parent().find('.today_rating').hide();
-		$(this).parent().find('.streamer_rating').show();
-		$(this).parent().find('.article_rating').show();
-	});
 	//change active filter preview news class
 	$('.best_filter1 .articles_show_filter span').click(function(){
 		$(".best_filter1 .articles_show_filter span").removeClass('selected');
