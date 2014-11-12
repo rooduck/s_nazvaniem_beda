@@ -1029,6 +1029,11 @@ float:left;
 background:#000b1b;
 padding-bottom:10px;
 }
+.main_userpage_stream_block{
+float:left;
+width:903px;
+height:511px;
+}
 .top_userpage_stream_block{
 float:left;
 margin-top:9px;
@@ -1108,18 +1113,18 @@ position:relative;
 position:absolute;
 top:-29px;
 padding-bottom:6px;
-background:url("/images/arrow_down_dark_blue.png") no-repeat 45px 23px;
+background:url("images/arrow_down_dark_blue.png") no-repeat 45px 23px;
 width:186px;
 left:-35px;
 z-index:5;
 display:none;
 }
 .how_much_left_popup.plus{
-background:url("/images/arrow_down_dark_blue.png") no-repeat 45px 23px;
+background:url("images/arrow_down_dark_blue.png") no-repeat 45px 23px;
 display:block;
 }
 .how_much_left_popup.minus{
-background:url("/images/arrow_down_dark_blue.png") no-repeat 147px 23px;
+background:url("images/arrow_down_dark_blue.png") no-repeat 147px 23px;
 display:block;
 }
 .how_much_left{
@@ -1157,24 +1162,24 @@ margin:0 1px;
 float:left;
 }
 .up_rating{
-    background: url("/images/up_rating.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: url("images/up_rating.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     float: left;
     height: 23px;
     width: 35px;
 	cursor:pointer;
 }
 .up_rating.selected{
-background: url("/images/up_rating_selected.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("images/up_rating_selected.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 .down_rating {
-    background: url("/images/down_rating.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: url("images/down_rating.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     float: left;
     height: 23px;
     width: 35px;
 	cursor:pointer;
 }
 .down_rating.selected {
-	background: url("/images/down_rating_selected.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background: url("images/down_rating_selected.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 .random_stream{
 float:right;
@@ -1242,7 +1247,7 @@ width:286px;
 	position:absolute;
 	z-index:2;
 	top:0;
-	background:url("/images/filter_pic.png") no-repeat;
+	background:url("images/filter_pic.png") no-repeat;
 	left:0;
 }
 .normal_one .constant_filter{
@@ -1251,7 +1256,7 @@ width:286px;
 	position:absolute;
 	z-index:2;
 	top:0;
-	background:url("/images/SOPP.png") no-repeat;
+	background:url("images/SOPP.png") no-repeat;
 	left:0;
 }
 .normal_one.stream .main_stream_info {
@@ -1270,7 +1275,7 @@ width:286px;
 }
 .normal_one .subsribe {
     float: left;
-	background:url("/images/subscribe.png") no-repeat;
+	background:url("images/subscribe.png") no-repeat;
 	width:41px;
 	height:41px;
 	cursor:pointer;
@@ -1334,10 +1339,10 @@ color:#fff;
 font-size:12px;
 }
 .preview_stream_info .down{
-background:url("/images/preview_stream_rating_down.png") no-repeat center left;
+background:url("images/preview_stream_rating_down.png") no-repeat center left;
 }
 .preview_stream_info .up{
-background:url("/images/preview_stream_rating_up.png") no-repeat center left;
+background:url("images/preview_stream_rating_up.png") no-repeat center left;
 }
 /*ANOUNSES*/
 #weekly_anounses {
@@ -1789,7 +1794,7 @@ padding-left:6px;
     float: left;
     width: 100%;
 	background:rgba(0,14,35,0.9);
-	height:569px;
+	height:571px;
 	position:relative;
 }
 .chat_body  .history{
@@ -1809,7 +1814,7 @@ cursor:pointer;
 .chat_wrapper {
     float: left;
     width: 100%;
-	height:503px;
+	height:495px;
 	position:relative;
 	padding-bottom:0px;
 }
@@ -1826,7 +1831,7 @@ display:none;
 .chat_bottom_line{
 width:100%;
 background:#000b1b;
-height:8px;
+height:11px;
 float:left;
 }
 .chat_wrapper .mCSB_scrollTools {
@@ -2022,6 +2027,8 @@ float:left;
 position:relative;
 width:67%;
 margin-left: 9px;
+min-width:67%;
+min-height:25px;
 }
 .chat_pic{
 width:21px;
@@ -3280,41 +3287,41 @@ background: #000b1b;
 height:1px;
 }
 .content_streams_menu .first_topmenu_line{
-background: url("/images/first_line_static_content.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("images/first_line_static_content.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 top:29px;
 left:-13px;
 }
 
 .content_streams_menu .first_topmenu_line.active{
-background: url("/images/first_line_content.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("images/first_line_content.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 z-index:3;
 left:-23px;
 }
 
 .content_streams_menu .second_topmenu_line{
-background: url("/images/second_line_static_content.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("images/second_line_static_content.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 top:47px;
 left:-23px;
 }
 
 .content_streams_menu .second_topmenu_line.active{
-background: url("/images/second_line_content.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("images/second_line_content.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 z-index:3;
 }
 
 .content_streams_menu .third_topmenu_line{
-background: url("/images/third_line_static_content.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("images/third_line_static_content.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 top:40px;
 left:-22px;
 }
 
 .content_streams_menu .third_topmenu_line.active{
-background: url("/images/third_line_content.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("images/third_line_content.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 z-index:3;
 }
 
 .content_streams_menu .fourth_topmenu_line{
-background: url("/images/fourth_line_static_content.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("images/fourth_line_static_content.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 height: 41px;
 left: -23px;
 position: absolute;
@@ -3513,7 +3520,7 @@ line-height:18px;
 .news_block .preview_text{
 color:#000b1b;
 font-size:12px;
-height:60px;
+height:57px;
 overflow:hidden;
 width:269px;
 word-wrap: break-word;
@@ -3756,7 +3763,6 @@ float: left;
 font-size: 16px;
 line-height: 20px;
 padding: 33px 20px 0;
-text-indent: 35px;
 width: 757px;
 word-wrap: break-word;
 }
@@ -3777,8 +3783,9 @@ line-height:29px;
 display:block;
 width:40px;
 height:40px;
-background:url("/images/edit_pencil.png") no-repeat;
+background:url("images/edit_pencil.png") no-repeat;
 float:left;
+margin-top: -3px;
 }
 .second_block {
     margin-top: 17px;
@@ -3808,30 +3815,30 @@ width:183px;
 display:none;
 }
 .news_rating_block .how_much_left_popup.plus{
-background: url("/images/arrow_down_dark_blue.png") no-repeat scroll 54px 23px rgba(0, 0, 0, 0);
+background: url("images/arrow_down_dark_blue.png") no-repeat scroll 54px 23px rgba(0, 0, 0, 0);
     display: block;
 }
 .news_rating_block .how_much_left_popup.minus {
-    background: url("/images/arrow_down_dark_blue.png") no-repeat scroll 157px 23px rgba(0, 0, 0, 0);
+    background: url("images/arrow_down_dark_blue.png") no-repeat scroll 157px 23px rgba(0, 0, 0, 0);
     display: block;
 }
 .conenten_main_news_block  .up_rating{
-background: url("/images/big_up_rating.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("images/big_up_rating.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 height: 30px;
 width: 45px;
 border-right:2px solid #afd7ff;
 }
 .conenten_main_news_block  .down_rating{
-background: url("/images/big_down_rating.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("images/big_down_rating.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 height: 30px;
 width: 46px;
 }
 .conenten_main_news_block  .up_rating.selected{
-background: url("/images/big_up_rating_selected.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("images/big_up_rating_selected.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 border-right:2px solid #26b0ee;
 }
 .conenten_main_news_block  .down_rating.selected{
-background: url("/images/big_down_rating_selected.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("images/big_down_rating_selected.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 .conenten_main_news_block .today_rating{
 color:#fff;
@@ -3861,6 +3868,7 @@ width:auto;
 }
 .article_wrapper > img {
     float: left;
+	max-width: 833px;
 }
 .lots_of_text{
 
@@ -4146,14 +4154,14 @@ position:relative;
 display:block;
 width:20px;
 height:20px;
-background:url("/images/smiles_img_disabled.png") no-repeat;
+background:url("images/smiles_img_disabled.png") no-repeat;
 float:left;
 margin-right: 10px;
 margin-top: 5px;
 cursor:pointer;
 }
 .float_right .smiles_img:hover{
-background:url("/images/smiles_img_enabled.png") no-repeat;
+background:url("images/smiles_img_enabled.png") no-repeat;
 }
 .blue_submit{
  background: none repeat scroll 0 0 #3399ff;
@@ -4188,7 +4196,7 @@ background:url("/images/smiles_img_enabled.png") no-repeat;
 float:left;
     height: 185px;
     width: 632px;
-	background: url("/images/arrow_down_white.png") no-repeat 511px bottom;
+	background: url("images/arrow_down_white.png") no-repeat 511px bottom;
 	padding-bottom:18px;
 }
 .enter_comment .smiles_at_this_group {
@@ -4230,7 +4238,7 @@ background:#999999;
 cursor:pointer;
 }
 .enter_comment .close_open_popup2{
-background:url("/images/close1.png") no-repeat;
+background:url("images/close1.png") no-repeat;
 right:0px;
 top:0px;
 width:19px;
@@ -4239,7 +4247,7 @@ position:absolute;
 cursor: pointer;
 }
 .enter_comment .close_open_popup2:hover{
-background:url("/images/close_active.png") no-repeat;
+background:url("images/close_active.png") no-repeat;
 }
 /*CREATE NEWS*/
 .create_news{
@@ -5020,18 +5028,18 @@ right:0;
 bottom:0;
 margin:auto;
 z-index:20;
-background: url("/images/create_room_bg.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("images/create_room_bg.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 height: 657px;
-/*visibility: hidden;*/
+visibility: hidden;
 width: 951px;
 z-index: 6;
 }
 .create_stream_popup .category_text {
-    background: url("/images/create_room_icon.png") no-repeat scroll left 3px rgba(0, 0, 0, 0);
+    background: url("images/create_room_icon.png") no-repeat scroll left 3px rgba(0, 0, 0, 0);
     padding-left: 26px;
 }
 .create_stream_popup .category_string_name {
-    background: url("/images/category_choose_border.png") repeat-x scroll left bottom rgba(0, 0, 0, 0);
+    background: url("images/category_choose_border.png") repeat-x scroll left bottom rgba(0, 0, 0, 0);
     width: 912px;
 	margin-bottom: 14px;
 }
