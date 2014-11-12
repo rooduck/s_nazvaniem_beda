@@ -1003,6 +1003,7 @@ line-height:52px;
 height:51px;
 text-align:center;
 cursor:pointer;
+border:0 none;
 }
 .top_streams_menu_create .text{
 font-size:12px;
@@ -3379,7 +3380,7 @@ margin-top: 44px;
 width: 250px;
 position:relative;
 }
-a.create_content_but{
+button.create_content_but{
 font-size:18px;
 font-weight:bold;
 text-transform:uppercase;
@@ -3391,6 +3392,7 @@ background:#3399ff;
 color:#fff;
 cursor:pointer;
 margin-bottom:10px;
+border:0 none;
 }
 .content_menu_create .some_plus{
 position:absolute;
