@@ -1033,8 +1033,7 @@ $(document).ready(function(){
 	
 	/*GROUP CALLBACKS ONLOAD*/
 	
-	//changing big stream pic from 2 to 3
-	Resize_rooms();
+
 	window.script_Chat_list_users = function(){
 		$('.who_is_in_chat').show();
 	}
@@ -1347,16 +1346,21 @@ $(document).ready(function(){
 	//article comments
 	$('.article_comment_row').hover(function(){
 		$(this).find('.comment_hover_left_border:first').show();
-		$(this).find('.up_comment_rating:first').css("visibility","visible");
-		$(this).find('.down_comment_rating:first').css("visibility","visible");
+		$(this).find('.up_rating:first').css("visibility","visible");
+		$(this).find('.down_rating:first').css("visibility","visible");
 		$(this).find('.user_comment_options:first').css("visibility","visible");
 		return;
 		}, 
 		function() {
 		$(this).find('.comment_hover_left_border:first').hide();
-		$(this).find('.up_comment_rating:first').css("visibility","hidden");
-		$(this).find('.down_comment_rating:first').css("visibility","hidden");
+		$(this).find('.up_rating:first').css("visibility","hidden");
+		$(this).find('.down_rating:first').css("visibility","hidden");
 		$(this).find('.user_comment_options:first').css("visibility","hidden");
+		$(this).find('.total_comment_rating').show();
+		$(this).find('.how_much_left_popup').hide();
+		$(this).find('.article_comment_rating').hide();
+		
+		
 	});
 
 	$('.all_streams_wrapper .mCSB_container').bind("DOMSubtreeModified",function(){
@@ -1552,22 +1556,6 @@ $(document).ready(function(){
 });
 
 
-
-//making 2 or 3 big block instead of monitor width
-function Resize_rooms(){
-		if ($('.all_rooms_wrapper_with_shadow').width()>=1440 && $('.all_rooms_wrapper_with_shadow .big_one').size()<3) {
-			$('.all_rooms_wrapper_with_shadow .normal_one').first().addClass('big_one');
-			$('.all_rooms_wrapper_with_shadow .normal_one').first().css('clear','none');
-			$('.all_rooms_wrapper_with_shadow .normal_one').first().removeClass('normal_one');
-			$('.all_rooms_wrapper_with_shadow .normal_one').first().css('clear','left');
-		}
-		else if($('.all_rooms_wrapper_with_shadow').width()<1440 && $('.all_rooms_wrapper_with_shadow .big_one').size()>=3) {
-			$('.all_rooms_wrapper_with_shadow .normal_one').first().css('clear','none');
-			$('.all_rooms_wrapper_with_shadow .normal_one').first().prev().addClass('normal_one');
-			$('.all_rooms_wrapper_with_shadow .normal_one.big_one').css('clear','left');
-			$('.all_rooms_wrapper_with_shadow .normal_one.big_one').removeClass('big_one');
-		}
-}
 window.set_scale_lvl = function()
 {
 	$("#slider-range").slider({
