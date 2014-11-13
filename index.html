@@ -12,7 +12,7 @@
 <script src="jquery-ui.min.js" type="text/javascript"></script>
 <script src="jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
 <script src="icheck.js" type="text/javascript"></script>
-
+<script src="rating.js" type="text/javascript"></script>
 <script src="jquery.carouFredSel-6.2.1.js"  type="text/javascript"></script>
 
 <script src="jquery.selectBoxIt.min.js" type="text/javascript"></script>
@@ -1766,6 +1766,7 @@
 									<div class="streamer_subscribed_star subscribed"></div> <!---WE ADD 'SUBSRIBED' CLASS IF THE USER IS SUBCRIBED TO THIS STREAMER-->
 									<span class="text2">2569 подписок</span>
 								</div>
+								<a href="#" class="finish_stream">закончить стрим</a>
 							</div>
 							<div class="stream_rating_block">
 							
@@ -1918,15 +1919,15 @@
 									<span class="user_chat_message toMe"><span class="user_name red">Dolgovec:</span>флэш просто суший макро терран я не понемаю зачем он вызвался за ничю приемушество было у него на стороне он мог бы просто полететь половиной зданий и поехать войсками в атаку под зданиями зделать сиеге и просто тупо убить тосса у которого был 1 чтормер и пачка кареров с пачкой гунов протев террановского лимита это смешно просто смешно в любом случае у него стояло столько турелей что даже если бы он не смог убить всех кареров то он мог бы просто порубить их интрецепторов а если бы даже не добил то всё равно кареры бы их слили на его туретках которых там было чтук 20 </span>
 								</div>
 								<div class="chat_message">
-									<span class="user_chat_message"> <span class="user_name red">Dolgovec:</span><img src="images/peka.png" alt="smile"/></span>
+									<span class="user_chat_message"> <span class="user_name">Dolgovec:</span><img src="images/peka.png" alt="smile"/></span>
 								</div>
 								<div class="chat_message">
 									
 									<span class="user_chat_message"><span class="user_name system">system:</span>граждане sc2tv забанили пользователя Dolgovec на 10 минут за 1 бан </span>		
 								</div>
 								<div class="chat_message">
-									
-									<span class="user_chat_message"><span class="user_name red">Adolf[RA]:</span>блин, не работает нихрена( почему смайлы не ставятся?</span>
+									<!---if this message from streamer we add class 'streamer' to the user_chat_message-->
+									<span class="user_chat_message streamer"><span class="user_name ">Adolf[RA]:</span>блин, не работает нихрена( почему смайлы не ставятся?</span>
 									
 								</div>
 								<div class="chat_message">
@@ -2757,280 +2758,227 @@
 				
 				<!---ROOMS-->
 				<div class="all_rooms">
-					<div class="top_room_header">
-						<div class="add_room">Добавить комнату</div>
-						<div class="room_filters">
-							<span class="white_16_text">Сортировать по:</span>
-							<select class="room_select">
-								<option value="time">Времени</option>
-								<option value="time">Рейтингу</option>
-								<option value="time">Чему-то еще</option>
-							</select>
-							<span class="closed_rooms"></span>
-							<span class="open_rooms"></span>
-							<input type="text" placeholder="guitman" class="standart_input" />
-							<span class="search_icon"></span>
+					<div class="block_before_streams">
+						<div class="some_unknow_block">
+							<img width="50" height="50" alt="user_avatar" src="images/donno.jpg">
+							<div class="unknow_text_block">
+								<span class="text1">Куплю кота drewoko</span>
+								<span class="text2">dolgovec</span>
+							</div>
 						</div>
+						<a class="random_stream" href="#"></a>
 					</div>
-					<div class="all_rooms_wrapper_with_shadow">
-						<div class="top_shadow"></div>
-						<div class="all_rooms_wrapper min_param" id="dynamic_filter_content">
-							<div class="room big_one">
-								<div class="stream_pic">
-									<a href="#">
-										<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
-										<div class="filter"></div>
-										<div class="room_parametrs">
-											<div class="eighttenn_plus true">18+</div>
-											<span class="open_rooms"></span>
-										</div>
-										<div class="people_in_room">
-											<span class="uchastniki">2125 участников</span>
-										</div>
-									</a>
-								</div>
-								
-								<div class="main_stream_info">
-									<div class="left_part_info">
-										<div class="stream_info">
-											<span class="stream_name">Комната зантных радиофилов</span>
-											<span class="room_category_name" href="#">Болталка</span>
-										</div>
-									</div>
-									<div class="right_part_info">
-										<span class="number_subscr">222</span>
-										<div class="room_rating">рейтинг</div>
-									</div>
+					<div class="all_rooms_wrapper min_param" id="dynamic_filter_content">
+						<div class="stream normal_one">
+							<div class="stream_pic">
+								<a href="#">
+									<img src="images/preview_pic_big.jpg" alt="room_preview_pic" />
+									<div class="filter_on_pic"></div>
+									<div class="constant_filter"></div>
+								</a>
+								<div class="preview_stream_info">
+									<span class="up">682</span>
 								</div>
 							</div>
-							<div class="room big_one">
-								<div class="stream_pic">
-									<a href="#">
-										<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
-										<div class="filter"></div>
-										<div class="room_parametrs">
-											<div class="eighttenn_plus true">18+</div>
-											<span class="open_rooms"></span>
-										</div>
-										<div class="people_in_room">
-											<span class="uchastniki">2125 участников</span>
-										</div>
-									</a>
-								</div>
-								
-								<div class="main_stream_info">
+							<div class="main_stream_info">
+								<a href="#">
 									<div class="left_part_info">
-										<div class="stream_info">
-											<span class="stream_name">Комната зантных радиофилов</span>
-											<span class="room_category_name" href="#">Болталка</span>
-										</div>
+										<span class="stream_name">Очень плохое радио</span>
+										<span class="streamer_name">Igor</span>
 									</div>
+									
 									<div class="right_part_info">
-										<span class="number_subscr">222</span>
-										<div class="room_rating">рейтинг</div>
+										<!--IF USER DOESN'T SUBSCRIBED TO THIS STREAMER THEN WE DON'T PAST THIS BLOCK-->
+										<div class="subsribe"></div>
+										<!--IF STREAM 18+ WE ADD THIS BLOCK-->
+										<span class="eighteen">18</span>
 									</div>
-								</div>
-							</div>
-							
-							<div class="room normal_one">
-								<div class="stream_pic">
-									<a href="#">
-										<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
-										<div class="filter"></div>
-										<div class="room_parametrs">
-											<div class="eighttenn_plus true">18+</div>
-											<span class="open_rooms"></span>
-										</div>
-										<div class="people_in_room">
-											<span class="uchastniki">2125 участников</span>
-										</div>
-									</a>
-								</div>
-								
-								<div class="main_stream_info">
-									<div class="left_part_info">
-										<div class="stream_info">
-											<span class="stream_name">Комната зантных радиофилов</span>
-											<span class="room_category_name" href="#">Болталка</span>
-										</div>
-									</div>
-									<div class="right_part_info">
-										<span class="number_subscr">222</span>
-										<div class="room_rating">рейтинг</div>
-									</div>
-								</div>
-							</div>
-							<div class="room normal_one">
-								<div class="stream_pic">
-									<a href="#">
-										<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
-										<div class="filter"></div>
-										<div class="room_parametrs">
-											<div class="eighttenn_plus true">18+</div>
-											<span class="open_rooms"></span>
-										</div>
-										<div class="people_in_room">
-											<span class="uchastniki">2125 участников</span>
-										</div>
-									</a>
-								</div>
-								
-								<div class="main_stream_info">
-									<div class="left_part_info">
-										<div class="stream_info">
-											<span class="stream_name">Комната зантных радиофилов</span>
-											<span class="room_category_name" href="#">Болталка</span>
-										</div>
-									</div>
-									<div class="right_part_info">
-										<span class="number_subscr">222</span>
-										<div class="room_rating">рейтинг</div>
-									</div>
-								</div>
-							</div>
-							<div class="room normal_one">
-								<div class="stream_pic">
-									<a href="#">
-										<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
-										<div class="filter"></div>
-										<div class="room_parametrs">
-											<div class="eighttenn_plus true">18+</div>
-											<span class="open_rooms"></span>
-										</div>
-										<div class="people_in_room">
-											<span class="uchastniki">2125 участников</span>
-										</div>
-									</a>
-								</div>
-								
-								<div class="main_stream_info">
-									<div class="left_part_info">
-										<div class="stream_info">
-											<span class="stream_name">Комната зантных радиофилов</span>
-											<span class="room_category_name" href="#">Болталка</span>
-										</div>
-									</div>
-									<div class="right_part_info">
-										<span class="number_subscr">222</span>
-										<div class="room_rating">рейтинг</div>
-									</div>
-								</div>
-							</div>
-							<div class="room normal_one">
-								<div class="stream_pic">
-									<a href="#">
-										<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
-										<div class="filter"></div>
-										<div class="room_parametrs">
-											<div class="eighttenn_plus true">18+</div>
-											<span class="open_rooms"></span>
-										</div>
-										<div class="people_in_room">
-											<span class="uchastniki">2125 участников</span>
-										</div>
-									</a>
-								</div>
-								
-								<div class="main_stream_info">
-									<div class="left_part_info">
-										<div class="stream_info">
-											<span class="stream_name">Комната зантных радиофилов</span>
-											<span class="room_category_name" href="#">Болталка</span>
-										</div>
-									</div>
-									<div class="right_part_info">
-										<span class="number_subscr">222</span>
-										<div class="room_rating">рейтинг</div>
-									</div>
-								</div>
-							</div>
-							<div class="room normal_one">
-								<div class="stream_pic">
-									<a href="#">
-										<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
-										<div class="filter"></div>
-										<div class="room_parametrs">
-											<div class="eighttenn_plus true">18+</div>
-											<span class="open_rooms"></span>
-										</div>
-										<div class="people_in_room">
-											<span class="uchastniki">2125 участников</span>
-										</div>
-									</a>
-								</div>
-								
-								<div class="main_stream_info">
-									<div class="left_part_info">
-										<div class="stream_info">
-											<span class="stream_name">Комната зантных радиофилов</span>
-											<span class="room_category_name" href="#">Болталка</span>
-										</div>
-									</div>
-									<div class="right_part_info">
-										<span class="number_subscr">222</span>
-										<div class="room_rating">рейтинг</div>
-									</div>
-								</div>
-							</div>
-							<div class="room normal_one">
-								<div class="stream_pic">
-									<a href="#">
-										<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
-										<div class="filter"></div>
-										<div class="room_parametrs">
-											<div class="eighttenn_plus true">18+</div>
-											<span class="open_rooms"></span>
-										</div>
-										<div class="people_in_room">
-											<span class="uchastniki">2125 участников</span>
-										</div>
-									</a>
-								</div>
-								
-								<div class="main_stream_info">
-									<div class="left_part_info">
-										<div class="stream_info">
-											<span class="stream_name">Комната зантных радиофилов</span>
-											<span class="room_category_name" href="#">Болталка</span>
-										</div>
-									</div>
-									<div class="right_part_info">
-										<span class="number_subscr">222</span>
-										<div class="room_rating">рейтинг</div>
-									</div>
-								</div>
-							</div>
-							<div class="room normal_one">
-								<div class="stream_pic">
-									<a href="#">
-										<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
-										<div class="filter"></div>
-										<div class="room_parametrs">
-											<div class="eighttenn_plus true">18+</div>
-											<span class="open_rooms"></span>
-										</div>
-										<div class="people_in_room">
-											<span class="uchastniki">2125 участников</span>
-										</div>
-									</a>
-								</div>
-								
-								<div class="main_stream_info">
-									<div class="left_part_info">
-										<div class="stream_info">
-											<span class="stream_name">Комната зантных радиофилов</span>
-											<span class="room_category_name" href="#">Болталка</span>
-										</div>
-									</div>
-									<div class="right_part_info">
-										<span class="number_subscr">222</span>
-										<div class="room_rating">рейтинг</div>
-									</div>
-								</div>
+								</a>
 							</div>
 						</div>
-
-						<div class="bottom_shadow"></div>
+						<div class="stream normal_one">
+							<div class="stream_pic">
+								<a href="#">
+									<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
+									<div class="filter_on_pic"></div>
+									<div class="constant_filter"></div>
+								</a>
+								<div class="preview_stream_info">
+									<span class="down">9982</span>
+								</div>
+							</div>
+							<div class="main_stream_info">
+								<a href="#">
+									<div class="left_part_info">
+										<span class="stream_name">Heroes3TV</span>
+										<span class="streamer_name">twaryna</span>
+									</div>
+									
+								</a>
+							</div>
+						</div>
+						<div class="stream normal_one">
+							<div class="stream_pic">
+								<a href="#">
+									<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
+									<div class="filter_on_pic"></div>
+									<div class="constant_filter"></div>
+								</a>
+								<div class="preview_stream_info">
+									<span class="down">92</span>
+								</div>
+							</div>
+							<div class="main_stream_info">
+								<a href="#">
+									<div class="left_part_info">
+										<span class="stream_name">Подглядываем за цыпочками</span>
+										<span class="streamer_name">momoshka</span>
+									</div>
+									<div class="right_part_info">
+										<div class="subsribe"></div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="stream normal_one">
+							<div class="stream_pic">
+								<a href="#">
+									<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
+									<div class="filter_on_pic"></div>
+									<div class="constant_filter"></div>
+								</a>
+								<div class="preview_stream_info">
+									<span class="down">92</span>
+								</div>
+							</div>
+							<div class="main_stream_info">
+								<a href="#">
+									<div class="left_part_info">
+										<span class="stream_name">ДОМ-2</span>
+										<span class="streamer_name">David Kim</span>
+										
+									</div>
+									
+								</a>
+							</div>
+						</div>
+						<div class="stream normal_one">
+							<div class="stream_pic">
+								<a href="#">
+									<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
+									<div class="filter_on_pic"></div>
+									<div class="constant_filter"></div>
+								</a>
+								<div class="preview_stream_info">
+									<span class="up">2</span>
+								</div>
+							</div>
+							<div class="main_stream_info">
+								<a href="#">
+									<div class="left_part_info">
+										<span class="stream_name">HL BM ND</span>
+										<span class="streamer_name">Scatman</span>
+										
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="stream normal_one">
+							<div class="stream_pic">
+								<a href="#">
+									<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
+									<div class="filter_on_pic"></div>
+									<div class="constant_filter"></div>
+								</a>
+								<div class="preview_stream_info">
+									<span class="down">492</span>
+								</div>
+							</div>
+							<div class="main_stream_info">
+								<a href="#">
+									<div class="left_part_info">
+										<span class="stream_name">Ничего не делаем</span>
+										<span class="streamer_name">Dolgovec</span>
+										
+									</div>
+									<div class="right_part_info">
+										<div class="subsribe"></div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="stream normal_one">
+							<div class="stream_pic">
+								<a href="#">
+									<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
+									<div class="filter_on_pic"></div>
+									<div class="constant_filter"></div>
+								</a>
+								<div class="preview_stream_info">
+									<span class="down">9232</span>
+								</div>
+							</div>
+							<div class="main_stream_info">
+								<a href="#">
+									<div class="left_part_info">
+										<span class="stream_name">Пьем виски</span>
+										<span class="streamer_name">drewoko</span>
+										
+									</div>
+									<div class="right_part_info">
+										<div class="subsribe"></div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="stream normal_one">
+							<div class="stream_pic">
+								<a href="#">
+									<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
+									<div class="filter_on_pic"></div>
+									<div class="constant_filter"></div>
+								</a>
+								<div class="preview_stream_info">
+									<span class="down">52</span>
+								</div>
+							</div>
+							<div class="main_stream_info">
+								<a href="#">
+									<div class="left_part_info">
+										<span class="stream_name">Очень плохое радио</span>
+										<span class="streamer_name">Igor</span>
+										
+									</div>
+									<div class="right_part_info">
+										<div class="subsribe"></div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="stream normal_one">
+							<div class="stream_pic">
+								<a href="#">
+									<img src="images/preview_pic_big.jpg" alt="stream_preview_pic" />
+									<div class="filter_on_pic"></div>
+									<div class="constant_filter"></div>
+								</a>
+								<div class="preview_stream_info">
+									<span class="down">923</span>
+								</div>
+							</div>
+							<div class="main_stream_info">
+								<a href="#">
+									<div class="left_part_info">
+										<span class="stream_name">Очень плохое радио</span>
+										<span class="streamer_name">Igor</span>
+										
+									</div>
+									<div class="right_part_info">
+										<div class="subsribe"></div>
+									</div>
+								</a>
+							</div>
+						</div>
 					</div>
 					<!---CATEGORY RATING-->
 				<div class="top_category_rating">
@@ -3876,7 +3824,7 @@
 							
 							<div class="news_rating_block">
 							<div class="how_much_left_popup">
-									<span class="how_much_left">У вас осталось <span>200 плюсов</span></span>
+									<span class="how_much_left">У вас осталось <span>200 +</span></span>
 								</div>
 								<div class="up_rating selected"></div>
 								<div class="today_rating">2567</div>
@@ -3958,9 +3906,15 @@
 											</div>
 										</div>
 										<div class="comment_rating_wrapper">
+											<form class="article_comment_rating" name="change_article_comment_rating" action="">
+												<input type="text" placeholder="23" name="change_article_comment_value">
+											</form>
 											<span class="total_comment_rating up">+12</span>
-											<div class="up_comment_rating selected"></div>
-											<div class="down_comment_rating"></div>
+											<div class="up_rating selected"></div>
+											<div class="down_rating"></div>
+											<div class="how_much_left_popup">
+												<span class="how_much_left">У вас осталось <span>200 +</span></span>
+											</div>
 										</div>
 									</div>
 									<div class="user_comment_options">
@@ -3995,9 +3949,15 @@
 											</div>
 										</div>
 										<div class="comment_rating_wrapper">
+											<form class="article_comment_rating" name="change_article_comment_rating" action="">
+												<input type="text" placeholder="23" name="change_article_comment_value">
+											</form>
 											<span class="total_comment_rating down">-322</span>
-											<div class="up_comment_rating selected"></div>
-											<div class="down_comment_rating"></div>
+											<div class="up_rating selected"></div>
+											<div class="down_rating"></div>
+											<div class="how_much_left_popup">
+												<span class="how_much_left">У вас осталось <span>200 +</span></span>
+											</div>
 										</div>
 									</div>
 									<div class="user_comment_options">
@@ -4017,9 +3977,15 @@
 											</div>
 										</div>
 										<div class="comment_rating_wrapper">
-											<span class="total_comment_rating down">-322</span>
-											<div class="up_comment_rating selected"></div>
-											<div class="down_comment_rating"></div>
+											<form class="article_comment_rating" name="change_article_comment_rating" action="">
+												<input type="text" placeholder="23" name="change_article_comment_value">
+											</form>
+											<span class="total_comment_rating up">+142</span>
+											<div class="up_rating selected"></div>
+											<div class="down_rating"></div>
+											<div class="how_much_left_popup">
+												<span class="how_much_left">У вас осталось <span>200 +</span></span>
+											</div>
 										</div>
 									</div>
 									<div class="user_comment_options">
@@ -4039,10 +4005,16 @@
 												</div>
 											</div>
 											<div class="comment_rating_wrapper">
-												<span class="total_comment_rating down">-322</span>
-												<div class="up_comment_rating selected"></div>
-												<div class="down_comment_rating"></div>
+											<form class="article_comment_rating" name="change_article_comment_rating" action="">
+												<input type="text" placeholder="23" name="change_article_comment_value">
+											</form>
+											<span class="total_comment_rating up">+2</span>
+											<div class="up_rating selected"></div>
+											<div class="down_rating"></div>
+											<div class="how_much_left_popup">
+												<span class="how_much_left">У вас осталось <span>200 +</span></span>
 											</div>
+										</div>
 										</div>
 										<div class="user_comment_options">
 											<div class="left_float">
@@ -4061,10 +4033,16 @@
 													</div>
 												</div>
 												<div class="comment_rating_wrapper">
-													<span class="total_comment_rating down">-322</span>
-													<div class="up_comment_rating selected"></div>
-													<div class="down_comment_rating"></div>
-												</div>
+											<form class="article_comment_rating" name="change_article_comment_rating" action="">
+												<input type="text" placeholder="23" name="change_article_comment_value">
+											</form>
+											<span class="total_comment_rating down">-2</span>
+											<div class="up_rating selected"></div>
+											<div class="down_rating"></div>
+											<div class="how_much_left_popup">
+												<span class="how_much_left">У вас осталось <span>200 +</span></span>
+											</div>
+										</div>
 											</div>
 											<div class="user_comment_options">
 												<div class="left_float">
@@ -4084,9 +4062,15 @@
 															</div>
 														</div>
 														<div class="comment_rating_wrapper">
-															<span class="total_comment_rating down">-322</span>
-															<div class="up_comment_rating selected"></div>
-															<div class="down_comment_rating"></div>
+															<form class="article_comment_rating" name="change_article_comment_rating" action="">
+																<input type="text" placeholder="23" name="change_article_comment_value">
+															</form>
+															<span class="total_comment_rating up">+12</span>
+															<div class="up_rating selected"></div>
+															<div class="down_rating"></div>
+															<div class="how_much_left_popup">
+																<span class="how_much_left">У вас осталось <span>200 +</span></span>
+															</div>
 														</div>
 													</div>
 													<div class="user_comment_options">
@@ -4106,9 +4090,15 @@
 																</div>
 															</div>
 															<div class="comment_rating_wrapper">
-																<span class="total_comment_rating down">-322</span>
-																<div class="up_comment_rating selected"></div>
-																<div class="down_comment_rating"></div>
+																<form class="article_comment_rating" name="change_article_comment_rating" action="">
+																	<input type="text" placeholder="23" name="change_article_comment_value">
+																</form>
+																<span class="total_comment_rating up">+1002</span>
+																<div class="up_rating selected"></div>
+																<div class="down_rating"></div>
+																<div class="how_much_left_popup">
+																	<span class="how_much_left">У вас осталось <span>200 +</span></span>
+																</div>
 															</div>
 														</div>
 														<div class="user_comment_options">
@@ -4128,9 +4118,15 @@
 																	</div>
 																</div>
 																<div class="comment_rating_wrapper">
-																	<span class="total_comment_rating down">-322</span>
-																	<div class="up_comment_rating selected"></div>
-																	<div class="down_comment_rating"></div>
+																	<form class="article_comment_rating" name="change_article_comment_rating" action="">
+																		<input type="text" placeholder="23" name="change_article_comment_value">
+																	</form>
+																	<span class="total_comment_rating up">+12</span>
+																	<div class="up_rating selected"></div>
+																	<div class="down_rating"></div>
+																	<div class="how_much_left_popup">
+																		<span class="how_much_left">У вас осталось <span>200 +</span></span>
+																	</div>
 																</div>
 															</div>
 															<div class="user_comment_options">
@@ -4153,9 +4149,15 @@
 															</div>
 														</div>
 														<div class="comment_rating_wrapper">
-															<span class="total_comment_rating down">-322</span>
-															<div class="up_comment_rating selected"></div>
-															<div class="down_comment_rating"></div>
+															<form class="article_comment_rating" name="change_article_comment_rating" action="">
+																<input type="text" placeholder="23" name="change_article_comment_value">
+															</form>
+															<span class="total_comment_rating up">+2</span>
+															<div class="up_rating selected"></div>
+															<div class="down_rating"></div>
+															<div class="how_much_left_popup">
+																<span class="how_much_left">У вас осталось <span>200 +</span></span>
+															</div>
 														</div>
 													</div>
 													<div class="user_comment_options">
@@ -4178,9 +4180,15 @@
 											</div>
 										</div>
 										<div class="comment_rating_wrapper">
-											<span class="total_comment_rating down">-322</span>
-											<div class="up_comment_rating selected"></div>
-											<div class="down_comment_rating"></div>
+											<form class="article_comment_rating" name="change_article_comment_rating" action="">
+												<input type="text" placeholder="23" name="change_article_comment_value">
+											</form>
+											<span class="total_comment_rating down">-2212</span>
+											<div class="up_rating selected"></div>
+											<div class="down_rating"></div>
+											<div class="how_much_left_popup">
+												<span class="how_much_left">У вас осталось <span>200 +</span></span>
+											</div>
 										</div>
 									</div>
 									<div class="user_comment_options">
