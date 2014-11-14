@@ -2479,6 +2479,7 @@ background:#000b1b;
 }
 .open_room .block_before_streams .text1, .open_room .block_before_streams .text2{
 color:#fff;
+float:left;
 }
 .open_room .block_before_streams .text2{
 clear:both;
@@ -2496,6 +2497,7 @@ font-size:12px;
 text-decoration:underline;
 cursor:pointer;
 margin-left:4px;
+margin-top:3px;
 }
 
 .room_creater_block{
@@ -2544,9 +2546,7 @@ margin-top:19px;
 background:none;
 height:479px;
 }
-.room_chat .chat_wrapper .mCSB_inside > .mCSB_container{
-padding-top:15px;
-}
+
 .room_chat .chat_wrapper{
 height:452px;
 }
