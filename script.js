@@ -1543,6 +1543,10 @@ $(document).ready(function(){
 			mouseWheel:{ scrollAmount: 180 }
 		});
 	});
+	$('.room_chat .chat_message').first().css("padding-top","21px");
+	$('.room_chat .chat_wrapper').bind("DOMSubtreeModified",function(){
+		$('.room_chat .chat_message').first().css("padding-top","21px");
+	});
 	//test paint graphs
 	var vote_result = {1: 22, 2: 5, 3: 77, 4: 32,5:34,6:12};
 	var choosed=5;
