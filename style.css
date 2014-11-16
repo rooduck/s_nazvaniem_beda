@@ -1890,7 +1890,7 @@ color:#ff6633;
 color:#fff297;
 }
 .user_chat_message.streamer .user_name{
-background:url("images/arrow_right_green.png") left 3px no-repeat;
+background:url("/images/arrow_right_green.png") left 3px no-repeat;
 padding-left:10px;
 }
 .user_chat_message{
@@ -3621,38 +3621,38 @@ position: absolute;
     top: -30px;
 }
 .news_rating_block .how_much_left_popup.plus{
-background: url("images/arrow_down_blue.png") no-repeat scroll 19px 30px rgba(0, 0, 0, 0);
+background: url("/images/arrow_down_blue.png") no-repeat scroll 19px 30px rgba(0, 0, 0, 0);
     display: block;
 }
 .comment_rating_wrapper .how_much_left_popup.plus{
-background: url("images/arrow_up_blue.png") no-repeat scroll 120px 0px rgba(0, 0, 0, 0);
+background: url("/images/arrow_up_blue.png") no-repeat scroll 120px 0px rgba(0, 0, 0, 0);
  display: block;
 }
 .news_rating_block .how_much_left_popup.minus {
-    background: url("images/arrow_down_blue.png") no-repeat scroll 142px 30px rgba(0, 0, 0, 0);
+    background: url("/images/arrow_down_blue.png") no-repeat scroll 142px 30px rgba(0, 0, 0, 0);
     display: block;
 }
 .comment_rating_wrapper .how_much_left_popup.minus {
-    background: url("images/arrow_up_blue.png") no-repeat scroll 149px 0px rgba(0, 0, 0, 0);
+    background: url("/images/arrow_up_blue.png") no-repeat scroll 149px 0px rgba(0, 0, 0, 0);
     display: block;
 }
 .conenten_main_news_block  .up_rating{
-background: url("images/big_up_rating.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("/images/big_up_rating.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 height: 30px;
 width: 45px;
 border-right:2px solid #afd7ff;
 }
 .conenten_main_news_block  .down_rating{
-background: url("images/big_down_rating.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("/images/big_down_rating.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 height: 30px;
 width: 46px;
 }
 .conenten_main_news_block  .up_rating.selected{
-background: url("images/big_up_rating_selected.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("/images/big_up_rating_selected.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 border-right:2px solid #26b0ee;
 }
 .conenten_main_news_block  .down_rating.selected{
-background: url("images/big_down_rating_selected.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+background: url("/images/big_down_rating_selected.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 .conenten_main_news_block .today_rating{
 color:#fff;
@@ -3867,7 +3867,7 @@ right: -46px;
 top: 29px;
 }
 .comment_rating_wrapper  .up_rating{
-background:url("images/small_up_rating.png") no-repeat;
+background:url("/images/small_up_rating.png") no-repeat;
 width:28px;
 height:19px;
 float:left;
@@ -3875,10 +3875,10 @@ cursor:pointer;
 visibility:hidden;
 }
 .comment_rating_wrapper  .up_rating.selected{
-background:url("images/small_up_rating_active.png") no-repeat;
+background:url("/images/small_up_rating_active.png") no-repeat;
 }
 .comment_rating_wrapper .down_rating{
-background:url("images/small_down_rating.png") no-repeat;
+background:url("/images/small_down_rating.png") no-repeat;
 width:28px;
 height:19px;
 float:left;
@@ -3886,7 +3886,7 @@ cursor:pointer;
 visibility:hidden;
 }
 .comment_rating_wrapper  .down_rating.selected{
-background:url("images/small_down_rating_active.png") no-repeat;
+background:url("/images/small_down_rating_active.png") no-repeat;
 }
 .total_comment_rating{
 font-size:18px;
@@ -4847,7 +4847,6 @@ background: url("/images/create_room_bg.jpg") no-repeat scroll 0 0 rgba(0, 0, 0,
 height: 657px;
 width: 951px;
 z-index: 6;
-visibility:hidden;
 }
 .create_stream_popup .category_text {
     background: url("/images/create_room_icon.png") no-repeat scroll left 3px rgba(0, 0, 0, 0);
