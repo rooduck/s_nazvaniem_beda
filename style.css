@@ -3305,7 +3305,7 @@ line-height:18px;
 .news_block .preview_text{
 color:#000b1b;
 font-size:12px;
-height:57px;
+height:59px;
 overflow:hidden;
 width:269px;
 word-wrap: break-word;
@@ -3546,9 +3546,12 @@ color: #333333;
 float: left;
 font-size: 16px;
 line-height: 20px;
-padding: 33px 20px 0;
-width: 757px;
+padding: 33px 0px 0;
 word-wrap: break-word;
+}
+
+.article_text img {
+    margin: 10px 0;
 }
 .lots_of_text p, .lots_of_text div {
 margin-bottom:20px;
@@ -6270,6 +6273,9 @@ margin-right:0px;
 .forgot_password_popup .top_tab_registr{
 float:none;
 width:265px;
+}
+.news_block .preview_text{
+height: 57px;
 }
 .rating_row{
 padding-bottom: 6px;
