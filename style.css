@@ -2173,6 +2173,7 @@ bottom:49px;
 left:6px;
 width:240px;
 background-position: 96px bottom;
+
 }
 .chat_list_wrapper{
 height: 482px;
@@ -2198,7 +2199,7 @@ padding-bottom:4px;
 }
 .smiles_at_this_group{
 float:left;
-width:200px;
+width:195px;
 margin-top:4px;
 padding-left:18px;
 padding-bottom: 8px;
@@ -4549,11 +4550,31 @@ text-align:center;
 /*VALUTE POPUP*/
 
 .valute_popup{
+
 position:absolute;
-top:100px;
-left:125px;
+top:0px;
+left:0px;
+bottom:0;
+right:0;
+width:951px;
 display:none;
 z-index:20;
+}
+.valute_popup .create_stream_wrapper {
+    background: none repeat scroll 0 0 #999999;
+    float: left;
+    width: 951px;
+}
+
+.valute_popup  .registr_label {
+width:146px;
+}
+.valute_popup  .input_block {
+width:100%;
+margin-right:0px;
+}
+.valute_popup  .right_block{
+margin-left:0px;
 }
 .valute_popup .top_tab_registr{
 padding-right:44px;
@@ -4754,7 +4775,6 @@ margin-top:20px;
 .valute_popup .vivod_money_block  .input_block{
 float: right;
 position:relative;
-    margin-right: 31px;
 }
 .valute_popup .create_stream_wrapper .right_block .registr_input{
 width:213px;
