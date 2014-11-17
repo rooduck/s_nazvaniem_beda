@@ -2839,6 +2839,7 @@ left: 23px;
 position:relative;
 }
 .prev_raspisanie.disabled, .next_raspisanie.disabled{
+    display: block !important;
 visibility:hidden;
 }
 .next_raspisanie{
