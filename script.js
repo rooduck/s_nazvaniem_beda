@@ -1031,7 +1031,10 @@ $(document).ready(function(){
 		//
 		//show smiles popup in article comments
 	$('.enter_comment .smiles_img').click(function(){
-		$('.click_user_popup2').show();
+		if ($('.click_user_popup2').css("display")=="none"))
+			$('.click_user_popup2').show();
+		else
+			$('.click_user_popup2').show();
 	});
 	$('.close_open_popup2').click(function(){
 		$('.click_user_popup2').hide();
@@ -1557,13 +1560,7 @@ $(document).ready(function(){
 	var vote_result = {1: 22, 2: 5, 3: 77, 4: 32,5:34,6:12};
 	var choosed=5;
 	script_paint_graphs(vote_result,choosed);
-	//give the path to the single smile, in order to script could correctly find container with smiles:
-	$smiles_container_chat = $('.user_stream_page .click_user_popup.smaili .chat_smiles');
-	$smiles_container_room = $('.open_room .click_user_popup.smaili .chat_smiles');
-	$smiles_container_article = $('.enter_comment .click_user_popup_wrapper2 .chat_smiles');
-	nice_smiles($smiles_container_chat);
-	nice_smiles($smiles_container_room);
-	nice_smiles($smiles_container_article);
+
 	//set_scale_lvl();
 	
 	/*$('.random_punkt').click(function(){
@@ -1572,20 +1569,6 @@ $(document).ready(function(){
 	
 });
 
-window.nice_smiles = function($smiles_container)
-{
-	var parent_width = $smiles_container.parent().width();
-	var sum_width=0;
-	$smiles_container.each(function(i)
-	{
-		sum_width+=this.width+2;// 2 - it's a padding
-		if (sum_width>parent_width)
-		{
-			$(this).css('clear','both');
-			sum_width=this.width;;
-		}
-	});
-}
 
 window.set_scale_lvl = function()
 {
@@ -1635,111 +1618,7 @@ setTimeout(function() {
 }, 5000);
 }
 
-/** t0s - общий код для всех страниц **/
 $(document).ready(function() {
-
-    var script_BE = (function(){
-
-        //Private
-        function getPhpUri() {
-            return '//'+ window.location.hostname +'/index.php?r=';
-        }
-        function getToken() {
-            return $('meta[name|=\'token\']').attr('content');
-        }
-        //Public
-        return {
-            sendToPHP : function(type,param) {
-                var uri = getPhpUri() +type;
-                param = param || {};
-
-                param.YII_CSRF_TOKEN = getToken(); // Добавляем токен CSRF
-
-                // Request -> Response
-                $.post(uri, param, function(data, textStatus, jqXHR) {
-                    switch (type) {
-                        case 'chat/smiles':
-                            script_PubSub.publish('POST:smiles',jqXHR.responseText);
-                            break;
-                        default:
-                            console.log('sendToPhp unknown param %p', type);
-                    }
-                }).fail(function(){
-                    console.log('Ошибка отправки запроса к пхп');
-                });
-
-            }
-        };
-    })();
-
-    var script_PubSub = (function() {
-
-        var myObject = {};
-
-        // Storage for topics that can be broadcast
-        // or listened to
-        var topics = {};
-
-        // An topic identifier
-        var subUid = -1;
-
-        // Publish or broadcast events of interest
-        // with a specific topic name and arguments
-        // such as the data to pass along
-        myObject.publish = function( topic, args ) {
-
-            if ( !topics[topic] ) {
-                return false;
-            }
-
-            var subscribers = topics[topic],
-                len = subscribers ? subscribers.length : 0;
-
-            while (len--) {
-                subscribers[len].func( topic, args );
-            }
-
-            return this;
-        };
-
-        // Subscribe to events of interest
-        // with a specific topic name and a
-        // callback function, to be executed
-        // when the topic/event is observed
-        myObject.subscribe = function( topic, func ) {
-
-            if (!topics[topic]) {
-                topics[topic] = [];
-            }
-
-            var token = ( ++subUid ).toString();
-            topics[topic].push({
-                token: token,
-                func: func
-            });
-            return token;
-        };
-
-        // Unsubscribe from a specific
-        // topic, based on a tokenized reference
-        // to the subscription
-        myObject.unsubscribe = function( token ) {
-            for ( var m in topics ) {
-                if ( topics[m] ) {
-                    for ( var i = 0, j = topics[m].length; i < j; i++ ) {
-                        if ( topics[m][i].token === token ) {
-                            topics[m].splice( i, 1 );
-                            return token;
-                        }
-                    }
-                }
-            }
-            return this;
-        };
-        return myObject;
-    }());
-
-
     /**
      * Глобальная функция: выводит пользовательские уведомления.
      * @param elements {object} - три класса, в которых указаны элементы для вывода уведомлений
@@ -1790,57 +1669,6 @@ $(document).ready(function() {
         return o.check;
 
     }) ({wrap:'.system_message_popup', who:'.user_sysmessage_nick', text: '.sysmessage_text'}, 5000);
-
-    window.script_Smiles = (function () {
-        var smilesContainer_ID = '.smiles_at_this_group';
-        // Private
-        function loadSmiles(href) {
-            var param = {};
-            if (href) {
-                var page;
-                //console.log('PAGE %p %n', href, href[30]);
-                if (href.indexOf('page=') > 0) {
-                    page = href.substring(30);
-                    param['page'] = page;
-                } else {
-                    page = 1;
-                    param['page'] = page;
-                }
-            }
-
-            script_BE.sendToPHP('chat/smiles',param);
-            var _token = script_PubSub.subscribe('POST:smiles', function (topic, recHTML) {
-                console.log('smiles subscriber doing your work');
-                $(smilesContainer_ID).empty().append(recHTML);
-
-                script_PubSub.unsubscribe(_token);
-            });
-        }
-
-        function addSmile ($smile,$msgInput) {
-            var that = this;
-            var cursorPosition = $msgInput[0].selectionStart,
-                smileCode = $smile.attr('title');
-
-            //add smile
-            if (cursorPosition == $msgInput.val().length) {
-                $msgInput.val($msgInput.val() + smileCode);
-            } else {
-                $msgInput.val($msgInput.val().substring(0, cursorPosition) + smileCode + $msgInput.val().substring(cursorPosition));
-            }
-            $msgInput.focus();
-        }
-
-        //Public
-        return {
-            addSmileToInput: function ($smile,$msgInput) {
-                addSmile ($smile,$msgInput);
-            },
-            loadSmilesFromBE: function(href) {
-                loadSmiles(href);
-            }
-        };
-    })();
 });
 
 //not final version, it's in progress
