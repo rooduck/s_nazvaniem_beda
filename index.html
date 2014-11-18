@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
@@ -27,7 +27,7 @@
 		<div id="top_header_line">
 		
 			<div class="top_logo">
-				<a href="/"><img src="images/logo.png" alt="logo" width="154" height="22"/></a>
+				<a href="/"><img src="images/logo.png" alt="logo" width="147" height="19"/></a>
 			</div>
 			<!---UNAUTHORIZED-->
 			<div class="top_header_user_menu unauthorized" style="display:none;">
@@ -2054,12 +2054,13 @@
 										<div class="click_user_popup_wrapper">
 											<div class="chat_list_wrapper">
 												<div class="smiles_at_this_group">
-													<img src="images/peka.png" alt="chat_smile" class="chat_smiles" />
-													<img src="images/peka.png" alt="chat_smile" class="chat_smiles" />
-													<img src="images/peka.png" alt="chat_smile" class="chat_smiles" />
-													<img src="images/peka.png" alt="chat_smile" class="chat_smiles" />
-													<img src="images/peka.png" alt="chat_smile" class="chat_smiles" />
-													<img src="images/peka.png" alt="chat_smile" class="chat_smiles" />
+												
+													<img src="images/peka.png" width="52" alt="chat_smile" class="chat_smiles" />
+													<img src="images/peka.png" width="50" alt="chat_smile" class="chat_smiles" />
+													<img src="images/peka.png" width="48" alt="chat_smile" class="chat_smiles" />
+													<img src="images/peka.png" width="46" alt="chat_smile" class="chat_smiles" />
+													<img src="images/peka.png" width="44" alt="chat_smile" class="chat_smiles" />
+													<img src="images/peka.png" width="42" alt="chat_smile" class="chat_smiles" />
 													<img src="images/peka.png" alt="chat_smile" class="chat_smiles" />
 													<img src="images/peka.png" alt="chat_smile" class="chat_smiles" />
 													<img src="images/peka.png" alt="chat_smile" class="chat_smiles" />
@@ -4471,7 +4472,7 @@
 		</div>
 	</div>
 	<!---CREATE STREAM-->
-	<div class="create_stream_popup">
+	<div class="create_stream_popup" style="visibility:hidden">
 		<div class="category_string_name">
 			<span class="category_text">Добавить стрим</span>
 		</div>
@@ -4889,6 +4890,7 @@
 		<span class="close_btn"></span>
 	</div>
 	
+	
 	<!---REGIST POPUP-->
 	<div class="registration_popup hide_popup">
 		<div class="top_tab_registr">
@@ -5109,6 +5111,21 @@
 			<input type="text" class="room_info_input" name="email" placeholder="Введите свой e-mail"/>
 			<button type="submit" class="blue_button">Отправить</button>
 			<span class="text_popup">письмо придет в течении 20 минут</span>
+		</form>
+		
+		<div class="close_category"></div>
+	</div>
+	
+	<!---RESTORE PASSWORD POPUP-->
+	<div class="check_pwd_popup">
+		<div class="category_string_name">
+			<span class="category_text">Проверка прав доступа</span>
+		</div>
+		<form action="" name="check_pass">
+			<input type="password" class="room_info_input" name="pass" placeholder="Введите пароль"/>
+			<!---SHOW ONLY WHEN PASS IS WRONG-->
+			<span class="text_popup">неправильно введен пароль</span>
+			<button type="submit" class="blue_button">Вход</button>
 		</form>
 		
 		<div class="close_category"></div>
