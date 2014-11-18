@@ -191,6 +191,12 @@ $(document).ready(function(){
 				$('.option_popup').hide();
 				$('.options.chat_pic').removeClass('active');
 			}
+			if ($(event.target).closest(".click_user_popup2 .chat_list_wrapper2").length || $(event.target).closest(".enter_comment .smiles_img").length) return;
+			else
+			{
+				$('.click_user_popup2').hide();
+				
+			}
 			if (!$(event.target).hasClass('chat_smiles') && $(event.target).closest(".smaili").length || $(event.target).closest(".smiles.chat_pic").length) return;
 			else
 			{
@@ -1551,6 +1557,13 @@ $(document).ready(function(){
 	var vote_result = {1: 22, 2: 5, 3: 77, 4: 32,5:34,6:12};
 	var choosed=5;
 	script_paint_graphs(vote_result,choosed);
+	//give the path to the single smile, in order to script could correctly find container with smiles:
+	$smiles_container_chat = $('.user_stream_page .click_user_popup.smaili .chat_smiles');
+	$smiles_container_room = $('.open_room .click_user_popup.smaili .chat_smiles');
+	$smiles_container_article = $('.enter_comment .click_user_popup_wrapper2 .chat_smiles');
+	nice_smiles($smiles_container_chat);
+	nice_smiles($smiles_container_room);
+	nice_smiles($smiles_container_article);
 	//set_scale_lvl();
 	
 	/*$('.random_punkt').click(function(){
@@ -1559,6 +1572,20 @@ $(document).ready(function(){
 	
 });
 
+window.nice_smiles = function($smiles_container)
+{
+	var parent_width = $smiles_container.parent().width();
+	var sum_width=0;
+	$smiles_container.each(function(i)
+	{
+		sum_width+=this.width+2;// 2 - it's a padding
+		if (sum_width>parent_width)
+		{
+			$(this).css('clear','both');
+			sum_width=this.width;;
+		}
+	});
+}
 
 window.set_scale_lvl = function()
 {
