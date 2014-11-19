@@ -1582,7 +1582,7 @@ window.nice_smiles = function($smiles_container)
 		if (sum_width>parent_width)
 		{
 			$(this).css('clear','both');
-			sum_width=this.width;;
+			sum_width=this.width;
 		}
 	});
 }
@@ -1639,7 +1639,9 @@ setTimeout(function() {
 $(document).ready(function() {
 
     var script_BE = (function(){
-
+        var allMethodsNames = {
+            'smiles': 'smile/get'
+        };
         //Private
         function getPhpUri() {
             return '//'+ window.location.hostname +'/index.php?r=';
@@ -1649,6 +1651,9 @@ $(document).ready(function() {
         }
         //Public
         return {
+            getMethodName: function(key) {
+                return allMethodsNames[key] || console.log('ERROR >>> неправильно задан ключ к событию %k', key);
+            },
             sendToPHP : function(type,param) {
                 var uri = getPhpUri() +type;
                 param = param || {};
@@ -1657,13 +1662,14 @@ $(document).ready(function() {
 
                 // Request -> Response
                 $.post(uri, param, function(data, textStatus, jqXHR) {
-                    switch (type) {
-                        case 'chat/smiles':
+                    /*switch (type) {
+                        case 'smile/get':
                             script_PubSub.publish('POST:smiles',jqXHR.responseText);
                             break;
                         default:
                             console.log('sendToPhp unknown param %p', type);
-                    }
+                    }*/
+                    script_PubSub.publish(type,jqXHR.responseText);
                 }).fail(function(){
                     console.log('Ошибка отправки запроса к пхп');
                 });
@@ -1794,22 +1800,27 @@ $(document).ready(function() {
     window.script_Smiles = (function () {
         var smilesContainer_ID = '.smiles_at_this_group';
         // Private
-        function loadSmiles(href) {
+        function loadSmiles(href, paramFor) {
             var param = {};
             if (href) {
                 var page;
                 //console.log('PAGE %p %n', href, href[30]);
                 if (href.indexOf('page=') > 0) {
-                    page = href.substring(30);
+                    page = href.substring(href.indexOf('page=')+5);
                     param['page'] = page;
                 } else {
                     page = 1;
                     param['page'] = page;
                 }
             }
-
-            script_BE.sendToPHP('chat/smiles',param);
-            var _token = script_PubSub.subscribe('POST:smiles', function (topic, recHTML) {
+            if (paramFor) {
+                param['for'] = paramFor;
+            } else {
+                console.log('ERROR >>> не задан параметр paramFor');
+            }
+            //console.log(script_BE.getMethodName('smiles'));
+            script_BE.sendToPHP(script_BE.getMethodName('smiles'),param);
+            var _token = script_PubSub.subscribe(script_BE.getMethodName('smiles'), function (topic, recHTML) {
                 console.log('smiles subscriber doing your work');
                 $(smilesContainer_ID).empty().append(recHTML);
 
@@ -1836,8 +1847,13 @@ $(document).ready(function() {
             addSmileToInput: function ($smile,$msgInput) {
                 addSmile ($smile,$msgInput);
             },
-            loadSmilesFromBE: function(href) {
-                loadSmiles(href);
+            /**
+             * Загрузка смайлов с БЕ
+             * @param href - паджинация, номер страницы со смайлами
+             * @param paramFor {'comment' | 'stream' | 'room'}
+             */
+            loadSmilesFromBE: function(href,paramFor) {
+                loadSmiles(href,paramFor);
             }
         };
     })();

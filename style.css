@@ -3555,6 +3555,9 @@ word-wrap: break-word;
 .article_text img {
     margin: 10px 0;
 }
+.article_text p {
+    margin: 12px 0;
+}
 .lots_of_text p, .lots_of_text div {
 margin-bottom:20px;
  word-wrap: break-word;
@@ -6016,7 +6019,7 @@ left: 0;
 position: fixed;
 top: 0;
 z-index: 19;
-background:url("images/little_bg.jpg") no-repeat;
+background:url("/images/little_bg.jpg") no-repeat;
 width:334px;
 height:275px;
 visibility:hidden;
@@ -6050,7 +6053,7 @@ margin-bottom: 2px;
 	width:265px;
 }
 .blue_button {
-    background: url("images/blu_button.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: url("/images/blu_button.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: 0 none;
     color: #003366;
     font-size: 18px;
@@ -6087,7 +6090,7 @@ text-decoration:underline;
 height:226px;
 }
 .autorization_popup .category_text,.check_pwd_popup .category_text{
-background: url("images/create_room_icon.png") no-repeat scroll left 3px rgba(0, 0, 0, 0);
+background: url("/images/create_room_icon.png") no-repeat scroll left 3px rgba(0, 0, 0, 0);
 padding-left:24px;
 }
 /*OTHER CATEGORY CHOOSE*/
