@@ -2173,7 +2173,6 @@ bottom:49px;
 left:6px;
 width:240px;
 background-position: 96px bottom;
-
 }
 .chat_list_wrapper{
 height: 482px;
@@ -2205,9 +2204,11 @@ padding-left:18px;
 padding-bottom: 8px;
 }
 .smiles_at_this_group .chat_smiles{
-float:left;
-padding:1px;
 cursor:pointer;
+}
+.smiles_at_this_group td {
+    text-align: center;
+    vertical-align: middle;
 }
 .smiles_at_this_group .chat_smiles:hover{
 background:#0d335d;
@@ -3937,10 +3938,8 @@ line-height:6px;
     font-size: 16px;
 	margin-bottom:10px;
 }
-.enter_comment img {
-    float: left;
-    height: 50px;
-    width: 50px;
+.enter_comment   img {
+float:left;
 }
 .enter_comment > form {
     width: 100%;
@@ -4024,10 +4023,7 @@ float:left;
     width: 600px;
 	overflow:hidden;
 }
-.enter_comment .smiles_at_this_group img{
-width:30px;
-height:30px;
-}
+
 .enter_comment  .smiles_at_this_group .chat_smiles:hover{
 background:#999999;
 }
@@ -6028,7 +6024,6 @@ right:0;
 margin:auto;
 }
 .check_pwd_popup {
-visibility:visible;
 height:211px;
 }
 .change_pwd_popup .category_string_name, .restore_pwd_popup .category_string_name, .autorization_popup .category_string_name, .check_pwd_popup .category_string_name{
