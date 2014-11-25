@@ -6024,7 +6024,8 @@ right:0;
 margin:auto;
 }
 .check_pwd_popup {
-height:211px;
+    height:211px;
+    visibility: visible;
 }
 .change_pwd_popup .category_string_name, .restore_pwd_popup .category_string_name, .autorization_popup .category_string_name, .check_pwd_popup .category_string_name{
 padding-bottom:9px;
