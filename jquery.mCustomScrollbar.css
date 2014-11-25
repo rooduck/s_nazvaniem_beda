@@ -59,6 +59,9 @@ y-axis
 .profile_hist_wrapper .mCSB_inside > .mCSB_container{
 margin-right: 23px; 
 }
+.chat_list_wrapper.mCSB_inside > .mCSB_container{
+    margin-right: 20px;
+}
 .all_streams_wrapper .mCSB_inside > .mCSB_container{ margin-right: 0px; }
 .room_userlist_page .mCSB_inside > .mCSB_container{ margin-right: 10px; }
 .selectboxit-list .mCSB_inside > .mCSB_container{ margin-right: 5px; }
