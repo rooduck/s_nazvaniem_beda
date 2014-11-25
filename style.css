@@ -1851,22 +1851,22 @@ float:left;
 	min-height:300px;
 }
 .chat_message {
-    float: left;
-	width:100%;
-	padding-bottom:5px;
-	padding-top:6px;
-	position:relative;
+    line-height: 13px;
+    padding:6px 10px 5px;
 }
 .chat_message:hover {
-background:#0d335d;
+background: #0d335d;
 }
-.chat_message  .user_name{
-color:#66ccff;
-font-size:12px;
-padding-right:2px;
-line-height:13px;
-cursor:pointer;
-float:none;
+.chat_message  .user_name, .chat_message .user_name_to{
+color: #66ccff;
+font-size: 12px;
+padding-right: 2px;
+line-height: 13px;
+cursor: pointer;
+float: none;
+}
+.chat_message .user_name_to {
+    padding-left: 0px;
 }
 .chat_message  .user_name.red{
 color:red;
@@ -1894,14 +1894,13 @@ background:url("/images/arrow_right_green.png") left 3px no-repeat;
 padding-left:10px;
 }
 .user_chat_message{
-display:block;
-font-size:12px;
-color:#fff;
-padding-right:13px;
-padding-left:10px;
+display: inline;
+font-size: 12px;
+color: #fff;
  padding-top: 0px;
- line-height:13px;
+
  word-wrap: break-word;
+    white-space: pre-wrap;
 }
 .user_chat_message.answer{
 margin-bottom:0px;
@@ -2175,7 +2174,7 @@ width:240px;
 background-position: 96px bottom;
 }
 .chat_list_wrapper{
-height: 482px;
+height: 483px;
 float:left;
 width:240px;
 background:#0d1016;
@@ -2202,6 +2201,9 @@ width:195px;
 margin-top:4px;
 padding-left:18px;
 padding-bottom: 8px;
+}
+#smiles table {
+    min-width: 100%;
 }
 .smiles_at_this_group .chat_smiles{
 cursor:pointer;
@@ -2608,18 +2610,18 @@ height:25px;
     background: url("/images/poll_img_enabled.png") no-repeat scroll center center rgba(0, 0, 0, 0);
 }
 .room_chat .click_user_popup.smaili{
-width: 874px;
+width: 799px;
 left:14px;
 }
 .room_chat .smaili .click_user_popup_wrapper{
-width: 874px;
+width: 799px;
 }
 .room_chat  .chat_list_wrapper{
-height: 315px;
-width: 874px;
+height: auto;
+width: 799px;
 }
 .room_chat .smiles_at_this_group{
-width: 850px;
+width: 760px;
 }
 .room_chat  .golosovalka .click_user_popup_wrapper, .room_chat   .vote_poll .click_user_popup_wrapper, .room_chat   .poll_results .click_user_popup_wrapper{
 height:315px;;
@@ -3995,9 +3997,9 @@ background:url("/images/smiles_img_enabled.png") no-repeat;
 	margin-right: 10px;
 }
 .enter_comment .click_user_popup2 {
-    background: none repeat scroll 0 0 #f5f5f5;
     border: 1px solid #cecece;
-    height: 196px;
+    background: url("/images/arrow_down_white.png") no-repeat 511px bottom;
+    padding-bottom: 0px;/*temporary no arrow*/
     width: 632px;
 	left:-508px;
 	bottom:35px;
@@ -4007,19 +4009,16 @@ background:url("/images/smiles_img_enabled.png") no-repeat;
 	display:none;
 }
 .enter_comment .click_user_popup_wrapper2 {
-    height: 186px;
+    background: none repeat scroll 0 0 #f5f5f5;
 	float:left;
     width: 632px;
+
 }
 .enter_comment .chat_list_wrapper2{
-float:left;
-    height: 185px;
+    float:left;
     width: 632px;
-	background: url("/images/arrow_down_white.png") no-repeat 511px bottom;
-	padding-bottom:18px;
 }
 .enter_comment .smiles_at_this_group {
-    height: 153px;
     width: 600px;
 	overflow:hidden;
 }
@@ -4049,10 +4048,20 @@ background:#999999;
     text-align: center;
     width: 22px;
 }
-.popup_smiles_navigation li:hover,.popup_smiles_navigation li.active {
-background:#999999;
-cursor:pointer;
+ .popup_smiles_navigation li:hover,.popup_smiles_navigation li.selected {
+     background:#999999;
+     cursor:pointer;
+ }
+.chat_body .popup_smiles_navigation li {
+      background: #00234a;
 }
+.chat_body .popup_smiles_navigation li:hover,.chat_body .popup_smiles_navigation li.selected {
+    background: #3399ff;
+}
+.popup_smiles_navigation li a{
+    color: #fff;
+}
+
 .enter_comment .close_open_popup2{
 background:url("/images/close1.png") no-repeat;
 right:0px;
