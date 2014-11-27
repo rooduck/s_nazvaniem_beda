@@ -625,6 +625,16 @@ margin-top:11px;
 	margin-right:7.2%;
 	font-size:14px;
 }
+#user_input {
+    height: 29px;
+    margin-left: 11px;
+    color:#9c9c9c;
+    width: 134px;
+    padding-left:46px;
+    background:url("/images/search_icon.png") no-repeat 8px 6px #fff;
+    margin-right:7.2%;
+    font-size:14px;
+}
 .user_message_search label {
     font-size: 14px;
 	cursor:pointer;
@@ -2492,6 +2502,7 @@ clear:both;
     float: left;
 	width:910px;
 	height:509px;
+    background: #000b1b;
 }
 .open_room .block_before_streams .text3{
 display:block;
