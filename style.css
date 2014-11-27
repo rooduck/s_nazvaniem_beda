@@ -1083,6 +1083,9 @@ a.back_to_the_list,div.back_to_the_list {
 float:left;
 margin-right:10px;
 }
+.some_unknow_block a{
+    float: left;
+}
 .user_stream_page .some_unknow_block .text1, .user_stream_page .some_unknow_block .text2{
 color:#fff;
 float:left;
@@ -6030,7 +6033,7 @@ color:#fff;
 word-wrap:break-word;
 }
 /*RESET AND RESTORE PASSWORD POPUP, AUTORIZATION POPUP, CHECK_PWD POPUP*/
-.change_pwd_popup ,.restore_pwd_popup ,.autorization_popup,.check_pwd_popup {
+.change_pwd_popup ,.restore_pwd_popup ,.autorization_popup,.check_pwd_popup, .login_form  {
 left: 0;
 position: fixed;
 top: 0;
@@ -6043,24 +6046,29 @@ bottom:0;
 right:0;
 margin:auto;
 }
-.check_pwd_popup {
-    height:211px;
+.login_form  {
     visibility: visible;
 }
-.change_pwd_popup .category_string_name, .restore_pwd_popup .category_string_name, .autorization_popup .category_string_name, .check_pwd_popup .category_string_name{
+.check_pwd_popup {
+height:211px;
+}
+.change_pwd_popup .category_string_name, .restore_pwd_popup .category_string_name, .autorization_popup .category_string_name,
+.check_pwd_popup .category_string_name, .login_form .category_string_name{
 padding-bottom:9px;
 margin-right:18px;
 }
-.change_pwd_popup  .category_text, .restore_pwd_popup .category_text{
+.change_pwd_popup  .category_text, .restore_pwd_popup .category_text, .login_form .category_text{
 background:url("/images/arrow_up_icon.png") no-repeat scroll left 3px rgba(0, 0, 0, 0);
 padding-left:24px;
 }
-
-.change_pwd_popup > form, .restore_pwd_popup >form ,.autorization_popup >form,.check_pwd_popup >form {
+.login_form .category_text {
+    width:300px;
+}
+.change_pwd_popup > form, .restore_pwd_popup >form ,.autorization_popup >form,.check_pwd_popup >form, .login_form > form {
     margin-left: 32px;
     margin-top: 25px;
 }
-.change_pwd_popup .room_info_input, .restore_pwd_popup .room_info_input, .autorization_popup .room_info_input{
+.change_pwd_popup .room_info_input, .restore_pwd_popup .room_info_input, .autorization_popup .room_info_input, .login_form .room_info_input{
     margin-bottom: 25px;
 	width:265px;
 }
