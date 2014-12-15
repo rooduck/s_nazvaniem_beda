@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Funstreams.tv</title>
+
+    <link type="image/x-icon" href="favicon.ico" rel="shortcut icon"/>
+    <link href="css/style.css" media="all" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" href="css/jquery.selectBoxIt.css" />
+    <link href="css/futurico.css" rel="stylesheet"/>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+    <script src="js/icheck.js" type="text/javascript"></script>
+    <script src="js/jquery.carouFredSel-6.2.1.js"  type="text/javascript"></script>
+    <script src="js/jquery.selectBoxIt.min.js" type="text/javascript"></script>
+    <script src="js/filter.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+    <script src="js/rating.js" type="text/javascript"></script>
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+<!--HEADER OLD VERSION-->
+<div id="header">
+    <!--include header.html-->
+</div>
+
+<!--STREAM ZONE WRAPPER-->
+<div id="workarea">
+
+<!--STREAMS ZONE-->
+<div id="streams_part">
+
+<!--TOP PAGE MENU-->
+<div class="top_streams_menu">
+    <div class="site_filter">
+        <!--include menu.html-->
+    </div>
+
+    <div class="top_streams_menu_create">
+        <!---USE THAT BLOCK WHAT U NEED-->
+        <button class="create_stream_but">Начать стрим</button>
+        <button class="create_room_but">Создать комнату</button>
+        <span class="text">чтобы стримить у нас на портале, необходимо <span>зарегистрироваться</span></span>
+    </div>
+
+</div>
+
+<!--ALL STREAMS LIST-->
+<div class="main_block">
+
+    <div class="all_streams_wrapper min_param" id="dynamic_filter_content">
+        <!--include stream_list.html-->
+    </div>
+
+    <!---CATEGORY RATING-->
+    <div class="top_category_rating">
+        <!--include category_rating.html-->
+    </div>
+</div>
+
+<!--BROADCAST SCHEDULE-->
+<div class="bottom_media_zone">
+    <!--include stream_anounses.html-->
+</div>
+</div>
+</div>
+
+<!--CONTENT ZONE-->
+<div id="wrapper_content">
+    <div id="content_part">
+
+        <!--CONTENT PAGE MENU-->
+        <div class="content_streams_menu">
+
+            <div class="site_filter">
+                <!--include menu.html-->
+            </div>
+
+            <div class="content_menu_create">
+                <!---USE THAT BLOCK WHAT U NEED-->
+                <button class="create_content_but">Добавить статью</button>
+                <span class="some_plus">+</span>
+                <span class="text">Для того чтобы добавить статью, необходимо <span>зарегистрироваться</span></span>
+            </div>
+        </div>
+
+        <!--OPEN ARTICLE AND BEST ARTICLES-->
+        <div class="conenten_main_news_block">
+            <div class="left_block open_article">
+
+                <!--ARTICLE HEADER-->
+                <div class="open_news_header">
+                    <div class="first_block">
+                        <div class="article_name">Пушечная новость по СердцеКамню или то,как я забрел сюда</div>
+                        <a href="#" class="redact_article_link"></a>
+                        <div class="news_rating_block">
+                            <div class="today_rating">2567</div>
+                            <div class="up_rating"></div>
+                            <div class="down_rating"></div>
+                            <div class="popup_rating">
+                                <!--Text is changed!-->
+                                <div class="rating_header">Поставьте количество минусов</div>
+                                <div class="close_rating"></div>
+                                <form name="rating_change" action="">
+                                    <div class="trackbar_block">
+                                        <span class="min_value">1</span>
+                                        <div id="slider-range-rating"></div>
+                                        <input name="number" type="text" style="display:none;" id="number_input" />
+                                        <span class="max_value"></span>
+                                    </div>
+                                    <button type="submit" class="light_blue_button">проголосовать</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second_block">
+                        <div class="news_author">автор статьи: <span>Delerium</span></div>
+                        <span class="news_date_creation">16 ноября 12:18:20</span>
+                    </div>
+                </div>
+
+                <!--ARTICLE WRAPPER-->
+                <div class="article_wrapper">
+
+                    <!--ARTICLE IMAGE-->
+                    <img src="images/news_preview.jpg" />
+
+                    <div class="article_text">
+                        <!--ARTICLE TEXT-->
+                        <div class="lots_of_text">
+                            <ul>
+                                <li>jdifksjklsdfdsfsdfdsfds</li>
+                                <li>
+                                    jdifksjklsdfdsfsdfdsfds
+                                </li>
+                                <li>
+                                    jdifksjklsdfdsfsdfdsfds
+                                </li>
+                            </ul>
+                            <ol>
+                                <li>
+                                    jdifksjklsdfdsfsdfdsfds
+                                </li>
+                                <li>
+                                    jdifksjklsdfdsfsdfdsfds
+                                </li>
+                                <li>
+                                    jdifksjklsdfdsfsdfdsfds
+                                </li>
+                            </ol>
+                            <p>Наш любимый детектив Фелпс снова в деле, хоть он и умер в прошлой части (сори Долговец, если не играл), но он снова на страже всего и вся в этом прекрасном мире, может ты и не знаешь, мой милый друг, но за окном сейчас дождь и темным-темно. Неделю назад был снег, а сейчас уже дождь и это только начало ноября. А теперь представте себе, как грустно будет осозновать, что это был последний снег в вашей жизни. Кто знает, что будет через неделю, кто знает. Может ты и чай в последний раз пьешь, так что стоит сделать глоток побольше, помедленней, чтобы насладиться этим искусственно прексрасным напитком из пакетика.
+                            </p>
+                            <p>Наш любимый ссыщик Фелпс снова в деле, хоть он и умер в прошлой части (сори Долговец, если не играл), но он снова на страже всего и вся в этом прекрасном мире, может ты и не знаешь, мой милый друг, но за окном сейчас дождь и темным-темно.
+                                Неделю назад был снег, а сейчас уже дождь и это только начало ноября. А теперь представте себе, как грустно будет осозновать, что это был последний снег в вашей жизни. Кто знает, что будет через неделю, кто знает.
+                                Может ты и чай в последний раз пьешь, так что стоит сделать глоток побольше, помедленней, чтобы насладиться этим искусственно прексрасным напитком из пакетика.
+                            </p>
+                        </div>
+
+                        <!--SHARE BAR-->
+                        <div class="shareBar_wrapper">
+                            <a class="vk_share" href="#"></a>
+                            <a class="tw_share" href="#"></a>
+                            <a class="fb_share" href="#"></a>
+                        </div>
+                    </div>
+
+                    <!--ARTICLE COMMENTS-->
+                    <div class="article_comments_wrapper">
+                        <!--Include article_comments.html-->
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--THE BEST ARTICLES-->
+            <div class="right_column best_articles">
+                <!--include best_articles.html-->
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</div>
+
+<!--POPUPS BLOCK-->
+
+<!--CREATE STREAM-->
+<div class="create_stream_popup" style="visibility:hidden">
+    <!--include popup_create_stream.html-->
+</div>
+
+<!---VALUTE POPUP-->
+<div class="valute_popup hide_popup">
+    <!--include popup_valute.html-->
+</div>
+
+<!--ADD CASH POPUP-->
+<div id="add_cash_popup" class="add_cash_popup hide_popup" >
+    <!--include popup_add_cash.html-->
+</div>
+
+<!--REGIST POPUP-->
+<div class="registration_popup hide_popup">
+    <!--include popup_registration.html-->
+</div>
+
+<!--SEARCH POPUP-->
+<div class="search_popup hide_popup">
+    <!--include popup_search.html-->
+</div>
+
+<!--OPTIONS POPUP-->
+<div class="options_popup hide_popup">
+    <!--include popup_options.html-->
+</div>
+
+<!--UVEDOMLENIA/PREDUPREJDENIA POPUP-->
+<div class="sysmess_wrapper">
+    <!--include popup_sysmess.html-->
+</div>
+
+<!--HOW MUCH DONATE POPUP-->
+<div class="how_much_donate_popup hide_popup">
+    <!--include popup_donate.html-->
+</div>
+
+<!--ERROR MESSAGES-->
+<div class="error_popup">
+    <div class="warning_block"></div>
+    <div class="error_text">
+        <span>Неправильно введен пароль, попробуйте еще раз + еще строка</span>
+    </div>
+</div>
+
+<!--CHANGE PASSWORD POPUP-->
+<div class="change_pwd_popup">
+    <!--include popup_change_password.html-->
+</div>
+
+<!--RESTORE PASSWORD POPUP-->
+<div class="restore_pwd_popup">
+    <!--include popup_forgot_password.html-->
+</div>
+
+<!--RESTORE PASSWORD POPUP-->
+<div class="check_pwd_popup">
+    <!--include popup_check_passw.html-->
+</div>
+
+<!--AUTHORIZATION PASSWORD POPUP-->
+<!--DO WE USE IT?-->
+<div class="autorization_popup">
+    <!--include popup_authorization.html-->
+</div>
+
+<!--OTHER CATEGORY CHOOSE-->
+<div class="other_category_choose ">
+    <!--include popup_choose_category.html-->
+</div>
+
+<!--CREATE ROOM POPUP-->
+<div class="create_room_popup ">
+    <!--include popup_create_room.html-->
+</div>
+
+<div class="fade"></div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<div class="category_string_name">
+    <span class="category_text">Создание комнаты</span>
+</div>
+<form name="create_room" action="#">
+    <div class="left_block">
+        <!--TEXT CHANGED WHEN WE CREATE AND REDACT ROOM-->
+        <div class="text_sub">Настройки комнаты</div>
+        <div class="room_info_row">
+            <span class="room_info_row_span">Название комнаты:</span>
+            <input class="room_info_input" type="text"  name="room_name" />
+        </div>
+        <!--CATEGORY CHOOSE-->
+        <div class="room_info_row">
+            <span class="room_info_row_span">Категория:</span>
+            <select name="category_name">
+                <option value="action">Шутеры</option>
+                <option value="strategy">Стратегии</option>
+                <option value="real">Real</option>
+                <option value="sandbox">Песочницы</option>
+                <option value="2d">Платформер</option>
+                <option value="horror">Хоррор</option>
+                <option value="Indiegames">Инди</option>
+                <option value="scisdead">Старкрафт</option>
+                <option value="cybersport">Киберспорт</option>
+                <option value="lol">Лол</option>
+                <option value="dota">Дота</option>
+            </select>
+        </div>
+
+        <!--UPLOAD PIC-->
+        <div class="room_info_row">
+            <span class="room_info_row_span">Ссылка на картинку:</span>
+            <input class="room_info_input" type="text"  name="room_pic_link" />
+        </div>
+
+        <!--DELETE MESSAGES OPTION-->
+        <div class="room_info_row">
+            <span class="room_info_row_span wide">Удалять сообщения через:</span>
+            <select name="time_to_reset" class="custom_select">
+                <option value="never">Никогда</option>a
+                <option value="1">1 час</option>
+                <option value="2">2 часа</option>
+                <option value="3">3 часа</option>
+                <option value="4">4 часа</option>
+            </select>
+        </div>
+
+        <!--NICE TRACK-->
+        <div class="room_info_row track">
+            <span class="room_info_row_span left">Ограничение: </span>
+            <div class="room_enter_lvl_popup_trackbar">
+                <span>1 уровень</span>
+            </div>
+            <div id="slider-range"></div>
+            <div id="level_points"></div>
+            <span id="amount">уровень вхождения в комнату - <span>1</span> уровень</span>
+            <input name="room_enter_lvl" type="text" style="display:none;" id="amount_input" />
+        </div>
+
+        <!--SOME OTHER OPTIONS-->
+        <div class="room_info_row">
+            <span class="room_info_row_span left">Тип управления</span>
+            <div class="checkboxes_wrapper">
+                <input type="radio" id="rating_demo" class="white_checkbox" name="control_type"/><label for="rating_demo">рейтинговая демократия</label>
+            </div>
+            <div class="checkboxes_wrapper">
+                <input type="radio" id="demo" class="white_checkbox" name="control_type"/><label for="demo">демократия</label>
+            </div>
+            <div class="checkboxes_wrapper">
+                <input type="radio" id="dict" class="white_checkbox" name="control_type"/><label for="dict">диктатура</label>
+            </div>
+        </div>
+        <div class="room_info_row">
+            <span class="room_info_row_span left">Описание: </span>
+            <textarea class="room_info_textarea" name="room_descr" placeholder="Напишите описание вашей комнаты"></textarea>
+        </div>
+    </div>
+
+    <div class="right_block">
+        <div class="text_sub">Безопасность</div>
+        <div class="room_info_row">
+            <span class="room_info_row_span margin">Комната от 18 лет: </span>
+            <div class="field switch">
+                <input type="radio" id="radio1" name="eighteen"   />
+                <input type="radio" id="radio2" name="eighteen" checked />
+                <label for="radio1" class="cb-enable selected"><span>Включить</span></label>
+                <label for="radio2" class="cb-disable"><span>Выключить</span></label>
+            </div>
+        </div>
+
+        <div class="room_info_row">
+            <span class="room_info_row_span right">Создать анонимно: </span>
+            <div class="field switch">
+                <input type="radio" id="radio3" name="anonim"   />
+                <input type="radio" id="radio4" name="anonim" checked />
+                <label for="radio3" class="cb-enable selected"><span>Да</span></label>
+                <label for="radio4" class="cb-disable"><span>Нет</span></label>
+            </div>
+        </div>
+
+        <div class="room_info_row">
+            <span class="room_info_row_span right">Разрешить анонимность в чате: </span>
+            <div class="field switch">
+                <input type="radio" id="radio5" name="anonim_in_chat"   />
+                <input type="radio" id="radio6" name="anonim_in_chat" checked />
+                <label for="radio5" class="cb-enable selected"><span>Да</span></label>
+                <label for="radio6" class="cb-disable"><span>Нет</span></label>
+            </div>
+        </div>
+
+        <div class="room_info_row">
+            <span class="room_info_row_span right">Пароль:</span>
+            <div class="field switch">
+                <input type="radio" id="radio7" name="passw"   />
+                <input type="radio" id="radio8" name="passw" checked />
+                <label for="radio7" class="cb-enable selected"><span>Да</span></label>
+                <label for="radio8" class="cb-disable"><span>Нет</span></label>
+            </div>
+        </div>
+        <!--PASSWORD-->
+        <div class="room_info_row">
+            <span class="room_info_row_span right">Пароль: </span>
+            <input class="room_info_input small" name="room_pic_link" type="password" />
+        </div>
+
+        <div class="room_info_block">
+            <span>Что такое комната?</span>
+            <p>
+                Комната - это возможность общаться в своем чате между людьми, объединённых любовь к одной игре, одному увлечению или любовью к определенному стримеру.
+            </p>
+        </div>
+
+        <div class="room_create_btn">
+            <button class="create_new_room" type="submit">Создать комнату</button>
+            <a class="some_link" href="#">Видеоинструкция по созданию комнаты</a>
+        </div>
+    </div>
+</form>
+<div class="close_category"></div>

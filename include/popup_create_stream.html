@@ -1,0 +1,115 @@
+<div class="category_string_name">
+    <span class="category_text">Добавить стрим</span>
+</div>
+<form name="create_room" action="#">
+    <div class="left_block">
+        <!--THIS TEXT IS CHANGED INSTEAD OF CREATING OR EDITING STREAM-->
+        <div class="text_sub">Настройки стрима</div>
+
+        <div class="room_info_row">
+            <span class="room_info_row_span">Название стрима:</span>
+            <input class="room_info_input" type="text" name="stream_name" />
+        </div>
+
+        <div class="room_info_row">
+            <span class="room_info_row_span">Категория:</span>
+            <select name="category_name">
+                <option value="action">Шутеры</option>
+                <option value="strategy">Стратегии</option>
+                <option value="real">Real</option>
+                <option value="sandbox">Песочницы</option>
+                <option value="2d">Платформер</option>
+                <option value="horror">Хоррор</option>
+                <option value="Indiegames">Инди</option>
+                <option value="scisdead">Старкрафт</option>
+                <option value="cybersport">Киберспорт</option>
+                <option value="lol">Лол</option>
+                <option value="dota">Дота</option>
+            </select>
+        </div>
+
+        <div class="room_info_row">
+            <span class="room_info_row_span">Выберите игру:</span>
+            <select name="game_name">
+                <option value="action">game1</option>
+                <option value="strategy">game2</option>
+                <option value="real">game3</option>
+                <option value="sandbox">game4</option>
+                <option value="2d">game5</option>
+                <option value="horror">game6</option>
+                <option value="Indiegames">game7</option>
+                <option value="scisdead">game1game8</option>
+                <option value="cybersport">game10</option>
+                <option value="lol">game123</option>
+                <option value="dota">game154545</option>
+            </select>
+        </div>
+
+        <div class="room_info_row">
+            <span class="room_info_row_span">Начало стрима:</span>
+            <div class="left_block_wrapper">
+                <div class="checkboxes_wrapper">
+                    <input type="radio" id="auto" class="white_checkbox" name="stream_start"/><label for="auto">авто</label>
+                </div>
+                <div class="checkboxes_wrapper">
+                    <input type="radio" id="choose_start" class="white_checkbox" name="stream_start"/><label for="choose_start">указать</label>
+                </div>
+            </div>
+            <div class="dateTime_input">
+                <input class="room_info_input" type="text"  name="stream_time" />
+            </div>
+        </div>
+
+        <span id="amount">*Указав время, вы появитесь в расписании и списке предстоящих стримов. У вас будет больше зрителей! А так же бонус по рейтингу</span>
+
+        <div class="room_info_row">
+            <span class="room_info_row_span margin">Стрим от 18 лет: </span>
+            <div class="field switch">
+                <input type="radio" id="radio1" name="eighteen"  checked />
+                <input type="radio" id="radio2" name="eighteen"  />
+                <label for="radio1" class="cb-enable selected"><span>Включить</span></label>
+                <label for="radio2" class="cb-disable"><span>Выключить</span></label>
+            </div>
+        </div>
+
+        <div class="room_info_row">
+            <span class="room_info_row_span margin">Ссылка на картинку:</span>
+            <input class="room_info_input file" type="file"  name="newstream_piclink" />
+        </div>
+
+        <div class="room_info_row">
+            <span class="room_info_row_span left">Описание: </span>
+            <textarea class="room_info_textarea" name="stream_descr" placeholder="Напишите описание вашего стрима"></textarea>
+        </div>
+
+    </div>
+    <div class="right_block">
+
+        <div class="text_sub">Вставьте ссылку на ваш канал на стриминговых сервисах</div>
+
+        <div class="room_info_row">
+            <span class="room_info_row_span right">Первый плеер:</span>
+            <input class="room_info_input" type="text"  name="first_player" />
+        </div>
+        <div class="room_info_row">
+            <span class="room_info_row_span right">Второй плеер:</span>
+            <input class="room_info_input" type="text"  name="second_player" />
+        </div>
+        <div class="room_info_row">
+            <span class="room_info_row_span right">Третий плеер:</span>
+            <input class="room_info_input" type="text"  name="third_player" />
+        </div>
+        <div class="room_info_block">
+            <p>	Стартовый рейтинг</p>
+            <div class="summary_start_rating">
+                <span class="big_number">0</span>
+                <p>Общий рейтинг</p>
+            </div>
+        </div>
+
+        <div class="room_create_btn">
+            <button class="create_new_room" type="submit">Добавить стрим</button>
+        </div>
+    </div>
+</form>
+<div class="close_category"></div>
