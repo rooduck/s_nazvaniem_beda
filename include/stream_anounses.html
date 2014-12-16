@@ -1,103 +1,89 @@
+<!--Начинаем интересный гайд как эту хрень заставить работать.
+Начнем с этого блока на странице юезра. Если у юзера нет пред. стримов И есть будущий стрим, то вы можете поступить по 2 вариантам:
+1)оставляете пустой slider_wrapper для  history_streams, тогда размер блока сохранится и там все будет ОК, просто блок будет пустой. можно вывести сообщение типа "пока что нет записей
+стримов(((". если че, этот вариант мне больше нравится.
+2)убирате вообще блок history_streams. В этом случае стрелочки справа и слева тоже нужно будет прятать, т.к. они предсназначены для работы слайдера, а слайдер не инициализируется из-за
+отсутсвия блока slider_wrapper
+Если у юзера нет И будущих стримов, то вообще можете этот блок не выводить, ибо он будет пустой
+
+Если у юзера ЕСТЬ будущий стрим, то в блок history_streams НУЖНО добавить класс next_stream_exist, а блоку future_streams - класс in_history !
+
+Если же у юзера есть хоть 1 стрим, но нет будущего, то блок future_streams можно не выводить. Класс next_stream_exist в таком случае тоже НЕ НАДО добавлять
+
+Класс slider отвечает за контейнер, в котором будут слайдится стримы, в случае страницы юзера этот класс ДОЛЖЕН быть у history_streams
+
+Со страницей анонсов все проще: там только блок future_streams (класс in_history НЕ нужен, класс slider НУЖЕН). Никаких особых условий не надо, просто foreach выводим блоки в slider_wrapper
+
+Блок up_anounses вообще хз когда выводится, выводить по надобности.
+-->
 <div class="stream_anounses">
 
-    <!--LINES-->
-    <div class="anounses_lines">
-        <div class="stick"></div>
-        <div class="first_line_an"></div>
-        <div class="second_line_an"></div>
-        <div class="third_line_an"></div>
-        <div class="fourth_line_an"></div>
-        <div class="fifth_line_an"></div>
-    </div>
-
-    <div class="the_hardest_part">
         <div class="prev_raspisanie"></div>
 
         <!--STREAMS SLIDER BLOCK-->
-        <div class="the_hardest_part_wrapper">
-
-            <div class="one_time_block">
-                <div class="anounsed_time">20:00</div>
-                <div class="streams_at_this_time">
-                    <div class="stream_row">
-                        <!---IF THIS STREAM IS LIVE THEN WE ADD LIVE SPAN-->
-                        <span class="stream_name">Dolgovec - Ничего не делаемвообщеничего <span>LIVE</span></span>
-                    </div>
-                    <div class="stream_row">
-                        <span class="stream_name">Dolgovec - Ничего не делаемвообщеничего</span>
-                    </div>
-                    <div class="stream_row">
-                        <span class="stream_name">Adolf - Гуляем с собакой <span>LIVE</span></span>
-                    </div>
-                </div>
+        <div class="history_streams slider next_stream_exist">
+            <div class="header">
+                История стримов
             </div>
-
-            <div class="one_time_block">
-                <div class="anounsed_time">20:00</div>
-                <div class="streams_at_this_time">
-                    <div class="stream_row">
-                        <!---IF THIS STREAM IS LIVE THEN WE ADD LIVE SPAN-->
-                        <span class="stream_name">Dolgovec - Ничего не делаемвообщеничего <span>LIVE</span></span>
+            <div class="slider_wrapper">
+                <div class="one_time_block">
+                    <div class="stream_name">
+                        Особенности национальной рыбалки - смотрим вместе!
                     </div>
-                    <div class="stream_row">
-                        <span class="stream_name">Dolgovec - Ничего не делаемвообщеничего</span>
-                    </div>
-                    <div class="stream_row">
-                        <span class="stream_name">Adolf - Гуляем с собакой <span>LIVE</span></span>
-                    </div>
+                    <div class="anounsed_time">20:00 19.12.14</div>
                 </div>
-            </div>
-
-            <div class="one_time_block">
-                <div class="anounsed_time">20:00</div>
-                <div class="streams_at_this_time">
-                    <div class="stream_row">
-                        <!---IF THIS STREAM IS LIVE THEN WE ADD LIVE SPAN-->
-                        <span class="stream_name">Dolgovec - Ничего не делаемвообщеничего <span>LIVE</span></span>
+                <div class="one_time_block">
+                    <div class="stream_name">
+                        DOTA2
                     </div>
-                    <div class="stream_row">
-                        <span class="stream_name">Dolgovec - Ничего не делаемвообщеничего</span>
-                    </div>
-                    <div class="stream_row">
-                        <span class="stream_name">Adolf - Гуляем с собакой <span>LIVE</span></span>
-                    </div>
+                    <div class="anounsed_time">20:00 19.12.14</div>
                 </div>
-            </div>
-
-            <div class="one_time_block">
-                <div class="anounsed_time">20:00</div>
-                <div class="streams_at_this_time">
-                    <div class="stream_row">
-                        <!---IF THIS STREAM IS LIVE THEN WE ADD LIVE SPAN-->
-                        <span class="stream_name">Dolgovec - Ничего не делаемвообщеничего <span>LIVE</span></span>
+                <div class="one_time_block">
+                    <div class="stream_name">
+                        Ломаем дизайн клиенту по его просьбе(
                     </div>
-                    <div class="stream_row">
-                        <span class="stream_name">Dolgovec - Ничего не делаемвообщеничего</span>
-                    </div>
-                    <div class="stream_row">
-                        <span class="stream_name">Adolf - Гуляем с собакой <span>LIVE</span></span>
-                    </div>
+                    <div class="anounsed_time">20:00 19.12.14</div>
                 </div>
-            </div>
-
-            <div class="one_time_block">
-                <div class="anounsed_time">20:00</div>
-                <div class="streams_at_this_time">
-                    <div class="stream_row">
-                        <!---IF THIS STREAM IS LIVE THEN WE ADD LIVE SPAN-->
-                        <span class="stream_name">Dolgovec - Ничего не делаемвообщеничего <span>LIVE</span></span>
+                <div class="one_time_block">
+                    <div class="stream_name">
+                        Турецкие горы - онлайн стрим с GoPro!
                     </div>
-                    <div class="stream_row">
-                        <span class="stream_name">Dolgovec - Ничего не делаемвообщеничего</span>
-                    </div>
-                    <div class="stream_row">
-                        <span class="stream_name">Adolf - Гуляем с собакой <span>LIVE</span></span>
-                    </div>
+                    <div class="anounsed_time">20:00 9.12.14</div>
                 </div>
+                <div class="one_time_block">
+                    <div class="stream_name">
+                        Покоряем ГМЛ за рандом!
+                    </div>
+                    <div class="anounsed_time">20:00 19.12.14</div>
+                </div>
+
             </div>
 
         </div>
+        <div class="future_streams in_history">
+            <div class="header">
+                Следующая трансляция
+            </div>
+            <div class="slider_wrapper">
+                <div class="one_time_block">
+                    <div class="stream_name">
+                        HLBM ND - speedrun
+                    </div>
+                    <div class="anounsed_time">20:00 19.12.14</div>
 
+                    <div class="up_anounses"></div>
+
+                    <div class="notification_checkbox">
+                        <form name="notificate_this_stream" action="">
+                            <input type="checkbox" name="check" class="blue_check"/>
+                            <div class="popup_hint"><!--hint, showed on hover-->
+                                <span>Уведомить о начале</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="next_raspisanie"></div>
-    </div>
+
 </div>

@@ -2,7 +2,7 @@
 ----------------------------------- */
 .icheckbox_futurico,
 .iradio_futurico,
-.icheckbox_futurico2, .icheckbox_futurico_white{
+.icheckbox_futurico2, .icheckbox_futurico_white,.blue{
     display: inline-block;
     *display: inline;
     vertical-align: middle;
@@ -19,32 +19,43 @@
 float:left;
 clear:both;
 }
+
 .icheckbox_futurico_white{
-background:url("/images/white_not_filled_radio.png") no-repeat;
+    background:url("/images/white_not_filled_radio.png") no-repeat;
 }
-    .icheckbox_futurico.checked {
-        background:url("/images/radio_checked.png") no-repeat;
-    }
-	.icheckbox_futurico_white.checked {
-        background:url("/images/white_radio.png") no-repeat;
-    }
-	
-	    .icheckbox_futurico2.checked {
-        background:url("../images/radio_checked.png") no-repeat;
-    }
-	.icheckbox_futurico.checked:hover {
-		background:url("/images/radio_checked_hover.png") no-repeat;
-	}
-		.icheckbox_futurico:hover{
-		background:url("/images/radio_hover.png") no-repeat;
-	}
-    .icheckbox_futurico.disabled {
-        background-position: -36px 0;
-        cursor: default;
-    }
-    .icheckbox_futurico.checked.disabled {
-        background-position: -54px 0;
-    }
+.icheckbox_futurico_white.checked {
+    background:url("/images/white_radio.png") no-repeat;
+}
+
+.blue{
+    background:url("../images/blue_checkbox.png") no-repeat;
+    width: 20px;
+    height: 20px;
+}
+.blue.checked {
+    background:url("../images/blue_checkbox_checked.png") no-repeat;
+}
+
+.icheckbox_futurico.checked {
+    background:url("/images/radio_checked.png") no-repeat;
+}
+.icheckbox_futurico:hover{
+    background:url("/images/radio_hover.png") no-repeat;
+}
+.icheckbox_futurico.checked:hover {
+    background:url("/images/radio_checked_hover.png") no-repeat;
+}
+.icheckbox_futurico.disabled {
+    background-position: -36px 0;
+    cursor: default;
+}
+.icheckbox_futurico.checked.disabled {
+    background-position: -54px 0;
+}
+
+.icheckbox_futurico2.checked {
+    background:url("../images/radio_checked.png") no-repeat;
+}
 .icheckbox_dark_blue{
     vertical-align: middle;
 }

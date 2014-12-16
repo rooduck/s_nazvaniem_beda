@@ -1,10 +1,10 @@
 //INCLUDING PARTS IN ONE, U DON'T NEED THIS IN DEV I THINK
 $(function(){
     $("#header").load("include/header.html");
-    $(".site_filter").load("include/menu.html");
+   // $(".site_filter").load("include/menu.html");
     $(".all_streams_wrapper, .all_rooms_wrapper").load("include/streams_list.html");
     $(".top_category_rating").load("include/category_rating.html");
-    $(".block_before_streams").load("include/back_block.html");
+    //$(".block_before_streams").load("include/back_block.html");
     $(".chat_buttons").load("include/chat_buttons.html");
     $(".chat_wrapper").load("include/chat.html");
     $(".room_userlist_page").load("include/room_userlist.html");
@@ -49,7 +49,7 @@ $(function(){
             }
         }, options);
 
-        this.empty().append("<canvas height ="+57 + " width="+57+" id='my-canvas"+settings.num+"'/ ></canvas>");
+        this.empty().append("<canvas height ="+45 + " width="+45+" id='my-canvas"+settings.num+"'/ ></canvas>");
         var canvas = document.getElementById('my-canvas'+settings.num);
         var x = canvas.width / 2;
         var y = canvas.height / 2;
@@ -302,9 +302,11 @@ $(document).ready(function(){
 
 
         /*BROADCAST SCHEDULE*/
-
-        $(".the_hardest_part_wrapper").carouFredSel({
-            items               : {visible: 4,minimum:4},
+        var slides=4;
+        if ($(".slider").hasClass('future_streams'))
+            slides=5;
+        $(".slider .slider_wrapper").carouFredSel({
+            items               : {visible: slides,minimum:slides+1},
             auto:{play:false},
             circular: false,
             infinite: false,
@@ -313,7 +315,7 @@ $(document).ready(function(){
             prev        : {button: ".prev_raspisanie",direction:"left",easing:"linear"},
             next        : {button: ".next_raspisanie",direction:"right",easing:"linear"},
             scroll : {
-                items           : 4,
+                items           : slides,
                 easing          : "linear",
                 duration        : 1000,
                 pauseOnHover    : true
@@ -1159,6 +1161,10 @@ $(document).ready(function(){
         checkboxClass: 'icheckbox_futurico',
         radioClass: 'icheckbox_futurico2'
     });
+    $('.blue_check').iCheck({
+        cursor: true,
+        checkboxClass: 'blue'
+    });
     $('.white_checkbox').iCheck({
         cursor: true,
         checkboxClass: 'icheckbox_futurico_white',
@@ -1289,11 +1295,11 @@ $(document).ready(function(){
             num : numb,
             starting: 0,
             ending: parseInt($(this).find('.how_much_fill').text()),
-            lineWidth: 6,
-            color:'#3189ef',
+            lineWidth: 2,
+            color:'#3399ff',
             fontSize:'0px',
-            backgroundColor: '#193c65',
-            radius:24
+            backgroundColor: '#11355c',
+            radius:19
         });
         numb++;
     });
@@ -1304,11 +1310,11 @@ $(document).ready(function(){
             num : numb,
             starting: 0,
             ending: parseInt($(this).find('.how_much_fill').text()),
-            lineWidth: 6,
-            color:'#0fd483',
+            lineWidth: 2,
+            color:'#54daa3',
             fontSize:'0px',
-            backgroundColor: '#095d42',
-            radius:24
+            backgroundColor: '#125338',
+            radius:19
         });
         numb++;
     });
@@ -1319,11 +1325,11 @@ $(document).ready(function(){
             num : numb,
             starting: 0,
             ending: parseInt($(this).find('.how_much_fill').text()),
-            lineWidth: 6,
-            color:'#f9ea42',
+            lineWidth: 2,
+            color:'#f8ca67',
             fontSize:'0px',
-            backgroundColor: '#696628',
-            radius:24
+            backgroundColor: '#6a521d',
+            radius:19
         });
         numb++;
     });
@@ -1334,11 +1340,11 @@ $(document).ready(function(){
             num : numb,
             starting: 0,
             ending: parseInt($(this).find('.how_much_fill').text()),
-            lineWidth: 6,
-            color:'#bf1d30',
+            lineWidth: 2,
+            color:'#d63447',
             fontSize:'0px',
-            backgroundColor: '#4f0f1e',
-            radius:24
+            backgroundColor: '#66141e',
+            radius:19
         });
         numb++;
     });

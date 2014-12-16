@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Funstreams.tv</title>
+
+    <link type="image/x-icon" href="favicon.ico" rel="shortcut icon"/>
+    <link href="css/style.css" media="all" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" href="css/jquery.selectBoxIt.css" />
+    <link href="css/futurico.css" rel="stylesheet"/>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+    <script src="js/icheck.js" type="text/javascript"></script>
+    <script src="js/jquery.carouFredSel-6.2.1.js"  type="text/javascript"></script>
+    <script src="js/jquery.selectBoxIt.min.js" type="text/javascript"></script>
+    <script src="js/filter.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+    <script src="js/rating.js" type="text/javascript"></script>
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+<!--HEADER OLD VERSION-->
+<div id="header">
+    <!--include header.html-->
+</div>
+
+<!--STREAM ZONE WRAPPER-->
+<div id="workarea">
+
+    <!--STREAMS ZONE-->
+    <div id="streams_part">
+
+        <!--TOP PAGE MENU, USER INFO INSTEAD OF MENU-->
+        <div class="top_streams_menu">
+            <div class="site_filter profile">
+                <div class="user_main_info">
+                    <img src="images/userstream_ava.jpg" width="80" height="80" /> <!--user avatar here-->
+
+                    <div class="row">
+                        <span class="text_18_white">Igor GHK</span><!--user name-->
+                        <div class="icon_redact"><!--redact icon-->
+                            <img src="images/icon_redact.png" width="11" height="11"/>
+                            <div class="popup_hint"><!--hint, showed on hover-->
+                                <span>Редактировать</span>
+                            </div>
+                        </div>
+                        <div class="icon_message"><!--redact icon-->
+                            <img src="images/icon_message.png" width="16" height="10"/>
+                            <div class="popup_hint"><!--hint, showed on hover-->
+                                <span>Написать</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text_12_blue">Пользователь</div><!--user rights???-->
+                    <div class="row text_12_grey">Skype: IgorGHK</div> <!--Skype-->
+                    <div class="row"><a href="#" class="text_12_grey">IgorGHK.tv</a></div><!--link somewhere-->
+                </div>
+
+                <div class="profile_lvl_wrapper"><!--wrapper for filling level circles-->
+
+                    <div class="profile_lvl streamer"><!--streamer-->
+                        <div class="for_canvas"></div><!--script will draw here a circle-->
+                        <span class="lvl_name">Стример</span><!--level name-->
+                        <span class="lvl_exp text_10_grey">268/300 exp</span><!--exp for thislevel-->
+                        <span class="lvl">8</span><!--level-->
+                        <span class="how_much_fill">30</span>   <!--ATTENTION!!! in this field u must write a number from 0 to 100,
+                        in order to plugin fill that circle correctly.
+                        For example, 100* 268/300 = 89, so u must give this container number 89-->
+                    </div>
+
+                    <div class="profile_lvl author">
+                        <div class="for_canvas"></div>
+                        <span class="lvl_name">Автор</span>
+                        <span class="lvl_exp text_10_grey">78/300 exp</span>
+                        <span class="lvl">4</span>
+                        <span class="how_much_fill">20</span>
+                    </div>
+                    <div class="profile_lvl support">
+                        <div class="for_canvas"></div>
+                        <span class="lvl_name">Саппорт</span>
+                        <span class="lvl_exp text_10_grey">150/300 exp</span>
+                        <span class="lvl">2</span>
+                        <span class="how_much_fill">50</span>
+                    </div>
+                    <div class="profile_lvl robot">
+                        <div class="for_canvas"></div>
+                        <span class="lvl_name">Робот</span>
+                        <span class="lvl_exp text_10_grey">180/300 exp</span>
+                        <span class="lvl">9</span>
+                        <span class="how_much_fill">60</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="top_streams_menu_create profile">
+                <!---USE THAT BLOCK AND TEXT WHAT U NEED-->
+                <!--'NOT_ACTIVE' CLASS ADDED WHEN USER IS NOT REGISTRED-->
+                <button class="blue_but not_active" style="display: none">Начать стрим</button>
+                <!--add 'follow' class when user is subscribed to this streamer-->
+                <button class="blue_but follow">Подписаться</button>
+                <span class="text">вы не залогинены</span>
+            </div>
+
+        </div>
+
+        <!--OPEN STREAM-->
+        <div class="main_block">
+
+            <div class="block_before_streams">
+                <span class="profile_text">Трансляция пользователя:</span>
+            </div>
+
+            <div class="user_tream_page_wrapper min_param" id="dynamic_filter_content">
+                <!--Player-->
+                <div class="main_userpage_stream_block" >
+                    <object width="903" style="display: none" height="511" bgcolor="#000b1b" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=welovegames" id="live_embed_player_flash" type="application/x-shockwave-flash">
+                        <param value="true" name="allowFullScreen">
+                        <param value="always" name="allowScriptAccess">
+                        <param value="all" name="allowNetworking">
+                        <param value="http://www.twitch.tv/widgets/live_embed_player.swf" name="movie">
+                        <param value="hostname=www.twitch.tv&amp;channel=welovegames&amp;auto_play=true&amp;start_volume=25" name="flashvars">
+                    </object>
+                    <!--if user is not streaming than use this zaglushka!-->
+                    <div class="zaglushka_stream">
+                        <span>этот пользователь не проводил трансляций</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--STREAM PAGE BLOCKS CHAT-->
+                <div style="display: none" class="user_chats">
+                    <div class="chats_wrapper">
+
+                        <!--CHAT HEADER OLD VERSION-->
+                        <div class="chat_header">
+                            <div class="chat_to_streamer">Чат: </div>
+                            <div class="chats_list">
+                                <div class="selected_channel">
+                                    <span class="text">какой-то крутой канал1</span>
+                                    <div class="arrow_block"></div>
+                                </div>
+                                <div class="popup_chats_list">
+                                    <div class="popup_chats_list_wrapper">
+                                        <div class="channel_name_row">
+                                            <span class="chat_people">103</span>
+                                            <span class="chat_name">какой-то крутой канал1</span>
+
+                                        </div>
+                                        <div class="channel_name_row">
+                                            <span class="chat_people">103</span>
+                                            <span class="chat_name">какой-то крутой канал2</span>
+
+                                        </div>
+                                        <div class="channel_name_row">
+                                            <span class="chat_people">3</span>
+                                            <span class="chat_name">какой-то крутой канал3</span>
+
+                                        </div>
+                                        <div class="channel_name_row">
+                                            <span class="chat_people">1033</span>
+                                            <span class="chat_name">какой-то крутой канал4</span>
+
+                                        </div>
+                                        <div class="channel_name_row">
+                                            <span class="chat_people">3</span>
+                                            <span class="chat_name">какой-то крутой канал5</span>
+                                        </div>
+                                        <div class="channel_name_row">
+                                            <span class="chat_people">3</span>
+                                            <span class="chat_name">какой-то крутой канал6</span>
+                                        </div>
+                                        <div class="channel_name_row">
+                                            <span class="chat_people">3</span>
+                                            <span class="chat_name">какой-то крутой канал7</span>
+                                        </div>
+                                        <div class="channel_name_row">
+                                            <span class="chat_people">3</span>
+                                            <span class="chat_name">какой-то крутой канал8</span>
+                                        </div>
+                                        <div class="channel_name_row">
+                                            <span class="chat_people">3</span>
+                                            <span class="chat_name">qweqweqw</span>
+                                        </div>
+                                        <div class="channel_name_row">
+                                            <span class="chat_people">3</span>
+                                            <span class="chat_name">43qg34 4 q43 gg </span>
+                                        </div>
+                                        <div class="channel_name_row">
+                                            <span class="chat_people">3</span>
+                                            <span class="chat_name"> erg reg ergwe  erg erwgr</span>
+                                        </div>
+                                        <div class="channel_name_row">
+                                            <span class="chat_people">3</span>
+                                            <span class="chat_name">qreew f wefqwqewer</span>
+                                        </div>
+                                        <div class="channel_name_row">
+                                            <span class="chat_people">3</span>
+                                            <span class="chat_name">43243242432423432432</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chat_streamer_action">
+                                <span class="text">WeLoveGamesTV</span>
+                                <div class="popup_actions_list click_user_popup">
+                                    <div class="popup_actions_list_wrapper">
+                                        <div class="click_user_popup_row">
+                                            Забанить
+                                        </div>
+                                        <div class="click_user_popup_row">
+                                            Выключить
+                                        </div>
+                                        <div class="click_user_popup_row">
+                                            Написать
+                                        </div>
+                                        <div class="click_user_popup_row">
+                                            Задонатить
+                                        </div>
+                                        <div class="click_user_popup_row">
+                                            Замутить
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chat_body">
+
+                            <!--CHAT-->
+                            <div class="chat_wrapper">
+                                <!--include chat.html-->
+                            </div>
+
+                            <form action="" name="chat_message_form">
+                                <input type="text" placeholder="Напиши сюда скорей!" class="chat_input" name="chat_message" />
+                                <button type="submit" class="send_blue"></button>
+                            </form>
+
+                            <div class="chat_buttons">
+                                <!--include chat_buttons.html-->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            <div class="chat_bottom_line"></div>
+        </div>
+
+        <!--BROADCAST SCHEDULE OLD VERSION-->
+        <div class="bottom_media_zone">
+            <!--include stream_anounses.html-->
+        </div>
+    </div>
+</div>
+
+<!--CONTENT ZONE-->
+<div id="wrapper_content">
+    <div id="content_part">
+
+        <!--CONTENT PAGE MENU-->
+        <div class="content_streams_menu">
+
+            <div class="site_filter">
+                <!--include menu.html-->
+            </div>
+
+            <div class="content_menu_create">
+                <!---USE THAT BLOCK WHAT U NEED-->
+                <button class="create_content_but">Добавить статью</button>
+                <span class="some_plus">+</span>
+                <span class="text">Для того чтобы добавить статью, необходимо <span>зарегистрироваться</span></span>
+            </div>
+        </div>
+
+        <!--ARTICLES LIST AND BEST ARTICLES-->
+        <div class="content_main_block" >
+
+            <!--ARTICLE LIST-->
+            <div class="left_column article_list">
+                <!--include article_list.html-->
+            </div>
+
+            <!--BEST ARTICLES-->
+            <div class="right_column best_articles">
+                <!--include best_articles.html-->
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+<!--POPUPS BLOCK-->
+
+<!--CREATE STREAM-->
+<div class="create_stream_popup" style="visibility:hidden">
+    <!--include popup_create_stream.html-->
+</div>
+
+<!---VALUTE POPUP-->
+<div class="valute_popup hide_popup">
+    <!--include popup_valute.html-->
+</div>
+
+<!--ADD CASH POPUP-->
+<div id="add_cash_popup" class="add_cash_popup hide_popup" >
+    <!--include popup_add_cash.html-->
+</div>
+
+<!--REGIST POPUP-->
+<div class="registration_popup hide_popup">
+    <!--include popup_registration.html-->
+</div>
+
+<!--SEARCH POPUP-->
+<div class="search_popup hide_popup">
+    <!--include popup_search.html-->
+</div>
+
+<!--OPTIONS POPUP-->
+<div class="options_popup hide_popup">
+    <!--include popup_options.html-->
+</div>
+
+<!--UVEDOMLENIA/PREDUPREJDENIA POPUP-->
+<div class="sysmess_wrapper">
+    <!--include popup_sysmess.html-->
+</div>
+
+<!--HOW MUCH DONATE POPUP-->
+<div class="how_much_donate_popup hide_popup">
+    <!--include popup_donate.html-->
+</div>
+
+<!--ERROR MESSAGES-->
+<div class="error_popup">
+    <div class="warning_block"></div>
+    <div class="error_text">
+        <span>Неправильно введен пароль, попробуйте еще раз + еще строка</span>
+    </div>
+</div>
+
+<!--CHANGE PASSWORD POPUP-->
+<div class="change_pwd_popup">
+    <!--include popup_change_password.html-->
+</div>
+
+<!--RESTORE PASSWORD POPUP-->
+<div class="restore_pwd_popup">
+    <!--include popup_forgot_password.html-->
+</div>
+
+<!--RESTORE PASSWORD POPUP-->
+<div class="check_pwd_popup">
+    <!--include popup_check_passw.html-->
+</div>
+
+<!--AUTHORIZATION PASSWORD POPUP-->
+<!--DO WE USE IT?-->
+<div class="autorization_popup">
+    <!--include popup_authorization.html-->
+</div>
+
+<!--OTHER CATEGORY CHOOSE-->
+<div class="other_category_choose ">
+    <!--include popup_choose_category.html-->
+</div>
+
+<!--CREATE ROOM POPUP-->
+<div class="create_room_popup ">
+    <!--include popup_create_room.html-->
+</div>
+
+<div class="fade"></div>
+</body>
+</html>
