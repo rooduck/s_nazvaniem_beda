@@ -1,70 +1,87 @@
-    <!--LEFT MENU PART WITH USER FILTERS-->
-    <div class="left_menu">
-        <div class="left_menu_column_text content_filter">
-            <span class="active first">все</span>
-            <span class="second">коллекция</span>
-            <span class="third">избранное(55)</span>
+<!--
+Инустркуция к применению:
+Т.к. у нас меню вверху и внизу идентичны, я не использую id тут.
+Вся логика работы: смена пунктов меню, добавления выбранного в бредкрамбс, переход обратно по бредкрамбс и пр., - я оставил вам.
+Для навигации по меню решил использовать список, если у вас есть другие предпочтения\пожелания - пишите.
+Не уверен, что у вас будет идти именно <a> в списке, поэтому добавил класс, можете менять.
+Сеператор запихнул как бг активного пункта (по которому можно перейти)
+Значек "другие" добавлять в том случае, когда много пунктов и все не влазят.
+Важно! Последним пунктом должен идти span!
+
+Это же меню в контенте:
+<div class="back_to_stream live"> - нафиг не нужен там (наверное, макетов не было), не пихайте его там.
+
+-->
+<!--LEFT MENU PART WITH USER FILTERS-->
+    <div class="left_menu content_filter">
+        <div class="filter_block ">
+            <div class="all_content_icon filter_icon active"></div>
+            <div class="popup_hint"><!--hint, showed on hover-->
+                <span>Всё</span>
+            </div>
         </div>
-        <div class="menu_lines">
-            <div class="stick"></div>
-            <div class="first_topmenu_line active"></div>
-            <div class="second_topmenu_line"></div>
-            <div class="third_topmenu_line"></div>
+        <div class="filter_block">
+            <div class="favorites_icon filter_icon"></div>
+            <div class="popup_hint"><!--hint, showed on hover-->
+                <span>Избранное</span>
+            </div>
+        </div>
+        <div class="filter_block">
+            <div class="collection_icon filter_icon"></div>
+            <div class="popup_hint"><!--hint, showed on hover-->
+                <span>Коллекция</span>
+            </div>
         </div>
     </div>
     <!--RIGHT MENU PART WITH CONTENT FILTER-->
     <div class="right_menu" >
-        <div class="first_cat_level">
+        <div class="breacdcrubms_wrapper">
+            <!--Not sure when we must use 'live' class. It gives a red circle to the left of back link-->
+            <div class="back_to_stream live"><a href="#">WelovegamesTV channel</a></div>
+            <div class="breadcrubms">
+                <ul>
+                    <li>
+                        <a href="#" class="active_li">Вернуться в начало</a>
+                    </li>
+                    <li>
+                        <a href="#" class="active_li">Стримы</a>
+                    </li>
+                    <li>
+                        <a href="#" class="active_li">Киберспорт</a>
+                    </li>
+                    <li>
+                        <span>Выберите следующий пункт меню</span><!--last option is always span!-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="cat_level">
             <div class="cifri_wrapper active">
                 <a href="#" class="click_filter">Стримы</a>
-                <span class="cifri">333</span>
+                <span class="cifri">3</span>
             </div>
             <div class="cifri_wrapper">
-                <a href="#" class="click_filter">Видео</a>
-                <span class="cifri">+33</span>
-            </div>
-            <div class="cifri_wrapper">
-                <a href="#" class="click_filter">Записи</a>
-                <span class="cifri">+6666</span>
-            </div>
-            <div class="cifri_wrapper">
-                <a href="#" class="click_filter">Комнаты</a>
-                <span class="cifri">7</span>
-            </div>
-            <div class="cifri_wrapper">
-                <a href="#" class="click_filter">Рабочие</a>
-                <span class="cifri">333</span>
-            </div>
-        </div>
-        <div class="second_cat_level">
-            <div class="cifri_wrapper">
-                <a href="#" class="click_filter">Все стримы</a>
-            </div>
-            <div class="cifri_wrapper">
-                <a href="#" class="click_filter">Игры</a>
-            </div>
-            <div class="cifri_wrapper">
-                <a href="#" class="active click_filter">Киберспорт</a>
-            </div>
-            <div class="cifri_wrapper">
-                <a href="#" class="click_filter">Реалы</a>
-            </div>
-        </div>
-        <div class="third_cat_level">
-            <div class="cifri_wrapper">
-                <a href="#" class="active click_filter">Все</a>
+                <a href="#" class="click_filter">Counter-strike</a>
+                <span class="cifri">9</span>
             </div>
             <div class="cifri_wrapper">
                 <a href="#" class="click_filter">LoL</a>
+                <span class="cifri">+</span>
             </div>
             <div class="cifri_wrapper">
-                <a href="#" class="click_filter">Sc2</a>
+                <a href="#" class="click_filter">Starcraft</a>
+                <span class="cifri">1</span>
             </div>
             <div class="cifri_wrapper">
-                <a href="#" class="click_filter">DotA 2</a>
+                <a href="#" class="click_filter">Headrtstone</a>
+                <span class="cifri">2</span>
             </div>
-            <div class="cifri_wrapper">
-                <a href="#" class="show_category_search">Другие</a>
+            <!--add when there are 2 much items in menu-->
+            <div class="other">
+                <div class="other_icon"></div>
+                <div class="popup_hint">
+                    <span>другие</span>
+                </div>
             </div>
         </div>
     </div>

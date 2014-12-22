@@ -1,7 +1,7 @@
 //INCLUDING PARTS IN ONE, U DON'T NEED THIS IN DEV I THINK
 $(function(){
     $("#header").load("include/header.html");
-   // $(".site_filter").load("include/menu.html");
+    $(".site_filter").load("include/menu.html");
     $(".all_streams_wrapper, .all_rooms_wrapper").load("include/streams_list.html");
     $(".top_category_rating").load("include/category_rating.html");
     //$(".block_before_streams").load("include/back_block.html");
@@ -29,7 +29,7 @@ $(function(){
     $(".autorization_popup").load("include/popup_authorization.html");
 });
 
-// PLUGIN FOR FILLING A CIRCLE, NOT SURE IF WE STILL NEED IT
+// PLUGIN FOR FILLING A CIRCLE
 (function($){
     $.fn.rotator = function(options){
         var settings = $.extend({
@@ -130,44 +130,80 @@ $(document).ready(function(){
         /*HEADER*/
 
         //show user_popup_profile
-        $('.user_pic').click(function(){
-            $(this).find('.user_pic_arrow').toggle();
-            if ($('#user_popup').css('visibility')=='hidden')
-            {
-                $('#user_popup').css('visibility','visible');
-                $('.user_popup_body').css('top','88px');
+        $('.li_first, .li_second, .li_third, .some_li .messages').click(function(){
+            $('#user_popup').css('visibility','visible');
+            $('.user_popup_body').css('visibility','hidden');
+            //check which option is clicked
+            if ($(this).hasClass('li_first') || $(this).hasClass('messages'))  {
+                //check active class for hide/show #user_popup
+                if ($(this).parent().hasClass('active'))  {
+                    $(this).parent().toggleClass('active');
+                    $('#user_popup').css('visibility','hidden');
+                }
+                else  {
+                    $('.user_popup_body.user_messages').css('visibility','visible');
+                    $('.li_first, .li_second, .li_third').parent().removeClass('active');
+                    $(this).parent().addClass('active');
+                }
+
             }
-            else
-            {
-                $('#user_popup').css('visibility','hidden');
-                $('.user_popup_body').css('top','-9999px');
+            else if ($(this).hasClass('li_second'))  {
+                if ($(this).parent().hasClass('active'))  {
+                    $(this).parent().toggleClass('active');
+                    $('#user_popup').css('visibility','hidden');
+                }
+                else  {
+                    $('.user_popup_body.user_streams').css('visibility','visible');
+                    $('.li_first, .li_second, .li_third').parent().removeClass('active');
+                    $(this).parent().addClass('active');
+                }
+            }
+            else if ($(this).hasClass('li_third'))  {
+                if ($(this).parent().hasClass('active'))  {
+                    $(this).parent().toggleClass('active');
+                    $('#user_popup').css('visibility','hidden');
+                }
+                else  {
+                    $('.user_popup_body.user_options').css('visibility','visible');
+                    $('.li_first, .li_second, .li_third').parent().removeClass('active');
+                    $(this).parent().addClass('active');
+                }
             }
         });
-
-        //changing class to active user_popup_menu and switch tabs
-        $('#user_popup_menu li').click(function(){
-            $('#user_popup_menu li').each(function(){
-                $(this).removeClass('active_li');
-                $(this).find('a').removeClass('active');
-            });
-            $(this).addClass('active_li');
-            $(this).find('a').addClass('active');
-
-            $(".user_popup_body").each(function(){
-                $(this).css('visibility','hidden');
-            });
-
-            //show popup user's category
-            if ( $(this).find('a').hasClass("seven_menu_pic") )
-                $(".user_achievements").css('visibility','visible');
-            else if ( $(this).find('a').hasClass("third_menu_pic") )
-                $(".user_messages").css('visibility','visible');
-            else if ( $(this).find('a').hasClass("second_menu_pic") )
-                $(".user_streams").css('visibility','visible');
-            else if ( $(this).find('a').hasClass("first_menu_pic") )
-                $(".user_profile").css('visibility','visible');
+        //add to ignore
+        $('.user_control_icon2, .dark_grey_button').click(function () {
+           $('.user_main_menu_hit.ignore').toggle();
         });
-
+        //open popup with smiles
+        $('#user_popup .smiles_img').click(function(){
+            $('#user_popup .click_user_popup').toggle();
+            $(this).toggleClass('active');
+        });
+        //change class of subscribe category
+        $('.user_category_list_row').click(function() {
+            $('.user_category_list_row').removeClass('active');
+            $(this).addClass('active');
+        });
+        //change text and class when delete/restore from subscribes
+        $('.delete_from_favor').click(function(){
+            $(this).toggleClass('restore');
+        });
+        //tabs in options in user popup
+        $('.content_ignore_cell').click(function(){
+            $('.user_right_block_chats_ignore').hide();
+            $('.user_right_block_main_settings').hide();
+            $('.user_right_block_content_ignore').show();
+        });
+        $('.user_ignore_cell').click(function(){
+            $('.user_right_block_content_ignore').hide();
+            $('.user_right_block_main_settings').hide();
+            $('.user_right_block_chats_ignore').show();
+        });
+        $('.option_cell').click(function(){
+            $('.user_right_block_chats_ignore').hide();
+            $('.user_right_block_content_ignore').hide();
+            $('.user_right_block_main_settings').show();
+        });
         //menu in user popup cabinet, achievments
         $('.submenu.achievements li').click(function(){
             $('.submenu.achievements li').each(function(){
@@ -192,11 +228,6 @@ $(document).ready(function(){
             $(this).addClass('active');
         });
 
-        //calculating width for x-scrolled blocks (in px instead of %)
-        var horizontal_block_podpiski_width = $(".user_streams_list .favorite_stream").size()*265;//265 - outerWidth
-        $(".user_streams_list_wrapper").css('width',horizontal_block_podpiski_width);
-        var horizontal_block_ignorelist_width = $(".user_streams_ignore_list .favorite_stream").size()*265;//265 - outerWidth
-        $(".user_streams_ignore_list_wrapper").css('width',horizontal_block_ignorelist_width);
 
         //del from favorite, ignorelist
         $('.favorite_del').click(function(){
@@ -207,37 +238,18 @@ $(document).ready(function(){
             $('.stream_popup_del').hide();
         });
 
-        //favorite submenu switcher
-        $('.submenu_li.podpiski').click(function(){
-            $('.user_streams_wrapper').show();
-            $('.user_streams_ignore_wrapper').hide();
-        });
-
-        $('.submenu_li.ignorelist').click(function(){
-            $('.user_streams_wrapper').hide();
-            $('.user_streams_ignore_wrapper').show();
-        });
 
 
         /*TOP MENU*/
-
-        //left part switch class
-        $('.top_streams_menu .left_menu_column_text span').click(function(){
-            $('.top_streams_menu .left_menu_column_text span').each(function(){
-                $(this).removeClass('active');
-                $('.top_streams_menu .menu_lines div').removeClass('active');
-            });
-            if ($(this).hasClass('first'))
-                $('.top_streams_menu .menu_lines .first_topmenu_line').addClass('active');
-            else if ($(this).hasClass('second'))
-                $('.top_streams_menu .menu_lines .second_topmenu_line').addClass('active');
-            else if ($(this).hasClass('third'))
-                $('.top_streams_menu .menu_lines .third_topmenu_line').addClass('active');
+        //add class on click
+        $('.filter_icon').click(function(){
+            $('.filter_icon').removeClass('active');
             $(this).addClass('active');
         });
 
+
         //menu switch active
-        $('.top_streams_menu .first_cat_level  .cifri_wrapper, .top_streams_menu .second_cat_level  .cifri_wrapper, .top_streams_menu .third_cat_level .cifri_wrapper').click(function(){
+        $('.top_streams_menu .cat_level .cifri_wrapper').click(function(){
             $(this).each(function(){
                 $(this).removeClass('active');
             });
@@ -303,7 +315,7 @@ $(document).ready(function(){
 
         /*BROADCAST SCHEDULE*/
         var slides=4;
-        if ($(".slider").hasClass('future_streams'))
+        if ($(".slider").hasClass('future_streams') || (!$(".slider").hasClass('next_stream_exist')))
             slides=5;
         $(".slider .slider_wrapper").carouFredSel({
             items               : {visible: slides,minimum:slides+1},
@@ -329,26 +341,8 @@ $(document).ready(function(){
 
         /*menu*/
 
-        //content_left_streamers_menu
-        $('.content_streams_menu .left_menu_column_text span').click(function(){
-            $('.content_streams_menu .left_menu_column_text span').each(function(){
-                $(this).removeClass('active');
-                $('.content_streams_menu .menu_lines div').removeClass('active');
-            });
-
-            if ($(this).hasClass('first'))
-                $('.content_streams_menu .menu_lines .first_topmenu_line').addClass('active');
-            else if ($(this).hasClass('second'))
-                $('.content_streams_menu .menu_lines .second_topmenu_line').addClass('active');
-            else if ($(this).hasClass('third'))
-                $('.content_streams_menu .menu_lines .third_topmenu_line').addClass('active');
-            else if ($(this).hasClass('fourth'))
-                $('.content_streams_menu .menu_lines .fourth_topmenu_line').addClass('active');
-            $(this).addClass('active');
-        });
-
         //menu switch active
-        $('.content_streams_menu .first_cat_level .cifri_wrapper, .content_streams_menu .second_cat_level .cifri_wrapper, .content_streams_menu .third_cat_level .cifri_wrapper').click(function(){
+        $('.content_streams_menu .cat_level .cifri_wrapper').click(function(){
             $(this).each(function(){
                 $(this).removeClass('active');
             });
@@ -456,20 +450,6 @@ $(document).ready(function(){
             $('.up_rating, .down_rating').removeClass('selected');
         });
 
-        //popup s valutoi OLD VERSION
-        $('.li_second').click(function(){
-            $('.hide_popup').hide();
-            $('.valute_popup').show();
-            if ($(this).hasClass('active')) {
-                $(this).removeClass('active');
-                $('.valute_popup').hide();
-            }
-            else {
-                $('.user_main_menu .some_li').find('div').removeClass('active');
-                $(this).addClass('active');
-                $('.valute_popup').show();
-            }
-        });
 
         //valute popup tabs
         $('.operacii_tabs .oper_tab').click(function(){
@@ -494,41 +474,6 @@ $(document).ready(function(){
             $('.add_cash_popup').show();
         });
 
-        //popup search
-        $('.user_main_menu .li_first').click(function(){
-            $('.hide_popup').hide();
-            if ($(this).hasClass('active')) {
-                $(this).removeClass('active');
-                $('.search_popup').hide();
-            } else {
-                if($(window).width()>1200)
-                    $('.search_popup').css('right',($(window).width()-1200)/2+11+'px');
-                else
-                    $('.search_popup').css('right','');
-                $('.user_main_menu .some_li').find('div').removeClass('active');
-                $(this).addClass('active');
-                $('.search_popup').show();
-            }
-        });
-
-        //option popup
-        $('.user_main_menu .li_fourth').click(function(){
-            $('.hide_popup').hide();
-            if ($(this).hasClass('active')) {
-                $(this).removeClass('active');
-                $('.options_popup').hide();
-
-            } else {
-                if($(window).width()>1200)
-                    $('.options_popup').css('right',($(window).width()-1200)/2+11+'px');
-                else
-                    $('.options_popup').css('right','');
-                $('.user_main_menu .some_li').find('div').removeClass('active');
-                $(this).addClass('active');
-                $('.options_popup').show();
-            }
-        });
-
         //forget_passw_popup
         $('a.text_popup').click(function(){
             $('.restore_pwd_popup').css("visibility","visible");
@@ -536,20 +481,7 @@ $(document).ready(function(){
             $('fade').show();
         });
 
-        //create stream popup in top menu
-        $('.user_main_menu .li_third').click(function(){
-            $('.hide_popup').hide();
-            if ($(this).hasClass('active')) {
-                $(this).removeClass('active');
-                $('.create_stream_popup').css('visibility','hidden');
 
-            } else {
-                $('.user_main_menu .some_li').find('div').removeClass('active');
-                $(this).addClass('active');
-                $('.create_stream_popup').css('visibility','visible');
-                $('.fade').show();
-            }
-        });
 
         //create stream popup button
         $('.create_stream_but').click(function(){
@@ -661,6 +593,13 @@ $(document).ready(function(){
             if ($(event.target).closest(".click_user_popup2 .chat_list_wrapper2").length || $(event.target).closest(".enter_comment .smiles_img").length) return;
             else
                 $('.click_user_popup2').hide();
+            //USER POPUP SMILES
+            if ($(event.target).closest("#user_popup .click_user_popup .smiles_at_this_group").length || $(event.target).closest("#user_popup .smiles_img").length) return;
+            else
+            {
+                $('.click_user_popup').hide();
+                $('#user_popup .smiles_img').removeClass('active');
+            }
             //CHAT SMILES
             if (!$(event.target).hasClass('chat_smiles') && $(event.target).closest(".smaili").length || $(event.target).closest(".smiles.chat_pic").length) return;
             else {
@@ -685,18 +624,19 @@ $(document).ready(function(){
                 $('.poll_results').hide();
                 $('.poll3.chat_pic').removeClass('active');
             }
-            //OPTIONS IN TOP HEADER LINE
-            if ($(event.target).closest(".options_popup").length || $(event.target).closest(".li_fourth").length) return;
+            //ignore popup in iser message list
+            if ($(event.target).closest(".user_control_icon2").length || $(event.target).closest(".user_main_menu_hit.ignore").length) return;
+            else
+                $('.user_main_menu_hit.ignore').hide();
+            //#USER_POPUP
+            if ($(event.target).closest("#user_popup").length || $(event.target).closest(".user_main_menu .some_li").length) return;
             else {
-                $('.options_popup').hide();
-                $('.li_fourth').removeClass('active');
+                $('#user_popup').css('visibility','hidden');
+                $('.user_popup_body').css('visibility','hidden');
+                $('.some_li').removeClass('active');
             }
-            //SEARCH IN TOP HEADER LINE
-            if ($(event.target).closest(".search_popup").length || $(event.target).closest(".li_first").length) return;
-            else {
-                $('.search_popup').hide();
-                $('.li_first').removeClass('active');
-            }
+
+
             event.stopPropagation();
         });
 
@@ -885,20 +825,41 @@ $(document).ready(function(){
     $(".user_message_list").mCustomScrollbar({
         axis:"y",
         theme:"light",
-        scrollInertia: 950,
-        mouseWheel:{ scrollAmount: 1000 },
+        scrollInertia: 850,
+        mouseWheel:{ scrollAmount: 350 },
         callbacks:{
             onScrollStart:function(){
-                $(".user_message_list_wrapper .top_shadow").show();
-                $(".user_message_list_wrapper .bottom_shadow").show();
+                $(".user_left_block .top_shadow").show();
+                $(".user_left_block .bottom_shadow").show();
             },
             onTotalScroll:function(){
-                $(".user_message_list_wrapper .top_shadow").show();
-                $(".user_message_list_wrapper .bottom_shadow").hide();
+                $(".user_left_block .top_shadow").show();
+                $(".user_left_block .bottom_shadow").hide();
             },
             onTotalScrollBack:function(){
-                $(".user_message_list_wrapper .top_shadow").hide();
-                $(".user_message_list_wrapper .bottom_shadow").show();
+                $(".user_left_block .top_shadow").hide();
+                $(".user_left_block .bottom_shadow").show();
+            }
+        }
+    });
+    //user message_list
+    $(".user_category_wrapper").mCustomScrollbar({
+        axis:"y",
+        theme:"light",
+        scrollInertia: 850,
+        mouseWheel:{ scrollAmount: 350 },
+        callbacks:{
+            onScrollStart:function(){
+                $(".user_right_block .top_shadow").show();
+                $(".user_right_block .bottom_shadow").show();
+            },
+            onTotalScroll:function(){
+                $(".user_right_block .top_shadow").show();
+                $(".user_right_block .bottom_shadow").hide();
+            },
+            onTotalScrollBack:function(){
+                $(".user_right_block .top_shadow").hide();
+                $(".user_right_block .bottom_shadow").show();
             }
         }
     });
@@ -978,7 +939,7 @@ $(document).ready(function(){
         axis:"y",
         theme:"light",
         scrollInertia: 950,
-        mouseWheel:{ scrollAmount: 1000 },
+        mouseWheel:{ scrollAmount: 500 },
         callbacks:{
             onScrollStart:function(){
                 $(".user_message_chat_wrapper .top_shadow").show();
@@ -1185,13 +1146,7 @@ $(document).ready(function(){
 
     /*GROUP OF HINTS*/
 
-    //hint for top_user_menu
-    $('.some_li').hover(function(){
-            $(this).find('.user_main_menu_hit').show();
-        },
-        function() {
-            $(this).find('.user_main_menu_hit').hide();
-        });
+
     //show checkbox in raspisanie
     $('.stream_row').hover(function(){
             $(this).find('.icheckbox_dark_blue').css('height',$(this).height());

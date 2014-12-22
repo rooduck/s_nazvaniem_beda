@@ -65,8 +65,7 @@ margin-right: 23px;
 .all_streams_wrapper .mCSB_inside > .mCSB_container{ margin-right: 0px; }
 .room_userlist_page .mCSB_inside > .mCSB_container{ margin-right: 10px; }
 .selectboxit-list .mCSB_inside > .mCSB_container{ margin-right: 5px; }
-	.mCSB_inside > .mCSB_container{ margin-right: 30px; }
-.user_message_chat .mCSB_inside > .mCSB_container{ margin-right: 0px; }
+	.mCSB_inside > .mCSB_container{ margin-right: 5px; }
 .registr_contract .mCSB_inside > .mCSB_container ,.lenta_operacii .mCSB_inside > .mCSB_container, .chat_specialist_wrapper .mCSB_inside > .mCSB_container{ margin-right: 0px; }
 .popup_chats_list_wrapper .mCSB_inside > .mCSB_container{margin-right:10px;}
 	.mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden{ margin-right: 0; } /* non-visible scrollbar */
@@ -91,19 +90,20 @@ margin-right: 23px;
 		right: 0;
 		bottom: 0;
 	}
-	.selectboxit-list .mCSB_scrollTools{
-	width:5px;
+
+	.selectboxit-list .mCSB_scrollTools,#user_popup .mCSB_scrollTools{
+	    width:5px;
 	}
 	.room_userlist_page .mCSB_scrollTools{
-	top:0px;
-	width:10px;
+	    top:0px;
+	    width:10px;
 	}
 	.registr_contract .mCSB_scrollTools{
 		right: -1px;
 		top: 0px;
 	}
 	.lenta_operacii .mCSB_scrollTools{
-	right: 37px;
+	    right: 37px;
 		top: 0px;
 	}
 	.chat_specialist_wrapper .mCSB_scrollTools{
@@ -150,9 +150,6 @@ margin-right: 23px;
 		right: 0; 
 		height: auto;
 	}
-.user_messages .mCSB_scrollTools .mCSB_draggerContainer{
-height:313px;
-}
 .all_streams_wrapper .mCSB_scrollTools .mCSB_draggerContainer{
 height:500px;
 }
@@ -165,6 +162,7 @@ height:500px;
 		margin: 0 auto;
 		-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;
 	}
+
 	.all_streams_wrapper .mCSB_scrollTools .mCSB_draggerRail, .chat_wrapper .mCSB_scrollTools .mCSB_draggerRail,.chat_list_wrapper .mCSB_scrollTools .mCSB_draggerRail, .popup_chats_list_wrapper .mCSB_scrollTools .mCSB_draggerRail{
 		width: 10px;
 	}
@@ -442,6 +440,9 @@ yx-axis
 	.mCSB_scrollTools .mCSB_draggerRail{
 		background-color:#000b1b;
 	}
+    #user_popup .mCSB_scrollTools .mCSB_draggerRail{
+        background-color:#233b5f;
+    }
 
 	.other_category_choose .mCSB_scrollTools .mCSB_draggerRail{
 		background-color:#202020;
