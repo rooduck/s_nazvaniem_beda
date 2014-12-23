@@ -2,7 +2,7 @@
 ----------------------------------- */
 .icheckbox_futurico,
 .iradio_futurico,
-.icheckbox_futurico2, .icheckbox_futurico_white,.blue{
+.icheckbox_futurico2, .icheckbox_futurico_white,.blue, .wall_checkbox{
     display: inline-block;
     *display: inline;
     vertical-align: middle;
@@ -26,7 +26,23 @@ clear:both;
 .icheckbox_futurico_white.checked {
     background:url("/images/white_radio.png") no-repeat;
 }
-
+.wall_checkbox {
+    background:url("../images/wall_checkbox.png") -21px 0 no-repeat;
+    width: 21px;
+    height: 21px;
+}
+.wall_checkbox:hover {
+    background:url("../images/wall_checkbox.png") 0px 0 no-repeat;
+}
+.wall_checkbox + label {
+    color: #666666;
+}
+.wall_checkbox.checked {
+    background:url("../images/wall_checkbox.png") -42px 0 no-repeat;
+}
+.wall_checkbox.checked +label {
+    color: #3b557b;
+}
 .blue{
     background:url("../images/blue_checkbox.png") no-repeat;
     width: 20px;
