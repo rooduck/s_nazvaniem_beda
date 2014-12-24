@@ -27,6 +27,8 @@ $(function(){
     $(".other_category_choose").load("include/popup_choose_category.html");
     $(".create_room_popup").load("include/popup_create_room.html");
     $(".autorization_popup").load("include/popup_authorization.html");
+    //second lvl include
+    setTimeout(function(){$('.switcher').load("include/switcher.html");},500);
 });
 
 // PLUGIN FOR FILLING A CIRCLE
@@ -112,6 +114,13 @@ $(document).ready(function(){
             $('.checkbox',parent).attr('checked', false);
         });
 
+        //custom my
+        $('.switcher label').click(function(){
+            $(this).parent().find('label').removeClass('active');
+            $(this).addClass('active');
+            if ($(this).prev().prev().text().length>0)
+                $(this).prev().prev().addClass('active');
+        });
         //hide containers without new messages
         $('.menu_number').each(function(){
             if($(this).text().length <=0)
@@ -278,8 +287,34 @@ $(document).ready(function(){
                 pauseOnHover    : true
             }
         });
-
-
+        //chat_gallery
+        $(".chat_gallery").carouFredSel({
+            items               : 11,
+            auto:{play:false},
+            circular: false,
+            infinite: false,
+            direction           : "up",
+            responsive	: false,
+            prev        : ".prev_chat_gallery_page",
+            next        : ".next_chat_gallery_page",
+            scroll : {
+                items           : 11,
+                easing          : "linear",
+                duration        : 1000,
+                pauseOnHover    : true
+            }
+        });
+        //fucking gallery hover for overflow
+        $('.chat_gallery_block img').hover(function () {
+                $('.chat_gallery_wrapper').css('z-index','3');
+                $(this).parent().parent().addClass('active');
+                $(this).parent().parent().find('a:first-child span').addClass('active');
+        });
+        $('.chat_gallery_block').mouseleave(function () {
+            $('.chat_gallery_wrapper').css('z-index','');
+            $(this).removeClass('active');
+            $(this).find('a:first-child span').removeClass('active');
+        });
 
 
         /*OPEN ROOM*/

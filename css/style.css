@@ -908,14 +908,15 @@ font-weight: bold;
 }
 
 .user_tream_page_wrapper{
-    width: 909px;
     float:left;
     height:561px;
     background: rgba(0,11,27,0.93);
+    min-width: 859px !important;
+    width: 859px;
 }
 .main_userpage_stream_block{
     float:left;
-    width:903px;
+    width:859px;
     height:511px;
     position: relative;
 }
@@ -965,6 +966,7 @@ a.back_to_the_list,div.back_to_the_list {
 }
 .players_switcher {
     float: left;
+    margin-bottom: 5px;
 }
 .players_switcher span{
     color:#999999;
@@ -973,7 +975,7 @@ a.back_to_the_list,div.back_to_the_list {
     font-size:12px;
     float:left;
     padding-right: 8px;
-    margin-top: 13px;
+    margin-top: 6px;
     cursor: pointer;
     margin-left: 9px;
     height: 12px;
@@ -1007,11 +1009,69 @@ a.back_to_the_list,div.back_to_the_list {
 }
 .streamListContainer .some_unknow_block .text2{
     color:#666;
-
     font-size:12px;
     float:left;
     clear:both;
     display:block;
+}
+.switcher {
+    float: left;
+    height: 14px;
+    color: #4d5560;
+    font-size: 12px;
+    margin-left: 20px;
+}
+.open_news_header .switcher {
+    margin-top: 2px;
+}
+.switcher input {
+    display: none;
+}
+.switcher input:checked+ label {
+    width: 14px;
+    background: #3399ff;
+}
+.open_news_header .switcher input:checked+ label {
+    background: #3399ff;
+}
+.switcher input + label {
+    background: #424242;
+    width: 14px;
+    height: 14px;
+    float: left;
+    cursor: pointer;
+    color: #4d5560;
+    font-size: 12px;
+}
+.open_news_header .switcher input + label {
+    background: #d0d0d0;
+    color: #d0d0d0;
+}
+.switcher label.active, .switcher input:checked +label +label {
+    color: #fff;
+}
+.open_news_header .switcher label.active,.open_news_header .switcher input:checked +label +label {
+    color: #000;
+}
+.switcher label:first-child, .switcher label:last-child {
+    float: left;
+    cursor: pointer;
+}
+.switcher label:first-child {
+    padding-right: 11px;
+    margin-right: 5px;
+    background: url("../images/switcher_arrow_left.png") right 4px no-repeat;
+}
+.open_news_header .switcher label:first-child {
+    background: url("../images/switcher_arrow_left2.png") right 4px no-repeat;
+}
+.switcher label:last-child {
+    padding-left: 11px;
+    margin-left: 5px;
+    background: url("../images/switcher_arrow_right.png") left 4px no-repeat;
+}
+.open_news_header .switcher label:last-child {
+    background: url("../images/switcher_arrow_right2.png") left 4px no-repeat;
 }
 .stream_rating_block{
     float:right;
@@ -1607,10 +1667,11 @@ a.back_to_the_list,div.back_to_the_list {
 }
 /*CHAT*/
 .user_chats{
-    float:left;
-    width:260px;
+    float: left;
+    width: 270px;
     height: 561px;
-    position:relative;
+    position: relative;
+    z-index: 1;
 
 }
 .chats_wrapper{
@@ -2436,6 +2497,84 @@ a.back_to_the_list,div.back_to_the_list {
 }
 .user_in_chat_row:hover{
     background:#1e2b39;
+
+}
+/*chat gallery*/
+.chat_gallery_wrapper {
+    float: left;
+    width: 40px;
+    height: 503px;
+    position: relative;
+    margin-top: 58px; /*DEL AFTER NORMAL LAYOUT!*/
+}
+.chat_gallery_wrapper .caroufredsel_wrapper {
+    margin-left: -110px !important;
+}
+.chat_gallery {
+    width: 40px;
+    height: 435px;
+    margin-top: 19px;
+    float: left;
+}
+.prev_chat_gallery_page {
+    background: url("../images/gallery_arrows.png") 0 0 no-repeat;
+    width: 12px;
+    height: 7px;
+    float: left;
+    cursor: pointer;
+    margin-left: 14px;
+    margin-top: 10px;
+}
+.prev_chat_gallery_page.disabled {
+    background: url("../images/gallery_arrows.png") 0 -7px no-repeat;
+}
+.next_chat_gallery_page {
+    background: url("../images/gallery_arrows.png") -12px 0 no-repeat;
+    width: 12px;
+    height: 7px;
+    float: left;
+    cursor: pointer;
+    margin-left: 14px;
+    margin-top: 18px;
+}
+.next_chat_gallery_page.disabled {
+    background: url("../images/gallery_arrows.png") -12px -7px no-repeat;
+}
+.chat_gallery_block {
+    float: left;
+    padding: 2px;
+    height: 35px;
+    width: 146px;
+}
+.chat_gallery_block.active {
+    background: #3399ff;
+}
+.chat_gallery_block span.active {
+    visibility: visible;
+}
+.chat_gallery_block span {
+    color: #000b1b;
+    font-size: 12px;
+    float: left;
+    margin-top: 9px;
+    margin-left: 9px;
+    max-width: 85px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+    visibility: hidden;
+}
+.chat_gallery_block a {
+    display: inline;
+    float: left;
+}
+.chat_gallery_block a:last-child {
+    float: right;
+}
+.chat_gallery_block img {
+    width: 36px;
+    height: 35px;
+    float: right;
 }
 /*ROOMS LIST*/
 .all_rooms {
@@ -2463,11 +2602,11 @@ a.back_to_the_list,div.back_to_the_list {
     width: 1169px;
 
 }
-.open_room .block_before_streams{
+.main_block .block_before_streams{
     width:100%;
     background:#000b1b;
 }
-.open_room .block_before_streams .text1, .open_room .block_before_streams .text2{
+.main_block .block_before_streams .text1, .main_block .block_before_streams .text2{
     color:#fff;
     float:left;
     max-width: 915px;
@@ -2476,8 +2615,9 @@ a.back_to_the_list,div.back_to_the_list {
     word-break: break-all;
     white-space: nowrap;
 }
-.open_room .block_before_streams .text2{
+.main_block .block_before_streams .text2{
     clear:both;
+    font-size: 12px;
 }
 .open_room_chat {
     float: left;
@@ -2485,7 +2625,7 @@ a.back_to_the_list,div.back_to_the_list {
     height:509px;
     background: #000b1b;
 }
-.open_room .block_before_streams .text3{
+.main_block .block_before_streams .text3{
     display:block;
     float:left;
     color:#3399ff;
