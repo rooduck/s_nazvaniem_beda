@@ -4,7 +4,7 @@ $(function(){
     $(".site_filter").load("include/menu.html");
     $(".all_streams_wrapper, .all_rooms_wrapper").load("include/streams_list.html");
     $(".top_category_rating").load("include/category_rating.html");
-    //$(".block_before_streams").load("include/back_block.html");
+    $(".block_before_streams").load("include/back_block.html");
     $(".chat_buttons").load("include/chat_buttons.html");
     $(".chat_wrapper").load("include/chat.html");
     $(".room_userlist_page").load("include/room_userlist.html");
@@ -1139,6 +1139,11 @@ $(document).ready(function(){
         cursor: true,
         radioClass: 'icheckbox_black'
     });
+    $('.wall_radio').iCheck({
+        cursor: true,
+        checkboxClass: 'wall_checkbox',
+        radioClass: 'wall_checkbox'
+    });
 
 
 
@@ -1299,6 +1304,21 @@ $(document).ready(function(){
             color:'#d63447',
             fontSize:'0px',
             backgroundColor: '#66141e',
+            radius:19
+        });
+        numb++;
+    });
+
+    //room_post
+    $('.room_post').each(function(){
+        $(this).find('.for_canvas').rotator({
+            num : numb,
+            starting: 0,
+            ending: parseInt($(this).find('.how_much_fill').text()),
+            lineWidth: 2,
+            color:'#3399ff',
+            fontSize:'0px',
+            backgroundColor: '#fff',
             radius:19
         });
         numb++;
