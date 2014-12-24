@@ -1,3 +1,10 @@
+<!--
+    Верхушка такая же, как и у любой другой страницы. А вот контент-зону мы полностью заменяем стеной.
+    Выносить в отдельный файл не стал, т.к. используется только в комнате (правда?)
+    Все достаточно просто, по коду разберете. (начало room_wall_wrapper )
+    Единтсвенное, что сам контент у нас идет в div, а если это цитата великого человека, то надо добавлять класс 'quote'
+    Еще так и не понял прикол "радиобатонов", если, по сути, это чекбоксы.
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,8 +56,8 @@
 
     <div class="top_streams_menu_create">
         <!---USE THAT BLOCK WHAT U NEED-->
-        <button class="create_stream_but">Начать стрим</button>
-        <button class="create_room_but">Создать комнату</button>
+        <button class="blue_but not_active" style="display: none">Начать стрим</button>
+        <button class="blue_but" >Создать комнату</button>
         <span class="text">чтобы стримить у нас на портале, необходимо <span>зарегистрироваться</span></span>
     </div>
 
@@ -134,34 +141,84 @@
 <div id="wrapper_content">
     <div id="content_part">
 
-        <!--CONTENT PAGE MENU-->
-        <div class="content_streams_menu">
-
-            <div class="site_filter">
-                <!--include menu.html-->
+        <div class="room_wall_wrapper">
+            <!--header-->
+            <div class="room_wall_header">
+                <div class="room_name">Стена комнаты <span>ЖИЗНЬ ЗА НЕРЗУЛЛА</span></div>
+                <span class="room_wall_last_update">Последнее обновление 17:00 25.12.2015</span>
+                <div class="room_wall_filter">
+                    <form name="filter" action=""><!--not sure that u need form-->
+                        <input type="checkbox" class="wall_radio" name="pic" id="pic"/>
+                        <label for="pic">Картинки</label>
+                        <input type="checkbox" class="wall_radio" name="video" id="video"/>
+                        <label for="video">Видео</label>
+                        <input type="checkbox" class="wall_radio" name="quotes" id="quotes"/>
+                        <label for="quotes">Цитаты</label>
+                    </form>
+                </div>
             </div>
+            <!--wall-->
+            <div class="room_wall">
+                <div class="room_post">
+                    <div class="post_header">
+                        <div class="for_canvas"></div>
+                        <span class="lvl">8</span>
+                        <div class="how_much_fill">88</div>
+                        <img src="images/user_message_avatar.png" alt="user_ava" />
+                        <div>
+                            <span class="user_name">Duckhero</span>
+                            <span class="user_role">Стример</span>
+                        </div>
+                        <span class="post_date">добавлено 17:00 25.12.2015</span>
 
-            <div class="content_menu_create">
-                <!---USE THAT BLOCK WHAT U NEED-->
-                <button class="create_content_but">Добавить статью</button>
-                <span class="some_plus">+</span>
-                <span class="text">Для того чтобы добавить статью, необходимо <span>зарегистрироваться</span></span>
+                    </div>
+                    <div class="post_body">
+                        <div class="quote">
+                            Меня затрахал перевод времени, слушайте, а что, если провести шоковую терапию? Ну типо ты не переводишь время, тебя бьют током, и медленно внушают новый способ счета, то есть когда ты будешь видеть 18:27, на самом деле будет 19:27. Вот было бы круто, не пришлось бы трахаться с переводом этого чертового времени.
+                        </div>
+                    </div>
+                </div>
+                <div class="room_post">
+                    <div class="post_header">
+                        <div class="for_canvas"></div>
+                        <span class="lvl">8</span>
+                        <div class="how_much_fill">88</div>
+                        <img src="images/user_message_avatar.png" alt="user_ava" />
+                        <div>
+                            <span class="user_name">Duckhero</span>
+                            <span class="user_role">Стример</span>
+                        </div>
+                        <span class="post_date">добавлено 17:00 25.12.2015</span>
+
+                    </div>
+                    <div class="post_body">
+                        <div>
+                            <img src="images/comix.jpg" alt="pic" />
+                        </div>
+                    </div>
+                </div>
+                <div class="room_post">
+                    <div class="post_header">
+                        <div class="for_canvas"></div>
+                        <span class="lvl">8</span>
+                        <div class="how_much_fill">88</div>
+                        <img src="images/user_message_avatar.png" alt="user_ava" />
+                        <div>
+                            <span class="user_name">Duckhero</span>
+                            <span class="user_role">Стример</span>
+                        </div>
+                        <span class="post_date">добавлено 17:00 25.12.2015</span>
+
+                    </div>
+                    <div class="post_body">
+                        <div>
+                            <iframe width="560" height="315" src="//www.youtube.com/embed/jnk15Wf6xMU" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!--ARTICLES LIST AND BEST ARTICLES-->
-        <div class="content_main_block" >
-
-            <!--ARTICLE LIST-->
-            <div class="left_column article_list">
-                <!--include article_list.html-->
-            </div>
-
-            <!--BEST ARTICLES-->
-            <div class="right_column best_articles">
-                <!--include best_articles.html-->
-            </div>
-        </div>
     </div>
 </div>
 </div>
