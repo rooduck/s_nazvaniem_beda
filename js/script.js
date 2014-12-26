@@ -464,7 +464,6 @@ $(document).ready(function(){
                 $(this).find('.down_rating:first').css("visibility","hidden");
                 $(this).find('.user_comment_options:first').css("visibility","hidden");
                 $(this).find('.total_comment_rating').show();
-                $(this).find('.how_much_left_popup').hide();
                 $(this).find('.article_comment_rating').hide();
             });
 
@@ -1377,24 +1376,7 @@ $(document).ready(function(){
     }, 1500);
 });
 
-//for rating value
-window.set_rating_trackbar = function(max)
-{
-    $("#slider-range-rating").slider({
-        range: "min",
-        animate: false,
-        min: 1,
-        max: max,
-        step:1,
-        value: 1,
-        slide: function( event, ui ) {
-            $( "#slider-range-rating .ui-slider-handle" ).text(ui.value);
-            $("#slider-range-rating").parent().find('input').val(ui.value);
-        }
-    });
-    $( "#slider-range-rating .ui-slider-handle" ).text("1");
-    $( ".max_value" ).text(max);
-}
+
 
 //for range slider
 window.set_scale_lvl = function()
