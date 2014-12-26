@@ -1185,7 +1185,7 @@ a.back_to_the_list,div.back_to_the_list {
     float: left;
     padding: 21px 2px 12px;
 }
-#slider-range-rating.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all {
+.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all {
     background: none repeat scroll 0 0 #85c2ff;
     position: relative;
     width: 135px;
@@ -1193,10 +1193,10 @@ a.back_to_the_list,div.back_to_the_list {
     border: 1px solid #296eb6;
     height: 10px;
 }
-#slider-range-rating .ui-slider-range.ui-widget-header.ui-corner-all.ui-slider-range-min {
+.ui-slider-range.ui-widget-header.ui-corner-all.ui-slider-range-min {
 
 }
-#slider-range-rating .ui-slider-handle.ui-state-default.ui-corner-all {
+.ui-slider-handle.ui-state-default.ui-corner-all {
     background: none repeat scroll 0 0 #3399ff;
     display: block;
     top:-7px;
@@ -1843,7 +1843,7 @@ a.back_to_the_list,div.back_to_the_list {
     float: left;
     width: 100%;
     background:rgba(0,14,35,0.9);
-    height:571px;
+    height:481px;
     position:relative;
 }
 .chat_body  .history{
@@ -1863,7 +1863,7 @@ a.back_to_the_list,div.back_to_the_list {
 .chat_wrapper {
     float: left;
     width: 100%;
-    height:495px;
+    height:418px;
     position:relative;
     padding-bottom:0px;
 }
@@ -3979,44 +3979,54 @@ background:url("../images/comment_answer.png") no-repeat 0 31px #d0d5e0;
 .comment_rating_wrapper {
     position: absolute;
     right: -46px;
-    top: 29px;
+    top: 38px;
 }
 .comment_rating_wrapper  .up_rating{
-    background:url("../images/small_up_rating.png") no-repeat;
-    width:28px;
-    height:19px;
+    background:url("../images/article_rating.png") 0 -24px no-repeat;
+    width:20px;
+    height:24px;
     float:left;
     cursor:pointer;
     visibility:hidden;
 }
-.comment_rating_wrapper  .up_rating.selected{
-    background:url("../images/small_up_rating_active.png") no-repeat;
+.comment_rating_wrapper  .up_rating:hover {
+    background:url("../images/article_rating.png") -20px -24px no-repeat;
 }
-.comment_rating_wrapper .down_rating{
-    background:url("../images/small_down_rating.png") no-repeat;
-    width:28px;
-    height:19px;
+.comment_rating_wrapper  .up_rating.selected {
+    background:url("../images/article_rating.png") -40px -24px no-repeat;
+}
+.comment_rating_wrapper .down_rating {
+    background:url("../images/article_rating.png") 0 0 no-repeat;
+    width:20px;
+    height:24px;
     float:left;
     cursor:pointer;
     visibility:hidden;
+}
+.comment_rating_wrapper .down_rating:hover {
+    background:url("../images/article_rating.png") -20px 0  no-repeat;
 }
 .comment_rating_wrapper  .down_rating.selected{
-    background:url("../images/small_down_rating_active.png") no-repeat;
+    background:url("../images/article_rating.png") -40px 0  no-repeat;
+}
+.comment_rating_wrapper .popup_rating {
+    top: 28px;
+    left: -204px;
 }
 .total_comment_rating{
-    font-size:18px;
-    position:absolute;
-    display:block;
-    width:56px;
-    text-align:center;
-    top:-25px;
-    left:0px;
+    font-size: 14px;
+    position: absolute;
+    display: block;
+    width: 41px;
+    text-align: center;
+    top: -19px;
+    left: 0;
 }
 .total_comment_rating.up{
-    color:#41a374;
+    color: #41a374;
 }
 .total_comment_rating.down{
-    color:#cb3b45;
+    color: #cb3b45;
 }
 .left_float {
     float: left;
