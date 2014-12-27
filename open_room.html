@@ -1,9 +1,9 @@
 <!--
+
     Верхушка такая же, как и у любой другой страницы. А вот контент-зону мы полностью заменяем стеной.
     Выносить в отдельный файл не стал, т.к. используется только в комнате (правда?)
     Все достаточно просто, по коду разберете. (начало room_wall_wrapper )
     Единтсвенное, что сам контент у нас идет в div, а если это цитата великого человека, то надо добавлять класс 'quote'
-    Еще так и не понял прикол "радиобатонов", если, по сути, это чекбоксы.
 -->
 <!DOCTYPE html>
 <html>
@@ -67,66 +67,154 @@
 <!--OPEN PRIVATE ROOM-->
 <div class="main_block" >
 
-    <div class="block_before_streams">
-        <!--include back_block.html-->
-    </div>
+    <div class="min_param" id="dynamic_filter_content">
 
-    <div class="open_room_chat min_param"  id="dynamic_filter_content">
-
-        <!--I don't like this block-->
-        <div class="room_creater_block">
-            <div class="room_creater_name">
-                <span class="text2">создатель комнаты: </span><span class="text4">Commander Duck</span>
-            </div>
-            <div class="black_designed_block"></div>
-        </div>
-
-        <!--ROOM CHAT-->
-        <div class="room_chat">
-            <div class="chat_body">
-                <div class="chat_wrapper">
-                    <!--include chat_buttons.html-->
+        <!--not like at the stream page-->
+        <div class="block_before_streams">
+            <div class="some_unknow_block">
+                <img src="images/donno.jpg" width="50" height="50" alt="user_avatar" />
+                <div class="unknow_text_block">
+                    <span class="text1">ЖИЗНЬ ЗА НЕРЗУЛЛА</span>
+                    <span class="text2">комната <a href="#">Just Roo</a></span>
                 </div>
-                <div class="chat_buttons">
-                    <!--include chat_buttons.html-->
+            </div>
+
+            <!--RATING-->
+            <div class="stream_rating_block">
+                <div class="today_rating"><span>Рейтинг:</span>256</div>
+                <div class="up_rating"></div>
+                <div class="down_rating"></div>
+                <div class="popup_rating">
+                    <!--Text is changed!-->
+                    <div class="rating_header">Поставьте количество минусов</div>
+                    <div class="close_rating"></div>
+                    <form name="rating_change" action="">
+                        <div class="trackbar_block">
+                            <span class="min_value">1</span>
+                            <div id="slider-range-rating"></div>
+                            <input name="number" type="text" style="display:none;" id="number_input" />
+                            <span class="max_value"></span>
+                        </div>
+                        <button type="submit" class="light_blue_button">проголосовать</button>
+                    </form>
                 </div>
-                <form action="" name="chat_message_form" class="room_chat_form">
-                    <input type="text" placeholder="Напиши сюда скорей!" class="chat_input" name="chat_message" />
-                </form>
             </div>
         </div>
 
+        <!--Some undefined block-->
+        <div class="main_room_block">
+            <img src="images/room_img.jpg" />
+        </div>
+        <!--STREAM PAGE BLOCKS CHAT-->
+        <div class="user_chats">
+            <div class="chats_wrapper">
+
+                <!--CHAT HEADER OLD VERSION-->
+                <div class="chat_header">
+                    <div class="chat_streamer_action">
+                        <span class="text">WeLoveGamesTV</span>
+                        <div class="popup_actions_list click_user_popup">
+                            <div class="popup_actions_list_wrapper">
+                                <div class="click_user_popup_row">
+                                    Забанить
+                                </div>
+                                <div class="click_user_popup_row">
+                                    Выключить
+                                </div>
+                                <div class="click_user_popup_row">
+                                    Написать
+                                </div>
+                                <div class="click_user_popup_row">
+                                    Задонатить
+                                </div>
+                                <div class="click_user_popup_row">
+                                    Замутить
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat_body">
+
+                    <!--CHAT-->
+                    <div class="chat_wrapper">
+                        <!--include chat.html-->
+                    </div>
+
+                    <form action="" name="chat_message_form">
+                        <input type="text" placeholder="Напиши сюда скорей!" class="chat_input" name="chat_message" />
+                        <button type="submit" class="send_blue"></button>
+                    </form>
+
+                    <div class="chat_buttons">
+                        <!--include chat_buttons.html-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--CHAT GALLERY! ABSOLUTELY NEW!-->
+        <div class="chat_gallery_wrapper">
+            <div class="prev_chat_gallery_page"></div>
+            <div class="chat_gallery">
+
+                <div class="chat_gallery_block">
+                    <a href="#"><span>гшовыртагвы</span></a>
+                    <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                </div>
+                <div class="chat_gallery_block">
+                    <a href="#"><span>гшовыртагвgdfgdfsgfdgdfgdsfgsdfgdfы</span></a>
+                    <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                </div>
+                <div class="chat_gallery_block">
+                    <a href="#"><span>гтагвы</span></a>
+                    <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                </div>
+                <div class="chat_gallery_block">
+                    <a href="#"><span>гшовыртагвы</span></a>
+                    <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                </div>
+                <div class="chat_gallery_block">
+                    <a href="#"><span>гшовыртагвgdfgdfsgfdgdfgdsfgsdfgdfы</span></a>
+                    <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                </div>
+                <div class="chat_gallery_block">
+                    <a href="#"><span>гтагвы</span></a>
+                    <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                </div>
+                <div class="chat_gallery_block">
+                    <a href="#"><span>гшовыртагвы</span></a>
+                    <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                </div>
+                <div class="chat_gallery_block">
+                    <a href="#"><span>гшовыртагвgdfgdfsgfdgdfgdsfgsdfgdfы</span></a>
+                    <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                </div>
+                <div class="chat_gallery_block">
+                    <a href="#"><span>гтагвы</span></a>
+                    <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                </div>
+                <div class="chat_gallery_block">
+                    <a href="#"><span>гшовыртагвы</span></a>
+                    <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                </div>
+                <div class="chat_gallery_block">
+                    <a href="#"><span>гшовыртагвgdfgdfsgfdgdfgdsfgsdfgdfы</span></a>
+                    <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                </div>
+                <div class="chat_gallery_block">
+                    <a href="#"><span>гтагвы</span></a>
+                    <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                </div>
+
+            </div>
+            <div class="next_chat_gallery_page"></div>
+        </div>
+        <div class="chat_bottom_line"></div>
     </div>
 
-    <div class="room_right_block">
-
-        <!--ROOM SWITCH BLOCK-->
-        <div class="room_block_switcher">
-            <div class="room_page_name active option">Настройки</div>
-            <div class="room_page_name list">Список</div>
-        </div>
-
-        <!--ROOM OPTIONS TEXT-->
-        <div class="room_options_page">
-            <span class="text2">Название: Комнатушка-однушка дизайнеров</span>
-            <span class="text2">Основатель: Commander Duck</span>
-            <span class="text2">Категория: Болталка</span>
-            <span class="text2">Удаление сообщений: никогда</span>
-            <span class="text2">Ограничение: с 3 уровня</span>
-            <span class="text2">Тип управления: Демократический</span>
-            <span class="text2">С 18 лет: нет</span>
-            <span class="text2">Анонимность в чате: да</span>
-            <span class="text2">Пароль: нет</span>
-            <div class="redact_room">редактировать</div>
-        </div>
-
-        <!--USERS IN ROOM LIST-->
-        <div class="room_userlist_page">
-            <!--include room_userList.html-->
-        </div>
-    </div>
-
-    <div class="chat_bottom_line"></div>
 
 </div>
 
