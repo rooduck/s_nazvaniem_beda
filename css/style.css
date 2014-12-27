@@ -20,7 +20,7 @@ p{
 }
 a{
     text-decoration:none;
-    color:#3189ef;
+    color: #3399ff;
     display: inline-block;
 }
 a:first-letter{
@@ -38,6 +38,10 @@ li{
 input{
     border-radius:1px;
     border:0 none;
+}
+input[type="file"] {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
 }
 form{
     margin:0;
@@ -1669,16 +1673,12 @@ a.back_to_the_list,div.back_to_the_list {
 .user_chats{
     float: left;
     width: 270px;
-    height: 561px;
     position: relative;
     z-index: 1;
 
 }
 .chats_wrapper{
-    height: 543px;
-
     width: 100%;
-
 }
 .stream_wrapper_middle_border,.top_stream_wrapper_middle_border {
     float: left;
@@ -1704,7 +1704,6 @@ a.back_to_the_list,div.back_to_the_list {
     width:100%;
     position: relative;
     background:#00234a;
-    padding-top:20px;
 
 }
 .chat_to_streamer{
@@ -2505,7 +2504,6 @@ a.back_to_the_list,div.back_to_the_list {
     width: 40px;
     height: 503px;
     position: relative;
-    margin-top: 58px; /*DEL AFTER NORMAL LAYOUT!*/
 }
 .chat_gallery_wrapper .caroufredsel_wrapper {
     margin-left: -110px !important;
@@ -2594,20 +2592,45 @@ a.back_to_the_list,div.back_to_the_list {
 
 /*OTKRITIE KOMNATI*/
 
+
 /*LEVII BLOCK*/
 .open_room {
     float: left;
     margin-left: 15px;
     position: relative;
     width: 1169px;
-
 }
-.main_block .block_before_streams{
+.main_room_block {
+    width: 859px;
+    float: left;
+    height: 503px;
+    position: relative;
+    text-align: center;
+}
+.block_before_streams{
     width:100%;
     background:#000b1b;
 }
-.main_block .block_before_streams .text1, .main_block .block_before_streams .text2{
-    color:#fff;
+.block_before_streams.lists span {
+    color: #b2c3d5;
+}
+.block_before_streams.lists .unknow_text_block {
+    margin-left: 20px;
+}
+.block_before_streams.lists .switcher {
+    margin-top: 4px;
+}
+.block_before_streams .switcher label.active, .block_before_streams  .switcher input:checked + label + label {
+    color: #b2c3d5;
+}
+.block_before_streams .switcher label.active:first-child {
+    background: url("../images/switcher_arrow_left_active.png") right 4px no-repeat;
+}
+.block_before_streams .switcher label.active:last-child {
+    background: url("../images/switcher_arrow_right_active.png") left 4px no-repeat;
+}
+.block_before_streams .text1,  .block_before_streams .text2{
+    color: #b2c3d5;
     float:left;
     max-width: 915px;
     overflow: hidden;
@@ -2615,9 +2638,12 @@ a.back_to_the_list,div.back_to_the_list {
     word-break: break-all;
     white-space: nowrap;
 }
-.main_block .block_before_streams .text2{
+.block_before_streams .text2{
     clear:both;
     font-size: 12px;
+}
+.some_unknow_block .text2 a {
+    float: none;
 }
 .open_room_chat {
     float: left;
@@ -2625,7 +2651,7 @@ a.back_to_the_list,div.back_to_the_list {
     height:509px;
     background: #000b1b;
 }
-.main_block .block_before_streams .text3{
+.block_before_streams .text3{
     display:block;
     float:left;
     color:#3399ff;
@@ -5528,9 +5554,12 @@ display: block;
 .user_category_list_row {
     cursor: pointer;
     float: left;
-    padding: 12px 0px 14px 20px;
+    padding: 10px 0px 13px 20px;
     width: 221px;
     border-bottom: 1px solid #152338;
+}
+.user_streams .user_category_list_row {
+    padding: 10px 0px 9px 20px;
 }
 .user_category_list_row:last-child {
     border-bottom: 0 none;
@@ -5547,13 +5576,29 @@ display: block;
 .user_category_list_row.inactive .user_category_name {
     color: #878c95;
 }
+.user_streams .user_category_list_contact .user_category_name {
+    font-size: 16px;
+    float: none;
+    position: relative;
+    top: 6px;
+}
+.user_streams .user_category_list_row.inactive .user_category_name {
+    font-size: 14px;
+}
+.user_category_list_row.inactive {
+    padding: 10px 0 25px 20px;
+}
+.user_streams .user_category_subscribes {
+    font-size: 30px;
+    float: right;
+}
 .user_category_subscribes {
     clear: both;
     color: #6d8ba8;
     display: block;
     float: left;
     font-size: 12px;
-    margin-top: 2px;
+    margin-right: 10px;
 }
 .user_category_list_row.inactive .user_category_subscribes {
     color: #3e5269;
@@ -5572,7 +5617,7 @@ display: block;
     height: 539px;
 }
 .right_user_block_row {
-    padding: 12px 12px 11px;
+    padding: 11px 12px 10px;
     float: left;
     width: 365px;
     border-bottom: 1px solid #152338
@@ -5638,7 +5683,7 @@ display: block;
     text-align: center;
 }
 /*options*/
-.user_options .right_user_block_row .user_category_name {
+.right_user_block_row .user_category_name {
     margin-top: -3px;
     width: 260px;
     max-width: 260px;
@@ -6695,4 +6740,8 @@ not all and ( -webkit-min-device-pixel-ratio : 0 ) {
 /*safari hack*/
 _::-moz-svg-foreign-content, :root .back_to_stream, html[xmlns*=""]:root .back_to_stream {
 margin-top: -3px;
+}
+/*fast temp fix*/
+#Article_subcategory_idSelectBoxItContainer {
+    margin-left: 10px;
 }
