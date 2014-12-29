@@ -98,8 +98,7 @@ $(function(){
 $(document).ready(function(){
     setTimeout(function() {
 
-        /*SOME GLOBAL EVENTS*/
-
+        
         //pretty switcher
         $(".cb-enable").click(function(){
             var parent = $(this).parents('.switch');
@@ -631,7 +630,7 @@ $(document).ready(function(){
             if ($(event.target).closest("#user_popup .click_user_popup .smiles_at_this_group").length || $(event.target).closest("#user_popup .smiles_img").length) return;
             else
             {
-                $('.click_user_popup').hide();
+                $('#user_popup .click_user_popup').hide();
                 $('#user_popup .smiles_img').removeClass('active');
             }
             //CHAT SMILES
