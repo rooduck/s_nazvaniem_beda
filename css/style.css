@@ -300,8 +300,8 @@ textarea{
     position: relative;
 }
 .user_message_control>div:hover .user_main_menu_hit{
-     display: block;
- }
+    display: block;
+}
 .user_message_control>div:hover .user_main_menu_hit.ignore {
     display: none;
 }
@@ -448,18 +448,18 @@ textarea{
     border-bottom: 1px solid transparent;
 }
 .user_message_chat_contact img{
-     width:30px;
-     height:30px;
-     float:left;
- }
+    width:30px;
+    height:30px;
+    float:left;
+}
 .user_message__chat_nick {
     float: left;
     color: #b4c1d6;
     font-size: 14px;
 }
 .user_message__chat_nick.to_me {
-color: #3399ff;
-font-weight: bold;
+    color: #3399ff;
+    font-weight: bold;
 }
 .user_mesage__chat_date {
     float: left;
@@ -819,7 +819,7 @@ font-weight: bold;
     float:left;
     width:100%;
     margin-top: 4px;
-	background: rgba(51,153,255,0.5);
+    background: rgba(51,153,255,0.5);
 }
 .cifri_wrapper{
     float:left;
@@ -913,7 +913,7 @@ font-weight: bold;
 
 .user_tream_page_wrapper{
     float:left;
-    height:561px;
+    height:541px;
     background: rgba(0,11,27,0.93);
     min-width: 859px !important;
     width: 859px;
@@ -921,7 +921,7 @@ font-weight: bold;
 .main_userpage_stream_block{
     float:left;
     width:859px;
-    height:511px;
+    height:479px;
     position: relative;
 }
 .top_userpage_stream_block{
@@ -1842,7 +1842,7 @@ a.back_to_the_list,div.back_to_the_list {
     float: left;
     width: 100%;
     background:rgba(0,14,35,0.9);
-    height:481px;
+    height:541px;
     position:relative;
 }
 .chat_body  .history{
@@ -1862,9 +1862,9 @@ a.back_to_the_list,div.back_to_the_list {
 .chat_wrapper {
     float: left;
     width: 100%;
-    height:418px;
+    height:475px;
     position:relative;
-    padding-bottom:0px;
+    padding-bottom:0;
 }
 .top_chat_shadow{
     background:url("../images/chat_bg.png") repeat-x;
@@ -2607,6 +2607,10 @@ a.back_to_the_list,div.back_to_the_list {
     position: relative;
     text-align: center;
 }
+.main_room_block img {
+    max-height: 503px;
+    max-width: 859px;
+}
 .block_before_streams{
     width:100%;
     background:#000b1b;
@@ -3312,7 +3316,7 @@ a.back_to_the_list,div.back_to_the_list {
     position:relative;
 }
 button.create_content_but{
-	float:right;
+    float:right;
     font-size:16px;
     font-weight:bold;
     text-transform:uppercase;
@@ -3334,7 +3338,7 @@ button.create_content_but{
     color:#3399ff;
 }
 .content_menu_create .text {
-	float:right;
+    float:right;
     color: #000b1b;
     display: block;
     font-size: 12px;
@@ -4425,7 +4429,7 @@ background:url("../images/comment_answer.png") no-repeat 0 31px #d0d5e0;
     margin-left: 8px;
 }
 .icon_redact:hover .popup_hint, .icon_message:hover .popup_hint{
-display: block;
+    display: block;
 }
 .popup_hint {
     display: none;
@@ -5643,6 +5647,11 @@ display: block;
 .user_category_lvl2 {
     font-size: 12px;
     color: #6d8ba8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+    min-width: 200px;
+    float: left;
 }
 .delete_from_favor {
     float: right;
@@ -6739,7 +6748,7 @@ not all and ( -webkit-min-device-pixel-ratio : 0 ) {
 }
 /*safari hack*/
 _::-moz-svg-foreign-content, :root .back_to_stream, html[xmlns*=""]:root .back_to_stream {
-margin-top: -3px;
+    margin-top: -3px;
 }
 /*fast temp fix*/
 #Article_subcategory_idSelectBoxItContainer {
