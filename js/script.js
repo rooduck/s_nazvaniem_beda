@@ -286,38 +286,7 @@ $(document).ready(function(){
                 pauseOnHover    : true
             }
         });
-        //chat_gallery
-        $(".chat_gallery").carouFredSel({
-            items               : 11,
-            auto:{play:false},
-            circular: false,
-            infinite: false,
-            direction           : "up",
-            responsive	: false,
-            prev        : ".prev_chat_gallery_page",
-            next        : ".next_chat_gallery_page",
-            scroll : {
-                items           : 11,
-                easing          : "linear",
-                duration        : 1000,
-                pauseOnHover    : true
-            }
-        });
-
-        //fucking gallery hover for overflow
-        $('.chat_gallery_block img').hover(function () {
-                $('.chat_gallery_wrapper').css('z-index','3');
-                $(this).parent().parent().addClass('active');
-                $(this).parent().parent().find('a:first-child span').addClass('active');
-        });
-        $('.chat_gallery_block').mouseleave(function () {
-            $('.chat_gallery_wrapper').css('z-index','');
-            $(this).removeClass('active');
-            $(this).find('a:first-child span').removeClass('active');
-        });
-        $('.chat_gallery').bind("DOMSubtreeModified",function(){
-            
-        });
+        chat_gallery();
 
         /*OPEN ROOM*/
 
@@ -1678,4 +1647,39 @@ function setStreamHover() {
         function () {
             $(this).find('.filter_on_pic').show();
         });
+}
+window.chat_gallery = function() {
+    $(".chat_gallery").carouFredSel({
+        items: 11,
+        auto: {play: false},
+        circular: false,
+        infinite: false,
+        direction: "up",
+        responsive: false,
+        prev: ".prev_chat_gallery_page",
+        next: ".next_chat_gallery_page",
+        scroll: {
+            items: 11,
+            easing: "linear",
+            duration: 1000,
+            pauseOnHover: true
+        }
+    });
+    if ($('.chat_gallery_block').size() > 11) {
+        $('.prev_chat_gallery_page, .next_chat_gallery_page').show();
+    }
+    else  {
+        $('.prev_chat_gallery_page, .next_chat_gallery_page').hide();
+    }
+    //fucking gallery hover for overflow
+    $('.chat_gallery_block img').hover(function () {
+        $('.chat_gallery_wrapper').css('z-index','3');
+        $(this).parent().parent().addClass('active');
+        $(this).parent().parent().find('a:first-child span').addClass('active');
+    });
+    $('.chat_gallery_block').mouseleave(function () {
+        $('.chat_gallery_wrapper').css('z-index','');
+        $(this).removeClass('active');
+        $(this).find('a:first-child span').removeClass('active');
+    });
 }
