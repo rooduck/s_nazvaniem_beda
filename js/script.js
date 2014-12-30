@@ -98,7 +98,7 @@ $(function(){
 $(document).ready(function(){
     setTimeout(function() {
 
-        
+
         //pretty switcher
         $(".cb-enable").click(function(){
             var parent = $(this).parents('.switch');
@@ -303,6 +303,7 @@ $(document).ready(function(){
                 pauseOnHover    : true
             }
         });
+
         //fucking gallery hover for overflow
         $('.chat_gallery_block img').hover(function () {
                 $('.chat_gallery_wrapper').css('z-index','3');
@@ -314,7 +315,18 @@ $(document).ready(function(){
             $(this).removeClass('active');
             $(this).find('a:first-child span').removeClass('active');
         });
-
+        $('.chat_gallery').bind("DOMSubtreeModified",function(){
+            $('.chat_gallery_block img').hover(function () {
+                $('.chat_gallery_wrapper').css('z-index','3');
+                $(this).parent().parent().addClass('active');
+                $(this).parent().parent().find('a:first-child span').addClass('active');
+            });
+            $('.chat_gallery_block').mouseleave(function () {
+                $('.chat_gallery_wrapper').css('z-index','');
+                $(this).removeClass('active');
+                $(this).find('a:first-child span').removeClass('active');
+            });
+        });
 
         /*OPEN ROOM*/
 
