@@ -4675,7 +4675,7 @@ background:url("../images/comment_answer.png") no-repeat 0 31px #d0d5e0;
 }
 /*CREATE ROOM POPUP*/
 .create_room_popup{
-    position:absolute;
+    position:fixed;
     width:951px;
     height:657px;
     background:url("../images/create_room_bg.jpg") no-repeat;
