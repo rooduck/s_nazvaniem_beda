@@ -316,16 +316,7 @@ $(document).ready(function(){
             $(this).find('a:first-child span').removeClass('active');
         });
         $('.chat_gallery').bind("DOMSubtreeModified",function(){
-            $('.chat_gallery_block img').hover(function () {
-                $('.chat_gallery_wrapper').css('z-index','3');
-                $(this).parent().parent().addClass('active');
-                $(this).parent().parent().find('a:first-child span').addClass('active');
-            });
-            $('.chat_gallery_block').mouseleave(function () {
-                $('.chat_gallery_wrapper').css('z-index','');
-                $(this).removeClass('active');
-                $(this).find('a:first-child span').removeClass('active');
-            });
+            
         });
 
         /*OPEN ROOM*/
