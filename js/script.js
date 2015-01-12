@@ -180,7 +180,7 @@ $(document).ready(function(){
         });
         //add to ignore
         $('.user_control_icon2, .dark_grey_button').click(function () {
-           $('.user_main_menu_hit.ignore').toggle();
+            $('.user_main_menu_hit.ignore').toggle();
         });
         //open popup with smiles
         $('#user_popup .smiles_img').click(function(){
@@ -413,7 +413,7 @@ $(document).ready(function(){
         });
 
         //show smiles popup in article comments
-        $('.enter_comment .smiles_img').click(function(){
+        $('.enter_comment .editor_tools li:first-child').click(function(){
             if ($('.click_user_popup2').css('display')=='none')
                 $('.click_user_popup2').show();
             else $('.click_user_popup2').hide();
@@ -422,22 +422,21 @@ $(document).ready(function(){
             $('.click_user_popup2').hide();
         });
 
-        //article comments hover
-        $('.article_comment_row').hover(function(){
-                $(this).find('.comment_hover_left_border:first').show();
-                $(this).find('.up_rating:first').css("visibility","visible");
-                $(this).find('.down_rating:first').css("visibility","visible");
-                $(this).find('.user_comment_options:first').css("visibility","visible");
-                return;
-            },
-            function() {
-                $(this).find('.comment_hover_left_border:first').hide();
-                $(this).find('.up_rating:first').css("visibility","hidden");
-                $(this).find('.down_rating:first').css("visibility","hidden");
-                $(this).find('.user_comment_options:first').css("visibility","hidden");
-                $(this).find('.total_comment_rating').show();
-                $(this).find('.article_comment_rating').hide();
-            });
+        //comment options
+        $('.article_comment_options span').click(function () {
+            if ($(this).hasClass('active'))
+                $('.article_comment_footer').removeClass('active');
+            else {
+                $('.article_comment_footer').removeClass('active');
+                $(this).parent().parent().addClass('active');
+            }
+            if ($(this).hasClass('active'))
+                $('.article_comment_options span').removeClass('active');
+            else {
+                $('.article_comment_options span').removeClass('active');
+                $(this).addClass('active');
+            }
+        });
 
 
 
@@ -596,7 +595,7 @@ $(document).ready(function(){
                 $('.options.chat_pic').removeClass('active');
             }
             //ARTICLE COMMENTS SMILES
-            if ($(event.target).closest(".click_user_popup2 .chat_list_wrapper2").length || $(event.target).closest(".enter_comment .smiles_img").length) return;
+            if ($(event.target).closest(".click_user_popup2 .chat_list_wrapper2").length || $(event.target).closest(".enter_comment .editor_tools li:first-child").length) return;
             else
                 $('.click_user_popup2').hide();
             //USER POPUP SMILES
@@ -825,524 +824,524 @@ $(document).ready(function(){
 
 
 
-    /*CUSTOM SCROLLBAR PLUGIN*/
+        /*CUSTOM SCROLLBAR PLUGIN*/
 
-    //user message_list
-    $(".user_message_list").mCustomScrollbar({
-        axis:"y",
-        theme:"light",
-        scrollInertia: 850,
-        mouseWheel:{ scrollAmount: 350 },
-        callbacks:{
-            onScrollStart:function(){
-                $(".user_left_block .top_shadow").show();
-                $(".user_left_block .bottom_shadow").show();
-            },
-            onTotalScroll:function(){
-                $(".user_left_block .top_shadow").show();
-                $(".user_left_block .bottom_shadow").hide();
-            },
-            onTotalScrollBack:function(){
-                $(".user_left_block .top_shadow").hide();
-                $(".user_left_block .bottom_shadow").show();
+        //user message_list
+        $(".user_message_list").mCustomScrollbar({
+            axis:"y",
+            theme:"light",
+            scrollInertia: 850,
+            mouseWheel:{ scrollAmount: 350 },
+            callbacks:{
+                onScrollStart:function(){
+                    $(".user_left_block .top_shadow").show();
+                    $(".user_left_block .bottom_shadow").show();
+                },
+                onTotalScroll:function(){
+                    $(".user_left_block .top_shadow").show();
+                    $(".user_left_block .bottom_shadow").hide();
+                },
+                onTotalScrollBack:function(){
+                    $(".user_left_block .top_shadow").hide();
+                    $(".user_left_block .bottom_shadow").show();
+                }
             }
-        }
-    });
-    //user message_list
-    $(".user_category_wrapper").mCustomScrollbar({
-        axis:"y",
-        theme:"light",
-        scrollInertia: 850,
-        mouseWheel:{ scrollAmount: 350 },
-        callbacks:{
-            onScrollStart:function(){
-                $(".user_right_block .top_shadow").show();
-                $(".user_right_block .bottom_shadow").show();
-            },
-            onTotalScroll:function(){
-                $(".user_right_block .top_shadow").show();
-                $(".user_right_block .bottom_shadow").hide();
-            },
-            onTotalScrollBack:function(){
-                $(".user_right_block .top_shadow").hide();
-                $(".user_right_block .bottom_shadow").show();
+        });
+        //user message_list
+        $(".user_category_wrapper").mCustomScrollbar({
+            axis:"y",
+            theme:"light",
+            scrollInertia: 850,
+            mouseWheel:{ scrollAmount: 350 },
+            callbacks:{
+                onScrollStart:function(){
+                    $(".user_right_block .top_shadow").show();
+                    $(".user_right_block .bottom_shadow").show();
+                },
+                onTotalScroll:function(){
+                    $(".user_right_block .top_shadow").show();
+                    $(".user_right_block .bottom_shadow").hide();
+                },
+                onTotalScrollBack:function(){
+                    $(".user_right_block .top_shadow").hide();
+                    $(".user_right_block .bottom_shadow").show();
+                }
             }
-        }
-    });
+        });
 
-    //valute operations
-    $('.lenta_operacii').each(function(){
-        $(this).mCustomScrollbar({
+        //valute operations
+        $('.lenta_operacii').each(function(){
+            $(this).mCustomScrollbar({
+                axis:"y",
+                theme:"light",
+                scrollInertia: 950,
+                mouseWheel:{ scrollAmount: 1000 }
+            });
+        });
+
+        //create_poll_room
+        $('.room_create_poll').each(function(){
+            $(this).mCustomScrollbar({
+                axis:"y",
+                theme:"light",
+                scrollInertia: 950,
+                mouseWheel:{ scrollAmount: 1000 }
+            });
+        });
+
+        //users in room
+        $('.room_userlist_page_wrapper').mCustomScrollbar({
             axis:"y",
             theme:"light",
             scrollInertia: 950,
             mouseWheel:{ scrollAmount: 1000 }
         });
-    });
 
-    //create_poll_room
-    $('.room_create_poll').each(function(){
-        $(this).mCustomScrollbar({
+        //result room polls
+        $('.room_results_poll').each(function(){
+            $(this).mCustomScrollbar({
+                axis:"y",
+                theme:"light",
+                scrollInertia: 950,
+                mouseWheel:{ scrollAmount: 1000 }
+            });
+        });
+
+        //result room polls
+        $('.room_vote_poll').each(function(){
+            $(this).mCustomScrollbar({
+                axis:"y",
+                theme:"light",
+                scrollInertia: 950,
+                mouseWheel:{ scrollAmount: 1000 }
+            });
+        });
+
+        //custom select
+        $('.selectBox-menuShowing-bottom').mCustomScrollbar({
+            axis:"y",
+            theme:"light"
+        });
+
+        //smiles_list
+        $('.chat_list_wrapper').mCustomScrollbar({
             axis:"y",
             theme:"light",
             scrollInertia: 950,
             mouseWheel:{ scrollAmount: 1000 }
         });
-    });
 
-    //users in room
-    $('.room_userlist_page_wrapper').mCustomScrollbar({
-        axis:"y",
-        theme:"light",
-        scrollInertia: 950,
-        mouseWheel:{ scrollAmount: 1000 }
-    });
-
-    //result room polls
-    $('.room_results_poll').each(function(){
-        $(this).mCustomScrollbar({
+        //chat so specom
+        $('.chat_specialist_wrapper').mCustomScrollbar({
             axis:"y",
             theme:"light",
             scrollInertia: 950,
             mouseWheel:{ scrollAmount: 1000 }
         });
-    });
 
-    //result room polls
-    $('.room_vote_poll').each(function(){
-        $(this).mCustomScrollbar({
+        //user_message_chat
+        $(".user_message_chat").mCustomScrollbar({
+            axis:"y",
+            theme:"light",
+            scrollInertia: 950,
+            mouseWheel:{ scrollAmount: 500 },
+            callbacks:{
+                onScrollStart:function(){
+                    $(".user_message_chat_wrapper .top_shadow").show();
+                    $(".user_message_chat_wrapper .bottom_shadow").show();
+                },
+                onTotalScroll:function(){
+                    $(".user_message_chat_wrapper .top_shadow").show();
+                    $(".user_message_chat_wrapper .bottom_shadow").hide();
+                },
+                onTotalScrollBack:function(){
+                    $(".user_message_chat_wrapper .top_shadow").hide();
+                    $(".user_message_chat_wrapper .bottom_shadow").show();
+                }
+            }
+        });
+
+        //registration
+        $(".registr_contract").mCustomScrollbar({
             axis:"y",
             theme:"light",
             scrollInertia: 950,
             mouseWheel:{ scrollAmount: 1000 }
         });
-    });
 
-    //custom select
-    $('.selectBox-menuShowing-bottom').mCustomScrollbar({
-        axis:"y",
-        theme:"light"
-    });
-
-    //smiles_list
-    $('.chat_list_wrapper').mCustomScrollbar({
-        axis:"y",
-        theme:"light",
-        scrollInertia: 950,
-        mouseWheel:{ scrollAmount: 1000 }
-    });
-
-    //chat so specom
-    $('.chat_specialist_wrapper').mCustomScrollbar({
-        axis:"y",
-        theme:"light",
-        scrollInertia: 950,
-        mouseWheel:{ scrollAmount: 1000 }
-    });
-
-    //user_message_chat
-    $(".user_message_chat").mCustomScrollbar({
-        axis:"y",
-        theme:"light",
-        scrollInertia: 950,
-        mouseWheel:{ scrollAmount: 500 },
-        callbacks:{
-            onScrollStart:function(){
-                $(".user_message_chat_wrapper .top_shadow").show();
-                $(".user_message_chat_wrapper .bottom_shadow").show();
-            },
-            onTotalScroll:function(){
-                $(".user_message_chat_wrapper .top_shadow").show();
-                $(".user_message_chat_wrapper .bottom_shadow").hide();
-            },
-            onTotalScrollBack:function(){
-                $(".user_message_chat_wrapper .top_shadow").hide();
-                $(".user_message_chat_wrapper .bottom_shadow").show();
+        //achievments
+        $(".user_achievements_list").mCustomScrollbar({
+            axis:"y",
+            theme:"light",
+            scrollInertia: 950,
+            mouseWheel:{ scrollAmount: 1000 },
+            callbacks:{
+                onScrollStart:function(){
+                    $(".achievements_wrapper .top_shadow").show();
+                    $(".achievements_wrapper .bottom_shadow").show();
+                },
+                onTotalScroll:function(){
+                    $(".achievements_wrapper .top_shadow").show();
+                    $(".achievements_wrapper .bottom_shadow").hide();
+                },
+                onTotalScrollBack:function(){
+                    $(".achievements_wrapper .top_shadow").hide();
+                    $(".achievements_wrapper .bottom_shadow").show();
+                }
             }
-        }
-    });
+        });
 
-    //registration
-    $(".registr_contract").mCustomScrollbar({
-        axis:"y",
-        theme:"light",
-        scrollInertia: 950,
-        mouseWheel:{ scrollAmount: 1000 }
-    });
-
-    //achievments
-    $(".user_achievements_list").mCustomScrollbar({
-        axis:"y",
-        theme:"light",
-        scrollInertia: 950,
-        mouseWheel:{ scrollAmount: 1000 },
-        callbacks:{
-            onScrollStart:function(){
-                $(".achievements_wrapper .top_shadow").show();
-                $(".achievements_wrapper .bottom_shadow").show();
-            },
-            onTotalScroll:function(){
-                $(".achievements_wrapper .top_shadow").show();
-                $(".achievements_wrapper .bottom_shadow").hide();
-            },
-            onTotalScrollBack:function(){
-                $(".achievements_wrapper .top_shadow").hide();
-                $(".achievements_wrapper .bottom_shadow").show();
+        //favorite stream list
+        $(".user_streams_list").mCustomScrollbar({
+            axis:"x",
+            theme:"light",
+            scrollInertia: 950,
+            mouseWheel:{ scrollAmount: 1000 },
+            callbacks:{
+                onScrollStart:function(){
+                    $(".user_streams_wrapper .right_shadow").show();
+                    $(".user_streams_wrapper .left_shadow").show();
+                },
+                onTotalScroll:function(){
+                    $(".user_streams_wrapper .left_shadow").show();
+                    $(".user_streams_wrapper .right_shadow").hide();
+                },
+                onTotalScrollBack:function(){
+                    $(".user_streams_wrapper .left_shadow").hide();
+                    $(".user_streams_wrapper .right_shadow").show();
+                }
             }
-        }
-    });
+        });
 
-    //favorite stream list
-    $(".user_streams_list").mCustomScrollbar({
-        axis:"x",
-        theme:"light",
-        scrollInertia: 950,
-        mouseWheel:{ scrollAmount: 1000 },
-        callbacks:{
-            onScrollStart:function(){
-                $(".user_streams_wrapper .right_shadow").show();
-                $(".user_streams_wrapper .left_shadow").show();
-            },
-            onTotalScroll:function(){
-                $(".user_streams_wrapper .left_shadow").show();
-                $(".user_streams_wrapper .right_shadow").hide();
-            },
-            onTotalScrollBack:function(){
-                $(".user_streams_wrapper .left_shadow").hide();
-                $(".user_streams_wrapper .right_shadow").show();
+        //favorite igronelist
+        $(".user_streams_ignore_list").mCustomScrollbar({
+            axis:"x",
+            theme:"light",
+            scrollInertia: 950,
+            mouseWheel:{ scrollAmount: 1000 },
+            callbacks:{
+                onScrollStart:function(){
+                    $(".user_streams_ignore_wrapper .right_shadow").show();
+                    $(".user_streams_ignore_wrapper .left_shadow").show();
+                },
+                onTotalScroll:function(){
+                    $(".user_streams_ignore_wrapper .left_shadow").show();
+                    $(".user_streams_ignore_wrapper .right_shadow").hide();
+                },
+                onTotalScrollBack:function(){
+                    $(".user_streams_ignore_wrapper .left_shadow").hide();
+                    $(".user_streams_ignore_wrapper .right_shadow").show();
+                }
             }
-        }
-    });
+        });
 
-    //favorite igronelist
-    $(".user_streams_ignore_list").mCustomScrollbar({
-        axis:"x",
-        theme:"light",
-        scrollInertia: 950,
-        mouseWheel:{ scrollAmount: 1000 },
-        callbacks:{
-            onScrollStart:function(){
-                $(".user_streams_ignore_wrapper .right_shadow").show();
-                $(".user_streams_ignore_wrapper .left_shadow").show();
-            },
-            onTotalScroll:function(){
-                $(".user_streams_ignore_wrapper .left_shadow").show();
-                $(".user_streams_ignore_wrapper .right_shadow").hide();
-            },
-            onTotalScrollBack:function(){
-                $(".user_streams_ignore_wrapper .left_shadow").hide();
-                $(".user_streams_ignore_wrapper .right_shadow").show();
+        //profile history experience
+        $(".profile_hist_wrapper").mCustomScrollbar({
+            axis:"y",
+            theme:"light",
+            scrollInertia: 950,
+            mouseWheel:{ scrollAmount: 1000 },
+            callbacks:{
+                onScrollStart:function(){
+                    $(".profile_hist .top_shadow").show();
+                    $(".profile_hist .bottom_shadow").show();
+                },
+                onTotalScroll:function(){
+                    $(".profile_hist .top_shadow").show();
+                    $(".profile_hist .bottom_shadow").hide();
+                },
+                onTotalScrollBack:function(){
+                    $(".profile_hist .top_shadow").hide();
+                    $(".profile_hist .bottom_shadow").show();
+                }
             }
-        }
-    });
+        });
 
-    //profile history experience
-    $(".profile_hist_wrapper").mCustomScrollbar({
-        axis:"y",
-        theme:"light",
-        scrollInertia: 950,
-        mouseWheel:{ scrollAmount: 1000 },
-        callbacks:{
-            onScrollStart:function(){
-                $(".profile_hist .top_shadow").show();
-                $(".profile_hist .bottom_shadow").show();
-            },
-            onTotalScroll:function(){
-                $(".profile_hist .top_shadow").show();
-                $(".profile_hist .bottom_shadow").hide();
-            },
-            onTotalScrollBack:function(){
-                $(".profile_hist .top_shadow").hide();
-                $(".profile_hist .bottom_shadow").show();
-            }
-        }
-    });
-
-    //all streams
-    $(".all_streams_wrapper").mCustomScrollbar({
-        axis:"y",
-        theme:"light",
-        scrollInertia: 950,
-        mouseWheel:{ scrollAmount: 1000 }
-    });
-    $('.all_streams_wrapper .mCSB_container').bind("DOMSubtreeModified",function(){
-
+        //all streams
         $(".all_streams_wrapper").mCustomScrollbar({
             axis:"y",
             theme:"light",
             scrollInertia: 950,
             mouseWheel:{ scrollAmount: 1000 }
         });
-        setStreamHover();
-    });
+        $('.all_streams_wrapper .mCSB_container').bind("DOMSubtreeModified",function(){
 
-    //custom select in chat header
-    $(".popup_chats_list_wrapper").mCustomScrollbar({
-        axis:"y",
-        theme:"light",
-        scrollInertia: 650,
-        mouseWheel:{ scrollAmount: 500 }
-    });
-
-    //for popups in chat
-    $(".click_user_popup_wrapper").mCustomScrollbar({
-        axis:"y",
-        theme:"light",
-        scrollInertia: 650,
-        mouseWheel:{ scrollAmount: 500 }
-    });
-    //users in chat list
-    $(".user_in_chat_wrapper").mCustomScrollbar({
-        axis:"y",
-        theme:"light",
-        scrollInertia: 650,
-        mouseWheel:{ scrollAmount: 500 }
-    });
-
-    //all rooms
-    $(".all_rooms_wrapper").mCustomScrollbar({
-        axis:"y",
-        theme:"light",
-        scrollInertia: 950,
-        mouseWheel:{ scrollAmount: 1000 },
-        callbacks:{
-            onScrollStart:function(){
-                $(".all_rooms_wrapper_with_shadow .top_shadow").show();
-                $(".all_rooms_wrapper_with_shadow .bottom_shadow").show();
-            },
-            onTotalScroll:function(){
-                $(".all_rooms_wrapper_with_shadow .top_shadow").show();
-                $(".all_rooms_wrapper_with_shadow .bottom_shadow").hide();
-            },
-            onTotalScrollBack:function(){
-                $(".all_rooms_wrapper_with_shadow .top_shadow").hide();
-                $(".all_rooms_wrapper_with_shadow .bottom_shadow").show();
-            }
-        }
-    });
-
-    /*GROUP OF CUSTOM CHECKBOXES*/
-
-    $('.blue_checkbox').iCheck({
-        cursor: true,
-        checkboxClass: 'icheckbox_futurico',
-        radioClass: 'icheckbox_futurico2'
-    });
-    $('.blue_check').iCheck({
-        cursor: true,
-        checkboxClass: 'blue'
-    });
-    $('.white_checkbox').iCheck({
-        cursor: true,
-        checkboxClass: 'icheckbox_futurico_white',
-        radioClass:'icheckbox_futurico_white'
-    });
-    $('.anonsi_checkbox').iCheck({
-        cursor: true,
-        checkboxClass: 'icheckbox_dark_blue2'
-    });
-    $('.black_checkbox').iCheck({
-        cursor: true,
-        radioClass: 'icheckbox_black'
-    });
-    $('.wall_radio').iCheck({
-        cursor: true,
-        checkboxClass: 'wall_checkbox',
-        radioClass: 'wall_checkbox'
-    });
-
-
-
-
-
-    /*GROUP OF HINTS*/
-
-
-    //show checkbox in raspisanie
-    $('.stream_row').hover(function(){
-            $(this).find('.icheckbox_dark_blue').css('height',$(this).height());
-            $(this).find('.icheckbox_dark_blue').show();
-        },
-        function() {
-            $(this).find('.icheckbox_dark_blue').hide();
+            $(".all_streams_wrapper").mCustomScrollbar({
+                axis:"y",
+                theme:"light",
+                scrollInertia: 950,
+                mouseWheel:{ scrollAmount: 1000 }
+            });
+            setStreamHover();
         });
-    $('.icheckbox_dark_blue .iCheck-helper').hover(function(){
 
-        },
-        function(){
-            $(this).parent().hide();
+        //custom select in chat header
+        $(".popup_chats_list_wrapper").mCustomScrollbar({
+            axis:"y",
+            theme:"light",
+            scrollInertia: 650,
+            mouseWheel:{ scrollAmount: 500 }
         });
-    $('.icheckbox_dark_blue .iCheck-helper').hover(function(){
-            $(this).parent().next('.checkbox_hint').show();
-        },
-        function() {
-            $(this).parent().next('.checkbox_hint').hide();
+
+        //for popups in chat
+        $(".click_user_popup_wrapper").mCustomScrollbar({
+            axis:"y",
+            theme:"light",
+            scrollInertia: 650,
+            mouseWheel:{ scrollAmount: 500 }
         });
-    $('.icheckbox_dark_blue').on('ifChecked', function(event){
-        $(this).parent().addClass('active');
-    });
-    $('.icheckbox_dark_blue').on('ifUnchecked', function(event){
-        $(this).parent().removeClass('active');
-    });
-
-
-
-
-    /*GROUP OF FILLING CIRCLE PLUGIN*/
-
-    //filling streamer lvl exp in user popup cabinet favorites
-    var numb=0;
-
-    //streamer
-    $('.its_streamer .favorite_lvl').each(function(){
-        $(this).find('.for_canvas').rotator({
-            num : numb,
-            starting: 0,
-            ending: parseInt($(this).find('.how_much_fill').text()),
-            lineWidth: 6,
-            color:'#3189ef',
-            fontSize:'0px',
-            backgroundColor: '#193c65',
-            radius:24
+        //users in chat list
+        $(".user_in_chat_wrapper").mCustomScrollbar({
+            axis:"y",
+            theme:"light",
+            scrollInertia: 650,
+            mouseWheel:{ scrollAmount: 500 }
         });
-        numb++;
-    });
 
-    //author
-    $('.its_author .favorite_lvl').each(function(){
-        $(this).find('.for_canvas').rotator({
-            num : numb,
-            starting: 0,
-            ending: parseInt($(this).find('.how_much_fill').text()),
-            lineWidth: 6,
-            color:'#0fd483',
-            fontSize:'0px',
-            backgroundColor: '#085b44',
-            radius:24
-        });
-        numb++;
-    });
-
-    //category
-    $('.its_category .favorite_lvl').each(function(){
-        $(this).find('.for_canvas').rotator({
-            num : numb,
-            starting: 0,
-            ending: parseInt($(this).find('.how_much_fill').text()),
-            lineWidth: 6,
-            color:'#3189ef',
-            fontSize:'0px',
-            backgroundColor: '#193c65',
-            radius:24
-        });
-        numb++;
-    });
-
-    //room
-    $('.its_room .favorite_lvl').each(function(){
-        $(this).find('.for_canvas').rotator({
-            num : numb,
-            starting: 0,
-            ending: parseInt($(this).find('.how_much_fill').text()),
-            lineWidth: 6,
-            color:'#3189ef',
-            fontSize:'0px',
-            backgroundColor: '#193c65',
-            radius:24
-        });
-        numb++;
-    });
-
-    //user profile
-
-    //streamer
-    $('.profile_lvl.streamer').each(function(){
-        $(this).find('.for_canvas').rotator({
-            num : numb,
-            starting: 0,
-            ending: parseInt($(this).find('.how_much_fill').text()),
-            lineWidth: 2,
-            color:'#3399ff',
-            fontSize:'0px',
-            backgroundColor: '#11355c',
-            radius:19
-        });
-        numb++;
-    });
-
-    //author
-    $('.profile_lvl.author').each(function(){
-        $(this).find('.for_canvas').rotator({
-            num : numb,
-            starting: 0,
-            ending: parseInt($(this).find('.how_much_fill').text()),
-            lineWidth: 2,
-            color:'#54daa3',
-            fontSize:'0px',
-            backgroundColor: '#125338',
-            radius:19
-        });
-        numb++;
-    });
-
-    //support
-    $('.profile_lvl.support').each(function(){
-        $(this).find('.for_canvas').rotator({
-            num : numb,
-            starting: 0,
-            ending: parseInt($(this).find('.how_much_fill').text()),
-            lineWidth: 2,
-            color:'#f8ca67',
-            fontSize:'0px',
-            backgroundColor: '#6a521d',
-            radius:19
-        });
-        numb++;
-    });
-
-    //robot
-    $('.profile_lvl.robot').each(function(){
-        $(this).find('.for_canvas').rotator({
-            num : numb,
-            starting: 0,
-            ending: parseInt($(this).find('.how_much_fill').text()),
-            lineWidth: 2,
-            color:'#d63447',
-            fontSize:'0px',
-            backgroundColor: '#66141e',
-            radius:19
-        });
-        numb++;
-    });
-
-    //room_post
-    $('.room_post').each(function(){
-        $(this).find('.for_canvas').rotator({
-            num : numb,
-            starting: 0,
-            ending: parseInt($(this).find('.how_much_fill').text()),
-            lineWidth: 2,
-            color:'#3399ff',
-            fontSize:'0px',
-            backgroundColor: '#fff',
-            radius:19
-        });
-        numb++;
-    });
-
-    /*GROUP OF CONNECTING LINES PLUGIN. THEY ALL ARE REINITIALIZE ON "resize"*/
-    $('.selectboxit-container .selectboxit-options').each(function(){
-        $(this).mCustomScrollbar({
+        //all rooms
+        $(".all_rooms_wrapper").mCustomScrollbar({
             axis:"y",
             theme:"light",
             scrollInertia: 950,
-            mouseWheel:{ scrollAmount: 180 }
+            mouseWheel:{ scrollAmount: 1000 },
+            callbacks:{
+                onScrollStart:function(){
+                    $(".all_rooms_wrapper_with_shadow .top_shadow").show();
+                    $(".all_rooms_wrapper_with_shadow .bottom_shadow").show();
+                },
+                onTotalScroll:function(){
+                    $(".all_rooms_wrapper_with_shadow .top_shadow").show();
+                    $(".all_rooms_wrapper_with_shadow .bottom_shadow").hide();
+                },
+                onTotalScrollBack:function(){
+                    $(".all_rooms_wrapper_with_shadow .top_shadow").hide();
+                    $(".all_rooms_wrapper_with_shadow .bottom_shadow").show();
+                }
+            }
         });
-    });
-    $('.room_chat .chat_message').first().css("padding-top","21px");
-    $('.room_chat .chat_wrapper').bind("DOMSubtreeModified",function(){
+
+        /*GROUP OF CUSTOM CHECKBOXES*/
+
+        $('.blue_checkbox').iCheck({
+            cursor: true,
+            checkboxClass: 'icheckbox_futurico',
+            radioClass: 'icheckbox_futurico2'
+        });
+        $('.blue_check').iCheck({
+            cursor: true,
+            checkboxClass: 'blue'
+        });
+        $('.white_checkbox').iCheck({
+            cursor: true,
+            checkboxClass: 'icheckbox_futurico_white',
+            radioClass:'icheckbox_futurico_white'
+        });
+        $('.anonsi_checkbox').iCheck({
+            cursor: true,
+            checkboxClass: 'icheckbox_dark_blue2'
+        });
+        $('.black_checkbox').iCheck({
+            cursor: true,
+            radioClass: 'icheckbox_black'
+        });
+        $('.wall_radio').iCheck({
+            cursor: true,
+            checkboxClass: 'wall_checkbox',
+            radioClass: 'wall_checkbox'
+        });
+
+
+
+
+
+        /*GROUP OF HINTS*/
+
+
+        //show checkbox in raspisanie
+        $('.stream_row').hover(function(){
+                $(this).find('.icheckbox_dark_blue').css('height',$(this).height());
+                $(this).find('.icheckbox_dark_blue').show();
+            },
+            function() {
+                $(this).find('.icheckbox_dark_blue').hide();
+            });
+        $('.icheckbox_dark_blue .iCheck-helper').hover(function(){
+
+            },
+            function(){
+                $(this).parent().hide();
+            });
+        $('.icheckbox_dark_blue .iCheck-helper').hover(function(){
+                $(this).parent().next('.checkbox_hint').show();
+            },
+            function() {
+                $(this).parent().next('.checkbox_hint').hide();
+            });
+        $('.icheckbox_dark_blue').on('ifChecked', function(event){
+            $(this).parent().addClass('active');
+        });
+        $('.icheckbox_dark_blue').on('ifUnchecked', function(event){
+            $(this).parent().removeClass('active');
+        });
+
+
+
+
+        /*GROUP OF FILLING CIRCLE PLUGIN*/
+
+        //filling streamer lvl exp in user popup cabinet favorites
+        var numb=0;
+
+        //streamer
+        $('.its_streamer .favorite_lvl').each(function(){
+            $(this).find('.for_canvas').rotator({
+                num : numb,
+                starting: 0,
+                ending: parseInt($(this).find('.how_much_fill').text()),
+                lineWidth: 6,
+                color:'#3189ef',
+                fontSize:'0px',
+                backgroundColor: '#193c65',
+                radius:24
+            });
+            numb++;
+        });
+
+        //author
+        $('.its_author .favorite_lvl').each(function(){
+            $(this).find('.for_canvas').rotator({
+                num : numb,
+                starting: 0,
+                ending: parseInt($(this).find('.how_much_fill').text()),
+                lineWidth: 6,
+                color:'#0fd483',
+                fontSize:'0px',
+                backgroundColor: '#085b44',
+                radius:24
+            });
+            numb++;
+        });
+
+        //category
+        $('.its_category .favorite_lvl').each(function(){
+            $(this).find('.for_canvas').rotator({
+                num : numb,
+                starting: 0,
+                ending: parseInt($(this).find('.how_much_fill').text()),
+                lineWidth: 6,
+                color:'#3189ef',
+                fontSize:'0px',
+                backgroundColor: '#193c65',
+                radius:24
+            });
+            numb++;
+        });
+
+        //room
+        $('.its_room .favorite_lvl').each(function(){
+            $(this).find('.for_canvas').rotator({
+                num : numb,
+                starting: 0,
+                ending: parseInt($(this).find('.how_much_fill').text()),
+                lineWidth: 6,
+                color:'#3189ef',
+                fontSize:'0px',
+                backgroundColor: '#193c65',
+                radius:24
+            });
+            numb++;
+        });
+
+        //user profile
+
+        //streamer
+        $('.profile_lvl.streamer').each(function(){
+            $(this).find('.for_canvas').rotator({
+                num : numb,
+                starting: 0,
+                ending: parseInt($(this).find('.how_much_fill').text()),
+                lineWidth: 2,
+                color:'#3399ff',
+                fontSize:'0px',
+                backgroundColor: '#11355c',
+                radius:19
+            });
+            numb++;
+        });
+
+        //author
+        $('.profile_lvl.author').each(function(){
+            $(this).find('.for_canvas').rotator({
+                num : numb,
+                starting: 0,
+                ending: parseInt($(this).find('.how_much_fill').text()),
+                lineWidth: 2,
+                color:'#54daa3',
+                fontSize:'0px',
+                backgroundColor: '#125338',
+                radius:19
+            });
+            numb++;
+        });
+
+        //support
+        $('.profile_lvl.support').each(function(){
+            $(this).find('.for_canvas').rotator({
+                num : numb,
+                starting: 0,
+                ending: parseInt($(this).find('.how_much_fill').text()),
+                lineWidth: 2,
+                color:'#f8ca67',
+                fontSize:'0px',
+                backgroundColor: '#6a521d',
+                radius:19
+            });
+            numb++;
+        });
+
+        //robot
+        $('.profile_lvl.robot').each(function(){
+            $(this).find('.for_canvas').rotator({
+                num : numb,
+                starting: 0,
+                ending: parseInt($(this).find('.how_much_fill').text()),
+                lineWidth: 2,
+                color:'#d63447',
+                fontSize:'0px',
+                backgroundColor: '#66141e',
+                radius:19
+            });
+            numb++;
+        });
+
+        //room_post
+        $('.room_post').each(function(){
+            $(this).find('.for_canvas').rotator({
+                num : numb,
+                starting: 0,
+                ending: parseInt($(this).find('.how_much_fill').text()),
+                lineWidth: 2,
+                color:'#3399ff',
+                fontSize:'0px',
+                backgroundColor: '#fff',
+                radius:19
+            });
+            numb++;
+        });
+
+        /*GROUP OF CONNECTING LINES PLUGIN. THEY ALL ARE REINITIALIZE ON "resize"*/
+        $('.selectboxit-container .selectboxit-options').each(function(){
+            $(this).mCustomScrollbar({
+                axis:"y",
+                theme:"light",
+                scrollInertia: 950,
+                mouseWheel:{ scrollAmount: 180 }
+            });
+        });
         $('.room_chat .chat_message').first().css("padding-top","21px");
-    });
+        $('.room_chat .chat_wrapper').bind("DOMSubtreeModified",function(){
+            $('.room_chat .chat_message').first().css("padding-top","21px");
+        });
 
 
     }, 1500);
