@@ -36,13 +36,13 @@
 </div>
 
 <!--STREAM ZONE WRAPPER-->
-<div id="workarea">
+<div id="mediazone">
 
     <!--STREAMS ZONE-->
-    <div id="streams_part">
+    <div id="mediazone_wrapper">
 
         <!--TOP PAGE MENU, USER INFO INSTEAD OF MENU-->
-        <div class="top_streams_menu">
+        <div class="menu">
             <div class="site_filter profile">
                 <div class="user_main_info">
                     <img src="images/userstream_ava.jpg" width="80" height="80" /> <!--user avatar here-->
@@ -117,13 +117,13 @@
         </div>
 
         <!--OPEN STREAM-->
-        <div class="main_block">
+        <div class="main_block" id="dynamic_filter_content">
 
             <div class="block_before_streams">
                 <span class="profile_text">Трансляция пользователя:</span>
             </div>
 
-            <div class="user_tream_page_wrapper min_param" id="dynamic_filter_content">
+            <div class="user_tream_page_wrapper min_param">
                 <!--Player-->
                 <div class="main_userpage_stream_block" >
                     <object width="903" style="display: none" height="511" bgcolor="#000b1b" data="#" id="live_embed_player_flash" type="application/x-shockwave-flash">
@@ -269,11 +269,11 @@
 </div>
 
 <!--CONTENT ZONE-->
-<div id="wrapper_content">
-    <div id="content_part">
+<div id="textzone">
+    <div id="textzone_wrapper">
 
         <!--CONTENT PAGE MENU-->
-        <div class="content_streams_menu">
+        <div class="menu">
 
             <div class="site_filter">
                 <!--include menu.html-->
@@ -288,7 +288,7 @@
         </div>
 
         <!--ARTICLES LIST AND BEST ARTICLES-->
-        <div class="content_main_block" >
+        <div class="content_main_block" id="static_filter_content">
 
             <!--ARTICLE LIST-->
             <div class="left_column article_list">
@@ -308,7 +308,7 @@
 <!--POPUPS BLOCK-->
 
 <!--CREATE STREAM-->
-<div class="create_stream_popup" style="visibility:hidden">
+<div class="create_stream_popup center_popup" style="visibility:hidden">
     <!--include popup_create_stream.html-->
 </div>
 
@@ -323,7 +323,7 @@
 </div>
 
 <!--REGIST POPUP-->
-<div class="registration_popup hide_popup">
+<div class="registration_popup center_popup">
     <!--include popup_registration.html-->
 </div>
 
@@ -332,23 +332,15 @@
     <!--include popup_search.html-->
 </div>
 
-<!--OPTIONS POPUP-->
-<div class="options_popup hide_popup">
-    <!--include popup_options.html-->
-</div>
 
 <!--UVEDOMLENIA/PREDUPREJDENIA POPUP-->
 <div class="sysmess_wrapper">
     <!--include popup_sysmess.html-->
 </div>
 
-<!--HOW MUCH DONATE POPUP-->
-<div class="how_much_donate_popup hide_popup">
-    <!--include popup_donate.html-->
-</div>
 
 <!--ERROR MESSAGES-->
-<div class="error_popup">
+<div class="error_popup center_popup">
     <div class="warning_block"></div>
     <div class="error_text">
         <span>Неправильно введен пароль, попробуйте еще раз + еще строка</span>
@@ -356,33 +348,33 @@
 </div>
 
 <!--CHANGE PASSWORD POPUP-->
-<div class="change_pwd_popup">
+<div class="change_pwd_popup center_popup">
     <!--include popup_change_password.html-->
 </div>
 
 <!--RESTORE PASSWORD POPUP-->
-<div class="restore_pwd_popup">
+<div class="restore_pwd_popup center_popup">
     <!--include popup_forgot_password.html-->
 </div>
 
 <!--RESTORE PASSWORD POPUP-->
-<div class="check_pwd_popup">
+<div class="check_pwd_popup center_popup">
     <!--include popup_check_passw.html-->
 </div>
 
 <!--AUTHORIZATION PASSWORD POPUP-->
 <!--DO WE USE IT?-->
-<div class="autorization_popup">
+<div class="autorization_popup center_popup">
     <!--include popup_authorization.html-->
 </div>
 
 <!--OTHER CATEGORY CHOOSE-->
-<div class="other_category_choose ">
+<div class="other_category_choose center_popup">
     <!--include popup_choose_category.html-->
 </div>
 
 <!--CREATE ROOM POPUP-->
-<div class="create_room_popup ">
+<div class="create_room_popup center_popup">
     <!--include popup_create_room.html-->
 </div>
 

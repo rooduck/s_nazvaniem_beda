@@ -2,9 +2,13 @@
 Касательно эдитора: хз будете ли вы делать свой или кастомизировать готовый, реализовал через список с картинками кастомизацию.
 ВАЖНО!!! Чтобы работал попап смайлов, он должен быть первый в списке инструментов!
 Стуктуру комментов соблюдаем! Дочерний коммент идет как вложенный в родительский! Мне это не очень прикольно, ховер из-за этого нормально не сделаешь, можно переделать.
+
+UPDATE!
+Добавлен кастомный спойлер и повешены на него ивенты. Хз будет ли он работать с вашим, если нелипите свой я его кастомизирую.
+Добавлен блок с жалобой на коммент.
 -->
 <!--COMMENT SEND FORM-->
-<div class="enter_comment">
+<div class="subcomment_block">
     <form action="" name="enter_article_comment">
         <img src="images/userstream_ava.jpg" alt="user_avatar" />
         <div class="arrow_textarea"></div>
@@ -108,12 +112,11 @@
     <div class="article_comment_footer">
         <div class="article_comment_options">
             <span>ответить</span>
-            <span>пожаловаться</span>
+            <span>позвать робота</span>
         </div>
         <time>от 12.01.2015 16:10</time>
     </div>
 
-    <div class="article_comment_line"></div>
 </div>
 
 <div class="article_comment_row author">
@@ -156,12 +159,12 @@
     <div class="article_comment_footer">
         <div class="article_comment_options">
             <span>ответить</span>
-            <span>пожаловаться</span>
+            <span>позвать робота</span>
         </div>
         <time>от 12.01.2015 16:10</time>
     </div>
-    <div class="article_comment_line"></div>
-    <div class="enter_comment">
+
+    <div class="subcomment_block">
         <form action="" name="enter_article_comment">
             <img src="images/userstream_ava.jpg" alt="user_avatar" />
             <div class="arrow_textarea"></div>
@@ -251,11 +254,61 @@
     <div class="article_comment_footer">
         <div class="article_comment_options">
             <span>ответить</span>
-            <span>пожаловаться</span>
+            <span>позвать робота</span>
         </div>
         <time>от 12.01.2015 16:10</time>
     </div>
-    <div class="article_comment_line"></div>
+
+    <div class="subcomment_block">
+        <form action="" name="choose_reason">
+            <img src="images/better_call_robot.png" alt="better_call_robot" />
+            <div class="radio_list">
+                <div class="left_block">
+                <div class="row">
+                    <input class="wall_radio" type="radio" name="reason" id="reason1" />
+                    <label for="reason1">Мат</label>
+                </div>
+                <div class="row">
+                    <input class="wall_radio" type="radio" name="reason" id="reason2" />
+                    <label for="reason2">Спам, реклама</label>
+                </div>
+                <div class="row">
+                    <input class="wall_radio" type="radio" name="reason" id="reason3" />
+                    <label for="reason3">Оскорбление</label>
+                </div>
+                <div class="row">
+                    <input class="wall_radio" type="radio" name="reason" id="reason4" />
+                    <label for="reason4">Спойлер</label>
+                </div>
+                </div>
+                <div class="right_block">
+                    <div class="row">
+                        <input class="wall_radio" type="radio" name="reason" id="reason5" />
+                        <label for="reason5">Ксенофобия, гомофобия, сексизм</label>
+                    </div>
+                    <div class="row">
+                        <input class="wall_radio" type="radio" name="reason" id="reason6" />
+                        <label for="reason6">Шок-контент, скримеры, вирусы</label>
+                    </div>
+                    <div class="row">
+                        <input class="wall_radio" type="radio" name="reason" id="reason7" />
+                        <label for="reason7">Порно</label>
+                    </div>
+                </div>
+            </div>
+            <div class="float_right">
+
+                <button type="submit" class="editor_send">отправить</button>
+                <div class="cool_note">
+                    За достоверную информацию
+                    вы получаете опыт.
+                    В дальнейшем вы сами
+                    сможете стать роботом
+                </div>
+
+            </div>
+        </form>
+    </div>
 </div>
 
 <div class="article_comment_row support">
@@ -300,224 +353,114 @@
     <div class="article_comment_footer">
         <div class="article_comment_options">
             <span>ответить</span>
-            <span>пожаловаться</span>
+            <span>позвать робота</span>
         </div>
         <time>от 12.01.2015 16:10</time>
     </div>
 
-    <div class="article_comment_line"></div>
+</div>
 
-    <!--SECOND LEVEL-->
-    <div class="article_comment_row author">
+<!--SECOND LEVEL-->
+<div class="article_comment_row author second_level">
 
-        <div class="article_comment_header">
-            <div class="article_user_info">
-                <img src="images/userstream_ava.jpg" alt="user_avatar" />
-                <a href="#" class="nick">Duckhero</a>
-                <div>автор</div>
-            </div>
-
-            <div class="comment_rating_wrapper">
-                <span class="total_comment_rating up">+12</span>
-                <div class="up_rating selected"></div>
-                <div class="down_rating"></div>
-
-                <div class="popup_rating">
-                    <!--Text is changed!-->
-                    <div class="rating_header">Поставьте количество минусов</div>
-                    <div class="close_rating"></div>
-                    <form name="rating_change" action="">
-                        <div class="trackbar_block">
-                            <span class="min_value">1</span>
-                            <div class="slider-comment-rating"></div>
-                            <input name="number" type="text" style="display:none;" />
-                            <span class="max_value"></span>
-                        </div>
-                        <button type="submit" class="light_blue_button">проголосовать</button>
-                    </form>
-                </div>
-            </div>
-
+    <div class="article_comment_header">
+        <div class="article_user_info">
+            <img src="images/userstream_ava.jpg" alt="user_avatar" />
+            <a href="#" class="nick">Duckhero</a>
+            <div>автор</div>
         </div>
 
-        <div class="article_comment_body">
-            <div class="user_comment">Ну допустим, что я просто даже не представляю, как бы мне так выразиться о том, что прекрасного происходит в вашей сраненькой игрульке. Казуалы сраные, но все-таки можно было бы сделать и как-то получше.
-                Что будет если я вообще перестану коммен
+        <div class="comment_rating_wrapper">
+            <span class="total_comment_rating up">+12</span>
+            <div class="up_rating selected"></div>
+            <div class="down_rating"></div>
+
+            <div class="popup_rating">
+                <!--Text is changed!-->
+                <div class="rating_header">Поставьте количество минусов</div>
+                <div class="close_rating"></div>
+                <form name="rating_change" action="">
+                    <div class="trackbar_block">
+                        <span class="min_value">1</span>
+                        <div class="slider-comment-rating"></div>
+                        <input name="number" type="text" style="display:none;" />
+                        <span class="max_value"></span>
+                    </div>
+                    <button type="submit" class="light_blue_button">проголосовать</button>
+                </form>
             </div>
         </div>
 
-        <div class="article_comment_footer">
-            <div class="article_comment_options">
-                <span>ответить</span>
-                <span>пожаловаться</span>
-            </div>
-            <time>от 12.01.2015 16:10</time>
+    </div>
+
+    <div class="article_comment_body">
+        <div class="user_comment">Ну допустим, что я просто даже не представляю, как бы мне так выразиться о том, что прекрасного происходит в вашей сраненькой игрульке. Казуалы сраные, но все-таки можно было бы сделать и как-то получше.
+            Что будет если я вообще перестану коммен
+        </div>
+    </div>
+
+    <div class="article_comment_footer">
+        <div class="article_comment_options">
+            <span>ответить</span>
+            <span>позвать робота</span>
+        </div>
+        <time>от 12.01.2015 16:10</time>
+    </div>
+
+
+</div>
+
+<!--THIRD LEVEL-->
+<div class="article_comment_row third_level robot">
+
+    <div class="article_comment_header">
+        <div class="article_user_info">
+            <img src="images/userstream_ava.jpg" alt="user_avatar" />
+            <a href="#" class="nick">Duckhero</a>
+            <div>робот</div>
         </div>
 
-        <div class="article_comment_line"></div>
+        <div class="comment_rating_wrapper">
+            <span class="total_comment_rating up">+12</span>
+            <div class="up_rating selected"></div>
+            <div class="down_rating"></div>
 
-        <!--THIRD LEVEL-->
-        <div class="article_comment_row robot">
-
-            <div class="article_comment_header">
-                <div class="article_user_info">
-                    <img src="images/userstream_ava.jpg" alt="user_avatar" />
-                    <a href="#" class="nick">Duckhero</a>
-                    <div>робот</div>
-                </div>
-
-                <div class="comment_rating_wrapper">
-                    <span class="total_comment_rating up">+12</span>
-                    <div class="up_rating selected"></div>
-                    <div class="down_rating"></div>
-
-                    <div class="popup_rating">
-                        <!--Text is changed!-->
-                        <div class="rating_header">Поставьте количество минусов</div>
-                        <div class="close_rating"></div>
-                        <form name="rating_change" action="">
-                            <div class="trackbar_block">
-                                <span class="min_value">1</span>
-                                <div class="slider-comment-rating"></div>
-                                <input name="number" type="text" style="display:none;" />
-                                <span class="max_value"></span>
-                            </div>
-                            <button type="submit" class="light_blue_button">проголосовать</button>
-                        </form>
+            <div class="popup_rating">
+                <!--Text is changed!-->
+                <div class="rating_header">Поставьте количество минусов</div>
+                <div class="close_rating"></div>
+                <form name="rating_change" action="">
+                    <div class="trackbar_block">
+                        <span class="min_value">1</span>
+                        <div class="slider-comment-rating"></div>
+                        <input name="number" type="text" style="display:none;" />
+                        <span class="max_value"></span>
                     </div>
-                </div>
-
+                    <button type="submit" class="light_blue_button">проголосовать</button>
+                </form>
             </div>
-
-            <div class="article_comment_body">
-                <div class="user_comment">Ну допустим, что я просто даже не представляю, как бы мне так выразиться о том, что прекрасного происходит в вашей сраненькой игрульке. Казуалы сраные, но все-таки можно было бы сделать и как-то получше.
-                    Что будет если я вообще перестану коммен
-                </div>
-            </div>
-
-            <div class="article_comment_footer">
-                <div class="article_comment_options">
-                    <span>ответить</span>
-                    <span>пожаловаться</span>
-                </div>
-                <time>от 12.01.2015 16:10</time>
-            </div>
-
-            <div class="article_comment_line"></div>
-
-            <!--FOURTH LEVEL-->
-            <div class="article_comment_row streamer">
-
-                <div class="article_comment_header">
-                    <div class="article_user_info">
-                        <img src="images/userstream_ava.jpg" alt="user_avatar" />
-                        <a href="#" class="nick">Duckhero</a>
-                        <div>стример</div>
-                    </div>
-
-                    <div class="comment_rating_wrapper">
-                        <span class="total_comment_rating up">+12</span>
-                        <div class="up_rating selected"></div>
-                        <div class="down_rating"></div>
-
-                        <div class="popup_rating">
-                            <!--Text is changed!-->
-                            <div class="rating_header">Поставьте количество минусов</div>
-                            <div class="close_rating"></div>
-                            <form name="rating_change" action="">
-                                <div class="trackbar_block">
-                                    <span class="min_value">1</span>
-                                    <div class="slider-comment-rating"></div>
-                                    <input name="number" type="text" style="display:none;" />
-                                    <span class="max_value"></span>
-                                </div>
-                                <button type="submit" class="light_blue_button">проголосовать</button>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="article_comment_body">
-                    <div class="user_comment">Ну допустим, что я просто даже не представляю, как бы мне так выразиться о том, что прекрасного происходит в вашей сраненькой игрульке. Казуалы сраные, но все-таки можно было бы сделать и как-то получше.
-                        Что будет если я вообще перестану коммен
-                    </div>
-                </div>
-
-                <div class="article_comment_footer">
-                    <div class="article_comment_options">
-                        <span>ответить</span>
-                        <span>пожаловаться</span>
-                    </div>
-                    <time>от 12.01.2015 16:10</time>
-                </div>
-
-
-                <div class="article_comment_line"></div>
-
-
-                <!--OTHER LEVELS-->
-
-                <div class="article_comment_row robot">
-
-                    <div class="article_comment_header">
-                        <div class="article_user_info">
-                            <img src="images/userstream_ava.jpg" alt="user_avatar" />
-                            <a href="#" class="nick">Duckhero</a>
-                            <div>робот</div>
-                        </div>
-
-                        <div class="comment_rating_wrapper">
-                            <span class="total_comment_rating up">+12</span>
-                            <div class="up_rating selected"></div>
-                            <div class="down_rating"></div>
-
-                            <div class="popup_rating">
-                                <!--Text is changed!-->
-                                <div class="rating_header">Поставьте количество минусов</div>
-                                <div class="close_rating"></div>
-                                <form name="rating_change" action="">
-                                    <div class="trackbar_block">
-                                        <span class="min_value">1</span>
-                                        <div class="slider-comment-rating"></div>
-                                        <input name="number" type="text" style="display:none;" />
-                                        <span class="max_value"></span>
-                                    </div>
-                                    <button type="submit" class="light_blue_button">проголосовать</button>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="article_comment_body">
-                        <div class="user_comment">Ну допустим, что я просто даже не представляю, как бы мне так выразиться о том, что прекрасного происходит в вашей сраненькой игрульке. Казуалы сраные, но все-таки можно было бы сделать и как-то получше.
-                            Что будет если я вообще перестану коммен
-                        </div>
-                    </div>
-
-                    <div class="article_comment_footer">
-                        <div class="article_comment_options">
-                            <span>ответить</span>
-                            <span>пожаловаться</span>
-                        </div>
-                        <time>от 12.01.2015 16:10</time>
-                    </div>
-
-                    <div class="article_comment_line"></div>
-
-                </div>
-
-            </div>
-
         </div>
 
+    </div>
 
+    <div class="article_comment_body">
+        <div class="user_comment">Ну допустим, что я просто даже не представляю, как бы мне так выразиться о том, что прекрасного происходит в вашей сраненькой игрульке. Казуалы сраные, но все-таки можно было бы сделать и как-то получше.
+            Что будет если я вообще перестану коммен
+        </div>
+    </div>
+
+    <div class="article_comment_footer">
+        <div class="article_comment_options">
+            <span>ответить</span>
+            <span>позвать робота</span>
+        </div>
+        <time>от 12.01.2015 16:10</time>
     </div>
 
 </div>
 
-<div class="article_comment_row my_comment">
+<!--FOURTH LEVEL-->
+<div class="article_comment_row last_level streamer">
 
     <div class="article_comment_header">
         <div class="article_user_info">
@@ -551,24 +494,231 @@
 
     <div class="article_comment_body">
         <div class="user_comment">Ну допустим, что я просто даже не представляю, как бы мне так выразиться о том, что прекрасного происходит в вашей сраненькой игрульке. Казуалы сраные, но все-таки можно было бы сделать и как-то получше.
-            Что будет если я вообще перестану комментировать ваши статеечки? Ну допустим, что я просто даже не представляю, как бы мне так выразиться о том, что прекрасного происходит в вашей сраненькой игрульке. Казуалы сраные, но все-таки можно было бы сделать и как-то получше.
-            Что будет если я вообще перестану комментировать ваши статеечки?
+            Что будет если я вообще перестану коммен
+        </div>
+    </div>
+
+    <div class="article_comment_footer">
+        <div class="article_comment_options">
+            <span>ответить</span>
+            <span>позвать робота</span>
+        </div>
+        <time>от 12.01.2015 16:10</time>
+    </div>
+
+
+</div>
+
+<!--OTHER LEVELS-->
+<div class="article_comment_row last_level robot">
+
+    <div class="article_comment_header">
+        <div class="article_user_info">
+            <img src="images/userstream_ava.jpg" alt="user_avatar" />
+            <a href="#" class="nick">Duckhero</a>
+            <div>робот</div>
+        </div>
+
+        <div class="comment_rating_wrapper">
+            <span class="total_comment_rating up">+12</span>
+            <div class="up_rating selected"></div>
+            <div class="down_rating"></div>
+
+            <div class="popup_rating">
+                <!--Text is changed!-->
+                <div class="rating_header">Поставьте количество минусов</div>
+                <div class="close_rating"></div>
+                <form name="rating_change" action="">
+                    <div class="trackbar_block">
+                        <span class="min_value">1</span>
+                        <div class="slider-comment-rating"></div>
+                        <input name="number" type="text" style="display:none;" />
+                        <span class="max_value"></span>
+                    </div>
+                    <button type="submit" class="light_blue_button">проголосовать</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="article_comment_body">
+        <div class="user_comment">Ну допустим, что я просто даже не представляю, как бы мне так выразиться о том, что прекрасного происходит в вашей сраненькой игрульке. Казуалы сраные, но все-таки можно было бы сделать и как-то получше.
+            Что будет если я вообще перестану коммен
+        </div>
+    </div>
+
+    <div class="article_comment_footer">
+        <div class="article_comment_options">
+            <span>ответить</span>
+            <span>позвать робота</span>
+        </div>
+        <time>от 12.01.2015 16:10</time>
+    </div>
+
+</div>
+
+<!--SECOND LEVEL-->
+<div class="article_comment_row second_level  my_comment">
+
+    <div class="article_comment_header">
+        <div class="article_user_info">
+            <img src="images/userstream_ava.jpg" alt="user_avatar" />
+            <a href="#" class="nick">Duckhero</a>
+            <div>автор</div>
+        </div>
+
+        <div class="comment_rating_wrapper">
+            <span class="total_comment_rating up">+12</span>
+            <div class="up_rating selected"></div>
+            <div class="down_rating"></div>
+
+            <div class="popup_rating">
+                <!--Text is changed!-->
+                <div class="rating_header">Поставьте количество минусов</div>
+                <div class="close_rating"></div>
+                <form name="rating_change" action="">
+                    <div class="trackbar_block">
+                        <span class="min_value">1</span>
+                        <div class="slider-comment-rating"></div>
+                        <input name="number" type="text" style="display:none;" />
+                        <span class="max_value"></span>
+                    </div>
+                    <button type="submit" class="light_blue_button">проголосовать</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="article_comment_body">
+        <div class="user_comment">
+            <div class="spoiler">
+                <span class="cut"><i>+</i> скрытый текст</span>
+                <div class="spoiler_text">
+                    текст под катом
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="article_comment_footer">
         <div class="article_comment_options">
             <span>редактировать</span>
-            <span>ответить</span>
-            <span>пожаловаться</span>
             <span class="red">удалить</span>
         </div>
         <time>от 12.01.2015 16:10</time>
     </div>
 
-    <div class="article_comment_line"></div>
-
 </div>
+
+<div class="article_comment_row third_level support">
+
+    <div class="article_comment_header">
+        <div class="article_user_info">
+            <img src="images/userstream_ava.jpg" alt="user_avatar" />
+            <a href="#" class="nick">Duckhero</a>
+            <div>автор</div>
+        </div>
+
+        <div class="comment_rating_wrapper">
+            <span class="total_comment_rating up">+12</span>
+            <div class="up_rating selected"></div>
+            <div class="down_rating"></div>
+
+            <div class="popup_rating">
+                <!--Text is changed!-->
+                <div class="rating_header">Поставьте количество минусов</div>
+                <div class="close_rating"></div>
+                <form name="rating_change" action="">
+                    <div class="trackbar_block">
+                        <span class="min_value">1</span>
+                        <div class="slider-comment-rating"></div>
+                        <input name="number" type="text" style="display:none;" />
+                        <span class="max_value"></span>
+                    </div>
+                    <button type="submit" class="light_blue_button">проголосовать</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="article_comment_body">
+        <div class="user_comment">
+            f.s,dofijsdfsdhfsojfdiofhsdoifsdjfidsjfsdfods;,
+            <div class="spoiler">
+                <span class="cut"><i>+</i> скрытый текст</span>
+                <div class="spoiler_text">
+                    текст под катом
+                </div>
+            </div>
+            fsdnfoijsdpfdjfd<br/>
+            ofsdh98fds0jfsioj]fs
+        </div>
+    </div>
+
+    <div class="article_comment_footer">
+        <div class="article_comment_options">
+            <span>редактировать</span>
+            <span class="red">удалить</span>
+        </div>
+        <time>от 12.01.2015 16:10</time>
+    </div>
+
+    <div class="subcomment_block">
+        <form action="" name="choose_reason">
+            <img src="images/better_call_robot.png" alt="better_call_robot" />
+            <div class="radio_list">
+                <div class="left_block">
+                    <div class="row">
+                        <input class="wall_radio" type="radio" name="reason" id="reason1" />
+                        <label for="reason1">Мат</label>
+                    </div>
+                    <div class="row">
+                        <input class="wall_radio" type="radio" name="reason" id="reason2" />
+                        <label for="reason2">Спам, реклама</label>
+                    </div>
+                    <div class="row">
+                        <input class="wall_radio" type="radio" name="reason" id="reason3" />
+                        <label for="reason3">Оскорбление</label>
+                    </div>
+                    <div class="row">
+                        <input class="wall_radio" type="radio" name="reason" id="reason4" />
+                        <label for="reason4">Спойлер</label>
+                    </div>
+                </div>
+                <div class="right_block">
+                    <div class="row">
+                        <input class="wall_radio" type="radio" name="reason" id="reason5" />
+                        <label for="reason5">Ксенофобия, гомофобия, сексизм</label>
+                    </div>
+                    <div class="row">
+                        <input class="wall_radio" type="radio" name="reason" id="reason6" />
+                        <label for="reason6">Шок-контент, скримеры, вирусы</label>
+                    </div>
+                    <div class="row">
+                        <input class="wall_radio" type="radio" name="reason" id="reason7" />
+                        <label for="reason7">Порно</label>
+                    </div>
+                </div>
+            </div>
+            <div class="float_right">
+
+                <button type="submit" class="editor_send">отправить</button>
+                <div class="cool_note">
+                    За достоверную информацию
+                    вы получаете опыт.
+                    В дальнейшем вы сами
+                    сможете стать роботом
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
 
 
 

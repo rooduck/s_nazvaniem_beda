@@ -16,8 +16,8 @@
 }
 .registration_wrapper .icheckbox_futurico,
 .registration_wrapper .iradio_futurico {
-float:left;
-clear:both;
+    float:left;
+    clear:both;
 }
 
 .icheckbox_futurico_white{
@@ -31,16 +31,37 @@ clear:both;
     width: 21px;
     height: 21px;
 }
+.wall_radio {
+    background:url("../images/radio_blue.png") 0 0 no-repeat;
+    width: 16px;
+    height: 16px;
+    float: left;
+}
 .wall_checkbox:hover {
-    background:url("../images/wall_checkbox.png") 0px 0 no-repeat;
+    background:url("../images/wall_checkbox.png") 0 0 no-repeat;
+}
+.wall_radio:hover {
+    background:url("../images/radio_blue.png") -16px 0 no-repeat;
 }
 .wall_checkbox + label {
     color: #666666;
 }
+.wall_radio + label {
+    color: #768aa8;
+    font-size: 12px;
+    float: left;
+    margin-left: 4px;
+}
 .wall_checkbox.checked {
     background:url("../images/wall_checkbox.png") -42px 0 no-repeat;
 }
-.wall_checkbox.checked +label {
+.wall_radio.checked {
+    background:url("../images/radio_blue.png") -32px 0 no-repeat;
+}
+.wall_checkbox.checked + label {
+    color: #3b557b;
+}
+.wall_radio.checked + label {
     color: #3b557b;
 }
 .blue{
@@ -76,31 +97,31 @@ clear:both;
     vertical-align: middle;
 }
 .icheckbox_dark_blue.checked {
-        background:url("/images/white_checkbox.png") center center no-repeat rgba(255,255,255,0.4);
+    background:url("/images/white_checkbox.png") center center no-repeat rgba(255,255,255,0.4);
 }
 .icheckbox_black {
-        background:url("/images/black_radiobutton.png") no-repeat;
-		 float: left;
+    background:url("/images/black_radiobutton.png") no-repeat;
+    float: left;
     height: 20px;
     width: 20px;
-	margin-left: 10px;
+    margin-left: 10px;
     margin-right: 7px;
     margin-top: 11px;
 }
 .icheckbox_black.checked {
-        background:url("/images/black_radiobutton_checked.png") no-repeat;
+    background:url("/images/black_radiobutton_checked.png") no-repeat;
 }
 .iradio_futurico {
     background-position: -72px 0;
 }
-    .iradio_futurico.checked {
-        background-position: -90px 0;
-    }
-    .iradio_futurico.disabled {
-        background-position: -108px 0;
-        cursor: default;
-    }
-    .iradio_futurico.checked.disabled {
-        background-position: -126px 0;
-    }
+.iradio_futurico.checked {
+    background-position: -90px 0;
+}
+.iradio_futurico.disabled {
+    background-position: -108px 0;
+    cursor: default;
+}
+.iradio_futurico.checked.disabled {
+    background-position: -126px 0;
+}
 

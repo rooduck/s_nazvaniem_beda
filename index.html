@@ -30,542 +30,534 @@
 <body>
 
 <div id="wrapper">
-    <!--HEADER OLD VERSION-->
-	<div id="header">
-        <!--include header.html-->
-	</div>
-	
-	<!--STREAM ZONE WRAPPER-->
-	<div id="workarea">
 
-    <!--STREAMS ZONE-->
-		<div id="streams_part">
+<div id="header">
+    <!--include header.html-->
+</div>
 
-            <!--TOP PAGE MENU-->
-            <div class="top_streams_menu">
-                <div class="site_filter">
-                    <!--include menu.html-->
+<!--STREAM ZONE WRAPPER-->
+<div id="mediazone">
+
+<!--STREAMS ZONE-->
+<div id="mediazone_wrapper">
+
+<!--TOP PAGE MENU-->
+<div class="menu">
+    <div class="site_filter">
+        <!--include menu.html-->
+    </div>
+
+    <div class="top_streams_menu_create">
+        <!---USE THAT BLOCK WHAT U NEED-->
+        <button class="blue_but not_active">Начать стрим</button>
+        <button class="blue_but" style="display: none">Создать комнату</button>
+        <span class="text">чтобы стримить у нас на портале, необходимо <span>зарегистрироваться</span></span>
+    </div>
+
+</div>
+
+<!--ALL STREAMS LIST-->
+<div class="main_block" id="dynamic_filter_content">
+    <!--class 'lists' needed only at stream\room list page!-->
+    <div class="block_before_streams lists">
+        <div class="unknow_text_block">
+            <span class="text1">Starcraft 2</span>
+            <div class="switcher">
+                <!--include switcher.html-->
+            </div>
+            <span class="text2">Подкатегория</span>
+        </div>
+    </div>
+    <div class="all_streams_wrapper min_param">
+        <!--include stream_list.html-->
+    </div>
+
+    <!---CATEGORY RATING-->
+    <div class="top_category_rating">
+        <!--include category_rating.html-->
+    </div>
+</div>
+
+<!--OPEN STREAM-->
+<div class="main_block" id="dynamic_filter_content">
+
+    <div class="user_tream_page_wrapper min_param">
+        <div class="block_before_streams">
+            <!--include back_block.html-->
+        </div>
+        <!--Player-->
+        <div class="main_userpage_stream_block">
+            <object width="903" height="511" bgcolor="#000b1b" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=welovegames" id="live_embed_player_flash" type="application/x-shockwave-flash">
+                <param value="true" name="allowFullScreen">
+                <param value="always" name="allowScriptAccess">
+                <param value="all" name="allowNetworking">
+                <param value="http://www.twitch.tv/widgets/live_embed_player.swf" name="movie">
+                <param value="hostname=www.twitch.tv&amp;channel=welovegames&amp;auto_play=true&amp;start_volume=25" name="flashvars">
+            </object>
+        </div>
+    </div>
+
+    <!--STREAM PAGE BLOCKS CHAT-->
+    <div class="user_chats">
+        <div class="chats_wrapper">
+
+            <!--CHAT HEADER OLD VERSION-->
+            <div class="chat_header">
+                <div class="chat_to_streamer">Чат: </div>
+                <div class="chats_list">
+                    <div class="selected_channel">
+                        <span class="text">какой-то крутой канал1</span>
+                        <div class="arrow_block"></div>
+                    </div>
+                    <div class="popup_chats_list">
+                        <div class="popup_chats_list_wrapper">
+                            <div class="channel_name_row">
+                                <span class="chat_people">103</span>
+                                <span class="chat_name">какой-то крутой канал1</span>
+
+                            </div>
+                            <div class="channel_name_row">
+                                <span class="chat_people">103</span>
+                                <span class="chat_name">какой-то крутой канал2</span>
+
+                            </div>
+                            <div class="channel_name_row">
+                                <span class="chat_people">3</span>
+                                <span class="chat_name">какой-то крутой канал3</span>
+
+                            </div>
+                            <div class="channel_name_row">
+                                <span class="chat_people">1033</span>
+                                <span class="chat_name">какой-то крутой канал4</span>
+
+                            </div>
+                            <div class="channel_name_row">
+                                <span class="chat_people">3</span>
+                                <span class="chat_name">какой-то крутой канал5</span>
+                            </div>
+                            <div class="channel_name_row">
+                                <span class="chat_people">3</span>
+                                <span class="chat_name">какой-то крутой канал6</span>
+                            </div>
+                            <div class="channel_name_row">
+                                <span class="chat_people">3</span>
+                                <span class="chat_name">какой-то крутой канал7</span>
+                            </div>
+                            <div class="channel_name_row">
+                                <span class="chat_people">3</span>
+                                <span class="chat_name">какой-то крутой канал8</span>
+                            </div>
+                            <div class="channel_name_row">
+                                <span class="chat_people">3</span>
+                                <span class="chat_name">qweqweqw</span>
+                            </div>
+                            <div class="channel_name_row">
+                                <span class="chat_people">3</span>
+                                <span class="chat_name">43qg34 4 q43 gg </span>
+                            </div>
+                            <div class="channel_name_row">
+                                <span class="chat_people">3</span>
+                                <span class="chat_name"> erg reg ergwe  erg erwgr</span>
+                            </div>
+                            <div class="channel_name_row">
+                                <span class="chat_people">3</span>
+                                <span class="chat_name">qreew f wefqwqewer</span>
+                            </div>
+                            <div class="channel_name_row">
+                                <span class="chat_people">3</span>
+                                <span class="chat_name">43243242432423432432</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="top_streams_menu_create">
-                    <!---USE THAT BLOCK WHAT U NEED-->
-                    <button class="blue_but not_active">Начать стрим</button>
-                    <button class="blue_but" style="display: none">Создать комнату</button>
-                    <span class="text">чтобы стримить у нас на портале, необходимо <span>зарегистрироваться</span></span>
+                <div class="chat_streamer_action">
+                    <span class="text">WeLoveGamesTV</span>
+                    <div class="popup_actions_list click_user_popup">
+                        <div class="popup_actions_list_wrapper">
+                            <div class="click_user_popup_row">
+                                Забанить
+                            </div>
+                            <div class="click_user_popup_row">
+                                Выключить
+                            </div>
+                            <div class="click_user_popup_row">
+                                Написать
+                            </div>
+                            <div class="click_user_popup_row">
+                                Задонатить
+                            </div>
+                            <div class="click_user_popup_row">
+                                Замутить
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
 
-            <!--ALL STREAMS LIST-->
-            <div class="main_block">
-                <!--class 'lists' needed only at stream\room list page!-->
-                <div class="block_before_streams lists">
-                    <div class="unknow_text_block">
-                        <span class="text1">Starcraft 2</span>
-                        <div class="switcher">
-                            <!--include switcher.html-->
-                        </div>
-                        <span class="text2">Подкатегория</span>
-                    </div>
-                </div>
-                <div class="all_streams_wrapper min_param" id="dynamic_filter_content">
-                    <!--include stream_list.html-->
+            <div class="chat_body">
+
+                <!--CHAT-->
+                <div class="chat_wrapper">
+                    <!--include chat.html-->
                 </div>
 
-                <!---CATEGORY RATING-->
-                <div class="top_category_rating">
-                    <!--include category_rating.html-->
-                </div>
-            </div>
+                <form action="" name="chat_message_form">
+                    <input type="text" placeholder="Напиши сюда скорей!" class="chat_input" name="chat_message" />
+                    <button type="submit" class="send_blue"></button>
+                </form>
 
-            <!--OPEN STREAM-->
-            <div class="main_block">
-
-                <div class="user_tream_page_wrapper min_param" id="dynamic_filter_content">
-                    <div class="block_before_streams">
-                        <!--include back_block.html-->
-                    </div>
-                    <!--Player-->
-                    <div class="main_userpage_stream_block">
-                        <object width="903" height="511" bgcolor="#000b1b" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=welovegames" id="live_embed_player_flash" type="application/x-shockwave-flash">
-                            <param value="true" name="allowFullScreen">
-                            <param value="always" name="allowScriptAccess">
-                            <param value="all" name="allowNetworking">
-                            <param value="http://www.twitch.tv/widgets/live_embed_player.swf" name="movie">
-                            <param value="hostname=www.twitch.tv&amp;channel=welovegames&amp;auto_play=true&amp;start_volume=25" name="flashvars">
-                        </object>
-                    </div>
-                </div>
-
-                <!--STREAM PAGE BLOCKS CHAT-->
-                <div class="user_chats">
-                    <div class="chats_wrapper">
-
-                        <!--CHAT HEADER OLD VERSION-->
-                        <div class="chat_header">
-                            <div class="chat_to_streamer">Чат: </div>
-                            <div class="chats_list">
-                                <div class="selected_channel">
-                                    <span class="text">какой-то крутой канал1</span>
-                                    <div class="arrow_block"></div>
-                                </div>
-                                <div class="popup_chats_list">
-                                    <div class="popup_chats_list_wrapper">
-                                        <div class="channel_name_row">
-                                        <span class="chat_people">103</span>
-                                            <span class="chat_name">какой-то крутой канал1</span>
-
-                                        </div>
-                                        <div class="channel_name_row">
-                                        <span class="chat_people">103</span>
-                                            <span class="chat_name">какой-то крутой канал2</span>
-
-                                        </div>
-                                        <div class="channel_name_row">
-                                        <span class="chat_people">3</span>
-                                            <span class="chat_name">какой-то крутой канал3</span>
-
-                                        </div>
-                                        <div class="channel_name_row">
-                                        <span class="chat_people">1033</span>
-                                            <span class="chat_name">какой-то крутой канал4</span>
-
-                                        </div>
-                                        <div class="channel_name_row">
-                                            <span class="chat_people">3</span>
-                                            <span class="chat_name">какой-то крутой канал5</span>
-                                        </div>
-                                        <div class="channel_name_row">
-                                            <span class="chat_people">3</span>
-                                            <span class="chat_name">какой-то крутой канал6</span>
-                                        </div>
-                                        <div class="channel_name_row">
-                                            <span class="chat_people">3</span>
-                                            <span class="chat_name">какой-то крутой канал7</span>
-                                        </div>
-                                        <div class="channel_name_row">
-                                            <span class="chat_people">3</span>
-                                            <span class="chat_name">какой-то крутой канал8</span>
-                                        </div>
-                                        <div class="channel_name_row">
-                                            <span class="chat_people">3</span>
-                                            <span class="chat_name">qweqweqw</span>
-                                        </div>
-                                        <div class="channel_name_row">
-                                            <span class="chat_people">3</span>
-                                            <span class="chat_name">43qg34 4 q43 gg </span>
-                                        </div>
-                                        <div class="channel_name_row">
-                                            <span class="chat_people">3</span>
-                                            <span class="chat_name"> erg reg ergwe  erg erwgr</span>
-                                        </div>
-                                        <div class="channel_name_row">
-                                            <span class="chat_people">3</span>
-                                            <span class="chat_name">qreew f wefqwqewer</span>
-                                        </div>
-                                        <div class="channel_name_row">
-                                            <span class="chat_people">3</span>
-                                            <span class="chat_name">43243242432423432432</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="chat_streamer_action">
-                                <span class="text">WeLoveGamesTV</span>
-                                <div class="popup_actions_list click_user_popup">
-                                    <div class="popup_actions_list_wrapper">
-                                        <div class="click_user_popup_row">
-                                            Забанить
-                                        </div>
-                                        <div class="click_user_popup_row">
-                                            Выключить
-                                        </div>
-                                        <div class="click_user_popup_row">
-                                            Написать
-                                        </div>
-                                        <div class="click_user_popup_row">
-                                            Задонатить
-                                        </div>
-                                        <div class="click_user_popup_row">
-                                            Замутить
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="chat_body">
-
-                            <!--CHAT-->
-                            <div class="chat_wrapper">
-                                <!--include chat.html-->
-                            </div>
-
-                            <form action="" name="chat_message_form">
-                                <input type="text" placeholder="Напиши сюда скорей!" class="chat_input" name="chat_message" />
-                                <button type="submit" class="send_blue"></button>
-                            </form>
-
-                            <div class="chat_buttons">
-                                <!--include chat_buttons.html-->
-                            </div>
-
-                            <div class="chat_bottom_line"></div>
-                        </div>
-                    </div>
+                <div class="chat_buttons">
+                    <!--include chat_buttons.html-->
                 </div>
 
                 <div class="chat_bottom_line"></div>
+            </div>
+        </div>
+    </div>
 
+    <div class="chat_bottom_line"></div>
+
+</div>
+
+<!--OPEN PRIVATE ROOM-->
+<div class="main_block" id="dynamic_filter_content">
+
+    <div class="block_before_streams">
+        <!--include back_block.html-->
+    </div>
+
+    <div class="open_room_chat min_param"  >
+
+        <!--I don't like this block-->
+        <div class="room_creater_block">
+            <div class="room_creater_name">
+                <span class="text2">создатель комнаты: </span><span class="text4">Commander Duck</span>
+            </div>
+            <div class="black_designed_block"></div>
+        </div>
+
+        <!--ROOM CHAT-->
+        <div class="room_chat">
+            <div class="chat_body">
+                <div class="chat_wrapper">
+                    <!--include chat_buttons.html-->
+                </div>
+                <div class="chat_buttons">
+                    <!--include chat_buttons.html-->
+                </div>
+                <form action="" name="chat_message_form" class="room_chat_form">
+                    <input type="text" placeholder="Напиши сюда скорей!" class="chat_input" name="chat_message" />
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="room_right_block">
+
+        <!--ROOM SWITCH BLOCK-->
+        <div class="room_block_switcher">
+            <div class="room_page_name active option">Настройки</div>
+            <div class="room_page_name list">Список</div>
+        </div>
+
+        <!--ROOM OPTIONS TEXT-->
+        <div class="room_options_page">
+            <span class="text2">Название: Комнатушка-однушка дизайнеров</span>
+            <span class="text2">Основатель: Commander Duck</span>
+            <span class="text2">Категория: Болталка</span>
+            <span class="text2">Удаление сообщений: никогда</span>
+            <span class="text2">Ограничение: с 3 уровня</span>
+            <span class="text2">Тип управления: Демократический</span>
+            <span class="text2">С 18 лет: нет</span>
+            <span class="text2">Анонимность в чате: да</span>
+            <span class="text2">Пароль: нет</span>
+            <div class="redact_room">редактировать</div>
+        </div>
+        <!--USERS IN ROOM LIST-->
+        <div class="room_userlist_page">
+            <!--include room_userList.html-->
+        </div>
+    </div>
+
+
+
+</div>
+
+<!--ROOMS LIST-->
+<div class="main_block" id="dynamic_filter_content">
+    <!--class 'lists' needed only at stream\room list page!-->
+    <div class="block_before_streams lists">
+        <div class="unknow_text_block">
+            <span class="text1">Starcraft 2</span>
+            <div class="switcher">
+                <!--include switcher.html-->
+            </div>
+            <span class="text2">Подкатегория</span>
+        </div>
+    </div>
+    <div class="all_rooms_wrapper min_param" >
+        <!--Cuz structure and styles r the same we just include stream_list.html-->
+    </div>
+
+    <!---CATEGORY RATING-->
+    <div class="top_category_rating">
+        <!--include category_rating.html-->
+    </div>
+</div>
+
+<!--BROADCAST SCHEDULE-->
+<div class="bottom_media_zone">
+    <!--include stream_anounses.html-->
+</div>
+</div>
+</div>
+
+<!--CONTENT ZONE-->
+<div id="textzone">
+    <div id="textzone_wrapper">
+
+        <!--CONTENT PAGE MENU-->
+        <div class="menu">
+
+            <div class="site_filter">
+                <!--include menu.html-->
             </div>
 
-            <!--OPEN PRIVATE ROOM-->
-            <div class="main_block" >
+            <div class="content_menu_create">
+                <!---USE THAT BLOCK WHAT U NEED-->
+                <button class="create_content_but">Добавить статью</button>
+                <span class="some_plus">+</span>
+                <span class="text">Для того чтобы добавить статью, необходимо <span>зарегистрироваться</span></span>
+            </div>
+        </div>
 
-                <div class="block_before_streams">
-                    <!--include back_block.html-->
-                </div>
+        <!--ARTICLES LIST AND BEST ARTICLES-->
+        <div class="content_main_block" id="static_filter_content">
 
-                <div class="open_room_chat min_param"  id="dynamic_filter_content">
-
-                    <!--I don't like this block-->
-                    <div class="room_creater_block">
-                        <div class="room_creater_name">
-                            <span class="text2">создатель комнаты: </span><span class="text4">Commander Duck</span>
-                        </div>
-                        <div class="black_designed_block"></div>
-                    </div>
-
-                    <!--ROOM CHAT-->
-                    <div class="room_chat">
-                        <div class="chat_body">
-                            <div class="chat_wrapper">
-                                <!--include chat_buttons.html-->
-                            </div>
-                            <div class="chat_buttons">
-                                <!--include chat_buttons.html-->
-                            </div>
-                            <form action="" name="chat_message_form" class="room_chat_form">
-                                <input type="text" placeholder="Напиши сюда скорей!" class="chat_input" name="chat_message" />
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="room_right_block">
-
-                    <!--ROOM SWITCH BLOCK-->
-                    <div class="room_block_switcher">
-                        <div class="room_page_name active option">Настройки</div>
-                        <div class="room_page_name list">Список</div>
-                    </div>
-
-                    <!--ROOM OPTIONS TEXT-->
-                    <div class="room_options_page">
-                        <span class="text2">Название: Комнатушка-однушка дизайнеров</span>
-                        <span class="text2">Основатель: Commander Duck</span>
-                        <span class="text2">Категория: Болталка</span>
-                        <span class="text2">Удаление сообщений: никогда</span>
-                        <span class="text2">Ограничение: с 3 уровня</span>
-                        <span class="text2">Тип управления: Демократический</span>
-                        <span class="text2">С 18 лет: нет</span>
-                        <span class="text2">Анонимность в чате: да</span>
-                        <span class="text2">Пароль: нет</span>
-                        <div class="redact_room">редактировать</div>
-                    </div>
-                    <!--USERS IN ROOM LIST-->
-                    <div class="room_userlist_page">
-                        <!--include room_userList.html-->
-                    </div>
-                </div>
-
-
-
+            <!--ARTICLE LIST-->
+            <div class="left_column article_list">
+                <!--include article_list.html-->
             </div>
 
-            <!--ROOMS LIST-->
-            <div class="main_block">
-                <!--class 'lists' needed only at stream\room list page!-->
-                <div class="block_before_streams lists">
-                    <div class="unknow_text_block">
-                        <span class="text1">Starcraft 2</span>
+            <!--BEST ARTICLES-->
+            <div class="right_column best_articles">
+                <!--include best_articles.html-->
+            </div>
+        </div>
+
+        <!--CREATE NEWS OLD VERSION-->
+        <div class="content_main_block" id="static_filter_content">
+
+            <!--ARTICLE REDACTOR-->
+            <div class="left_column">
+                <div class="create_news">
+                    <!--include create_article.html-->
+                </div>
+            </div>
+
+            <!--Don't know what's this stuff-->
+            <div class="right_column">
+                <div class="soveti_wrapper">
+                    <div class="soveti_row">
+                        Что-то интересное, очень раз два три четыре пять шесть семь восемь Что-то интересное, очень раз два три четыре пять шесть семь восемь
+                    </div>
+                    <div class="soveti_row">
+                        Что-то интересное, очень раз два три четыре пять шесть семь восемь Что-то интересное, очень раз два три четыре пять шесть семь восемь
+                    </div>
+                    <div class="soveti_row">
+                        Что-то интересное, очень раз два три четыре пять шесть семь восемь Что-то интересное, очень раз два три четыре пять шесть семь восемь
+                    </div>
+                    <div class="soveti_row">
+                        Что-то интересное, очень раз два три четыре пять шесть семь восемь Что-то интересное, очень раз два три четыре пять шесть семь восемь
+                    </div>
+                    <div class="soveti_row">
+                        Что-то интересное, очень раз два три четыре пять шесть семь восемь Что-то интересное, очень раз два три четыре пять шесть семь восемь
+                    </div>
+                    <div class="soveti_row">
+                        Что-то интересное, очень раз два три четыре пять шесть семь восемь Что-то интересное, очень раз два три четыре пять шесть семь восемь
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--OPEN ARTICLE AND BEST ARTICLES-->
+        <div class="conenten_main_news_block" id="static_filter_content">
+            <div class="left_block open_article">
+
+                <!--ARTICLE HEADER-->
+                <div class="open_news_header">
+                    <div class="first_block">
+                        <div class="article_name">Пушечная новость по СердцеКамню или то,как я забрел сюда</div>
+                        <a href="#" class="redact_article_link"></a>
+
+                        <div class="news_rating_block">
+                            <div class="today_rating">2567</div>
+                            <div class="up_rating"></div>
+                            <div class="down_rating"></div>
+                            <div class="popup_rating">
+                                <!--Text is changed!-->
+                                <div class="rating_header">Поставьте количество минусов</div>
+                                <div class="close_rating"></div>
+                                <form name="rating_change" action="">
+                                    <div class="trackbar_block">
+                                        <span class="min_value">1</span>
+                                        <div id="slider-range-rating"></div>
+                                        <input name="number" type="text" style="display:none;" id="number_input" />
+                                        <span class="max_value"></span>
+                                    </div>
+                                    <button type="submit" class="light_blue_button">проголосовать</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second_block">
+                        <div class="news_author">автор статьи: <span>Delerium</span></div>
                         <div class="switcher">
                             <!--include switcher.html-->
                         </div>
-                        <span class="text2">Подкатегория</span>
+                        <span class="news_date_creation">16 ноября 12:18:20</span>
                     </div>
                 </div>
-                <div class="all_rooms_wrapper min_param" id="dynamic_filter_content">
-                    <!--Cuz structure and styles r the same we just include stream_list.html-->
+
+                <!--ARTICLE WRAPPER-->
+                <div class="article_wrapper">
+
+                    <!--ARTICLE IMAGE-->
+                    <img src="images/news_preview.jpg" />
+
+                    <div class="article_text">
+                        <!--ARTICLE TEXT-->
+                        <div class="lots_of_text">
+                            <ul>
+                                <li>jdifksjklsdfdsfsdfdsfds</li>
+                                <li>
+                                    jdifksjklsdfdsfsdfdsfds
+                                </li>
+                                <li>
+                                    jdifksjklsdfdsfsdfdsfds
+                                </li>
+                            </ul>
+                            <ol>
+                                <li>
+                                    jdifksjklsdfdsfsdfdsfds
+                                </li>
+                                <li>
+                                    jdifksjklsdfdsfsdfdsfds
+                                </li>
+                                <li>
+                                    jdifksjklsdfdsfsdfdsfds
+                                </li>
+                            </ol>
+                            <p>Наш любимый детектив Фелпс снова в деле, хоть он и умер в прошлой части (сори Долговец, если не играл), но он снова на страже всего и вся в этом прекрасном мире, может ты и не знаешь, мой милый друг, но за окном сейчас дождь и темным-темно. Неделю назад был снег, а сейчас уже дождь и это только начало ноября. А теперь представте себе, как грустно будет осозновать, что это был последний снег в вашей жизни. Кто знает, что будет через неделю, кто знает. Может ты и чай в последний раз пьешь, так что стоит сделать глоток побольше, помедленней, чтобы насладиться этим искусственно прексрасным напитком из пакетика.
+                            </p>
+                            <p>Наш любимый ссыщик Фелпс снова в деле, хоть он и умер в прошлой части (сори Долговец, если не играл), но он снова на страже всего и вся в этом прекрасном мире, может ты и не знаешь, мой милый друг, но за окном сейчас дождь и темным-темно.
+                                Неделю назад был снег, а сейчас уже дождь и это только начало ноября. А теперь представте себе, как грустно будет осозновать, что это был последний снег в вашей жизни. Кто знает, что будет через неделю, кто знает.
+                                Может ты и чай в последний раз пьешь, так что стоит сделать глоток побольше, помедленней, чтобы насладиться этим искусственно прексрасным напитком из пакетика.
+                            </p>
+                        </div>
+
+                        <!--SHARE BAR-->
+                        <div class="shareBar_wrapper">
+                            <a class="vk_share" href="#"></a>
+                            <a class="tw_share" href="#"></a>
+                            <a class="fb_share" href="#"></a>
+                        </div>
+                    </div>
+
+                    <!--ARTICLE COMMENTS-->
+                    <div class="article_comments_wrapper">
+                        <!--Include article_comments.html-->
+                    </div>
+
                 </div>
 
-                <!---CATEGORY RATING-->
-                <div class="top_category_rating">
-                    <!--include category_rating.html-->
-                </div>
             </div>
 
-			<!--BROADCAST SCHEDULE-->
-			<div class="bottom_media_zone">
-                <!--include stream_anounses.html-->
-			</div>
-		</div>
-	</div>
-
-	<!--CONTENT ZONE-->
-	<div id="wrapper_content">
-		<div id="content_part">
-
-            <!--CONTENT PAGE MENU-->
-			<div class="content_streams_menu">
-
-                <div class="site_filter">
-                    <!--include menu.html-->
-                </div>
-
-                <div class="content_menu_create">
-                    <!---USE THAT BLOCK WHAT U NEED-->
-                    <button class="create_content_but">Добавить статью</button>
-                    <span class="some_plus">+</span>
-                    <span class="text">Для того чтобы добавить статью, необходимо <span>зарегистрироваться</span></span>
-                </div>
+            <!--THE BEST ARTICLES-->
+            <div class="right_column best_articles">
+                <!--include best_articles.html-->
             </div>
 
-			<!--ARTICLES LIST AND BEST ARTICLES-->
-			<div class="content_main_block" >
+        </div>
 
-                <!--ARTICLE LIST-->
-				<div class="left_column article_list">
-                    <!--include article_list.html-->
-				</div>
-
-                <!--BEST ARTICLES-->
-				<div class="right_column best_articles">
-                    <!--include best_articles.html-->
-				</div>
-			</div>
-
-            <!--CREATE NEWS OLD VERSION-->
-			<div class="content_main_block">		
-
-                <!--ARTICLE REDACTOR-->
-                <div class="left_column">
-                    <div class="create_news">
-                        <!--include create_article.html-->
-                    </div>
-				</div>
-
-                <!--Don't know what's this stuff-->
-                <div class="right_column">
-					<div class="soveti_wrapper">
-						<div class="soveti_row">
-							Что-то интересное, очень раз два три четыре пять шесть семь восемь Что-то интересное, очень раз два три четыре пять шесть семь восемь
-						</div>
-												<div class="soveti_row">
-							Что-то интересное, очень раз два три четыре пять шесть семь восемь Что-то интересное, очень раз два три четыре пять шесть семь восемь
-						</div>
-												<div class="soveti_row">
-							Что-то интересное, очень раз два три четыре пять шесть семь восемь Что-то интересное, очень раз два три четыре пять шесть семь восемь
-						</div>
-												<div class="soveti_row">
-							Что-то интересное, очень раз два три четыре пять шесть семь восемь Что-то интересное, очень раз два три четыре пять шесть семь восемь
-						</div>
-												<div class="soveti_row">
-							Что-то интересное, очень раз два три четыре пять шесть семь восемь Что-то интересное, очень раз два три четыре пять шесть семь восемь
-						</div>
-												<div class="soveti_row">
-							Что-то интересное, очень раз два три четыре пять шесть семь восемь Что-то интересное, очень раз два три четыре пять шесть семь восемь
-						</div>
-					</div>
-				</div>
-			</div>
-
-            <!--OPEN ARTICLE AND BEST ARTICLES-->
-			<div class="conenten_main_news_block">
-				<div class="left_block open_article">
-
-                    <!--ARTICLE HEADER-->
-                    <div class="open_news_header">
-						<div class="first_block">
-							<div class="article_name">Пушечная новость по СердцеКамню или то,как я забрел сюда</div>
-							<a href="#" class="redact_article_link"></a>
-							
-							<div class="news_rating_block">
-                                <div class="today_rating">2567</div>
-                                <div class="up_rating"></div>
-                                <div class="down_rating"></div>
-                                <div class="popup_rating">
-                                    <!--Text is changed!-->
-                                    <div class="rating_header">Поставьте количество минусов</div>
-                                    <div class="close_rating"></div>
-                                    <form name="rating_change" action="">
-                                        <div class="trackbar_block">
-                                            <span class="min_value">1</span>
-                                            <div id="slider-range-rating"></div>
-                                            <input name="number" type="text" style="display:none;" id="number_input" />
-                                            <span class="max_value"></span>
-                                        </div>
-                                        <button type="submit" class="light_blue_button">проголосовать</button>
-                                    </form>
-                                </div>
-                            </div>
-						</div>
-						<div class="second_block">
-							<div class="news_author">автор статьи: <span>Delerium</span></div>
-                            <div class="switcher">
-                                <!--include switcher.html-->
-                            </div>
-							<span class="news_date_creation">16 ноября 12:18:20</span>
-						</div>
-					</div>
-
-                    <!--ARTICLE WRAPPER-->
-					<div class="article_wrapper">
-
-                        <!--ARTICLE IMAGE-->
-                        <img src="images/news_preview.jpg" />
-
-                        <div class="article_text">
-                            <!--ARTICLE TEXT-->
-                            <div class="lots_of_text">
-                                <ul>
-                                    <li>jdifksjklsdfdsfsdfdsfds</li>
-                                    <li>
-                                        jdifksjklsdfdsfsdfdsfds
-                                    </li>
-                                    <li>
-                                        jdifksjklsdfdsfsdfdsfds
-                                    </li>
-                                </ul>
-                                <ol>
-                                    <li>
-                                        jdifksjklsdfdsfsdfdsfds
-                                    </li>
-                                    <li>
-                                        jdifksjklsdfdsfsdfdsfds
-                                    </li>
-                                    <li>
-                                        jdifksjklsdfdsfsdfdsfds
-                                    </li>
-                                </ol>
-									<p>Наш любимый детектив Фелпс снова в деле, хоть он и умер в прошлой части (сори Долговец, если не играл), но он снова на страже всего и вся в этом прекрасном мире, может ты и не знаешь, мой милый друг, но за окном сейчас дождь и темным-темно. Неделю назад был снег, а сейчас уже дождь и это только начало ноября. А теперь представте себе, как грустно будет осозновать, что это был последний снег в вашей жизни. Кто знает, что будет через неделю, кто знает. Может ты и чай в последний раз пьешь, так что стоит сделать глоток побольше, помедленней, чтобы насладиться этим искусственно прексрасным напитком из пакетика.
-									</p>
-									<p>Наш любимый ссыщик Фелпс снова в деле, хоть он и умер в прошлой части (сори Долговец, если не играл), но он снова на страже всего и вся в этом прекрасном мире, может ты и не знаешь, мой милый друг, но за окном сейчас дождь и темным-темно.
-                                        Неделю назад был снег, а сейчас уже дождь и это только начало ноября. А теперь представте себе, как грустно будет осозновать, что это был последний снег в вашей жизни. Кто знает, что будет через неделю, кто знает.
-                                        Может ты и чай в последний раз пьешь, так что стоит сделать глоток побольше, помедленней, чтобы насладиться этим искусственно прексрасным напитком из пакетика.
-                                    </p>
-                            </div>
-
-                            <!--SHARE BAR-->
-                            <div class="shareBar_wrapper">
-								<a class="vk_share" href="#"></a>
-								<a class="tw_share" href="#"></a>
-								<a class="fb_share" href="#"></a>
-							</div>
-					    </div>
-
-                        <!--ARTICLE COMMENTS-->
-						<div class="article_comments_wrapper">
-                            <!--Include article_comments.html-->
-						</div>
-
-                    </div>
-
-                </div>
-
-                <!--THE BEST ARTICLES-->
-				<div class="right_column best_articles">
-                    <!--include best_articles.html-->
-				</div>
-
-		    </div>
-
-	    </div>
     </div>
+</div>
 </div>
 
 <!--POPUPS BLOCK-->
 
-    <!--CREATE STREAM-->
-    <div class="create_stream_popup" style="visibility:hidden">
-        <!--include popup_create_stream.html-->
-    </div>
-	
-	<!---VALUTE POPUP-->
-	<div class="valute_popup hide_popup">
-        <!--include popup_valute.html-->
-	</div>
-        
-	<!--ADD CASH POPUP-->
-	<div id="add_cash_popup" class="add_cash_popup hide_popup" >
-        <!--include popup_add_cash.html-->
-    </div>
-	
-	<!--REGIST POPUP-->
-	<div class="registration_popup hide_popup">
-        <!--include popup_registration.html-->
-	</div>
-	
-	<!--SEARCH POPUP-->
-	<div class="search_popup hide_popup">
-        <!--include popup_search.html-->
-	</div>
-	
-	<!--OPTIONS POPUP-->
-	<div class="options_popup hide_popup">
-        <!--include popup_options.html-->
-	</div>
-	
-	<!--UVEDOMLENIA/PREDUPREJDENIA POPUP-->
-	<div class="sysmess_wrapper">
-        <!--include popup_sysmess.html-->
-	</div>
-	
-	<!--HOW MUCH DONATE POPUP-->
-	<div class="how_much_donate_popup hide_popup">
-        <!--include popup_donate.html-->
-	</div>
+<!--CREATE STREAM-->
+<div class="create_stream_popup center_popup" style="visibility:hidden">
+    <!--include popup_create_stream.html-->
+</div>
 
-    <!--ERROR MESSAGES-->
-	<div class="error_popup">
-		<div class="warning_block"></div>
-		<div class="error_text">
-			<span>Неправильно введен пароль, попробуйте еще раз + еще строка</span>
-		</div>
-	</div>
-	
-	<!--CHANGE PASSWORD POPUP-->
-	<div class="change_pwd_popup">
-        <!--include popup_change_password.html-->
-	</div>
-	
-	<!--RESTORE PASSWORD POPUP-->
-	<div class="restore_pwd_popup">
-        <!--include popup_forgot_password.html-->
-	</div>
+<!---VALUTE POPUP-->
+<div class="valute_popup hide_popup">
+    <!--include popup_valute.html-->
+</div>
 
-	<!--RESTORE PASSWORD POPUP-->
-	<div class="check_pwd_popup">
-        <!--include popup_check_passw.html-->
-	</div>
-	
-	<!--AUTHORIZATION PASSWORD POPUP-->
-    <!--DO WE USE IT?-->
-	<div class="autorization_popup">
-        <!--include popup_authorization.html-->
-	</div>
-	
-	<!--OTHER CATEGORY CHOOSE-->
-	<div class="other_category_choose ">
-        <!--include popup_choose_category.html-->
-	</div>
-	
-	<!--CREATE ROOM POPUP-->
-	<div class="create_room_popup ">
-        <!--include popup_create_room.html-->
-	</div>
+<!--ADD CASH POPUP-->
+<div id="add_cash_popup" class="add_cash_popup hide_popup" >
+    <!--include popup_add_cash.html-->
+</div>
+
+<!--REGIST POPUP-->
+<div class="registration_popup center_popup">
+    <!--include popup_registration.html-->
+</div>
+
+<!--SEARCH POPUP-->
+<div class="search_popup hide_popup">
+    <!--include popup_search.html-->
+</div>
+
+
+<!--UVEDOMLENIA/PREDUPREJDENIA POPUP-->
+<div class="sysmess_wrapper">
+    <!--include popup_sysmess.html-->
+</div>
+
+
+<!--ERROR MESSAGES-->
+<div class="error_popup center_popup">
+    <div class="warning_block"></div>
+    <div class="error_text">
+        <span>Неправильно введен пароль, попробуйте еще раз + еще строка</span>
+    </div>
+</div>
+
+<!--CHANGE PASSWORD POPUP-->
+<div class="change_pwd_popup center_popup">
+    <!--include popup_change_password.html-->
+</div>
+
+<!--RESTORE PASSWORD POPUP-->
+<div class="restore_pwd_popup center_popup">
+    <!--include popup_forgot_password.html-->
+</div>
+
+<!--RESTORE PASSWORD POPUP-->
+<div class="check_pwd_popup center_popup">
+    <!--include popup_check_passw.html-->
+</div>
+
+<!--AUTHORIZATION PASSWORD POPUP-->
+<!--DO WE USE IT?-->
+<div class="autorization_popup center_popup">
+    <!--include popup_authorization.html-->
+</div>
+
+<!--OTHER CATEGORY CHOOSE-->
+<div class="other_category_choose center_popup">
+    <!--include popup_choose_category.html-->
+</div>
+
+<!--CREATE ROOM POPUP-->
+<div class="create_room_popup center_popup">
+    <!--include popup_create_room.html-->
+</div>
 
 <div class="fade"></div>
 </body>

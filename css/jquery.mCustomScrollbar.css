@@ -36,16 +36,10 @@ CONTENTS:
 		outline: none;
 		direction: ltr;
 	}
-	.user_streams_list .mCustomScrollBox {
-	overflow: visible;
-	}
 	.mCSB_container{ /* contains the original content */
 		overflow: hidden;
 		width: auto;
 		height: auto;
-	}
-	.user_streams_list .mCSB_container{
-	overflow: visible;
 	}
 
 
@@ -56,9 +50,6 @@ CONTENTS:
 y-axis
 ------------------------------------------------------------------------------------------------------------------------
 */
-.profile_hist_wrapper .mCSB_inside > .mCSB_container{
-margin-right: 23px; 
-}
 .chat_list_wrapper.mCSB_inside > .mCSB_container{
     margin-right: 20px;
 }
@@ -90,6 +81,9 @@ margin-right: 23px;
 		right: 0;
 		bottom: 0;
 	}
+    .chat_gallery_preview .mCSB_scrollTools {
+        width: 5px;
+    }
 
 	.selectboxit-list .mCSB_scrollTools,#user_popup .mCSB_scrollTools{
 	    width:5px;
@@ -246,9 +240,6 @@ x-axis
 	border-radius:0px;
 	margin: 6px 0;
 	}
-	.user_streams_list .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail, .user_streams_ignore_list .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail{
-	height: 9px;
-	}
 	.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger{
 		width: 30px; /* minimum dragger width */
 		height: 100%;
@@ -266,10 +257,6 @@ x-axis
 		border-radius:0px;
 		background:url("/images/new_scrollbar.png") no-repeat center #3399ff;
 		margin: 6px auto;
-	}
-	.user_streams_list .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar, .user_streams_ignore_list .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{
-	height:9px;
-	margin:7px auto;
 	}
 	.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar, 
 	.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar{

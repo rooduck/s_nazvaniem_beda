@@ -1,3 +1,13 @@
+<!--
+    Верхушка такая же, как и у любой другой страницы. А вот контент-зону мы полностью заменяем стеной.
+    Выносить в отдельный файл не стал, т.к. используется только в комнате (правда?)
+    Все достаточно просто, по коду разберете. (начало room_wall_wrapper )
+    Единтсвенное, что сам контент у нас идет в div, а если это цитата великого человека, то надо добавлять класс 'quote'
+
+    Надо отключить вставку  $(".block_before_streams").load("include/back_block.html"); чтобы верхушку увидеть
+
+    Не особо представляю, как будут реализованы цитаты, поэтому сделал кое-как, потом под вас сделаю нормально:grumpy:
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,235 +46,237 @@
 </div>
 
 <!--STREAM ZONE WRAPPER-->
-<div id="workarea">
+<div id="mediazone">
 
 <!--STREAMS ZONE-->
-<div id="streams_part">
+<div id="mediazone_wrapper">
 
 <!--TOP PAGE MENU-->
-<div class="top_streams_menu">
+<div class="menu">
     <div class="site_filter">
         <!--include menu.html-->
     </div>
 
     <div class="top_streams_menu_create">
         <!---USE THAT BLOCK WHAT U NEED-->
-        <button class="create_stream_but">Начать стрим</button>
+        <button class="blue_but not_active" style="display: none">Начать стрим</button>
+        <button class="blue_but" >Создать комнату</button>
         <span class="text">чтобы стримить у нас на портале, необходимо <span>зарегистрироваться</span></span>
     </div>
 
 </div>
 
-<!--OPEN STREAM-->
-<div class="main_block">
 
-    <div class="user_tream_page_wrapper min_param" id="dynamic_filter_content">
+<!--OPEN PRIVATE ROOM-->
+<div class="main_block" id="dynamic_filter_content">
+
+    <div class="min_param" >
+
+        <!--not like at the stream page-->
         <div class="block_before_streams">
-            <!--include back_block.html-->
-        </div>
-        <!--Player-->
-        <div class="main_userpage_stream_block">
-            <object width="846" height="511" bgcolor="#000b1b" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=welovegames" id="live_embed_player_flash" type="application/x-shockwave-flash">
-                <param value="true" name="allowFullScreen">
-                <param value="always" name="allowScriptAccess">
-                <param value="all" name="allowNetworking">
-                <param value="http://www.twitch.tv/widgets/live_embed_player.swf" name="movie">
-                <param value="hostname=www.twitch.tv&amp;channel=welovegames&amp;auto_play=true&amp;start_volume=25" name="flashvars">
-            </object>
-        </div>
-    </div>
+            <div class="some_unknow_block">
+                <img src="images/donno.jpg" width="50" height="50" alt="user_avatar" />
+                <div class="unknow_text_block">
+                    <span class="text1">ЖИЗНЬ ЗА НЕРЗУЛЛА</span>
+                    <span class="text2">комната <a href="#">Just Roo</a></span>
+                </div>
+            </div>
 
-    <!--STREAM PAGE BLOCKS CHAT-->
-    <div class="user_chats">
-        <div class="chats_wrapper">
+            <!--RATING-->
+            <div class="stream_rating_block">
+                <div class="today_rating"><span>Рейтинг:</span>256</div>
+                <div class="up_rating"></div>
+                <div class="down_rating"></div>
+                <div class="popup_rating">
+                    <!--Text is changed!-->
+                    <div class="rating_header">Поставьте количество минусов</div>
+                    <div class="close_rating"></div>
+                    <form name="rating_change" action="">
+                        <div class="trackbar_block">
+                            <span class="min_value">1</span>
+                            <div id="slider-range-rating"></div>
+                            <input name="number" type="text" style="display:none;" id="number_input" />
+                            <span class="max_value"></span>
+                        </div>
+                        <button type="submit" class="light_blue_button">проголосовать</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-            <!--CHAT HEADER OLD VERSION-->
-            <div class="chat_header">
-                <div class="chat_to_streamer">Чат: </div>
-                <div class="chats_list">
-                    <div class="selected_channel">
-                        <span class="text">какой-то крутой канал1</span>
-                        <div class="arrow_block"></div>
+        <!--LEFT BLOCK-->
+        <div class="main_room_block">
+
+            <!--CHAT GALLERY-->
+            <div class="chat_gallery_wrapper">
+                <div class="prev_chat_gallery_page"></div>
+                <div class="chat_gallery">
+
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гшовыртагвы</span></a>
                     </div>
-                    <div class="popup_chats_list">
-                        <div class="popup_chats_list_wrapper">
-                            <div class="channel_name_row">
-                                <span class="chat_people">103</span>
-                                <span class="chat_name">какой-то крутой канал1</span>
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гшовыртагвы</span></a>
+                    </div>
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гшовыртагвы</span></a>
+                    </div>
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гшовыртагвы</span></a>
+                    </div>
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гшовыртагвgdfgdfsgfdgdfgdsfgsdfgdfы</span></a>
+                    </div>
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гтагвы</span></a>
+                    </div>
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гшовыртагвы</span></a>
+                    </div>
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гшовыртагвgdfgdfsgfdgdfgdsfgsdfgdfы</span></a>
+                    </div>
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гтагвы</span></a>
+                    </div>
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гшовыртагвы</span></a>
+                    </div>
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гшовыртагвgdfgdfsgfdgdfgdsfgsdfgdfы</span></a>
+                    </div>
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гтагвы</span></a>
+                    </div>
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гшовыртагвы</span></a>
+                    </div>
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гшовыртагвgdfgdfsgfdgdfgdsfgsdfgdfы</span></a>
+                    </div>
+                    <div class="chat_gallery_block">
+                        <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
+                        <a href="#"><span>гтагвы</span></a>
+                    </div>
 
-                            </div>
-                            <div class="channel_name_row">
-                                <span class="chat_people">103</span>
-                                <span class="chat_name">какой-то крутой канал2</span>
+                </div>
+                <div class="next_chat_gallery_page"></div>
+            </div>
+            <!--PREVIEW-->
+            <div class="chat_gallery_preview">
+                <div class="close"></div>
+                <div class="chat_gallery_preview_wrapper">
+                    <div class="gallery_block">
+                        <div class="gallery_content">
+                            <img src="images/room_img.jpg" />
+                        </div>
+                        <div class="gallery_content_likes">
+                            <div></div>12
+                        </div>
+                        <span class="text_18_white">удалить</span>
+                    </div>
+                    <div class="gallery_block">
+                        <div class="gallery_content quote">
+                            Меня затрахал перевод времени, слушайте, а что, если провести шоковую терапию?<br/> (c) Duckhero
+                        </div>
+                        <div class="gallery_content_likes">
+                            <div></div>12
+                        </div>
+                        <span class="text_18_white">удалить</span>
+                    </div>
+                </div>
+            </div>
+            <!--PLAYER-->
+            <div class="player_block">
+                <object width="430" height="242" bgcolor="#000b1b" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=welovegames" id="live_embed_player_flash" type="application/x-shockwave-flash">
+                    <param value="true" name="allowFullScreen">
+                    <param value="always" name="allowScriptAccess">
+                    <param value="all" name="allowNetworking">
+                    <param value="http://www.twitch.tv/widgets/live_embed_player.swf" name="movie">
+                    <param value="hostname=www.twitch.tv&amp;channel=welovegames&amp;auto_play=true&amp;start_volume=25" name="flashvars">
+                </object>
+            </div>
+        </div>
+        <!--CHAT-->
+        <div class="user_chats">
+            <div class="chats_wrapper">
 
-                            </div>
-                            <div class="channel_name_row">
-                                <span class="chat_people">3</span>
-                                <span class="chat_name">какой-то крутой канал3</span>
-
-                            </div>
-                            <div class="channel_name_row">
-                                <span class="chat_people">1033</span>
-                                <span class="chat_name">какой-то крутой канал4</span>
-
-                            </div>
-                            <div class="channel_name_row">
-                                <span class="chat_people">3</span>
-                                <span class="chat_name">какой-то крутой канал5</span>
-                            </div>
-                            <div class="channel_name_row">
-                                <span class="chat_people">3</span>
-                                <span class="chat_name">какой-то крутой канал6</span>
-                            </div>
-                            <div class="channel_name_row">
-                                <span class="chat_people">3</span>
-                                <span class="chat_name">какой-то крутой канал7</span>
-                            </div>
-                            <div class="channel_name_row">
-                                <span class="chat_people">3</span>
-                                <span class="chat_name">какой-то крутой канал8</span>
-                            </div>
-                            <div class="channel_name_row">
-                                <span class="chat_people">3</span>
-                                <span class="chat_name">qweqweqw</span>
-                            </div>
-                            <div class="channel_name_row">
-                                <span class="chat_people">3</span>
-                                <span class="chat_name">43qg34 4 q43 gg </span>
-                            </div>
-                            <div class="channel_name_row">
-                                <span class="chat_people">3</span>
-                                <span class="chat_name"> erg reg ergwe  erg erwgr</span>
-                            </div>
-                            <div class="channel_name_row">
-                                <span class="chat_people">3</span>
-                                <span class="chat_name">qreew f wefqwqewer</span>
-                            </div>
-                            <div class="channel_name_row">
-                                <span class="chat_people">3</span>
-                                <span class="chat_name">43243242432423432432</span>
+                <!--CHAT HEADER OLD VERSION-->
+                <div class="chat_header">
+                    <div class="chat_streamer_action">
+                        <span class="text">WeLoveGamesTV</span>
+                        <div class="popup_actions_list click_user_popup">
+                            <div class="popup_actions_list_wrapper">
+                                <div class="click_user_popup_row">
+                                    Забанить
+                                </div>
+                                <div class="click_user_popup_row">
+                                    Выключить
+                                </div>
+                                <div class="click_user_popup_row">
+                                    Написать
+                                </div>
+                                <div class="click_user_popup_row">
+                                    Задонатить
+                                </div>
+                                <div class="click_user_popup_row">
+                                    Замутить
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="chat_streamer_action">
-                    <span class="text">WeLoveGamesTV</span>
-                    <div class="popup_actions_list click_user_popup">
-                        <div class="popup_actions_list_wrapper">
-                            <div class="click_user_popup_row">
-                                Забанить
-                            </div>
-                            <div class="click_user_popup_row">
-                                Выключить
-                            </div>
-                            <div class="click_user_popup_row">
-                                Написать
-                            </div>
-                            <div class="click_user_popup_row">
-                                Задонатить
-                            </div>
-                            <div class="click_user_popup_row">
-                                Замутить
-                            </div>
-                        </div>
+                <div class="chat_body">
+
+                    <!--CHAT-->
+                    <div class="chat_wrapper">
+                        <!--include chat.html-->
                     </div>
+
+                    <form action="" name="chat_message_form">
+                        <input type="text" placeholder="Напиши сюда скорей!" class="chat_input" name="chat_message" />
+                        <button type="submit" class="send_blue"></button>
+                    </form>
+
+                    <div class="chat_buttons">
+                        <!--include chat_buttons.html-->
+                    </div>
+
                 </div>
-            </div>
-
-            <div class="chat_body">
-
-                <!--CHAT-->
-                <div class="chat_wrapper">
-                    <!--include chat.html-->
-                </div>
-
-                <form action="" name="chat_message_form">
-                    <input type="text" placeholder="Напиши сюда скорей!" class="chat_input" name="chat_message" />
-                    <button type="submit" class="send_blue"></button>
-                </form>
-
-                <div class="chat_buttons">
-                    <!--include chat_buttons.html-->
-                </div>
-
             </div>
         </div>
+
+
+        <div class="chat_bottom_line"></div>
     </div>
 
-    <!--CHAT GALLERY! ABSOLUTELY NEW!-->
-    <div class="chat_gallery_wrapper">
-        <div class="prev_chat_gallery_page"></div>
-        <div class="chat_gallery">
 
-            <div class="chat_gallery_block">
-                <a href="#"><span>гшовыртагвы</span></a>
-                <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
-            </div>
-            <div class="chat_gallery_block">
-                <a href="#"><span>гшовыртагвgdfgdfsgfdgdfgdsfgsdfgdfы</span></a>
-                <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
-            </div>
-            <div class="chat_gallery_block">
-                <a href="#"><span>гтагвы</span></a>
-                <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
-            </div>
-            <div class="chat_gallery_block">
-                <a href="#"><span>гшовыртагвы</span></a>
-                <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
-            </div>
-            <div class="chat_gallery_block">
-                <a href="#"><span>гшовыртагвgdfgdfsgfdgdfgdsfgsdfgdfы</span></a>
-                <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
-            </div>
-            <div class="chat_gallery_block">
-                <a href="#"><span>гтагвы</span></a>
-                <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
-            </div>
-            <div class="chat_gallery_block">
-                <a href="#"><span>гшовыртагвы</span></a>
-                <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
-            </div>
-            <div class="chat_gallery_block">
-                <a href="#"><span>гшовыртагвgdfgdfsgfdgdfgdsfgsdfgdfы</span></a>
-                <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
-            </div>
-            <div class="chat_gallery_block">
-                <a href="#"><span>гтагвы</span></a>
-                <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
-            </div>
-            <div class="chat_gallery_block">
-                <a href="#"><span>гшовыртагвы</span></a>
-                <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
-            </div>
-            <div class="chat_gallery_block">
-                <a href="#"><span>гшовыртагвgdfgdfsgfdgdfgdsfgsdfgdfы</span></a>
-                <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
-            </div>
-            <div class="chat_gallery_block">
-                <a href="#"><span>гтагвы</span></a>
-                <a href="#"><img src="images/user_message_avatar.png" alt="preview_pic" /></a>
-            </div>
-
-        </div>
-        <div class="next_chat_gallery_page"></div>
-    </div>
-    <div class="chat_bottom_line"></div>
 </div>
 
-<!--BROADCAST SCHEDULE-->
-<div class="bottom_media_zone">
-    <!--include stream_anounses.html-->
-</div>
 </div>
 </div>
 
 <!--CONTENT ZONE-->
-<div id="wrapper_content">
-    <div id="content_part">
+<div id="textzone">
+    <div id="textzone_wrapper">
 
         <!--CONTENT PAGE MENU-->
-        <div class="content_streams_menu">
+        <div class="menu">
 
             <div class="site_filter">
                 <!--include menu.html-->
@@ -278,17 +290,81 @@
             </div>
         </div>
 
-        <!--ARTICLES LIST AND BEST ARTICLES-->
-        <div class="content_main_block" >
-
-            <!--ARTICLE LIST-->
-            <div class="left_column article_list">
-                <!--include article_list.html-->
+        <div class="room_wall_wrapper" id="static_filter_content">
+            <!--header-->
+            <div class="room_wall_header">
+                <div class="room_name">Стена комнаты <span>ЖИЗНЬ ЗА НЕРЗУЛЛА</span></div>
+                <span class="room_wall_last_update">Последнее обновление 17:00 25.12.2015</span>
+                <div class="room_wall_filter">
+                    <form name="filter" action=""><!--not sure that u need form-->
+                        <input type="checkbox" class="wall_radio" name="pic" id="pic"/>
+                        <label for="pic">Картинки</label>
+                        <input type="checkbox" class="wall_radio" name="video" id="video"/>
+                        <label for="video">Видео</label>
+                        <input type="checkbox" class="wall_radio" name="quotes" id="quotes"/>
+                        <label for="quotes">Цитаты</label>
+                    </form>
+                </div>
             </div>
+            <!--wall-->
+            <div class="room_wall">
+                <div class="room_post">
+                    <div class="post_header">
+                        <div class="for_canvas"></div>
+                        <span class="lvl">8</span>
+                        <div class="how_much_fill">88</div>
+                        <img src="images/user_message_avatar.png" alt="user_ava" />
+                        <div>
+                            <span class="user_name">Duckhero</span>
+                            <span class="user_role">Стример</span>
+                        </div>
+                        <span class="post_date">добавлено 17:00 25.12.2015</span>
 
-            <!--BEST ARTICLES-->
-            <div class="right_column best_articles">
-                <!--include best_articles.html-->
+                    </div>
+                    <div class="post_body">
+                        <div class="quote">
+                            Меня затрахал перевод времени, слушайте, а что, если провести шоковую терапию? Ну типо ты не переводишь время, тебя бьют током, и медленно внушают новый способ счета, то есть когда ты будешь видеть 18:27, на самом деле будет 19:27. Вот было бы круто, не пришлось бы трахаться с переводом этого чертового времени.
+                        </div>
+                    </div>
+                </div>
+                <div class="room_post">
+                    <div class="post_header">
+                        <div class="for_canvas"></div>
+                        <span class="lvl">8</span>
+                        <div class="how_much_fill">88</div>
+                        <img src="images/user_message_avatar.png" alt="user_ava" />
+                        <div>
+                            <span class="user_name">Duckhero</span>
+                            <span class="user_role">Стример</span>
+                        </div>
+                        <span class="post_date">добавлено 17:00 25.12.2015</span>
+
+                    </div>
+                    <div class="post_body">
+                        <div>
+                            <img src="images/comix.jpg" alt="pic" />
+                        </div>
+                    </div>
+                </div>
+                <div class="room_post">
+                    <div class="post_header">
+                        <div class="for_canvas"></div>
+                        <span class="lvl">8</span>
+                        <div class="how_much_fill">88</div>
+                        <img src="images/user_message_avatar.png" alt="user_ava" />
+                        <div>
+                            <span class="user_name">Duckhero</span>
+                            <span class="user_role">Стример</span>
+                        </div>
+                        <span class="post_date">добавлено 17:00 25.12.2015</span>
+
+                    </div>
+                    <div class="post_body">
+                        <div>
+                            <iframe width="560" height="315" src="//www.youtube.com/embed/jnk15Wf6xMU" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -299,7 +375,7 @@
 <!--POPUPS BLOCK-->
 
 <!--CREATE STREAM-->
-<div class="create_stream_popup" style="visibility:hidden">
+<div class="create_stream_popup center_popup" style="visibility:hidden">
     <!--include popup_create_stream.html-->
 </div>
 
@@ -314,7 +390,7 @@
 </div>
 
 <!--REGIST POPUP-->
-<div class="registration_popup hide_popup">
+<div class="registration_popup center_popup">
     <!--include popup_registration.html-->
 </div>
 
@@ -323,23 +399,15 @@
     <!--include popup_search.html-->
 </div>
 
-<!--OPTIONS POPUP-->
-<div class="options_popup hide_popup">
-    <!--include popup_options.html-->
-</div>
 
 <!--UVEDOMLENIA/PREDUPREJDENIA POPUP-->
 <div class="sysmess_wrapper">
     <!--include popup_sysmess.html-->
 </div>
 
-<!--HOW MUCH DONATE POPUP-->
-<div class="how_much_donate_popup hide_popup">
-    <!--include popup_donate.html-->
-</div>
 
 <!--ERROR MESSAGES-->
-<div class="error_popup">
+<div class="error_popup center_popup">
     <div class="warning_block"></div>
     <div class="error_text">
         <span>Неправильно введен пароль, попробуйте еще раз + еще строка</span>
@@ -347,33 +415,33 @@
 </div>
 
 <!--CHANGE PASSWORD POPUP-->
-<div class="change_pwd_popup">
+<div class="change_pwd_popup center_popup">
     <!--include popup_change_password.html-->
 </div>
 
 <!--RESTORE PASSWORD POPUP-->
-<div class="restore_pwd_popup">
+<div class="restore_pwd_popup center_popup">
     <!--include popup_forgot_password.html-->
 </div>
 
 <!--RESTORE PASSWORD POPUP-->
-<div class="check_pwd_popup">
+<div class="check_pwd_popup center_popup">
     <!--include popup_check_passw.html-->
 </div>
 
 <!--AUTHORIZATION PASSWORD POPUP-->
 <!--DO WE USE IT?-->
-<div class="autorization_popup">
+<div class="autorization_popup center_popup">
     <!--include popup_authorization.html-->
 </div>
 
 <!--OTHER CATEGORY CHOOSE-->
-<div class="other_category_choose ">
+<div class="other_category_choose center_popup">
     <!--include popup_choose_category.html-->
 </div>
 
 <!--CREATE ROOM POPUP-->
-<div class="create_room_popup ">
+<div class="create_room_popup center_popup">
     <!--include popup_create_room.html-->
 </div>
 

@@ -4,7 +4,7 @@ $(function(){
     $(".site_filter").load("include/menu.html");
     $(".all_streams_wrapper, .all_rooms_wrapper").load("include/streams_list.html");
     $(".top_category_rating").load("include/category_rating.html");
-    $(".block_before_streams").load("include/back_block.html");
+    //$(".block_before_streams").load("include/back_block.html");
     $(".chat_buttons").load("include/chat_buttons.html");
     $(".chat_wrapper").load("include/chat.html");
     $(".room_userlist_page").load("include/room_userlist.html");
@@ -19,9 +19,7 @@ $(function(){
     $(".restore_pwd_popup").load("include/popup_forgot_password.html");
     $(".registration_popup").load("include/popup_registration.html");
     $(".search_popup").load("include/popup_search.html");
-    $(".options_popup").load("include/popup_options.html");
     $(".sysmess_wrapper").load("include/popup_sysmess.html");
-    $(".how_much_donate_popup").load("include/popup_donate.html");
     $(".change_pwd_popup").load("include/popup_change_password.html");
     $(".check_pwd_popup").load("include/popup_check_passw.html");
     $(".other_category_choose").load("include/popup_choose_category.html");
@@ -98,7 +96,6 @@ $(function(){
 $(document).ready(function(){
     setTimeout(function() {
 
-
         //pretty switcher
         $(".cb-enable").click(function(){
             var parent = $(this).parents('.switch');
@@ -120,17 +117,9 @@ $(document).ready(function(){
             if ($(this).prev().prev().text().length>0)
                 $(this).prev().prev().addClass('active');
         });
-        //hide containers without new messages
-        $('.menu_number').each(function(){
-            if($(this).text().length <=0)
-                $(this).hide();
-        });
 
         //use this for all site select
         $("select").selectBoxIt();
-
-        //remove filter from stream pic
-        setStreamHover();
 
         //trackbar at room create popup
         set_scale_lvl();
@@ -212,21 +201,7 @@ $(document).ready(function(){
             $('.user_right_block_content_ignore').hide();
             $('.user_right_block_main_settings').show();
         });
-        //menu in user popup cabinet, achievments
-        $('.submenu.achievements li').click(function(){
-            $('.submenu.achievements li').each(function(){
-                $(this).removeClass('active');
-            });
-            $(this).addClass('active');
-        });
 
-        //menu in user popup cabinet, favorites
-        $('.submenu.streams li').click(function(){
-            $('.submenu.streams li').each(function(){
-                $(this).removeClass('active');
-            });
-            $(this).addClass('active');
-        });
 
         //change chat list in messages
         $('.user_message_list_row').click(function(){
@@ -248,23 +223,20 @@ $(document).ready(function(){
 
 
 
-        /*TOP MENU*/
+        /*MENU*/
         //add class on click
         $('.filter_icon').click(function(){
-            $('.filter_icon').removeClass('active');
+            $(this).parent().parent().find('.filter_icon').removeClass('active');
             $(this).addClass('active');
         });
 
-
         //menu switch active
-        $('.top_streams_menu .cat_level .cifri_wrapper').click(function(){
+        $('.menu .cat_level .cifri_wrapper').click(function(){
             $(this).each(function(){
                 $(this).removeClass('active');
             });
             $(this).addClass('active');
         });
-
-
 
 
         /*STREAM AND ROOM LIST*/
@@ -290,7 +262,7 @@ $(document).ready(function(){
         script_chat_gallery($block);
 
         /*OPEN ROOM*/
-
+        //Todo:delete
         //room_option_page switcher
         $('.room_page_name').click(function(){
             if ($(this).hasClass('option'))
@@ -343,18 +315,8 @@ $(document).ready(function(){
 
 
 
-
         /*ARTICLES*/
 
-        /*menu*/
-
-        //menu switch active
-        $('.content_streams_menu .cat_level .cifri_wrapper').click(function(){
-            $(this).each(function(){
-                $(this).removeClass('active');
-            });
-            $(this).addClass('active');
-        });
 
         /*best of articles*/
 
@@ -397,23 +359,9 @@ $(document).ready(function(){
         });
 
         /*COMMENTS ARTICLE*/
-        $('.comment_hover_left_border').each(function(){
-            $(this).css("height",$(this).parent().height()-2);
-        });
-
-        //changing classes in comment rating
-        $('.comment_rating_wrapper .up_comment_rating').click(function(){
-            $(this).addClass('selected');
-            $(this).parent().find('.down_comment_rating').removeClass('selected');
-        });
-
-        $('.comment_rating_wrapper .down_comment_rating').click(function(){
-            $(this).addClass('selected');
-            $(this).parent().find('.up_comment_rating').removeClass('selected');
-        });
 
         //show smiles popup in article comments
-        $('.enter_comment .editor_tools li:first-child').click(function(){
+        $('.subcomment_block .editor_tools li:first-child').click(function(){
             if ($('.click_user_popup2').css('display')=='none')
                 $('.click_user_popup2').show();
             else $('.click_user_popup2').hide();
@@ -424,21 +372,27 @@ $(document).ready(function(){
 
         //comment options
         $('.article_comment_options span').click(function () {
-            if ($(this).hasClass('active'))
-                $('.article_comment_footer').removeClass('active');
-            else {
-                $('.article_comment_footer').removeClass('active');
-                $(this).parent().parent().addClass('active');
-            }
-            if ($(this).hasClass('active'))
+            if ($(this).hasClass('active'))  {
+                $('.article_comment_row').removeClass('active');
                 $('.article_comment_options span').removeClass('active');
+            }
             else {
+                $('.article_comment_row').removeClass('active');
+                $(this).parent().parent().parent().addClass('active');
                 $('.article_comment_options span').removeClass('active');
                 $(this).addClass('active');
             }
         });
 
-
+        //spoiler
+        $('.spoiler .cut').click(function(){
+            $(this).next().toggle();
+            if ($(this).find('i').text()=='+') {
+                $(this).find('i').text('-');
+            }
+            else
+                $(this).find('i').text('+');
+        });
 
 
         /*POPUPS INITIALIZATION AND WORK INSIDE*/
@@ -486,8 +440,6 @@ $(document).ready(function(){
             $('fade').show();
         });
 
-
-
         //create stream popup button
         $('.create_stream_but').click(function(){
             $('.create_stream_popup').css('visibility','visible');
@@ -497,15 +449,17 @@ $(document).ready(function(){
         //create room popup
         $('.create_room_but').click(function(){
             $('.fade').show();
-            $('.create_room_popup').find('.create_new_room').text("Создать комнату");
-            $('.create_room_popup').css('visibility','visible');
+            $('.create_room_popup')
+                .find('.create_new_room').text("Создать комнату")
+            .css('visibility','visible');
         });
 
         //redact room popup
         $('.redact_room').click(function(){
-            $('.create_room_popup').find('.create_new_room').text("Изменить");
+            $('.create_room_popup')
+                .find('.create_new_room').text("Изменить")
+                .css('visibility','visible');
             $('.fade').show();
-            $('.create_room_popup').css('visibility','visible');
         });
 
         //change register captcha pic at registration popup
@@ -518,10 +472,6 @@ $(document).ready(function(){
             $(this).find('span').addClass('true_captcha');
         });
 
-        //show popup how much donate
-        $('.support_add').click(function(){
-            $('.how_much_donate_popup').show();
-        });
 
 
         //TODO: refactor
@@ -547,9 +497,6 @@ $(document).ready(function(){
         $('.add_cash_popup .close_btn').click(function(){
             $('.add_cash_popup').hide();
             $('.user_main_menu .some_li').find('div').removeClass('active');
-        });
-        $('.how_much_donate_popup .close_btn').click(function(){
-            $('.how_much_donate_popup').hide();
         });
 
         //show forget password popup
@@ -595,7 +542,7 @@ $(document).ready(function(){
                 $('.options.chat_pic').removeClass('active');
             }
             //ARTICLE COMMENTS SMILES
-            if ($(event.target).closest(".click_user_popup2 .chat_list_wrapper2").length || $(event.target).closest(".enter_comment .editor_tools li:first-child").length) return;
+            if ($(event.target).closest(".click_user_popup2 .chat_list_wrapper2").length || $(event.target).closest(".subcomment_block .editor_tools li:first-child").length) return;
             else
                 $('.click_user_popup2').hide();
             //USER POPUP SMILES
@@ -640,8 +587,6 @@ $(document).ready(function(){
                 $('.user_popup_body').css('visibility','hidden');
                 $('.some_li').removeClass('active');
             }
-
-
             event.stopPropagation();
         });
 
@@ -656,33 +601,39 @@ $(document).ready(function(){
             $(this).addClass('active');
         });
 
-        //changing classes at stream_page
-        $('.streamer_subscribed_star').click(function(){
-            if ($(this).hasClass('subscribed'))
-                $(this).removeClass('subscribed');
-            else $(this).addClass('subscribed');
-        });
 
         //subsribe on stream
         $('.subsribe').click(function(){
             $(this).toggleClass('true');
         });
 
+        //gallery preview likes
+        $('.gallery_content_likes').click(function () {
+            $(this).toggleClass('active');
+        });
+        //gallery preview toggle
+        $('.chat_gallery_block').click(function(){
+            if ($('.chat_gallery_preview').css('display')=='none') {
+                $('.chat_gallery_preview').animate({width: 'toggle'}, 500);
+                $('.player_block object').attr('width', '430')
+                    .attr('height', 242);
+            }
+        });
+        $('.chat_gallery_preview .close').click(function () {
+           $('.chat_gallery_preview').animate({width:'toggle'},500);
+            $('.player_block object').attr('width','860')
+                .attr('height',484);
+        });
         /*CHAT*/
-
         window.script_Chat_list_users = function(){
             $('.who_is_in_chat').show();
-        }
+        };
 
         //show action on streamer nick click
         $('.chat_streamer_action .text').click(function(){
-            $('.popup_actions_list').css('width',$('.chat_streamer_action .text').outerWidth(true));
-            $('.popup_actions_list').toggle(400);
-        });
-
-        //hide after clicking the option
-        $('.popup_actions_list .action_name_row').click(function(){
-            $('.popup_actions_list').fadeOut(400);
+            $('.popup_actions_list')
+                .css('width',$('.chat_streamer_action .text').outerWidth(true))
+                .toggle(400);
         });
 
         //hide user_in_chat_list when clicking on someone's nick
@@ -809,8 +760,8 @@ $(document).ready(function(){
             });
             $html = $('.input_answers_block').html();
 
-            if (input_clicks<11)
-                $html+='<div class="answer_input"><span class="golosovalka_podpis input_podpis">'+input_clicks+'.</span><input type="text" class="input_answer" name="answer'+input_clicks+'"/></div>';
+            if (input_clicks < 11)
+                $html += '<div class="answer_input"><span class="golosovalka_podpis input_podpis">' + input_clicks + '.</span><input type="text" class="input_answer" name="answer' + input_clicks + '"/></div>';
             $('.input_answers_block').html($html);
         });
 
@@ -820,12 +771,21 @@ $(document).ready(function(){
         script_paint_graphs(vote_result,choosed);
 
 
-
-
-
-
         /*CUSTOM SCROLLBAR PLUGIN*/
 
+        $('.chat_wrapper').mCustomScrollbar({
+            axis: "y",
+            theme: "light",
+            scrollInertia: 850,
+            mouseWheel: {scrollAmount: 350}
+        });
+        //gallery preview
+        $('.chat_gallery_preview_wrapper').mCustomScrollbar({
+            axis: "y",
+            theme: "light",
+            scrollInertia: 850,
+            mouseWheel: {scrollAmount: 350}
+        });
         //user message_list
         $(".user_message_list").mCustomScrollbar({
             axis:"y",
@@ -991,71 +951,6 @@ $(document).ready(function(){
             }
         });
 
-        //favorite stream list
-        $(".user_streams_list").mCustomScrollbar({
-            axis:"x",
-            theme:"light",
-            scrollInertia: 950,
-            mouseWheel:{ scrollAmount: 1000 },
-            callbacks:{
-                onScrollStart:function(){
-                    $(".user_streams_wrapper .right_shadow").show();
-                    $(".user_streams_wrapper .left_shadow").show();
-                },
-                onTotalScroll:function(){
-                    $(".user_streams_wrapper .left_shadow").show();
-                    $(".user_streams_wrapper .right_shadow").hide();
-                },
-                onTotalScrollBack:function(){
-                    $(".user_streams_wrapper .left_shadow").hide();
-                    $(".user_streams_wrapper .right_shadow").show();
-                }
-            }
-        });
-
-        //favorite igronelist
-        $(".user_streams_ignore_list").mCustomScrollbar({
-            axis:"x",
-            theme:"light",
-            scrollInertia: 950,
-            mouseWheel:{ scrollAmount: 1000 },
-            callbacks:{
-                onScrollStart:function(){
-                    $(".user_streams_ignore_wrapper .right_shadow").show();
-                    $(".user_streams_ignore_wrapper .left_shadow").show();
-                },
-                onTotalScroll:function(){
-                    $(".user_streams_ignore_wrapper .left_shadow").show();
-                    $(".user_streams_ignore_wrapper .right_shadow").hide();
-                },
-                onTotalScrollBack:function(){
-                    $(".user_streams_ignore_wrapper .left_shadow").hide();
-                    $(".user_streams_ignore_wrapper .right_shadow").show();
-                }
-            }
-        });
-
-        //profile history experience
-        $(".profile_hist_wrapper").mCustomScrollbar({
-            axis:"y",
-            theme:"light",
-            scrollInertia: 950,
-            mouseWheel:{ scrollAmount: 1000 },
-            callbacks:{
-                onScrollStart:function(){
-                    $(".profile_hist .top_shadow").show();
-                    $(".profile_hist .bottom_shadow").show();
-                },
-                onTotalScroll:function(){
-                    $(".profile_hist .top_shadow").show();
-                    $(".profile_hist .bottom_shadow").hide();
-                },
-                onTotalScrollBack:function(){
-                    $(".profile_hist .top_shadow").hide();
-                    $(".profile_hist .bottom_shadow").show();
-                }
-            }
-        });
 
         //all streams
         $(".all_streams_wrapper").mCustomScrollbar({
@@ -1065,14 +960,12 @@ $(document).ready(function(){
             mouseWheel:{ scrollAmount: 1000 }
         });
         $('.all_streams_wrapper .mCSB_container').bind("DOMSubtreeModified",function(){
-
             $(".all_streams_wrapper").mCustomScrollbar({
                 axis:"y",
                 theme:"light",
                 scrollInertia: 950,
                 mouseWheel:{ scrollAmount: 1000 }
             });
-            setStreamHover();
         });
 
         //custom select in chat header
@@ -1103,21 +996,7 @@ $(document).ready(function(){
             axis:"y",
             theme:"light",
             scrollInertia: 950,
-            mouseWheel:{ scrollAmount: 1000 },
-            callbacks:{
-                onScrollStart:function(){
-                    $(".all_rooms_wrapper_with_shadow .top_shadow").show();
-                    $(".all_rooms_wrapper_with_shadow .bottom_shadow").show();
-                },
-                onTotalScroll:function(){
-                    $(".all_rooms_wrapper_with_shadow .top_shadow").show();
-                    $(".all_rooms_wrapper_with_shadow .bottom_shadow").hide();
-                },
-                onTotalScrollBack:function(){
-                    $(".all_rooms_wrapper_with_shadow .top_shadow").hide();
-                    $(".all_rooms_wrapper_with_shadow .bottom_shadow").show();
-                }
-            }
+            mouseWheel:{ scrollAmount: 1000 }
         });
 
         /*GROUP OF CUSTOM CHECKBOXES*/
@@ -1140,22 +1019,14 @@ $(document).ready(function(){
             cursor: true,
             checkboxClass: 'icheckbox_dark_blue2'
         });
-        $('.black_checkbox').iCheck({
-            cursor: true,
-            radioClass: 'icheckbox_black'
-        });
         $('.wall_radio').iCheck({
             cursor: true,
             checkboxClass: 'wall_checkbox',
-            radioClass: 'wall_checkbox'
+            radioClass: 'wall_radio'
         });
 
 
-
-
-
         /*GROUP OF HINTS*/
-
 
         //show checkbox in raspisanie
         $('.stream_row').hover(function(){
@@ -1166,7 +1037,6 @@ $(document).ready(function(){
                 $(this).find('.icheckbox_dark_blue').hide();
             });
         $('.icheckbox_dark_blue .iCheck-helper').hover(function(){
-
             },
             function(){
                 $(this).parent().hide();
@@ -1186,71 +1056,11 @@ $(document).ready(function(){
 
 
 
-
         /*GROUP OF FILLING CIRCLE PLUGIN*/
 
-        //filling streamer lvl exp in user popup cabinet favorites
+        //filling streamer lvl exp
         var numb=0;
 
-        //streamer
-        $('.its_streamer .favorite_lvl').each(function(){
-            $(this).find('.for_canvas').rotator({
-                num : numb,
-                starting: 0,
-                ending: parseInt($(this).find('.how_much_fill').text()),
-                lineWidth: 6,
-                color:'#3189ef',
-                fontSize:'0px',
-                backgroundColor: '#193c65',
-                radius:24
-            });
-            numb++;
-        });
-
-        //author
-        $('.its_author .favorite_lvl').each(function(){
-            $(this).find('.for_canvas').rotator({
-                num : numb,
-                starting: 0,
-                ending: parseInt($(this).find('.how_much_fill').text()),
-                lineWidth: 6,
-                color:'#0fd483',
-                fontSize:'0px',
-                backgroundColor: '#085b44',
-                radius:24
-            });
-            numb++;
-        });
-
-        //category
-        $('.its_category .favorite_lvl').each(function(){
-            $(this).find('.for_canvas').rotator({
-                num : numb,
-                starting: 0,
-                ending: parseInt($(this).find('.how_much_fill').text()),
-                lineWidth: 6,
-                color:'#3189ef',
-                fontSize:'0px',
-                backgroundColor: '#193c65',
-                radius:24
-            });
-            numb++;
-        });
-
-        //room
-        $('.its_room .favorite_lvl').each(function(){
-            $(this).find('.for_canvas').rotator({
-                num : numb,
-                starting: 0,
-                ending: parseInt($(this).find('.how_much_fill').text()),
-                lineWidth: 6,
-                color:'#3189ef',
-                fontSize:'0px',
-                backgroundColor: '#193c65',
-                radius:24
-            });
-            numb++;
-        });
 
         //user profile
 
@@ -1329,7 +1139,7 @@ $(document).ready(function(){
             numb++;
         });
 
-        /*GROUP OF CONNECTING LINES PLUGIN. THEY ALL ARE REINITIALIZE ON "resize"*/
+        /*custom styles*/
         $('.selectboxit-container .selectboxit-options').each(function(){
             $(this).mCustomScrollbar({
                 axis:"y",
@@ -1349,7 +1159,10 @@ $(document).ready(function(){
 
 
 
-//for range slider
+/**
+ * Глобальная функция, инициализирует трекбар в попапе создания комнаты\стрима
+ * Т.к. у нас уровни ограничены с 1 по 9, то параметры не передаются
+ */
 window.set_scale_lvl = function()
 {
     $("#slider-range").slider({
@@ -1379,24 +1192,19 @@ window.set_scale_lvl = function()
             html+="<div class='lvl_point' style='left:"+margin+"px'></div>";
     }
     $("#level_points").html(html);
-}
+};
 
-//show errors
+
+/* Глобальная функция: выводит уведомления об ошибке.
+    * @param error_text {string} - текст ошибки
+    */
 window.script_error_popup = function(error_text){
     $('.error_popup span').text(error_text);
-    if ($(window).height()>712)
-        $('.error_popup').css('top',$(window).height()/2-100);
-    else
-        $('.error_popup').css('top','');
-    if ($(window).width()>1200)
-        $('.error_popup').css('left',$(window).width()/2-200);
-    else
-        $('.error_popup').css('left','');
-    $('.error_popup').show();
+    $('.error_popup').css('visibility','visible');
     setTimeout(function() {
         $('.error_popup').fadeOut('fast');
     }, 5000);
-}
+};
 
 /** t0s - общий код для всех страниц **/
 $(document).ready(function() {
@@ -1637,21 +1445,13 @@ window.script_paint_graphs = function(vote_result,choosed){
             $graphs +='<div class="graphic_bar"><div class="graph_bar"  style="height:'+height+'px"></div><span class="poll_answer_number">'+i+'</span><span class="poll_answer_votes">'+val+'</span></div>';
     });
     $('.graphics').html($graphs);
-}
+};
 
-//remove filter on hover pic
-function setStreamHover() {
-    $('.stream.normal_one').hover(function () {
-            $(this).find('.filter_on_pic').hide();
-        },
-        function () {
-            $(this).find('.filter_on_pic').show();
-        });
-}
+
 //chat gallery
 window.script_chat_gallery = function($block) {
     $(".chat_gallery").carouFredSel({
-        items: 11,
+        items: 12,
         auto: {play: false},
         circular: false,
         infinite: false,
@@ -1660,13 +1460,13 @@ window.script_chat_gallery = function($block) {
         prev: ".prev_chat_gallery_page",
         next: ".next_chat_gallery_page",
         scroll: {
-            items: 11,
+            items: 12,
             easing: "linear",
             duration: 1000,
             pauseOnHover: true
         }
     });
-    if ($('.chat_gallery_block').size() > 11) {
+    if ($('.chat_gallery_block').size() > 12) {
         $('.prev_chat_gallery_page, .next_chat_gallery_page').show();
     }
     else  {
@@ -1683,4 +1483,4 @@ window.script_chat_gallery = function($block) {
         $(this).removeClass('active');
         $(this).find('a:first-child span').removeClass('active');
     });
-}
+};

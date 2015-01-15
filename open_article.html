@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/jquery.selectBoxIt.css" />
     <link href="css/futurico.css" rel="stylesheet"/>
 
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script src="js/jquery-ui.min.js" type="text/javascript"></script>
     <script src="js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
     <script src="js/icheck.js" type="text/javascript"></script>
@@ -36,13 +36,13 @@
 </div>
 
 <!--STREAM ZONE WRAPPER-->
-<div id="workarea">
+<div id="mediazone">
 
 <!--STREAMS ZONE-->
-<div id="streams_part">
+<div id="mediazone_wrapper">
 
 <!--TOP PAGE MENU-->
-<div class="top_streams_menu">
+<div class="menu">
     <div class="site_filter">
         <!--include menu.html-->
     </div>
@@ -57,9 +57,9 @@
 </div>
 
 <!--ALL STREAMS LIST-->
-<div class="main_block">
+<div class="main_block" id="dynamic_filter_content">
 
-    <div class="all_streams_wrapper min_param" id="dynamic_filter_content">
+    <div class="all_streams_wrapper min_param" >
         <!--include stream_list.html-->
     </div>
 
@@ -77,11 +77,11 @@
 </div>
 
 <!--CONTENT ZONE-->
-<div id="wrapper_content">
-    <div id="content_part">
+<div id="textzone">
+    <div id="textzone_wrapper">
 
         <!--CONTENT PAGE MENU-->
-        <div class="content_streams_menu">
+        <div class="menu">
 
             <div class="site_filter">
                 <!--include menu.html-->
@@ -96,7 +96,7 @@
         </div>
 
         <!--OPEN ARTICLE AND BEST ARTICLES-->
-        <div class="conenten_main_news_block">
+        <div class="conenten_main_news_block" id="static_filter_content">
             <div class="left_block open_article">
 
                 <!--ARTICLE HEADER-->
@@ -201,7 +201,7 @@
 <!--POPUPS BLOCK-->
 
 <!--CREATE STREAM-->
-<div class="create_stream_popup" style="visibility:hidden">
+<div class="create_stream_popup center_popup" style="visibility:hidden">
     <!--include popup_create_stream.html-->
 </div>
 
@@ -216,7 +216,7 @@
 </div>
 
 <!--REGIST POPUP-->
-<div class="registration_popup hide_popup">
+<div class="registration_popup center_popup">
     <!--include popup_registration.html-->
 </div>
 
@@ -225,23 +225,15 @@
     <!--include popup_search.html-->
 </div>
 
-<!--OPTIONS POPUP-->
-<div class="options_popup hide_popup">
-    <!--include popup_options.html-->
-</div>
 
 <!--UVEDOMLENIA/PREDUPREJDENIA POPUP-->
 <div class="sysmess_wrapper">
     <!--include popup_sysmess.html-->
 </div>
 
-<!--HOW MUCH DONATE POPUP-->
-<div class="how_much_donate_popup hide_popup">
-    <!--include popup_donate.html-->
-</div>
 
 <!--ERROR MESSAGES-->
-<div class="error_popup">
+<div class="error_popup center_popup">
     <div class="warning_block"></div>
     <div class="error_text">
         <span>Неправильно введен пароль, попробуйте еще раз + еще строка</span>
@@ -249,33 +241,33 @@
 </div>
 
 <!--CHANGE PASSWORD POPUP-->
-<div class="change_pwd_popup">
+<div class="change_pwd_popup center_popup">
     <!--include popup_change_password.html-->
 </div>
 
 <!--RESTORE PASSWORD POPUP-->
-<div class="restore_pwd_popup">
+<div class="restore_pwd_popup center_popup">
     <!--include popup_forgot_password.html-->
 </div>
 
 <!--RESTORE PASSWORD POPUP-->
-<div class="check_pwd_popup">
+<div class="check_pwd_popup center_popup">
     <!--include popup_check_passw.html-->
 </div>
 
 <!--AUTHORIZATION PASSWORD POPUP-->
 <!--DO WE USE IT?-->
-<div class="autorization_popup">
+<div class="autorization_popup center_popup">
     <!--include popup_authorization.html-->
 </div>
 
 <!--OTHER CATEGORY CHOOSE-->
-<div class="other_category_choose ">
+<div class="other_category_choose center_popup">
     <!--include popup_choose_category.html-->
 </div>
 
 <!--CREATE ROOM POPUP-->
-<div class="create_room_popup ">
+<div class="create_room_popup center_popup">
     <!--include popup_create_room.html-->
 </div>
 
