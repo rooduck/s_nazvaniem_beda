@@ -258,8 +258,7 @@ $(document).ready(function(){
                 pauseOnHover    : true
             }
         });
-        $block= $('.chat_gallery_block');
-        script_chat_gallery($block);
+
 
         /*OPEN ROOM*/
         //Todo:delete
@@ -611,19 +610,39 @@ $(document).ready(function(){
         $('.gallery_content_likes').click(function () {
             $(this).toggleClass('active');
         });
+
         //gallery preview toggle
-        $('.chat_gallery_block').click(function(){
-            if ($('.chat_gallery_preview').css('display')=='none') {
-                $('.chat_gallery_preview').animate({width: 'toggle'}, 500);
-                $('.player_block object').attr('width', '430')
-                    .attr('height', 242);
+        $('.main_room_block .minimize, .chat_gallery_thumbnails div').click(function () {
+            //if we click on minimize button
+            if (!$(this).parent().hasClass('chat_gallery_thumbnails')) {
+
+                if ($('.main_room_block .minimize').hasClass('active')) {
+                    $('.chat_gallery_preview').css('visibility', 'hidden');
+                    $('.player_block object').attr('width', '789')
+                        .attr('height', 444);
+                }
+                else {
+                    $('.chat_gallery_preview').css('visibility', 'visible');
+                    $('.player_block object').attr('width', '210')
+                        .attr('height', 199);
+                }
+                $('.player_block').toggleClass('active');
+                $('.main_room_block .minimize').toggleClass('active');
+            }
+            //else on thumbnails
+            else {
+                $('.chat_gallery_preview').css('visibility', 'visible');
+                $('.player_block object').attr('width', '210')
+                    .attr('height', 199);
+                $('.player_block').removeClass('active');
+                $('.main_room_block .minimize').addClass('active');
             }
         });
-        $('.chat_gallery_preview .close').click(function () {
-           $('.chat_gallery_preview').animate({width:'toggle'},500);
-            $('.player_block object').attr('width','860')
-                .attr('height',484);
+        //scrollTo in gallery example
+        $('.chat_gallery_thumbnails div').click(function () {
+           $('.chat_gallery_preview_wrapper').mCustomScrollbar('scrollTo','40%');
         });
+
         /*CHAT*/
         window.script_Chat_list_users = function(){
             $('.who_is_in_chat').show();
@@ -781,9 +800,10 @@ $(document).ready(function(){
         });
         //gallery preview
         $('.chat_gallery_preview_wrapper').mCustomScrollbar({
-            axis: "y",
+            axis: "x",
             theme: "light",
             scrollInertia: 850,
+            advanced:{autoExpandHorizontalScroll:true},
             mouseWheel: {scrollAmount: 350}
         });
         //user message_list
@@ -1448,39 +1468,4 @@ window.script_paint_graphs = function(vote_result,choosed){
 };
 
 
-//chat gallery
-window.script_chat_gallery = function($block) {
-    $(".chat_gallery").carouFredSel({
-        items: 12,
-        auto: {play: false},
-        circular: false,
-        infinite: false,
-        direction: "up",
-        responsive: false,
-        prev: ".prev_chat_gallery_page",
-        next: ".next_chat_gallery_page",
-        scroll: {
-            items: 12,
-            easing: "linear",
-            duration: 1000,
-            pauseOnHover: true
-        }
-    });
-    if ($('.chat_gallery_block').size() > 12) {
-        $('.prev_chat_gallery_page, .next_chat_gallery_page').show();
-    }
-    else  {
-        $('.prev_chat_gallery_page, .next_chat_gallery_page').hide();
-    }
-    //fucking gallery hover for overflow
-    $block.find('img').hover(function () {
-        $('.chat_gallery_wrapper').css('z-index','3');
-        $(this).parent().parent().addClass('active');
-        $(this).parent().parent().find('a:first-child span').addClass('active');
-    });
-    $block.mouseleave(function () {
-        $('.chat_gallery_wrapper').css('z-index','');
-        $(this).removeClass('active');
-        $(this).find('a:first-child span').removeClass('active');
-    });
-};
+
