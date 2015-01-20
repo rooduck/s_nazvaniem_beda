@@ -575,6 +575,12 @@ $(document).ready(function(){
                 $('.poll_results').hide();
                 $('.poll3.chat_pic').removeClass('active');
             }
+            //ADD LINK
+            if ($(event.target).closest(".add_link_popup").length || $(event.target).closest(".add_link.chat_pic").length) return;
+            else {
+                $('.add_link_popup').hide();
+                $('.add_link.chat_pic').removeClass('active');
+            }
             //ignore popup in iser message list
             if ($(event.target).closest(".user_control_icon2").length || $(event.target).closest(".user_main_menu_hit.ignore").length) return;
             else
@@ -733,6 +739,12 @@ $(document).ready(function(){
                     $('.click_user_popup.poll_results').show();
                 else
                     $('.click_user_popup.poll_results').hide();
+            }
+            else if ($(this).hasClass('add_link')) {
+                if ($(this).hasClass('active'))
+                    $('.click_user_popup.add_link_popup').show();
+                else
+                    $('.click_user_popup.add_link_popup').hide();
             }
         });
 
