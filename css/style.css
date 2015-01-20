@@ -667,8 +667,9 @@ textarea {
 }
 #mediazone_wrapper {
     width: 1200px;
-    margin: 0 auto 60px;
+    margin: 0 auto;
     overflow : hidden;
+    padding-bottom: 60px;
 }
 .left_column{
     float:left;
@@ -1799,11 +1800,19 @@ textarea {
 .poll.chat_pic .chat_hint{
     left:-25px;
 }
+.add_link.chat_pic .chat_hint {
+    width: 140px;
+}
+.add_link {
+    background: url("../images/icon_add_link.png") 0 0 no-repeat;
+    width: 20px;
+}
+.add_link:hover, .add_link.active {
+    background: url("../images/icon_add_link.png") -20px 0 no-repeat;
+}
 .mat_filter{
-
     background:url("../images/mat_img_grey.png") no-repeat center center;
 }
-
 .mat_filter.active, .mat_filter:hover{
     background:url("../images/mat_img_grey_active.png") no-repeat center center;
 }
@@ -2136,6 +2145,44 @@ textarea {
     text-align:center;
     width:24px;
 }
+/*ADD LINK POPUP*/
+.add_link_popup {
+    background: none repeat scroll 0 0 #0d1016;
+    bottom: 35px;
+    height: 165px;
+    width: 230px;
+    padding: 10px 5px;
+}
+.add_link_popup input {
+    border-radius: 0;
+    color: #999999;
+    font-size: 12px;
+    height: 26px;
+    text-indent: 5px;
+    width: 100%;
+    padding: 0;
+}
+.add_link_popup .blue_but, .add_link_popup .red_but {
+    font-size: 14px;
+    height: 27px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+.click_user_popup.add_link_popup div {
+    background: none repeat scroll 0 0 #172543;
+    height: 1px;
+    width: 100%;
+}
+.click_user_popup.add_link_popup span {
+    color: #626c81;
+    display: block;
+    font-size: 12px;
+    line-height: 12px;
+    margin-left: 27px;
+    text-align: center;
+    width: 180px;
+}
 /*USERS IN THAT LIST*/
 .click_user_popup.who_is_in_chat{
     bottom:49px;
@@ -2171,11 +2218,11 @@ textarea {
     padding-top: 15px;
     position: relative;
     text-align: left;
-    width: 850px;
+    width: 900px;
 }
 .chat_gallery_preview_wrapper {
     height: 441px;
-    width: 850px;
+    width: 900px;
 }
 .main_room_block .minimize {
     position: absolute;
@@ -2203,6 +2250,9 @@ textarea {
     height: 423px;
     min-width: 173px;
     margin-left: 50px;
+}
+.gallery_block:last-child {
+    margin-right: 210px;
 }
 .gallery_block_header {
     float: left;
@@ -2238,6 +2288,10 @@ textarea {
 .gallery_block img {
     max-width: 730px;
     max-height: 330px;
+    position: relative;
+}
+.gallery_block img:hover {
+    z-index: 3;
 }
 .gallery_content_likes {
     float: left;
@@ -4520,7 +4574,7 @@ button.create_content_but{
     width: 80px;
     text-align: left;
 }
-.blue_but {
+.blue_but, .red_but {
     background: #3399ff;
     border: 0 none;
     text-transform: uppercase;
@@ -4531,6 +4585,11 @@ button.create_content_but{
     height: 40px;
     cursor: pointer;
     padding: 0;
+}
+.red_but {
+    background: #d94f50;
+    font-size: 16px;
+    color: #863c3d;
 }
 .blue_but.not_active {
     background: #707983;
@@ -5874,7 +5933,7 @@ button.create_content_but{
     margin-bottom: 10px;
 }
 .check_pwd_popup {
-    height:211px;
+    height: 265px;
 }
 .change_pwd_popup .category_string_name, .restore_pwd_popup .category_string_name, .autorization_popup .category_string_name,
 .check_pwd_popup .category_string_name, .login_form .category_string_name {
@@ -5914,7 +5973,7 @@ button.create_content_but{
     margin: 0;
 }
 .check_pwd_popup .blue_button {
-    margin-top: 10px;
+    margin-top: 26px;
 }
 .text_popup {
     color: #999999;
@@ -5924,6 +5983,13 @@ button.create_content_but{
     text-align: center;
     float: left;
     margin-top: 5px;
+}
+.grey_text {
+    font-size: 12px;
+    color: #999999;
+    text-align: center;
+    width: 245px;
+    margin-left: 15px;
 }
 .check_pwd_popup .text_popup {
     text-align: left;
