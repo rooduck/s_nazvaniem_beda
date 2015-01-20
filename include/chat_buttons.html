@@ -1,6 +1,6 @@
 <!--ICONS-->
 <div class="chat_images">
-    <div class="mat_filter chat_pic"><div class="chat_hint"><span>матфильтр</span></div></div>
+    <div class="add_link chat_pic"><div class="chat_hint"><span>добавить видео/стрим</span></div></div>
     <div class="options chat_pic"><div class="chat_hint"><span>настройки</span></div></div>
     <div class="smiles chat_pic"><div class="chat_hint"><span>смайлы</span></div></div>
     <div class="poll chat_pic"><div class="chat_hint"><span>голосование1</span></div></div>
@@ -96,7 +96,16 @@
         </div>
     </div>
 </div>
-
+<!--ADD LINK-->
+<div class="click_user_popup add_link_popup">
+    <form name="change_link" action="">
+        <input type="text" name="link" placeholder="Вставьте ссылку на стрим или видео" />
+        <button class="blue_but">Добавить</button>
+        <div></div>
+        <button class="red_but">Удалить текущее</button>
+        <span>При нажатии на „удалить“ вы убираете запущенный стрим или видео</span>
+    </form>
+</div>
 <!--CREATE POLL-->
 <div class="click_user_popup golosovalka">
     <div class="click_user_popup_header">
