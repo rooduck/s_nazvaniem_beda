@@ -2285,10 +2285,15 @@ textarea {
     height: 330px;
     max-width: 730px;
 }
-.gallery_block img {
+.gallery_content img {
     max-width: 730px;
     max-height: 330px;
     position: relative;
+    top: 50%;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    -o-transform: translate(0%,-50%);
+    transform: translate(0%, -50%);
 }
 .gallery_block img:hover {
     z-index: 3;
@@ -2329,7 +2334,7 @@ textarea {
 }
 .chat_gallery_thumbnails {
     overflow: hidden;
-    width: 420px;
+    width: 455px;
     margin: 0 auto;
     padding-top: 15px;
 }
@@ -2337,8 +2342,11 @@ textarea {
     width: 20px;
     height: 21px;
     margin-right: 15px;
-    float: left;
     cursor: pointer;
+    display: inline-block;
+}
+.chat_gallery_thumbnails > div:last-child {
+    margin-right: 0;
 }
 .chat_gallery_thumbnails > div.pic {
      background: url("../images/icon_gallery_pics.png") 0 0 no-repeat;
@@ -2362,7 +2370,7 @@ textarea {
 }
 .player_block {
     position: absolute;
-    top: 9px;
+    top: 0;
     left: 690px;
 }
 .player_block.active {
