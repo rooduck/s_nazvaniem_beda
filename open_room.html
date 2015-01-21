@@ -7,6 +7,10 @@
     Надо отключить вставку  $(".block_before_streams").load("include/back_block.html"); чтобы верхушку увидеть
 
     Не особо представляю, как будут реализованы цитаты, поэтому сделал кое-как, потом под вас сделаю нормально:grumpy:
+
+    Кнопочки вверху: blue_but - для обычной кнопки "создать стрим\комнату"
+    red_but - для кнопочки "удалить стрим\комнату"
+    not_active - добавляется класс к blue_but в том случае, если стрим\комната не может быть создана
 -->
 <!DOCTYPE html>
 <html>
@@ -191,7 +195,7 @@
 
             <!--PLAYER-->
             <div class="player_block">
-                <object width="210" height="199" bgcolor="#000b1b" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=welovegames" id="live_embed_player_flash" type="application/x-shockwave-flash">
+                <object width="210" height="150" bgcolor="#000b1b" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=welovegames" id="live_embed_player_flash" type="application/x-shockwave-flash">
                     <param value="true" name="allowFullScreen">
                     <param value="always" name="allowScriptAccess">
                     <param value="all" name="allowNetworking">
@@ -216,7 +220,6 @@
                 <div class="quote new"></div>
             </div>
         </div>
-
         <!--CHAT-->
         <div class="user_chats">
             <div class="chats_wrapper">
