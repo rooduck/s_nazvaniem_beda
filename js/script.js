@@ -639,7 +639,7 @@ $(document).ready(function(){
             else {
                 $('.chat_gallery_preview').css('visibility', 'visible');
                 $('.player_block object').attr('width', '210')
-                    .attr('height', 199);
+                    .attr('height', 150);
                 $('.player_block').removeClass('active');
                 $('.main_room_block .minimize').addClass('active');
             }
