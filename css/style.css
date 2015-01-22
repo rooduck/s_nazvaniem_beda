@@ -2192,23 +2192,60 @@ textarea {
     display:none;
     height:435px;
 }
-.user_in_chat_wrapper{
-    width:240px;
-    background:#0d1016;
-    float:left;
-    position:relative;
-    height:400px;
+.user_in_chat_wrapper {
+    width: 234px;
+    background: #0d1016;
+    float: left;
+    position: relative;
+    height: 400px;
+    padding-left: 7px;
+
 }
-.user_in_chat_row{
-    float:left;
-    width:219px;
-    padding:4px 0px 1px 12px;
-    font-size:12px;
-    color:#fff;
+.click_user_popup .header {
+    color: #3c5774;
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-top: 5px;
+    width: 190px;
+    cursor: pointer;
+}
+.user_in_chat_list section {
+    float: left;
+}
+.click_user_popup .header:not(:first-child) {
+    margin-top: 15px;
+}
+.user_in_chat_row {
+    float: left;
+    width: 200px;
+    padding: 8px 10px 8px 10px;
+    font-size: 12px;
+    color: #fff;
+    border-bottom: 1px solid #131821;
 }
 .user_in_chat_row:hover{
-    background:#1e2b39;
-
+    background: #1e2b39;
+}
+.user_in_chat_row span {
+    cursor: pointer;
+}
+.user_in_chat_row .accept_user {
+    float: right;
+    background: url("../images/icons_room_user_accept.png") 0 0 no-repeat;
+    width: 14px;
+    height: 8px;
+    margin-right: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.user_in_chat_row .delete_user {
+    float: right;
+    background: url("../images/icons_room_user_accept.png") -14px 0 no-repeat;
+    width: 10px;
+    height: 8px;
+    margin-top: 5px;
+    cursor: pointer;
 }
 /*gallery content preview*/
 .chat_gallery_preview {
