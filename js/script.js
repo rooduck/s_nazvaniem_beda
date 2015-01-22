@@ -662,15 +662,24 @@ $(document).ready(function(){
         });
 
         //hide user_in_chat_list when clicking on someone's nick
-        $('.user_in_chat_row').click(function(){
+        $('.user_in_chat_row span').click(function(){
             $('.who_is_in_chat').hide();
         });
-
+        //scroll up\down when click on header in user_in_chat_list
+        $('.user_in_chat_list .header').click(function() {
+            if ($(this).next().is(":hidden"))
+                $(this).next().slideDown(400);
+            else
+                $(this).next().slideUp(400);
+        });
         //update click
         $('.user_in_chat_list').bind("DOMSubtreeModified",function(){
-            $('.user_in_chat_row').click(function(){
+
+            $('.user_in_chat_row span').click(function(){
                 $('.who_is_in_chat').hide();
             });
+
+
         });
 
         //channel chats list
@@ -1020,7 +1029,7 @@ $(document).ready(function(){
             axis:"y",
             theme:"light",
             scrollInertia: 650,
-            mouseWheel:{ scrollAmount: 500 }
+            mouseWheel:{ scrollAmount: 200 }
         });
 
         //all rooms
