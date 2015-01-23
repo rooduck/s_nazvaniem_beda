@@ -1430,12 +1430,11 @@ textarea {
     width: 100%;
 }
 
-.chat_header{
-    float:left;
-    width:100%;
+.chat_header {
+    float: left;
+    width: 100%;
     position: relative;
-    background:#00234a;
-
+    background: #05203d;
 }
 .chat_to_streamer{
     float:left;
@@ -1447,7 +1446,7 @@ textarea {
 }
 .chat_streamer_action {
     float: left;
-    width: 100%;
+    width: 197px;
     background:#0b2e55;
     position:relative;
     padding: 7px 0;
@@ -1494,9 +1493,12 @@ textarea {
     float: left;
     font-size: 14px;
     padding-right: 15px;
-    cursor:pointer;
-    background:url("../images/arrow_down_blue.png") no-repeat right center;
+    cursor: pointer;
+    background: url("../images/arrow_down_blue.png") no-repeat right center;
     margin-left: 11px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
 }
 .popup_actions_list {
     clear: both;
@@ -1519,7 +1521,7 @@ textarea {
     background: none repeat scroll 0 0 #000b1b;
     border-radius: 2px;
     float: left;
-    padding: 6px 0px 6px 0;
+    padding: 6px 0 6px 0;
     width: 201px;
     cursor:pointer;
 }
@@ -1544,6 +1546,64 @@ textarea {
     margin-right: 8px;
 }
 
+/*request block*/
+.new_requests {
+    color: #ffffff;
+    float: left;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-top: 6px;
+    position: relative;
+    cursor: pointer;
+}
+.new_requests .new {
+    background: none repeat scroll 0 0 #c42d49;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 13px;
+    height: 16px;
+    position: absolute;
+    right: -20px;
+    text-align: center;
+    top: -12px;
+    width: 16px;
+}
+.requests_popup {
+    background: none repeat scroll 0 0 #05203d;
+    height: 430px;
+    position: absolute;
+    top: 26px;
+    z-index: 20;
+    display: none;
+}
+.requests_popup .user_in_chat_list {
+    height: 400px;
+}
+.requests_popup  .user_in_chat_row {
+    border-bottom: 1px solid #07274a;
+    color: #fff;
+    float: left;
+    font-size: 12px;
+    padding: 11px 10px 1px;
+    width: 239px;
+}
+.requests_popup  .user_in_chat_row:hover {
+    background: #0b2e56;
+}
+.requests_popup .user_in_chat_row  span {
+    color: #2b6097;
+    font-size: 14px;
+}
+.requests_popup .user_in_chat_row .accept_user {
+    margin-right: 0;
+    margin-left: 10px;
+}
+.slideUp {
+    background: url('../images/arrow_slideUp.png') center center #07274a no-repeat;
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+}
 .chat_name{
     color: #fff;
     float: left;
@@ -2229,23 +2289,35 @@ textarea {
 }
 .user_in_chat_row span {
     cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 75%;
+    display: inline-block;
 }
 .user_in_chat_row .accept_user {
     float: right;
     background: url("../images/icons_room_user_accept.png") 0 0 no-repeat;
-    width: 14px;
-    height: 8px;
+    width: 22px;
+    height: 22px;
     margin-right: 10px;
-    margin-top: 5px;
+    margin-top: -2px;
+    margin-bottom: 7px;
     cursor: pointer;
+}
+.user_in_chat_row .accept_user:hover  {
+    background: url("../images/icons_room_user_accept.png") -22px 0 no-repeat;
 }
 .user_in_chat_row .delete_user {
     float: right;
-    background: url("../images/icons_room_user_accept.png") -14px 0 no-repeat;
-    width: 10px;
-    height: 8px;
-    margin-top: 5px;
+    background: url("../images/icons_room_user_accept.png") -44px 0 no-repeat;
+    width: 22px;
+    height: 22px;
+    margin-top: -2px;
+    margin-bottom: 7px;
     cursor: pointer;
+}
+.user_in_chat_row .delete_user:hover {
+    background: url("../images/icons_room_user_accept.png") -66px 0 no-repeat;
 }
 /*gallery content preview*/
 .chat_gallery_preview {
