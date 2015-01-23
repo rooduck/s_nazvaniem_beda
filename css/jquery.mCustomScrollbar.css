@@ -81,7 +81,7 @@ y-axis
 		right: 0;
 		bottom: 0;
 	}
-    .chat_gallery_preview .mCSB_scrollTools {
+    .chat_gallery_preview .mCSB_scrollTools,.mCSB_scrollTools.mCSB_scrollTools_vertical {
         width: 5px;
     }
 
@@ -449,7 +449,8 @@ yx-axis
 	.mCSB_scrollTools .mCSB_draggerRail{
 		background-color:#000b1b;
 	}
-    #user_popup .mCSB_scrollTools .mCSB_draggerRail{
+
+    #user_popup .mCSB_scrollTools .mCSB_draggerRail, .requests_popup .mCSB_scrollTools .mCSB_draggerRail{
         background-color:#233b5f;
     }
 
