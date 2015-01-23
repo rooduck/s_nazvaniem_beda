@@ -7,6 +7,7 @@ $(function(){
     //$(".block_before_streams").load("include/back_block.html");
     $(".chat_buttons").load("include/chat_buttons.html");
     $(".chat_wrapper").load("include/chat.html");
+    $('.chat_header').load("include/chat_header.html");
     $(".room_userlist_page").load("include/room_userlist.html");
     $(".bottom_media_zone").load("include/stream_anounses.html");
     $(".article_list").load("include/article_list.html");
@@ -662,26 +663,34 @@ $(document).ready(function(){
         });
 
         //hide user_in_chat_list when clicking on someone's nick
-        $('.user_in_chat_row span').click(function(){
+        $('.user_in_chat_wrapper .user_in_chat_row span').click(function(){
             $('.who_is_in_chat').hide();
         });
         //scroll up\down when click on header in user_in_chat_list
-        $('.user_in_chat_list .header').click(function() {
+        $('.user_in_chat_wrapper .user_in_chat_list .header').click(function() {
             if ($(this).next().is(":hidden"))
                 $(this).next().slideDown(400);
             else
                 $(this).next().slideUp(400);
         });
         //update click
-        $('.user_in_chat_list').bind("DOMSubtreeModified",function(){
+        $('.user_in_chat_wrapper .user_in_chat_list').bind("DOMSubtreeModified",function(){
 
             $('.user_in_chat_row span').click(function(){
                 $('.who_is_in_chat').hide();
             });
-
-
+            
         });
-
+        //request in room popup
+        $('.requests_popup .slideUp').click (function () {
+            $('.requests_popup').slideUp(400);
+        });
+        $('.new_requests span').click (function () {
+            if ($('.requests_popup').is(":hidden"))
+                $('.requests_popup').slideDown(400);
+            else
+                $('.requests_popup').slideUp(400);
+        });
         //channel chats list
         $('.selected_channel').click(function(){
             if ($('.popup_chats_list').css('display')=='none')
@@ -1032,6 +1041,13 @@ $(document).ready(function(){
             mouseWheel:{ scrollAmount: 200 }
         });
 
+        //users in new requests
+        $(".requests_popup .user_in_chat_list").mCustomScrollbar({
+            axis:"y",
+            theme:"light",
+            scrollInertia: 650,
+            mouseWheel:{ scrollAmount: 200 }
+        });
         //all rooms
         $(".all_rooms_wrapper").mCustomScrollbar({
             axis:"y",
