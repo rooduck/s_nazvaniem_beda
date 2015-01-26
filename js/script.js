@@ -41,7 +41,7 @@ $(function(){
             lineWidth: 7,
             timer: 10,
             radius: 40,
-            fontStyle: 'Tahome',
+            fontStyle: 'Tahoma',
             fontSize: '20pt',
             fontColor: 'darkblue',
             backgroundColor: 'lightgray',
@@ -625,13 +625,21 @@ $(document).ready(function(){
 
                 if ($('.main_room_block .minimize').hasClass('active')) {
                     $('.chat_gallery_preview').css('visibility', 'hidden');
-                    $('.player_block object').attr('width', '789')
-                        .attr('height', 444);
+                    if ($('.player_block > *').prop("tagName")=='A')
+                        $('.player_block img').attr('width', '')
+                            .attr('height', '');
+                    else
+                        $('.player_block > *').attr('width', '789')
+                            .attr('height', '444');
                 }
                 else {
                     $('.chat_gallery_preview').css('visibility', 'visible');
-                    $('.player_block object').attr('width', '210')
-                        .attr('height', 199);
+                    if ($('.player_block > *').prop("tagName")=='A')
+                        $('.player_block img').attr('width', '210')
+                            .attr('height', '150');
+                    else
+                        $('.player_block > *').attr('width', '210')
+                            .attr('height', '150');
                 }
                 $('.player_block').toggleClass('active');
                 $('.main_room_block .minimize').toggleClass('active');
@@ -639,8 +647,12 @@ $(document).ready(function(){
             //else on thumbnails
             else {
                 $('.chat_gallery_preview').css('visibility', 'visible');
-                $('.player_block object').attr('width', '210')
-                    .attr('height', 150);
+                if ($('.player_block > *').prop("tagName")=='A')
+                    $('.player_block img').attr('width', '210')
+                        .attr('height', '150');
+                else
+                    $('.player_block > *').attr('width', '210')
+                        .attr('height', '150');
                 $('.player_block').removeClass('active');
                 $('.main_room_block .minimize').addClass('active');
             }
