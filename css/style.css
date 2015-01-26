@@ -2487,9 +2487,16 @@ textarea {
     position: absolute;
     top: 0;
     left: 690px;
+
 }
 .player_block.active {
-    left: 55px;
+    left: 0;
+    width: 900px;
+    height: 517px;
+}
+.player_block.active img {
+    max-width: 900px;
+    max-height: 517px;
 }
 /*ROOMS LIST*/
 .all_rooms_wrapper {
