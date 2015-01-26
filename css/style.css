@@ -1551,10 +1551,12 @@ textarea {
     color: #ffffff;
     float: left;
     font-size: 14px;
-    margin-left: 10px;
-    margin-top: 6px;
     position: relative;
     cursor: pointer;
+}
+.new_requests > span {
+    display: block;
+    padding: 6px 10px 8px 14px;
 }
 .new_requests .new {
     background: none repeat scroll 0 0 #c42d49;
@@ -1563,21 +1565,21 @@ textarea {
     font-size: 13px;
     height: 16px;
     position: absolute;
-    right: -20px;
+    right: -6px;
     text-align: center;
-    top: -12px;
+    top: -6px;
     width: 16px;
 }
 .requests_popup {
     background: none repeat scroll 0 0 #05203d;
-    height: 430px;
+    height: 425px;
     position: absolute;
-    top: 26px;
+    top: 31px;
     z-index: 20;
     display: none;
 }
 .requests_popup .user_in_chat_list {
-    height: 400px;
+    height: 395px;
 }
 .requests_popup  .user_in_chat_row {
     border-bottom: 1px solid #07274a;
@@ -2394,9 +2396,9 @@ textarea {
     height: 330px;
     max-width: 730px;
 }
-.gallery_content img {
-    max-width: 730px;
-    max-height: 330px;
+.gallery_content > a {
+    display: block;
+    float: left;
     position: relative;
     top: 50%;
     -webkit-transform: translate(0%, -50%);
@@ -2404,7 +2406,11 @@ textarea {
     -o-transform: translate(0%,-50%);
     transform: translate(0%, -50%);
 }
-.gallery_block img:hover {
+.gallery_content img {
+    max-width: 730px;
+    max-height: 330px;
+}
+.gallery_block .gallery_content a:hover {
     z-index: 3;
 }
 .gallery_content_likes {
@@ -2481,9 +2487,16 @@ textarea {
     position: absolute;
     top: 0;
     left: 690px;
+
 }
 .player_block.active {
-    left: 55px;
+    left: 0;
+    width: 900px;
+    height: 517px;
+}
+.player_block.active img {
+    max-width: 900px;
+    max-height: 517px;
 }
 /*ROOMS LIST*/
 .all_rooms_wrapper {
