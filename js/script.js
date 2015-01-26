@@ -643,6 +643,7 @@ $(document).ready(function(){
                 }
                 $('.player_block').toggleClass('active');
                 $('.main_room_block .minimize').toggleClass('active');
+                $('.chat_gallery_thumbnails').toggle();
             }
             //else on thumbnails
             else {
@@ -653,6 +654,7 @@ $(document).ready(function(){
                 else
                     $('.player_block > *').attr('width', '210')
                         .attr('height', '150');
+
                 $('.player_block').removeClass('active');
                 $('.main_room_block .minimize').addClass('active');
             }
