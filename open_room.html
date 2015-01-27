@@ -11,6 +11,8 @@
     Кнопочки вверху: blue_but - для обычной кнопки "создать стрим\комнату"
     red_but - для кнопочки "удалить стрим\комнату"
     not_active - добавляется класс к blue_but в том случае, если стрим\комната не может быть создана
+
+    Если комната\стрим удалены, то вместо main_room_block и user_chats идет <div class="this_room_deleted">эта комната удалена</div>
 -->
 <!DOCTYPE html>
 <html>
@@ -195,15 +197,15 @@
 
             <!--PLAYER-->
             <div class="player_block">
-                <a href="#"> <img src="images/room_img.jpg" width="100" height="100" /></a>
-                <!--<object width="210" height="150" bgcolor="#000b1b" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=welovegames" id="live_embed_player_flash" type="application/x-shockwave-flash">
-                    <param value="true" name="allowFullScreen">
-                    <param value="always" name="allowScriptAccess">
-                    <param value="all" name="allowNetworking">
-                    <param value="http://www.twitch.tv/widgets/live_embed_player.swf" name="movie">
-                    <param value="hostname=www.twitch.tv&amp;channel=welovegames&amp;auto_play=true&amp;start_volume=25" name="flashvars">
-                </object>-->
-                <!--<iframe width="560" height="315" src="//www.youtube.com/embed/jnk15Wf6xMU" frameborder="0" allowfullscreen></iframe>-->
+                <!-- <a href="#"> <img src="images/room_img.jpg" width="100" height="100" /></a>-->
+                <!-- <object width="210" height="150" bgcolor="#000b1b" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=welovegames" id="live_embed_player_flash" type="application/x-shockwave-flash">
+                   <param value="true" name="allowFullScreen">
+                   <param value="always" name="allowScriptAccess">
+                   <param value="all" name="allowNetworking">
+                   <param value="http://www.twitch.tv/widgets/live_embed_player.swf" name="movie">
+                   <param value="hostname=www.twitch.tv&amp;channel=welovegames&amp;auto_play=true&amp;start_volume=25" name="flashvars">
+               </object>-->
+             <iframe width="560" height="315" src="//www.youtube.com/embed/jnk15Wf6xMU" frameborder="0" allowfullscreen></iframe>
             </div>
 
             <!--THUMBNAILS-->
@@ -251,6 +253,7 @@
             </div>
         </div>
 
+        <div class="this_room_deleted" style="display: none">эта комната удалена</div>
 
         <div class="chat_bottom_line"></div>
     </div>
@@ -316,6 +319,9 @@
                             Меня затрахал перевод времени, слушайте, а что, если провести шоковую терапию? Ну типо ты не переводишь время, тебя бьют током, и медленно внушают новый способ счета, то есть когда ты будешь видеть 18:27, на самом деле будет 19:27. Вот было бы круто, не пришлось бы трахаться с переводом этого чертового времени.
                         </div>
                     </div>
+                    <div class="wall_post_likes">
+                        <div></div>108
+                    </div>
                 </div>
                 <div class="room_post">
                     <div class="post_header">
@@ -335,6 +341,9 @@
                             <img src="images/comix.jpg" alt="pic" />
                         </div>
                     </div>
+                    <div class="wall_post_likes">
+                        <div></div>08
+                    </div>
                 </div>
                 <div class="room_post">
                     <div class="post_header">
@@ -353,6 +362,9 @@
                         <div>
                             <iframe width="560" height="315" src="//www.youtube.com/embed/jnk15Wf6xMU" frameborder="0" allowfullscreen></iframe>
                         </div>
+                    </div>
+                    <div class="wall_post_likes">
+                        <div></div>1048
                     </div>
                 </div>
             </div>
