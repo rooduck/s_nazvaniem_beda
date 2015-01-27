@@ -1563,7 +1563,7 @@ textarea {
     border-radius: 100px;
     color: #fff;
     font-size: 13px;
-    height: 16px;
+    height: 17px;
     position: absolute;
     right: -6px;
     text-align: center;
@@ -2359,8 +2359,10 @@ textarea {
     overflow: hidden;
     float: left;
     height: 423px;
-    min-width: 173px;
     margin-left: 50px;
+}
+.gallery_block:hover, .gallery_block.hovered {
+    background: #0d2548;
 }
 .gallery_block:last-child {
     margin-right: 210px;
@@ -2368,7 +2370,9 @@ textarea {
 .gallery_block_header {
     float: left;
     width: 100%;
-    margin-bottom: 12px;
+    margin-bottom: 9px;
+    text-align: center;
+    padding-top: 10px;
 }
 .gallery_block_header img{
     border-radius: 40px;
@@ -2377,12 +2381,11 @@ textarea {
     width: 30px;
     height: 30px;
     margin-right: 10px;
-    float: left;
+    vertical-align: top;
 }
 .gallery_block_header a {
     color: #3399ff;
-    display: block;
-    float: left;
+    display: inline-block;
     margin-top: 5px;
     max-width: 80%;
     overflow: hidden;
@@ -2395,10 +2398,11 @@ textarea {
     margin-bottom: 3px;
     height: 330px;
     max-width: 730px;
+    text-align: center;
+    width: 100%;
 }
 .gallery_content > a {
-    display: block;
-    float: left;
+    display: inline-block;
     position: relative;
     top: 50%;
     -webkit-transform: translate(0%, -50%);
@@ -2419,17 +2423,21 @@ textarea {
     font-size: 14px;
     color: #fff;
     clear: both;
-    margin-left: 9px;
-    margin-top: 4px;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
 }
 .gallery_content_likes.active {
     color: #d92025;
 }
 .gallery_content_likes div {
     background: url("../images/icon_gallery_likes.png") no-repeat scroll 0 1px rgba(0, 0, 0, 0);
-    float: left;
+    display: inline-block;
     height: 16px;
-    margin-right: 5px;
+    margin: 0 auto;
+    position: relative;
+    right: 5px;
+    vertical-align: top;
     width: 17px;
 }
 .gallery_content_likes:hover div, .gallery_content_likes.active div {
@@ -2449,54 +2457,67 @@ textarea {
 }
 .chat_gallery_thumbnails {
     overflow: hidden;
-    width: 455px;
+    width: 465px;
     margin: 0 auto;
     padding-top: 15px;
 }
 .chat_gallery_thumbnails > div {
     width: 20px;
     height: 21px;
-    margin-right: 15px;
+    margin-right: 5px;
     cursor: pointer;
     display: inline-block;
+    padding: 5px;
 }
+
 .chat_gallery_thumbnails > div:last-child {
     margin-right: 0;
 }
 .chat_gallery_thumbnails > div.pic {
-     background: url("../images/icon_gallery_pics.png") 0 0 no-repeat;
+     background: url("../images/icon_pic.png") center center no-repeat;
  }
 .chat_gallery_thumbnails > div.quote {
-    background: url("../images/icon_gallery_pics.png") -40px 0 no-repeat;
-    padding-top: 0;
-    text-indent: 0;
+    background: url("../images/icon_quote.png") center center no-repeat;
 }
 .chat_gallery_thumbnails > div.video {
-    background: url("../images/icon_gallery_pics.png") -80px 0 no-repeat;
+    background: url("../images/icon_video.png") center center no-repeat;
 }
 .chat_gallery_thumbnails > div.pic.new {
-    background: url("../images/icon_gallery_pics.png") -20px 0 no-repeat;
+    background: url("../images/icon_pic_new.png") center center no-repeat;
 }
 .chat_gallery_thumbnails > div.quote.new {
-    background: url("../images/icon_gallery_pics.png") -60px 0 no-repeat;
+    background: url("../images/icon_quote_new.png") center center no-repeat;
 }
 .chat_gallery_thumbnails > div.video.new {
-    background: url("../images/icon_gallery_pics.png") -100px 0 no-repeat;
+    background: url("../images/icon_video_new.png") center center no-repeat;
+}
+.chat_gallery_thumbnails > div:hover, .chat_gallery_thumbnails > div.new:hover {
+    background-color: #0d2548;
 }
 .player_block {
     position: absolute;
     top: 0;
     left: 690px;
-
+}
+.player_block iframe, .player_block img, .player_block object {
+    width: 210px;
+    height: 150px;
 }
 .player_block.active {
     left: 0;
     width: 900px;
-    height: 517px;
+    height: 453px;
 }
 .player_block.active img {
     max-width: 900px;
-    max-height: 517px;
+    max-height: 453px;
+    width: auto;
+    height: auto;
+}
+.player_block.active iframe, .player_block.active object {
+    width: 789px;
+    height: 444px;
+    margin-top: 9px;
 }
 /*ROOMS LIST*/
 .all_rooms_wrapper {
@@ -2816,6 +2837,16 @@ textarea {
     width: 100%;
     padding-bottom: 4px;
 }
+.this_room_deleted {
+    color: #3399ff;
+    float: left;
+    font-size: 48px;
+    height: 439px;
+    line-height: 439px;
+    position: relative;
+    text-align: center;
+    width: 1169px;
+}
 /*ROOM WALL*/
 
 .room_wall_wrapper {
@@ -2930,6 +2961,33 @@ textarea {
     width: 100%;
     word-break: break-all;
     padding-bottom: 75px;
+}
+.wall_post_likes {
+    clear: both;
+    color: #92a5c2;
+    cursor: pointer;
+    float: left;
+    font-size: 18px;
+    margin-left: 21px;
+    margin-top: -52px;
+    padding: 10px 12px 8px 9px;
+}
+.wall_post_likes div {
+    background: url("../images/icon_likes_wall.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 21px;
+    margin-right: 8px;
+    width: 25px;
+}
+.wall_post_likes:hover {
+    color: #3b557b;
+    background: #f9eaec;
+}
+.wall_post_likes:hover div, .wall_post_likes.active div {
+    background: url("../images/icon_likes_wall.png") no-repeat scroll -25px 0 rgba(0, 0, 0, 0);
+}
+.wall_post_likes.active {
+    color: #c42d49;
 }
 .quote:first-letter {
     font-weight: bold;
@@ -4720,6 +4778,10 @@ button.create_content_but{
     background: #d94f50;
     font-size: 16px;
     color: #863c3d;
+}
+.red_but.inactive {
+    background: #d0d0d0;
+    color: #999;
 }
 .blue_but.not_active {
     background: #707983;
