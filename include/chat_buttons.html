@@ -1,3 +1,7 @@
+<!--
+    Если в попапе с добавлением видео\стрима (add_link_popup) кнопка "Удалить текущее" неактивная для юзера
+    то ей надо добавлять класс 'inactive'
+-->
 <!--ICONS-->
 <div class="chat_images">
     <div class="add_link chat_pic"><div class="chat_hint"><span>добавить видео/стрим</span></div></div>
@@ -122,16 +126,18 @@
         </div>
     </div>
 </div>
+
 <!--ADD LINK-->
 <div class="click_user_popup add_link_popup">
     <form name="change_link" action="">
         <input type="text" name="link" placeholder="Вставьте ссылку на стрим или видео" />
         <button class="blue_but">Добавить</button>
         <div></div>
-        <button class="red_but">Удалить текущее</button>
+        <button class="red_but inactive">Удалить текущее</button>
         <span>При нажатии на „удалить“ вы убираете запущенный стрим или видео</span>
     </form>
 </div>
+
 <!--CREATE POLL-->
 <div class="click_user_popup golosovalka">
     <div class="click_user_popup_header">
