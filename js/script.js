@@ -3,6 +3,7 @@ $(function(){
     $("#header").load("include/header.html");
     $(".site_filter").load("include/menu.html");
     $(".all_streams_wrapper, .all_rooms_wrapper").load("include/streams_list.html");
+    $('.filter0_cap').load('include/filter_cap.html');
     $(".top_category_rating").load("include/category_rating.html");
     //$(".block_before_streams").load("include/back_block.html");
     $(".chat_buttons").load("include/chat_buttons.html");
@@ -226,9 +227,9 @@ $(document).ready(function(){
 
         /*MENU*/
         //add class on click
-        $('.filter_icon').click(function(){
+        $('.filter_icon, .filter_block .stream_number').click(function(){
             $(this).parent().parent().find('.filter_icon').removeClass('active');
-            $(this).addClass('active');
+            $(this).parent().find('.filter_icon').addClass('active');
         });
 
         //menu switch active
@@ -239,6 +240,10 @@ $(document).ready(function(){
             $(this).addClass('active');
         });
 
+        //show popup on favorite
+        $('.favorites_icon.filter_icon, .filter_block .stream_number').click(function(){
+           $(this).parent().find('.popup_block_wrapper').slideToggle(500);
+        });
 
         /*STREAM AND ROOM LIST*/
 
@@ -593,6 +598,14 @@ $(document).ready(function(){
                 $('.user_popup_body').css('visibility','hidden');
                 $('.some_li').removeClass('active');
             }
+            //favorite list popup
+            if ($(event.target).closest(".filter_block .favorites_icon, .filter_block .stream_number").length || $(event.target).closest(".popup_block_wrapper").length) return;
+            else
+            {
+                $('.popup_block_wrapper').slideUp(500);
+                $('.filter_block .favorites_icon').removeClass('active');
+            }
+
             event.stopPropagation();
         });
 
@@ -1048,6 +1061,13 @@ $(document).ready(function(){
             mouseWheel:{ scrollAmount: 1000 }
         });
 
+        //favorite popup list
+        $('.list_wrapper').mCustomScrollbar({
+            axis:"y",
+            theme:"light",
+            scrollInertia: 650,
+            mouseWheel:{ scrollAmount: 200 }
+        });
         /*GROUP OF CUSTOM CHECKBOXES*/
 
         $('.blue_checkbox').iCheck({
