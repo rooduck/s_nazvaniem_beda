@@ -1,3 +1,8 @@
+<!--
+    Update 30.01:
+    Добавлена заглушка для 0 уровня фильтра.
+    Вместо всего, что должно быть в <div class="main_block"> в него грузится <div class="filter0_cap">
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,7 +64,7 @@
 <!--ROOMS LIST-->
 <div class="main_block">
     <!--class 'lists' needed only at stream\room list page!-->
-    <div class="block_before_streams lists">
+    <div class="block_before_streams lists" style="display: none;">
         <div class="unknow_text_block">
             <span class="text1">Starcraft 2</span>
             <div class="switcher">
@@ -68,13 +73,18 @@
             <span class="text2">Подкатегория</span>
         </div>
     </div>
-    <div class="all_rooms_wrapper min_param" id="dynamic_filter_content">
+    <div class="all_rooms_wrapper min_param" id="dynamic_filter_content" style="display: none;">
         <!--Cuz structure and styles r the same we just include stream_list.html-->
     </div>
 
     <!---CATEGORY RATING-->
-    <div class="top_category_rating">
+    <div class="top_category_rating" style="display: none;">
         <!--include category_rating.html-->
+    </div>
+
+    <!--CAP FOR FILTER-->
+    <div class="filter0_cap">
+        <!--include filter_cap.html-->
     </div>
 </div>
 
