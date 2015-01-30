@@ -244,7 +244,7 @@ textarea {
     height: 580px;
     width: 640px;
     position: absolute;
-    z-index: 5;
+    z-index: 7;
     top: 0;
     visibility: hidden;
     right: 0;
@@ -715,6 +715,19 @@ textarea {
     width: 46px;
     cursor:pointer;
 }
+.stream_number {
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    padding: 0 4px;
+    background: #c42d49;
+    font-size: 11px;
+    color: #fff;
+    cursor: pointer;
+}
 .filter_icon:hover, .filter_icon.active {
     border-bottom: 1px solid #3399ff;
 }
@@ -724,24 +737,97 @@ textarea {
 .all_content_icon {
     background: url("../images/icon_home.png") center no-repeat;
 }
-.all_content_icon:hover,.all_content_icon.active {
+.filter_block:hover .all_content_icon,.all_content_icon.active {
     background: url("../images/icon_home.png") center no-repeat rgba(51,153,255,0.5);
 }
 .favorites_icon {
     background: url("../images/icon_star.png") center no-repeat;
 }
-.favorites_icon:hover, .favorites_icon.active {
+.filter_block:hover  .favorites_icon, .favorites_icon.active {
     background: url("../images/icon_star.png") center no-repeat rgba(51,153,255,0.5);
 }
 .collection_icon {
     background: url("../images/icon_collection.png") center no-repeat;
 }
-.collection_icon:hover, .collection_icon.active {
+.filter_block:hover .collection_icon, .collection_icon.active {
     background: url("../images/icon_collection.png") center no-repeat rgba(51,153,255,0.5);
 }
 .filter_block .popup_hint {
     top: 42px;
 }
+/*favorites popup*/
+.popup_block_wrapper {
+    position: absolute;
+    top: 32px;
+    background: url("../images/arrow_top_popup.png") no-repeat 17px top;
+    padding-top: 7px;
+    z-index: 7;
+    width: 276px;
+    overflow: hidden;
+    display: none;
+}
+.list_header {
+    color: #fff;
+    font-size: 12px;
+    background: #122034;
+    float: left;
+    padding: 8px 10px;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.list_wrapper {
+    float: left;
+    height: 306px;
+}
+.list_wrapper .row {
+    float: left;
+    background: #0e192a;
+    padding: 10px 10px 6px;
+    border-bottom: 1px solid #152338;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+.list_wrapper .row:hover {
+    background: #192c49;
+}
+.list_wrapper .row > a:first-child, .list_wrapper .row > img {
+    float: left;
+    margin-right: 10px;
+}
+.list_wrapper .row img {
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+.text_14_ovhi {
+    color: #6084bc;
+    float: left;
+    font-size: 14px;
+    min-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+}
+.list_wrapper .text_14_ovhi {
+    margin-bottom: 2px;
+}
+.link_12_ovhi {
+    color: #3399ff;
+    float: left;
+    font-size: 12px;
+    min-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+}
+/*end favorite popup*/
 .breacdcrubms_wrapper {
     float: left;
     width: 795px;
@@ -1316,6 +1402,132 @@ textarea {
     padding-left: 9px;
     background:#01132b;
     height:506px;
+}
+/*cap for 0-level filter*/
+.filter0_cap {
+    background: none repeat scroll 0 0 #000b1b;
+    float: left;
+    height: 567px;
+    min-width: 1169px;
+    width: 100%;
+}
+.icon_crown {
+    background: url("../images/icon_crown.png") 0 3px no-repeat;
+    padding-left: 40px;
+    margin: 15px 0 10px 15px;
+    font-size: 24px;
+    color: #fff;
+}
+.streams_col, .rooms_col, .records_col {
+    float: left;
+    width: 390px;
+}
+.rooms_col {
+    width: 389px;
+}
+.block_wrapper.stream {
+    border: 0 none;
+    float: left;
+    height: 168px;
+    position: relative;
+    width: 390px;
+}
+.rooms_col .block_wrapper.stream, .rooms_col .block_wrapper.stream:hover, .rooms_col .block_wrapper .filter_on_pic,
+.rooms_col .block_wrapper .stream_pic img, .rooms_col .block_wrapper.stream .main_stream_info {
+    width: 389px
+}
+.block_wrapper.stream:hover {
+    width: 390px;
+    height: 168px;
+    border: 0 none;
+}
+.block_wrapper .filter_on_pic {
+    background: rgba(0, 0, 0, 0.3);
+    height: 168px;
+    width: 390px;
+}
+.block_wrapper .stream_pic img {
+    height: 168px;
+    width: 390px;
+}
+.block_wrapper.stream:hover .stream_pic img {
+    border: 5px solid #3399ff;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    z-index: 5;
+}
+.block_wrapper.stream:hover .main_stream_info, .block_wrapper.stream:hover .preview_stream_info {
+    z-index: 6;
+}
+.block_wrapper .preview_stream_info {
+    top: 45px;
+    left: 136px;
+    right: auto;
+    text-transform: uppercase;
+    width: 118px;
+    padding: 0;
+    height: 46px;
+    background: rgba(0, 0, 0, 0.2);
+}
+.rooms_col .block_wrapper .preview_stream_info {
+    width: 141px;
+}
+.block_wrapper:hover .preview_stream_info {
+    background: #3399ff;
+}
+.block_wrapper .preview_stream_info div {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 23px;
+    color: #fff;
+}
+.streams_col .block_wrapper .preview_stream_info div {
+    background: url("../images/icon_play.png") no-repeat 0 0;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    margin-top: 11px;
+}
+.rooms_col .block_wrapper .preview_stream_info div {
+    background: url("../images/icon_door.png") no-repeat 0 0;
+    padding-left: 27px;
+    padding-bottom: 0;
+    margin-left: 13px;
+    margin-top: 12px;
+    line-height: 21px;
+}
+.rooms_col .block_wrapper:hover .preview_stream_info div {
+    background: url("../images/icon_door.png") no-repeat 0 -21px;
+    padding-bottom: 7px;
+}
+.records_col .block_wrapper .preview_stream_info div {
+    background: url("../images/icon_record.png") no-repeat 0 0;
+    padding-left: 31px;
+    margin-left: 15px;
+    margin-top: 11px;
+    padding-bottom: 6px;
+}
+.block_wrapper.stream .main_stream_info {
+    width: 390px;
+    height: 50px;
+}
+.block_wrapper .left_part_info {
+    margin-left: 14px;
+    width: 307px;
+}
+.block_wrapper .stream_name {
+    margin-top: 7px;
+}
+.block_wrapper .streamer_name {
+    color: #3399ff;
+    width: auto;
+    max-width: 100%;
+}
+.block_wrapper .right_part_info {
+    margin-right: 9px;
+    margin-top: 27px;
+    font-size: 12px;
 }
 /*RATING LIST*/
 .whats_game{
@@ -2361,7 +2573,7 @@ textarea {
     height: 423px;
     margin-left: 50px;
 }
-.gallery_block:hover {
+.gallery_block:hover, .gallery_block.hovered {
     background: #0d2548;
 }
 .gallery_block:last-child {
@@ -4833,7 +5045,7 @@ button.create_content_but{
 .center_popup {
     visibility: hidden;
     position:fixed;
-    z-index: 6;
+    z-index: 7;
     bottom: 0;
     top: 0;
     right: 0;
@@ -5929,11 +6141,11 @@ button.create_content_but{
 }
 /*POPUP SEARCH*/
 .search_popup {
-    display:none;
-    position:absolute;
-    top:34px;
-    right:11px;
-    z-index:6;
+    display: none;
+    position: absolute;
+    top: 34px;
+    right: 11px;
+    z-index: 7;
 }
 .search_popup {
     right:11px;
@@ -6038,11 +6250,11 @@ button.create_content_but{
     float: left;
 }
 /*UVEDOMLENIA/PREDUPREJDENIA POPUP*/
-.sysmess_wrapper{
-    position:fixed;
-    z-index:7;
-    right:6px;
-    top:43px;
+.sysmess_wrapper {
+    position: fixed;
+    z-index: 8;
+    right: 6px;
+    top: 43px;
 }
 .system_message_popup{
     display:none;
@@ -6362,15 +6574,15 @@ a.text_popup {
     font-weight:bold;
 }
 /*FADE*/
-.fade{
+.fade {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
     height: 100%;
     position: fixed;
     width: 100%;
-    z-index: 5;
+    z-index: 6;
     display: none;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
 }
 /*CUSTOM SELECT*/
 .selectboxit-container .selectboxit.chat_select {
