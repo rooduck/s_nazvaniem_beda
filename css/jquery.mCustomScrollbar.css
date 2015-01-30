@@ -450,7 +450,7 @@ yx-axis
 		background-color:#000b1b;
 	}
 
-    #user_popup .mCSB_scrollTools .mCSB_draggerRail, .requests_popup .mCSB_scrollTools .mCSB_draggerRail{
+    #user_popup .mCSB_scrollTools .mCSB_draggerRail, .requests_popup .mCSB_scrollTools .mCSB_draggerRail, .list_wrapper .mCSB_scrollTools .mCSB_draggerRail{
         background-color:#233b5f;
     }
 
