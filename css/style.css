@@ -5043,7 +5043,6 @@ button.create_content_but{
 }
 /*CENTER_POPUP*/
 .center_popup {
-    visibility: hidden;
     position:fixed;
     z-index: 7;
     bottom: 0;
